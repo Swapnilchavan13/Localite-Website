@@ -1,0 +1,32 @@
+/* General styles for the Home component */
+.home-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .home-container p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .slider-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .home-title {
+      font-size: 2rem;
+    }
+  
+  
+    .home-container p {
+      font-size: 0.9rem;
+    }
+  }
+  
