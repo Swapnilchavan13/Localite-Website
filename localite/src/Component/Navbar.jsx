@@ -26,7 +26,7 @@ export const Navbar = () => {
           &#9776; {/* Unicode character for hamburger icon */}
         </div>
       </div>
-      <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
+      <div className={`navbar-links ${isOpen ? 'open' : 'close'}`}>
         <Link to="/about">About</Link>
         <Link to="/">New Trends</Link>
         <Link to="/">New Place</Link>
