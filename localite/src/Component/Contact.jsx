@@ -13,7 +13,7 @@ export const Contact = () => {
         <h2>Our Contact Information</h2>
         <p><strong>Email:</strong> support@localite.com</p>
         <p><strong>Phone:</strong> +1 (123) 456-7890</p>
-        <p><strong>Address:</strong> Eskon Temple, Juhu, Mumbai</p>
+        <p><strong>Address:</strong> Iskon Temple, Juhu, Mumbai</p>
       </div>
       
       <div className="contact-form">
