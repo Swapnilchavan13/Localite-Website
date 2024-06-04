@@ -5,6 +5,7 @@ import { Home } from './Component/Home';
 import { About } from './Component/About';
 import { More } from './Component/More';
 import { Contact } from './Component/Contact';
+import { Footer } from './Component/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="more" element={<More />} />
           <Route path="contact" element={<Contact />} /> 
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
