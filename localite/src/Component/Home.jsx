@@ -20,7 +20,7 @@ export const Home = () => {
       <h1 className="home-title">Welcome to Localite!</h1>
       <Slider {...settings}>
         <div>
-          <img src="https://img.freepik.com/premium-photo/broadcast-live-stream-concert-via-mobile-phone_367038-242.jpg" alt="Image 1" className="slider-image" />
+          <img src="https://img.freepik.com/premium-photo/indian-car-mechanic-standing-working-service-station-car-specialists-examining-lifted-car-professional-repairmen-wearing-mechanic-uniform-blue-color_255667-45739.jpg" alt="Image 1" className="slider-image" />
         </div>
         <div>
           <img src="https://media.istockphoto.com/id/1442437498/photo/owner-at-checkout-counter-in-supermarket.jpg?s=612x612&w=0&k=20&c=8NGepgYkYotdfBJhXWKc6cXmSsXYwgv5kr9f_jReWqE=" alt="Image 2" className="slider-image" />
