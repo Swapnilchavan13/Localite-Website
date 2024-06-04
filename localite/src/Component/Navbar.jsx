@@ -55,6 +55,11 @@ export const Navbar = () => {
     className={selectedImageIndex === 3 ? 'selected' : ''}
     onClick={() => handleImageClick(3)}  />
     </Link>
+
+    <a href="https://play.google.com/store/apps/details?id=com.supercell.clashofclans&hl=en_IN">
+    <img src="https://lh6.googleusercontent.com/proxy/OJ-G_SGV_K268pPWtsIOh-aWaCJ60oglw7NZRyjlh7KGanB_RFGH6MrUoWgon55yyY9VziqQ5p7OWMYbEoviPpoPXg4_WRTeS-0CmuvFPvFN-hDcbDq3u-VGTRPA3_-FopgrQdxN" alt=""/>
+    </a>
+    
 </div>
 
     </div>
