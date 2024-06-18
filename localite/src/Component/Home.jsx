@@ -3,6 +3,9 @@ import Slider from 'react-slick';
 import '../styles/home.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Footer } from '../Component/Footer';
+import { Topnavbar } from './Topnavbar';
+import { Navbar } from './Navbar';
 
 export const Home = () => {
   const settings = {
@@ -13,42 +16,187 @@ export const Home = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    customPaging: i => (
+      <button>
+        <span className="custom-dot"></span>
+      </button>
+    ),
   };
 
   return (
-    <div className="home-container">
-      <h1 className="home-title">Welcome to Localite!</h1>
-      <Slider {...settings}>
-        <div>
-          <img src="https://img.freepik.com/premium-photo/indian-car-mechanic-standing-working-service-station-car-specialists-examining-lifted-car-professional-repairmen-wearing-mechanic-uniform-blue-color_255667-45739.jpg" alt="Image 1" className="slider-image" />
+    <div className="maind">
+      <Topnavbar />
+      <Navbar />
+      <div className="home-container">
+        <div className="firstdiv">
+          <h1><span className="highlight">Juhu's</span> Hyper Local Marketing Agency</h1>
+          <div className="contentdiv"></div>
+          <button className="getstartedbtn">Get started</button>
         </div>
-        <div>
-          <img src="https://media.istockphoto.com/id/1442437498/photo/owner-at-checkout-counter-in-supermarket.jpg?s=612x612&w=0&k=20&c=8NGepgYkYotdfBJhXWKc6cXmSsXYwgv5kr9f_jReWqE=" alt="Image 2" className="slider-image" />
-        </div>
-        <div>
-          <img src="https://static1.squarespace.com/static/63c4d69d7196096ae1af7627/t/64817ab43f6c6a16fa304f62/1686207156277/Localite-placemaking.png?format=1500w" alt="Image 3" className="slider-image" />
-        </div>
-        <div>
-          <img src="https://res.cloudinary.com/simplotel/image/upload/x_0,y_68,w_1920,h_1080,r_0,c_crop,q_90,fl_progressive/w_500,f_auto,c_fit/ramada-plaza-palm-grove-juhu-beach-mumbai/sea-3490428_1920_1_wvdqfr" alt="Image 4" className="slider-image" />
-        </div>
-        <div>
-          <img src="https://media.assettype.com/homegrown%2Fimport%2Fbook%2F10772-pxrhfptjwc-1542625095.jpg" alt="Image 5" className="slider-image" />
-        </div>
+        <br />
+        <br />
+        <hr />
+        <br />
+        <br />
+        <div className="firstdiv">
+          <h1 className="home-title">Complete <span className="highlight">Hyper Local Marketing</span> Services For Your Businesses</h1>
+         <div className='Slider'>
 
-      </Slider>
+          <Slider {...settings}>
+            <div>
+              <img src="https://www.myhoardings.com/blog/wp-content/uploads/2023/02/DOOH-Ads-India.jpg" alt="Image 1" className="slider-image" />
+            </div>
+            <div>
+              <img src="https://www.mdlogistics.com/wp-content/uploads/2017/06/Mobile-App-developers.jpg" alt="Image 2" className="slider-image" />
+            </div>
+            <div>
+              <img src="https://www.forbes.com/advisor/wp-content/uploads/2023/06/Image_-1.jpg" alt="Image 3" className="slider-image" />
+            </div>
+          
+          </Slider>
+         </div>
+    </div>
+
+    <div className='whyusdiv'>
+      <h1>Why Us?</h1>
+      <img src="https://media.istockphoto.com/id/655887334/photo/why-choose-us.jpg?s=612x612&w=0&k=20&c=TJLPS91NH3rTJhdcAgB92M984kcJ80S910X-4XnTpNE=" alt="" />
+      <div className='whycontent'>
+         We Focus on Hyper Local Busunesses.<br/> We are Experience Marketers. <br/>We are Best In Class Resources. <br/>We are Cost Efficient.
+      </div>
       <br />
-      <p>
-        Discover the best places and experiences in your local area with Localite. Whether you're looking for a new restaurant to try, a park to explore, or an event to attend, we've got you covered.
-      </p>
-      <p>
-        Our mission is to connect you with the hidden gems in your neighborhood. We believe that the best experiences are often found close to home, and we're here to help you find them.
-      </p>
-      <p>
-        Join our community and start exploring today. Share your own discoveries and connect with others who love to explore their local areas just like you.
-      </p>
-      <p>
-        Stay tuned for updates, reviews, and recommendations from our team and fellow Localite users. Let's make the most of our local communities together!
-      </p>
+      <img src="https://media.istockphoto.com/id/655887334/photo/why-choose-us.jpg?s=612x612&w=0&k=20&c=TJLPS91NH3rTJhdcAgB92M984kcJ80S910X-4XnTpNE=" alt="" />
+      <div className='whycontent'>
+         We Focus on Hyper Local Busunesses.<br/> We are Experience Marketers. <br/>We are Best In Class Resources. <br/>We are Cost Efficient.
+      </div>
+      <br />
+      <img src="https://media.istockphoto.com/id/655887334/photo/why-choose-us.jpg?s=612x612&w=0&k=20&c=TJLPS91NH3rTJhdcAgB92M984kcJ80S910X-4XnTpNE=" alt="" />
+      <div className='whycontent'>
+         We Focus on Hyper Local Busunesses.<br/> We are Experience Marketers. <br/>We are Best In Class Resources. <br/>We are Cost Efficient.
+      </div>
+    </div>
+<br />
+<br />
+    <div className='Aboutus'>
+      <h1>About Us</h1>
+      <img src="https://media.istockphoto.com/id/466818688/photo/blank-watercolor-textured-paper-canvas.webp?b=1&s=170667a&w=0&k=20&c=iAiByac0cBVa5Z9jShwlJHhkB9lLSRbkGIBKr8NnU8U=" alt="" />
+
+<div className='aboutuscontent'>
+  Lorem, harum dolorem laborum dicta inventore consequatur quae officia iusto ex nihil? Non incidunt voluptas.
+
+  <br />
+  <br />
+  Lorem, ipsum dolor sit. dicta inventore consequatur quae officia iusto ex nihil? Non incidunt voluptas.
+</div>
+
+<div className='followus'>
+  <p>Follow us:</p>
+  <div className='followdiv'>
+    <img src="https://icones.pro/wp-content/uploads/2021/02/instagram-logo-icone4.png" alt="" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="" />
+    <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" alt="" />
+    <img src="https://w7.pngwing.com/pngs/676/1/png-transparent-x-icon-ex-twitter-tech-companies-social-media-thumbnail.png" alt="" />
+  </div>
+</div>
+    </div>
+<br />
+    <div className='featurediv'>
+      <h1>Features</h1>
+      <div>
+      <img src="https://t4.ftcdn.net/jpg/00/93/85/69/360_F_93856984_YszdhleLIiJzQG9L9pSGDCIvNu5GEWCc.jpg" alt="" />
+      <div className='featurecontent'>
+         Lorem, ipsum dolor sit amet consectetur aprovident quisquam minima maiores harum quibusdam, ipsum autem sint quasi, id sunt soluta cumque ullam debitis.
+      </div>
+      </div>
+
+      <div>
+      <img src="https://t4.ftcdn.net/jpg/00/93/85/69/360_F_93856984_YszdhleLIiJzQG9L9pSGDCIvNu5GEWCc.jpg" alt="" />
+      <div className='featurecontent'>
+         Lorem, dolor sit amet aprovident quisquam minima maiores harum quibusdam, ipsum autem sint quasi, id sunt soluta cumque ullam debitis.
+      </div>
+      </div>
+
+      <div>
+      <img src="https://t4.ftcdn.net/jpg/00/93/85/69/360_F_93856984_YszdhleLIiJzQG9L9pSGDCIvNu5GEWCc.jpg" alt="" />
+      <div className='featurecontent'>
+         Lorem, ipsum dolor sit amet consectetur aprovident quisquam minima maiores harum quibusdam, ipsum autem sint quasi, id sunt soluta cumque ullam debitis.
+      </div>
+      </div>
+
+    </div>
+
+    <div className='advertiserdiv'>
+      <h2>
+        Meet our <br/> Advertisers
+      </h2>
+
+        <div className='adverdivs'>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+        </div>
+    </div>
+
+    <div className='sellwith'>
+<h1>Sell With<br/> LOCALITE</h1>
+<div className='frdiv'>
+  <h1>To learn more<br/> join our<br/> <span className='community'>community</span>!</h1>
+  <div className='sediv'>
+    <ul>
+    <li>Get the best out of your <br />neighborhood.</li>
+    <br />
+    <li>Explore and purchase goods <br /> and services</li>
+    <br />
+    <li>Stay informed about exciting offers,<br /> events, exhibition, workshops,<br /> product, launches, and much more!</li>
+    <br />
+    <li>Grow your business and connect with <br /> your customers, users etc.</li>
+    </ul>
+</div>
+    <button className='getstartedbtn'>Download App</button>
+</div>
+    </div>
+
+    <div className='faq'>
+      <h1>FAQs</h1>
+      <select name="" id="">
+        <option value="">What is Localite?</option>
+      </select>
+      <select name="" id="">
+        <option value="">How Do I explore this product?</option>
+      </select>
+      <select name="" id="">
+        <option value="">How wiil I get my payments?</option>
+      </select>
+      <select name="" id="">
+        <option value="">What are my gains/profits?</option>
+      </select>
+      <select name="" id="">
+        <option value="">How will your product help my business?</option>
+      </select>
+      <select name="" id="">
+        <option value="">What are the things under my control?</option>
+      </select>
+      <select name="" id="">
+        <option value="">What if there is any issue throught the <br /> process, what to do?</option>
+      </select>
+      <select name="" id="">
+        <option value="">How will you solve the problem?</option>
+      </select>
+
+<div className='selling'>
+      <h2>Start selling online with <br />LOCALITE</h2>
+      <img src="https://freeiconshop.com/wp-content/uploads/edd/google-play-badge.png" alt="" />
+      <img src="https://freeiconshop.com/wp-content/uploads/edd/app-store-badge.png" alt="" />
+</div>
+    </div>
+
+</div>
+    <Footer />
     </div>
   );
 };
+

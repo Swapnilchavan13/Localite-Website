@@ -1,0 +1,27 @@
+/* Topnavbar */
+.topdiv {
+  width: 102%;
+  background-color: #edf4ff;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  padding-left: 30px;
+  border-bottom: 1px solid rgb(187, 186, 186);
+  box-sizing: border-box;
+}
+
+.downloadbtn {
+  background-color: #f61717;
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 35px;
+  margin: auto;
+  margin-left: 60px;
+  font-weight: bold;
+}
+
+.topdiv img {
+  width: 180px;
+}
