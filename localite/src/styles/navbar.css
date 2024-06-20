@@ -1,5 +1,5 @@
 .navbar {
-  width: 102%;
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -26,4 +26,41 @@
 hr {
   margin-top: -20px;
   width: 350px;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+  .navbar {
+    width: 102%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #edf4ff;
+    box-sizing: border-box;
+  }
+  
+  .logodiv {
+    text-align: center;
+  }
+  
+  .logodiv p {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .navbar img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  hr {
+    margin-top: -20px;
+    width: 350px;
+  }
+  
+
 }

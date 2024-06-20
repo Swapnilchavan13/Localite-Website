@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Slider from 'react-slick';
 import '../styles/home.css';
 import "slick-carousel/slick/slick.css";
@@ -6,6 +6,23 @@ import "slick-carousel/slick/slick-theme.css";
 import { Footer } from '../Component/Footer';
 import { Topnavbar } from './Topnavbar';
 import { Navbar } from './Navbar';
+
+
+const names = [
+  "Juhu",
+  "Versova",
+  "Vile Parle",
+  "Santacruz",
+  "Andheri",
+  "Khar",
+  "Bandra"
+];;
+
+const DynamicHeading = ({ name }) => (
+  <h1>
+    <span className="highlight">{name}'s</span> Hyper Local Marketing Agency
+  </h1>
+);
 
 export const Home = () => {
   const settings = {
@@ -22,6 +39,43 @@ export const Home = () => {
       </button>
     ),
   };
+  
+  const [nameIndex, setNameIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNameIndex(prevIndex => (prevIndex + 1) % names.length);
+    }, 2000); // Change name every 3 seconds
+
+    return () => clearInterval(interval); // Clean up the interval on component unmount
+  }, []);
+
+  useEffect(() => {
+    // Add event listener to track scroll position
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    // Show scroll-to-top button when user scrolls down 400px
+    const scrollButton = document.querySelector('.scroll-to-top');
+    if (scrollButton) {
+      if (window.scrollY > 400) {
+        scrollButton.classList.add('show');
+      } else {
+        scrollButton.classList.remove('show');
+      }
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <div className="maind">
@@ -29,7 +83,7 @@ export const Home = () => {
       <Navbar />
       <div className="home-container">
         <div className="firstdiv">
-          <h1><span className="highlight">Juhu's</span> Hyper Local Marketing Agency</h1>
+        <DynamicHeading name={names[nameIndex]} />
           <div className="contentdiv"></div>
           <button className="getstartedbtn">Get started</button>
         </div>
@@ -57,7 +111,7 @@ export const Home = () => {
          </div>
     </div>
 
-    <div className='whyusdiv'>
+    <div className='whyusdiv' id="why-us">
       <h1>Why Us?</h1>
       <img src="https://media.istockphoto.com/id/655887334/photo/why-choose-us.jpg?s=612x612&w=0&k=20&c=TJLPS91NH3rTJhdcAgB92M984kcJ80S910X-4XnTpNE=" alt="" />
       <div className='whycontent'>
@@ -76,7 +130,7 @@ export const Home = () => {
     </div>
 <br />
 <br />
-    <div className='Aboutus'>
+    <div className='Aboutus' id="about-us">
       <h1>About Us</h1>
       <img src="https://media.istockphoto.com/id/466818688/photo/blank-watercolor-textured-paper-canvas.webp?b=1&s=170667a&w=0&k=20&c=iAiByac0cBVa5Z9jShwlJHhkB9lLSRbkGIBKr8NnU8U=" alt="" />
 
@@ -99,7 +153,7 @@ export const Home = () => {
 </div>
     </div>
 <br />
-    <div className='featurediv'>
+    <div className='featurediv' id='services'>
       <h1>Features</h1>
       <div>
       <img src="https://t4.ftcdn.net/jpg/00/93/85/69/360_F_93856984_YszdhleLIiJzQG9L9pSGDCIvNu5GEWCc.jpg" alt="" />
@@ -160,7 +214,7 @@ export const Home = () => {
 </div>
     </div>
 
-    <div className='faq'>
+    <div className='faq' id='explore'>
       <h1>FAQs</h1>
       <select name="" id="">
         <option value="">What is Localite?</option>
@@ -196,6 +250,10 @@ export const Home = () => {
 
 </div>
     <Footer />
+
+    <button className="scroll-to-top" onClick={scrollToTop}>
+        Scroll to Top
+      </button>
     </div>
   );
 };
