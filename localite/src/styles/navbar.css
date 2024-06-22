@@ -25,15 +25,15 @@
 
 hr {
   margin-top: -20px;
-  width: 350px;
+  width: 90%;
 }
 
 
 /* Mobile Styles */
-@media (max-width: 768px) {
+@media (max-width: 200px) {
 
   .navbar {
-    width: 102%;
+    width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -59,7 +59,7 @@ hr {
   
   hr {
     margin-top: -20px;
-    width: 350px;
+    width: 90%;
   }
   
 

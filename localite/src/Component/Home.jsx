@@ -78,6 +78,7 @@ export const Home = () => {
   };
 
   return (
+    <div className='mainmain'>
     <div className="maind">
       <Topnavbar />
       <Navbar />
@@ -93,7 +94,7 @@ export const Home = () => {
         <br />
         <br />
         <div className="firstdiv">
-          <h1 className="home-title">Complete <span className="highlight">Hyper Local Marketing</span> Services For Your Businesses</h1>
+          <h1 className="home-title">Complete <span className="highlight">HyperLocal Marketing</span> Services For Your Businesses</h1>
          <div className='Slider'>
 
           <Slider {...settings}>
@@ -115,17 +116,17 @@ export const Home = () => {
       <h1>Why Us?</h1>
       <img src="https://media.istockphoto.com/id/655887334/photo/why-choose-us.jpg?s=612x612&w=0&k=20&c=TJLPS91NH3rTJhdcAgB92M984kcJ80S910X-4XnTpNE=" alt="" />
       <div className='whycontent'>
-         We Focus on Hyper Local Busunesses.<br/> We are Experience Marketers. <br/>We are Best In Class Resources. <br/>We are Cost Efficient.
+         We Focus on HyperLocal Busunesses.<br/> We are Experience Marketers. <br/>We are Best In Class Resources. <br/>We are Cost Efficient.
       </div>
       <br />
       <img src="https://media.istockphoto.com/id/655887334/photo/why-choose-us.jpg?s=612x612&w=0&k=20&c=TJLPS91NH3rTJhdcAgB92M984kcJ80S910X-4XnTpNE=" alt="" />
       <div className='whycontent'>
-         We Focus on Hyper Local Busunesses.<br/> We are Experience Marketers. <br/>We are Best In Class Resources. <br/>We are Cost Efficient.
+         We Focus on HyperLocal Busunesses.<br/> We are Experience Marketers. <br/>We are Best In Class Resources. <br/>We are Cost Efficient.
       </div>
       <br />
       <img src="https://media.istockphoto.com/id/655887334/photo/why-choose-us.jpg?s=612x612&w=0&k=20&c=TJLPS91NH3rTJhdcAgB92M984kcJ80S910X-4XnTpNE=" alt="" />
       <div className='whycontent'>
-         We Focus on Hyper Local Busunesses.<br/> We are Experience Marketers. <br/>We are Best In Class Resources. <br/>We are Cost Efficient.
+         We Focus on HyperLocal Busunesses.<br/> We are Experience Marketers. <br/>We are Best In Class Resources. <br/>We are Cost Efficient.
       </div>
     </div>
 <br />
@@ -254,6 +255,9 @@ export const Home = () => {
     <button className="scroll-to-top" onClick={scrollToTop}>
         Scroll to Top
       </button>
+    </div>
+
+
     </div>
   );
 };

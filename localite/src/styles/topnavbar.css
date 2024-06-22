@@ -1,46 +1,43 @@
-/* Topnavbar */
 .topdiv {
-  width: 100%;
-  background-color: #edf4ff;
+  /* width: 100%; */
   display: flex;
-  justify-content: space-around;
-  text-align: center;
-  padding-left: 30px;
-  border-bottom: 1px solid rgb(187, 186, 186);
-  box-sizing: border-box;
-}
-
-.downloadbtn {
-  background-color: #f61717;
-  padding: 10px 15px;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  height: 35px;
-  margin: auto;
-  margin-left: 960px;
-  font-weight: bold;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #edf4ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .topdiv img {
-  width: 180px;
+  height: 40px;
 }
+
+.downloadbtn {
+  padding: 10px 20px;
+  background-color: #f61717;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 
 
 
 /* Mobile Styles */
-@media (max-width: 768px) {
+@media (max-width: 200px) {
 
-  .topdiv {
+  /* .topdiv {
     width: 100%;
     background-color: #edf4ff;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     text-align: center;
     padding-left: 30px;
     border-bottom: 1px solid rgb(187, 186, 186);
     box-sizing: border-box;
-  }
+  } */
   
   .downloadbtn {
     background-color: #f61717;
@@ -50,12 +47,12 @@
     border-radius: 10px;
     height: 35px;
     margin: auto;
-    margin-left: 60px;
-    font-weight: bold;
+    margin-left: 110px;
+    /* font-weight: bold; */
   }
   
-  .topdiv img {
+  /* .topdiv img {
     width: 180px;
-  }
+  } */
   
 }

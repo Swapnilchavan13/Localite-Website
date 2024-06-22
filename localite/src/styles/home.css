@@ -22,7 +22,7 @@ body {
 
 .slider-image {
   margin: auto;
-  width: 70%;
+  width: 100%;
 }
 
 
@@ -43,7 +43,7 @@ body {
 .contentdiv {
   background-color: black;
   height: 470px;
-  width: 104%;
+  width: 100%;
 }
 
 .getstartedbtn {
@@ -59,7 +59,7 @@ body {
 }
 
 .whyusdiv {
-  width: 1200px;
+  width: 100%;
   margin: auto;
   margin-top: 50px;
   background-color: #2b3149;
@@ -83,13 +83,13 @@ body {
 }
 
 .whyusdiv img {
-  width: 100%;
-  max-width: 700px;
+  width: 60%;
+  /* max-width: 300px; */
   border-radius: 10px;
 }
 
 .Aboutus {
-  width: 700px;
+  width: 100%;
   margin: auto;
   text-align: center;
 }
@@ -99,7 +99,7 @@ body {
 }
 
 .Aboutus img {
-  width: 600px;
+  width: 100%;
   /* max-width: 320px;  */
   border-radius: 20px;
   height: auto;
@@ -119,21 +119,21 @@ body {
 .featurediv {
   text-align: center;
   margin: auto;
-  width: 800px;
+  width: 100%;
 }
 
 .featurediv img {
-  width: 600px;
+  width: 80%;
   border-radius: 20px;
 }
 
 .advertiserdiv {
   text-align: center;
-  width: 1200px;
+  width: 100%;
   margin: auto;
   padding-top: 5px;
   background-color: #a9b3da;
-  height: 600px;
+  height: fit-content;
 }
 
 .advertiserdiv h2 {
@@ -142,8 +142,8 @@ body {
 
 .adverdivs div {
   margin: auto;
-  width: 200px;
-  height: 200px;
+  width: 50%;
+  height: 100px;
   border-radius: 10px;
   background-color: white;
 }
@@ -156,14 +156,14 @@ body {
 }
 
 .sellwith {
-  width: 800px;
+  width: 100%;
   margin: auto;
   text-align: center;
 }
 
 .sellwith .frdiv {
   margin: auto;
-  width: 600px;
+  width: 90%;
   border-radius: 20px;
   color: white;
   background-color: #2b3149;
@@ -181,7 +181,7 @@ body {
 }
 
 .faq {
-  width: 800px;
+  width: 100%;
   margin: auto;
   text-align: center;
 }
@@ -214,7 +214,7 @@ body {
 
 /* Footer Styles */
 .footer {
-  width: 103%;
+  width: 100%;
   background-color: #2b3149;
   color: #fff;
   padding: 0px 20px 10px 20px;
@@ -230,6 +230,9 @@ body {
 .footer-section {
   flex-basis: 30%;
   margin-bottom: 30px;
+}
+.footer-section .img1{
+  margin-top: 20px;
 }
 
 .footer-section h3 {
@@ -318,11 +321,32 @@ body {
   display: block; /* Show when scrolled */
 }
 
+.twodivs {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.mainmain {
+  margin-left: 10px;
+  margin: auto;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure body and html take up the full height and prevent overflow */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
 
   /* ///////////// */
 
 /* Mobile Styles */
-@media (max-width: 768px) {
+@media (max-width: 200px) {
 /* //////////// */
 
 .scroll-to-top {
@@ -419,7 +443,7 @@ body {
   .contentdiv {
     background-color: black;
     height: 270px;
-    width: 104%;
+    width: 100%;
   }
   
   .getstartedbtn {
@@ -435,7 +459,7 @@ body {
   }
   
   .whyusdiv {
-    width: 390px;
+    width: 100%;
     margin-top: 50px;
     background-color: #2b3149;
     text-align: center;
@@ -492,7 +516,7 @@ body {
   
   .featurediv {
     text-align: center;
-    width: 390px;
+    width: 100%;
   }
   
   .featurediv img {
@@ -503,7 +527,7 @@ body {
   
   .advertiserdiv {
     text-align: center;
-    width: 390px;
+    width: 100%;
     padding-top: 5px;
     background-color: #a9b3da;
     height: 300px;
@@ -529,14 +553,14 @@ body {
   }
   
   .sellwith {
-    width: 390px;
+    width: 100%;
     text-align: center;
   }
   
   .sellwith .frdiv {
     margin: auto;
     width: 100%;
-    max-width: 350px;
+    max-width: 100%;
     border-radius: 20px;
     color: white;
     background-color: #2b3149;
@@ -586,7 +610,7 @@ body {
   
   /* Footer Styles */
   .footer {
-    width: 103%;
+    width: 100%;
     background-color: #2b3149;
     color: #fff;
     padding: 0px 20px 10px 20px;
@@ -644,7 +668,7 @@ body {
     border-radius: 30px;
     color: white;
     border: none;
-    margin-left: -25px;
+    /* margin-left: -25px; */
     padding: 8px 12px;
     cursor: pointer;
   }
