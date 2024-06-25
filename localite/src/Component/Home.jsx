@@ -20,7 +20,7 @@ const names = [
 
 const DynamicHeading = ({ name }) => (
   <h1>
-    <span className="highlight">{name}'s</span> Hyper Local Marketing Agency
+    <span className="highlight">{name}'s</span> HyperLocal Marketing Agency
   </h1>
 );
 
@@ -85,7 +85,8 @@ export const Home = () => {
       <div className="home-container">
         <div className="firstdiv">
         <DynamicHeading name={names[nameIndex]} />
-          <div className="contentdiv"></div>
+          {/* <div className="contentdiv"></div> */}
+          <iframe width="100%" height="300px" src="lvideo.mp4"  autoPlay></iframe>
           <button className="getstartedbtn">Get started</button>
         </div>
         <br />
@@ -93,19 +94,19 @@ export const Home = () => {
         <hr />
         <br />
         <br />
-        <div className="firstdiv">
+        <div className="firstdiv"  id='services'>
           <h1 className="home-title">Complete <span className="highlight">HyperLocal Marketing</span> Services For Your Businesses</h1>
          <div className='Slider'>
 
           <Slider {...settings}>
-            <div>
-              <img src="https://www.myhoardings.com/blog/wp-content/uploads/2023/02/DOOH-Ads-India.jpg" alt="Image 1" className="slider-image" />
+            <div >
+              <img style={{height:'350px'}} src="https://www.myhoardings.com/blog/wp-content/uploads/2023/02/DOOH-Ads-India.jpg" alt="Image 1" className="slider-image" />
             </div>
             <div>
-              <img src="https://www.mdlogistics.com/wp-content/uploads/2017/06/Mobile-App-developers.jpg" alt="Image 2" className="slider-image" />
+              <img style={{height:'350px'}} src="slide2.png" alt="Image 2" className="slider-image" />
             </div>
             <div>
-              <img src="https://www.forbes.com/advisor/wp-content/uploads/2023/06/Image_-1.jpg" alt="Image 3" className="slider-image" />
+              <img style={{height:'350px'}} src="slide3.png" alt="Image 3" className="slider-image" />
             </div>
           
           </Slider>
@@ -114,24 +115,39 @@ export const Home = () => {
 
     <div className='whyusdiv' id="why-us">
       <h1>Why Us?</h1>
-      <img src="https://media.istockphoto.com/id/655887334/photo/why-choose-us.jpg?s=612x612&w=0&k=20&c=TJLPS91NH3rTJhdcAgB92M984kcJ80S910X-4XnTpNE=" alt="" />
-      <div className='whycontent'>
-         We Focus on HyperLocal Busunesses.<br/> We are Experience Marketers. <br/>We are Best In Class Resources. <br/>We are Cost Efficient.
+      <img src="whyus.png" alt="" />
+      <div style={{marginTop: "-40px"}} className='whycontent'>
+        <h4>20 Prime Locations</h4>
+        <div style={{marginTop:'-12px'}}>
+        Give your brand the power of video <br />
+        at 20 high traffic areas in Juhu. <br /> 
+        Do what the multi-national brands do.
+        </div>
       </div>
       <br />
-      <img src="https://media.istockphoto.com/id/655887334/photo/why-choose-us.jpg?s=612x612&w=0&k=20&c=TJLPS91NH3rTJhdcAgB92M984kcJ80S910X-4XnTpNE=" alt="" />
-      <div className='whycontent'>
-         We Focus on HyperLocal Busunesses.<br/> We are Experience Marketers. <br/>We are Best In Class Resources. <br/>We are Cost Efficient.
+      <img src="why us 2.jpg" alt="" />
+      <div style={{marginTop: "-40px"}} className='whycontent'>
+      <h4>Reach Prime customers</h4>
+      <div style={{marginTop:'-12px'}}> 
+
+      Our App is used by Juhu’s top residents.
+      Take your brand to them- 3 offers a week!
+      </div>
       </div>
       <br />
-      <img src="https://media.istockphoto.com/id/655887334/photo/why-choose-us.jpg?s=612x612&w=0&k=20&c=TJLPS91NH3rTJhdcAgB92M984kcJ80S910X-4XnTpNE=" alt="" />
-      <div className='whycontent'>
-         We Focus on HyperLocal Busunesses.<br/> We are Experience Marketers. <br/>We are Best In Class Resources. <br/>We are Cost Efficient.
+      <img src="why_us 3.png" alt="" />
+      <div style={{marginTop: "-40px"}} className='whycontent'>
+        <h4>Top tier team</h4>
+        <div style={{marginTop:'-12px'}}> 
+        Work with a team that provided social and
+        marketing solutions to some of the world’s
+        biggest brands.
+        </div>
       </div>
     </div>
 <br />
 <br />
-    <div className='Aboutus' id="about-us">
+    {/* <div className='Aboutus' id="about-us">
       <h1>About Us</h1>
       <img src="https://media.istockphoto.com/id/466818688/photo/blank-watercolor-textured-paper-canvas.webp?b=1&s=170667a&w=0&k=20&c=iAiByac0cBVa5Z9jShwlJHhkB9lLSRbkGIBKr8NnU8U=" alt="" />
 
@@ -152,34 +168,72 @@ export const Home = () => {
     <img src="https://w7.pngwing.com/pngs/676/1/png-transparent-x-icon-ex-twitter-tech-companies-social-media-thumbnail.png" alt="" />
   </div>
 </div>
+    </div> */}
+    <div className='featurediv' id="about-us">
+      <h1>How it works?</h1>
+      <div>
+      <img src="pen.jpg" alt="" />
+      <div style={{marginTop: '-40px'}} className='featurecontent'>
+        <h4>Sign-up</h4> 
+        <div style={{marginTop:'-12px'}}> 
+        Become part of Juhu’s exclusive marketing 
+        network that is on Localite to promote <br /> 
+        their businesses.
+          </div>      
+      </div>
+      </div>
+
+      <div>
+      <img src="cms.jpg" alt="" />
+      <div style={{marginTop: '-40px'}} className='featurecontent'>
+        <h4>Create your Post</h4>   
+        <div style={{marginTop:'-12px'}}> 
+        Build your offers using our simple dashboard
+        (or let us do it for you) and your ad reaches 1000’s
+        of app users in seconds.
+        </div>
+      </div>
+      </div>
+
+      <div>
+      <img src="dj.jpg" alt="" />
+      <div style={{marginTop: '-40px'}} className='featurecontent'>
+     <h4>Create your videos</h4>  
+     <div style={{marginTop:'-12px'}}> 
+     Our expert team of editors will create powerful
+     videos for you using high quality 
+     footage and messaging.
+     </div>
+      </div>
+      </div>
+
+      <div>
+      <img src="https://exchange4media.gumlet.io/news-photo/132480-Signpost-Image2_12Feb24.jpg?w=480&dpr=2.6" alt="" />
+      <div style={{marginTop: '-40px'}}  className='featurecontent'>
+        <h4>Go live outdoors</h4>
+        <div style={{marginTop:'-12px'}}> 
+Take your brand live at 20 of the most prominent 
+locations in Juhu and reach over 50,000 
+people per day
+        </div>
+      </div>
+      </div>
+
+      <div>
+      <img src="howitworks 4.png" alt="" />
+      <div style={{marginTop: '-40px'}}  className='featurecontent'>
+      <h4>Go live on Social</h4>
+      <div style={{marginTop:'-12px'}}>
+Our team will take you live on social using the 
+latest tools and social techniques 
+to reach the ideal audience.
+         </div>
+      </div>
+      </div>
+
     </div>
-<br />
-    <div className='featurediv' id='services'>
-      <h1>Features</h1>
-      <div>
-      <img src="https://t4.ftcdn.net/jpg/00/93/85/69/360_F_93856984_YszdhleLIiJzQG9L9pSGDCIvNu5GEWCc.jpg" alt="" />
-      <div className='featurecontent'>
-         Lorem, ipsum dolor sit amet consectetur aprovident quisquam minima maiores harum quibusdam, ipsum autem sint quasi, id sunt soluta cumque ullam debitis.
-      </div>
-      </div>
 
-      <div>
-      <img src="https://t4.ftcdn.net/jpg/00/93/85/69/360_F_93856984_YszdhleLIiJzQG9L9pSGDCIvNu5GEWCc.jpg" alt="" />
-      <div className='featurecontent'>
-         Lorem, dolor sit amet aprovident quisquam minima maiores harum quibusdam, ipsum autem sint quasi, id sunt soluta cumque ullam debitis.
-      </div>
-      </div>
-
-      <div>
-      <img src="https://t4.ftcdn.net/jpg/00/93/85/69/360_F_93856984_YszdhleLIiJzQG9L9pSGDCIvNu5GEWCc.jpg" alt="" />
-      <div className='featurecontent'>
-         Lorem, ipsum dolor sit amet consectetur aprovident quisquam minima maiores harum quibusdam, ipsum autem sint quasi, id sunt soluta cumque ullam debitis.
-      </div>
-      </div>
-
-    </div>
-
-    <div className='advertiserdiv'>
+    {/* <div className='advertiserdiv'>
       <h2>
         Meet our <br/> Advertisers
       </h2>
@@ -194,28 +248,32 @@ export const Home = () => {
 <div></div>
 <div></div>
         </div>
-    </div>
+    </div> */}
 
-    <div className='sellwith'>
-<h1>Sell With<br/> LOCALITE</h1>
+    <div className='sellwith' id='explore'>
+<h1>The LOCALITE <br /> App</h1>
 <div className='frdiv'>
-  <h1>To learn more<br/> join our<br/> <span className='community'>community</span>!</h1>
+  <h1>An exclusive app<br/><span className='community'>of Juhu, by Juhu,<br />for Juhu.</span></h1>
   <div className='sediv'>
     <ul>
-    <li>Get the best out of your <br />neighborhood.</li>
+    <li>An exclusive app with 1000`s of offers<br />from the Juhu area.</li>
     <br />
-    <li>Explore and purchase goods <br /> and services</li>
+    <li>Total value of offers is over <br /> Rs. 2 crores.</li>
     <br />
-    <li>Stay informed about exciting offers,<br /> events, exhibition, workshops,<br /> product, launches, and much more!</li>
+    <li>The app is only for members. </li>
     <br />
-    <li>Grow your business and connect with <br /> your customers, users etc.</li>
+    <li>Features include:</li>
+    <p>Explore and purcahse goods and services.</p>
+    <p>Updates on the latest discount and offers from local brands.</p>
+    <p>Stay informed about products and services available as sample for free, attracting more consumers to brands.</p>
+    <p>Create social communities and engage with like-minded people in their neighborhood, providing brands with a more engaging audience.</p>
     </ul>
 </div>
     <button className='getstartedbtn'>Download App</button>
 </div>
     </div>
 
-    <div className='faq' id='explore'>
+    <div className='faq'>
       <h1>FAQs</h1>
       <select name="" id="">
         <option value="">What is Localite?</option>

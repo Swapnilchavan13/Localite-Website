@@ -25,7 +25,6 @@ body {
   width: 100%;
 }
 
-
 .highlight {
   color: #68cfb0;
 }
@@ -83,8 +82,9 @@ body {
 }
 
 .whyusdiv img {
-  width: 60%;
+  width: 90%;
   /* max-width: 300px; */
+  height: 280px;
   border-radius: 10px;
 }
 
@@ -126,6 +126,7 @@ body {
   width: 80%;
   border-radius: 20px;
 }
+
 
 .advertiserdiv {
   text-align: center;
@@ -175,6 +176,13 @@ body {
 .sediv {
   text-align: left;
 }
+.sediv p{
+  padding-right: 20px;
+/* color: rgb(173, 173, 173); */
+margin-left: 8px;
+color: rgb(238, 238, 238);
+font-size: smaller;
+}
 
 .community {
   color: #68cfb0;
@@ -215,6 +223,7 @@ body {
 /* Footer Styles */
 .footer {
   width: 100%;
+  margin-top: -50px;
   background-color: #2b3149;
   color: #fff;
   padding: 0px 20px 10px 20px;
@@ -227,12 +236,18 @@ body {
   justify-content: space-between;
 }
 
+.footer-content p{
+  font-size: 13px;
+  margin-left: 6px;
+}
+
 .footer-section {
   flex-basis: 30%;
   margin-bottom: 30px;
 }
 .footer-section .img1{
   margin-top: 20px;
+  
 }
 
 .footer-section h3 {
@@ -251,7 +266,9 @@ body {
 }
 
 .footer-section ul li {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
+  font-size: smaller;
+  font-weight: bold;
 }
 
 .footer-section ul li a {
@@ -266,7 +283,7 @@ body {
 .footer-section form input {
   padding: 8px;
   border: none;
-  width: 270px;
+  width: 240px;
   border-radius: 30px;
 }
 
@@ -290,6 +307,7 @@ body {
 }
 
 .footerline {
+  width: 95%;
   margin-top: 5px;
   background-color: red;
   border-color: red;
@@ -367,9 +385,7 @@ html, body {
   display: block; /* Show when scrolled */
 }
 
-
   /* ///////////// */
-
 
   .footer-section {
       flex-basis: 100%;
@@ -393,8 +409,6 @@ html, body {
   .home-container p {
       font-size: 0.9rem;
   }
-
-
 
   /* //////// */
 
@@ -572,6 +586,8 @@ html, body {
   .sediv {
     text-align: left;
   }
+
+  
   
   .community {
     color: #68cfb0;
