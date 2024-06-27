@@ -4,6 +4,7 @@ body {
   margin: auto;
 }
 
+
 .home-container {
   width: auto;
   margin-left: 10px;
@@ -20,9 +21,10 @@ body {
   margin-bottom: 20px;
 }
 
-.slider-image {
+#slider-image {
   margin: auto;
-  width: 100%;
+  width: 60%;
+  height: 30%;
 }
 
 .highlight {
@@ -39,11 +41,389 @@ body {
   height: 240px;
 }
 
-.contentdiv {
+video{
+  margin: auto;
+  width: 90%;
+}
+
+/* .contentdiv {
   background-color: black;
   height: 470px;
   width: 100%;
+} */
+
+.getstartedbtn {
+  background-color: #f61717;
+  padding: 10px 35px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin: auto;
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: bold;
 }
+
+.whyusdiv {
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+  background-color: #2b3149;
+  text-align: center;
+  color: white;
+  padding-top: 25px;
+  box-sizing: border-box;
+}
+
+.whyusdiv h3 {
+  text-align: left;
+}
+
+.whyusdiv p{
+  font-size: 40px;
+}
+
+.whycontent, .aboutuscontent, .featurecontent {
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.aboutuscontent {
+  color: rgb(133, 137, 141);
+}
+
+.whyusdiv img {
+  width: 60%;
+  /* max-width: 300px; */
+  height: 480px;
+  border-radius: 10px;
+}
+
+.Aboutus {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.Aboutus h1 {
+  color: black;
+}
+
+.Aboutus img {
+  width: 100%;
+  /* max-width: 320px;  */
+  border-radius: 20px;
+  height: auto;
+}
+
+.followdiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.followdiv img {
+  border: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.featurediv {
+  text-align: center;
+  margin: auto;
+  width: 100%;
+}
+
+.featurediv img {
+  width: 80%;
+  border-radius: 20px;
+}
+
+
+.advertiserdiv {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  padding-top: 5px;
+  background-color: #a9b3da;
+  height: fit-content;
+}
+
+.advertiserdiv h2 {
+  color: #2b3149;
+}
+
+.adverdivs div {
+  margin: auto;
+  width: 50%;
+  height: 100px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.adverdivs {
+  display: grid;
+  row-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 5px;
+}
+
+.sellwith {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.sellwith .frdiv {
+  margin: auto;
+  width: 90%;
+  border-radius: 20px;
+  color: white;
+  background-color: #2b3149;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.sediv {
+  text-align: left;
+}
+.sediv p{
+  padding-right: 20px;
+/* color: rgb(173, 173, 173); */
+margin-left: 8px;
+color: rgb(238, 238, 238);
+font-size: smaller;
+}
+
+.community {
+  color: #68cfb0;
+}
+
+.faq {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.faq select {
+  width: 80%;
+  border: none;
+  background-color: #edf4ff;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.selling {
+  padding: 20px 30px;
+}
+
+.selling img {
+  width: 100%;
+  margin-left: 10px;
+  max-width: 180px;
+}
+
+.selling img:nth-child(3) {
+  margin-top: -100px;
+}
+
+.selling img:nth-child(2) {
+  margin-top: -70px;
+}
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  margin-top: -50px;
+  background-color: #2b3149;
+  color: #fff;
+  padding: 0px 20px 10px 20px;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-content p{
+  font-size: 13px;
+  margin-left: 6px;
+}
+
+.footer-section {
+  flex-basis: 30%;
+  margin-bottom: 30px;
+}
+.footer-section .img1{
+  margin-top: 20px;
+  
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 3px;
+  font-size: smaller;
+  font-weight: bold;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section form {
+  display: flex;
+}
+
+.footer-section form input {
+  padding: 8px;
+  border: none;
+  width: 240px;
+  border-radius: 30px;
+}
+
+.footer-section form button {
+  background-color: #f61717;
+  border-radius: 30px;
+  color: white;
+  border: none;
+  margin-left: -25px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+}
+
+.whitelogo {
+  width: 200px;
+}
+
+.footerline {
+  width: 95%;
+  margin-top: 5px;
+  background-color: red;
+  border-color: red;
+}
+
+.footer-section img {
+  width: 30px;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+/* //////////// */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff; /* Choose your desired background color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears above other elements */
+  display: none; /* Hide initially */
+}
+
+.scroll-to-top.show {
+  display: block; /* Show when scrolled */
+}
+
+.twodivs {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.mainmain {
+  margin-left: 10px;
+  margin: auto;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure body and html take up the full height and prevent overflow */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+  /* ///////////// */
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+/* //////////// */
+
+.home-container {
+  width: auto;
+  margin-left: 10px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  background-color: #edf4ff;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.home-container p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+#slider-image {
+  margin: auto;
+  width: 100%;
+  height: 350px;
+}
+
+.highlight {
+  color: #68cfb0;
+}
+
+.firstdiv {
+  margin-top: -20px;
+  text-align: center;
+  justify-content: center;
+}
+
+.firstdiv img{
+  height: 240px;
+}
+
+video{
+  margin: auto;
+  width: 90%;
+}
+/* .contentdiv {
+  background-color: black;
+  height: 470px;
+  width: 100%;
+} */
 
 .getstartedbtn {
   background-color: #f61717;
@@ -361,353 +741,5 @@ html, body {
   overflow-x: hidden;
 }
 
-  /* ///////////// */
-
-/* Mobile Styles */
-@media (max-width: 200px) {
-/* //////////// */
-
-.scroll-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #007bff; /* Choose your desired background color */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 1000; /* Ensure it appears above other elements */
-  display: none; /* Hide initially */
-}
-
-.scroll-to-top.show {
-  display: block; /* Show when scrolled */
-}
-
-  /* ///////////// */
-
-  .footer-section {
-      flex-basis: 100%;
-      margin-bottom: 20px;
-  }
-
-  .twodivs {
-      display: flex;
-      width: 100%;
-      justify-content: space-evenly;
-  }
-
-  .twodivs div {
-      padding-left: 40px;
-  }
-
-  .home-title {
-      font-size: 2rem;
-  }
-
-  .home-container p {
-      font-size: 0.9rem;
-  }
-
-  /* //////// */
-
-  body {
-    background-color: #edf4ff;
-    margin: auto;
-  }
-  
-  .home-container {
-    width: auto;
-    margin-left: 10px;
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    background-color: #edf4ff;
-    margin: auto;
-    box-sizing: border-box;
-  }
-  
-  .home-container p {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  .slider-image {
-    margin: auto;
-    width: 100%;
-    height: auto;
-  }
-  
-  .highlight {
-    color: #68cfb0;
-  }
-  
-  .firstdiv {
-    margin-top: -20px;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  .firstdiv img{
-    height: 240px;
-  }
-  
-  
-  .contentdiv {
-    background-color: black;
-    height: 270px;
-    width: 100%;
-  }
-  
-  .getstartedbtn {
-    background-color: #f61717;
-    padding: 10px 35px;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    margin: auto;
-    font-size: 20px;
-    margin-top: 20px;
-    font-weight: bold;
-  }
-  
-  .whyusdiv {
-    width: 100%;
-    margin-top: 50px;
-    background-color: #2b3149;
-    text-align: center;
-    color: white;
-    padding-top: 25px;
-    box-sizing: border-box;
-  }
-  
-  .whyusdiv h3 {
-    text-align: left;
-  }
-  
-  .whycontent, .aboutuscontent, .featurecontent {
-    padding: 30px;
-    box-sizing: border-box;
-  }
-  
-  .aboutuscontent {
-    color: rgb(133, 137, 141);
-  }
-  
-  .whyusdiv img {
-    width: 100%;
-    max-width: 330px;
-    border-radius: 10px;
-  }
-  
-  .Aboutus {
-    width: 390px;
-    text-align: center;
-  }
-  
-  .Aboutus h1 {
-    color: black;
-  }
-  
-  .Aboutus img {
-    width: 100%;
-    max-width: 320px;
-    border-radius: 20px;
-    height: auto;
-  }
-  
-  .followdiv {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  .followdiv img {
-    border: 50%;
-    width: 50px;
-    height: 50px;
-  }
-  
-  .featurediv {
-    text-align: center;
-    width: 100%;
-  }
-  
-  .featurediv img {
-    width: 100%;
-    max-width: 320px;
-    border-radius: 20px;
-  }
-  
-  .advertiserdiv {
-    text-align: center;
-    width: 100%;
-    padding-top: 5px;
-    background-color: #a9b3da;
-    height: 300px;
-  }
-  
-  .advertiserdiv h2 {
-    color: #2b3149;
-  }
-  
-  .adverdivs div {
-    margin: auto;
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    background-color: white;
-  }
-  
-  .adverdivs {
-    display: grid;
-    row-gap: 20px;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 5px;
-  }
-  
-  .sellwith {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .sellwith .frdiv {
-    margin: auto;
-    width: 100%;
-    max-width: 100%;
-    border-radius: 20px;
-    color: white;
-    background-color: #2b3149;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    box-sizing: border-box;
-  }
-  
-  .sediv {
-    text-align: left;
-  }
-
-  
-  
-  .community {
-    color: #68cfb0;
-  }
-  
-  .faq {
-    width: 390px;
-  
-    text-align: center;
-  }
-  
-  .faq select {
-    width: 80%;
-    border: none;
-    background-color: #edf4ff;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  .selling {
-    padding: 20px 30px;
-  }
-  
-  .selling img {
-    width: 100%;
-    max-width: 180px;
-  }
-  
-  .selling img:nth-child(3) {
-    margin-top: -100px;
-  }
-  
-  .selling img:nth-child(2) {
-    margin-top: -70px;
-  }
-  
-  /* Footer Styles */
-  .footer {
-    width: 100%;
-    background-color: #2b3149;
-    color: #fff;
-    padding: 0px 20px 10px 20px;
-    box-sizing: border-box;
-  }
-  
-  .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .footer-section {
-    flex-basis: 30%;
-    margin-bottom: 30px;
-  }
-  
-  .footer-section h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .footer-section p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 5px;
-  }
-  
-  .footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .footer-section form {
-    display: flex;
-  }
-  
-  .footer-section form input {
-    padding: 8px;
-    border: none;
-    width: 270px;
-    border-radius: 30px;
-  }
-  
-  .footer-section form button {
-    background-color: #f61717;
-    border-radius: 30px;
-    color: white;
-    border: none;
-    /* margin-left: -25px; */
-    padding: 8px 12px;
-    cursor: pointer;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    font-size: 14px;
-  }
-  
-  .whitelogo {
-    width: 200px;
-  }
-  
-  .footerline {
-    margin-top: 5px;
-    background-color: red;
-    border-color: red;
-  }
-  
-  .footer-section img {
-    width: 30px;
-    border-radius: 50%;
-    margin-left: 20px;
-  }
 
 }
