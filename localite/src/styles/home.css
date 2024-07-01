@@ -681,6 +681,9 @@ font-size: smaller;
   text-align: center;
   font-size: 14px;
 }
+#footerimgs img{
+ width: 24px;
+}
 
 .whitelogo {
   width: 200px;

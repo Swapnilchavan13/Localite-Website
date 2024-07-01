@@ -19,13 +19,13 @@ export const Footer = () => {
                             <li><a href="/">Home</a></li>
                             <li><a href="#about">About us</a></li>
                             <li><a href="community">Community</a></li>
-                            <li><a href="#about">Career</a></li>
+                            <li><a href="careers">Career</a></li>
                             <li><a href="terms">Terms</a></li>
                             <li><a href="ContactUs">Contact us</a></li>
                         </ul>
                     </div>
 
-                    <div className="footer-section follow">
+                    <div id='footerimgs' className="footer-section follow">
                         {/* <p>Follow Us:</p> */}
                         <img className='img1' src="https://icones.pro/wp-content/uploads/2021/02/instagram-logo-icone4.png" alt="" />
                         <br />
