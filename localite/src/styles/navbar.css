@@ -1,6 +1,7 @@
 .navbar {
-  width: 100%;
+  width: 60%;
   margin: auto;
+  margin-top: -100px;
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -24,13 +25,14 @@
 }
 
 hr {
+  display: none;
   margin-top: -20px;
   width: 90%;
 }
 
 
 /* Mobile Styles */
-@media (max-width: 200px) {
+@media (max-width: 1000px) {
 
   .navbar {
     width: 100%;
@@ -58,6 +60,7 @@ hr {
   }
   
   hr {
+    display: block;
     margin-top: -20px;
     width: 90%;
   }

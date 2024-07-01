@@ -4,7 +4,6 @@ body {
   margin: auto;
 }
 
-
 .home-container {
   width: auto;
   margin-left: 10px;
@@ -22,9 +21,10 @@ body {
 }
 
 #slider-image {
-  margin: auto;
-  width: 60%;
-  height: 30%;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .highlight {
@@ -32,6 +32,7 @@ body {
 }
 
 .firstdiv {
+  font-size: x-large;
   margin-top: -20px;
   text-align: center;
   justify-content: center;
@@ -43,7 +44,7 @@ body {
 
 video{
   margin: auto;
-  width: 90%;
+  width: 80%;
 }
 
 /* .contentdiv {
@@ -54,15 +55,21 @@ video{
 
 .getstartedbtn {
   background-color: #f61717;
-  padding: 10px 35px;
+  padding: 10px 65px;
   color: white;
   border: none;
   border-radius: 10px;
   margin: auto;
-  font-size: 20px;
+  font-size: 50px;
   margin-top: 20px;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
+#services h1{
+  margin: auto;
+ width: 60%;
+ margin-bottom: 20px;
+}
+
 
 .whyusdiv {
   width: 90%;
@@ -73,6 +80,10 @@ video{
   color: white;
   padding-top: 25px;
   box-sizing: border-box;
+}
+
+#whymain{
+  display: flex;
 }
 
 .whyusdiv h3 {
@@ -92,12 +103,52 @@ video{
   color: rgb(133, 137, 141);
 }
 
+
 .whyusdiv img {
-  width: 60%;
+  width: 350px;
   /* max-width: 300px; */
-  height: 480px;
+  height: 280px;
   border-radius: 10px;
 }
+
+.howdiv{
+  display: flex;
+  justify-content: center;
+  /* margin: auto; */
+}
+
+.howdiv img{
+ width: 500px;
+}
+
+.howdiv h4{
+  font-size: 30px;
+}
+
+.how1img{
+  margin-left: 110px;
+}
+
+.how2img{
+  margin-left: 110px;
+}
+
+.how3img{
+  margin-left: 110px;
+}
+
+.how4img{
+  margin-left: 110px;
+}
+
+.how5img{
+  margin-left: 110px;
+}
+
+.how4img img, .how5img img{
+border-radius: 30px;
+}
+
 
 .Aboutus {
   width: 100%;
@@ -133,11 +184,21 @@ video{
   width: 100%;
 }
 
-.featurediv img {
-  width: 80%;
+/* .featurediv img {
+  width: 600px;
+  height: 300px;
+  margin: 0;
+  border: 1px solid red;
   border-radius: 20px;
-}
+} */
 
+.whycon{
+  font-size: 25px;
+  margin: auto;
+  margin-top: 80px;
+  width: 80%;
+  text-align: left;
+}
 
 .advertiserdiv {
   text-align: center;
@@ -185,7 +246,13 @@ video{
 }
 
 .sediv {
+  margin-top: 20px;
+  margin: auto;
+  width: 70%;
   text-align: left;
+}
+.sediv ul{
+  font-size: 25px;
 }
 .sediv p{
   padding-right: 20px;
@@ -200,12 +267,13 @@ font-size: smaller;
 }
 
 .faq {
-  width: 100%;
+  width: 70%;
   margin: auto;
   text-align: center;
 }
 
 .faq select {
+  font-size: large;
   width: 80%;
   border: none;
   background-color: #edf4ff;
@@ -231,14 +299,30 @@ font-size: smaller;
   margin-top: -70px;
 }
 
+.contactus1{
+ padding: 20px;
+ gap: 20px;
+ font-family: 'Arial, sans-serif';
+  width:80%;
+  margin: auto;
+  display: flex;
+}
+
+.contactform{
+  margin-top: 40px ;
+  width: 50% ;
+}
 /* Footer Styles */
 .footer {
   width: 100%;
   margin-top: -50px;
   background-color: #2b3149;
   color: #fff;
-  padding: 0px 20px 10px 20px;
+  padding: 20px 20px 10px 20px;
   box-sizing: border-box;
+}
+.mainfooter{
+  display: flex;
 }
 
 .footer-content {
@@ -273,6 +357,7 @@ font-size: smaller;
 
 .footer-section ul {
   list-style: none;
+  line-height: 22px;
   padding: 0;
 }
 
@@ -330,6 +415,10 @@ font-size: smaller;
   margin-left: 20px;
 }
 
+#footerimgs img{
+  width: 28px;
+ }
+
 /* //////////// */
 
 .scroll-to-top {
@@ -376,7 +465,7 @@ html, body {
   /* ///////////// */
 
 /* Mobile Styles */
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
 /* //////////// */
 
 .home-container {
@@ -406,6 +495,7 @@ html, body {
 }
 
 .firstdiv {
+  font-size: medium;
   margin-top: -20px;
   text-align: center;
   justify-content: center;
@@ -437,6 +527,13 @@ video{
   font-weight: bold;
 }
 
+#services h1{
+  margin: auto;
+ width: 100%;
+ margin-bottom: 20px;
+}
+
+
 .whyusdiv {
   width: 100%;
   margin: auto;
@@ -446,6 +543,9 @@ video{
   color: white;
   padding-top: 25px;
   box-sizing: border-box;
+}
+#whymain{
+  display: block;
 }
 
 .whyusdiv h3 {
@@ -466,6 +566,16 @@ video{
   /* max-width: 300px; */
   height: 280px;
   border-radius: 10px;
+}
+
+.whycon{
+  font-size: medium;
+  width: 90%;
+  margin: auto;
+}
+
+.howdiv{
+  display: block;
 }
 
 .Aboutus {
@@ -505,6 +615,21 @@ video{
 .featurediv img {
   width: 80%;
   border-radius: 20px;
+}
+
+
+.howdiv h4{
+  text-align: center;
+  margin-top: -30px;
+  font-size: 20px;
+}
+
+.how1img,.how2img, .how3img, .how4img, .how5img{
+  margin: auto;
+}
+
+.whyusdiv h3 {
+  text-align: center;
 }
 
 
@@ -554,6 +679,9 @@ video{
 }
 
 .sediv {
+  margin-top: 20px;
+  margin: auto;
+  width: 100%;
   text-align: left;
 }
 .sediv p{
@@ -562,6 +690,10 @@ video{
 margin-left: 8px;
 color: rgb(238, 238, 238);
 font-size: smaller;
+}
+
+.sediv ul{
+  font-size: medium;
 }
 
 .community {
@@ -575,6 +707,7 @@ font-size: smaller;
 }
 
 .faq select {
+  font-size: medium;
   width: 80%;
   border: none;
   background-color: #edf4ff;
@@ -600,6 +733,16 @@ font-size: smaller;
   margin-top: -70px;
 }
 
+.contactus1{
+  width: 100%;
+   display: block;
+ }
+
+ .contactform{
+  margin-top: 40px ;
+  width: 90% ;
+}
+
 /* Footer Styles */
 .footer {
   width: 100%;
@@ -609,7 +752,9 @@ font-size: smaller;
   padding: 0px 20px 10px 20px;
   box-sizing: border-box;
 }
-
+.mainfooter{
+  display: block;
+}
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -682,7 +827,7 @@ font-size: smaller;
   font-size: 14px;
 }
 #footerimgs img{
- width: 24px;
+ width: 28px;
 }
 
 .whitelogo {

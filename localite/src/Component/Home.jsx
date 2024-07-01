@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Footer } from '../Component/Footer';
 import { Topnavbar } from './Topnavbar';
 import { Navbar } from './Navbar';
+import { useMediaQuery } from 'react-responsive';
 
 
 const names = [
@@ -41,21 +42,36 @@ export const Home = () => {
       }
     }, []);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    customPaging: i => (
-      <button>
-        <span className="custom-dot"></span>
-      </button>
-    ),
-  };
+    const isWebView = useMediaQuery({ minWidth: 768 }); // Adjust the minWidth based on what you consider a web view
 
+    const [settings, setSettings] = useState({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      customPaging: i => (
+        <button>
+          <span className="custom-dot"></span>
+        </button>
+      ),
+    });
+  
+    useEffect(() => {
+      if (isWebView) {
+        setSettings(prevSettings => ({
+          ...prevSettings,
+          slidesToShow: 3,
+        }));
+      } else {
+        setSettings(prevSettings => ({
+          ...prevSettings,
+          slidesToShow: 1,
+        }));
+      }
+    }, [isWebView]);
   const [nameIndex, setNameIndex] = useState(0);
 
   useEffect(() => {
@@ -102,10 +118,11 @@ export const Home = () => {
           <div className="firstdiv">
             <DynamicHeading name={names[nameIndex]} />
             {/* <div className="contentdiv"></div> */}
-            <video ref={videoRef} controls>
+            <video className='.video' ref={videoRef} controls>
       <source src="lvideo.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+    <br />
             <button className="getstartedbtn">Get started</button>
           </div>
           <br />
@@ -119,7 +136,7 @@ export const Home = () => {
 
               <Slider {...settings}>
                 <div>
-                  <img src="https://www.myhoardings.com/blog/wp-content/uploads/2023/02/DOOH-Ads-India.jpg" alt="Localite" id="slider-image" />
+                  <img src="led.jpg" alt="Localite" id="slider-image" />
                 </div>
                 <div>
                   <img  src="slide2.png" alt="Localite 2" id="slider-image" />
@@ -132,18 +149,25 @@ export const Home = () => {
             </div>
           </div>
 
+
           <div className='whyusdiv' id="why-us">
             <h1>Why Us?</h1>
+<div id='whymain'>
+  <div>
+
             <img src="whyus.png" alt="" />
             <div style={{ marginTop: "-40px" }} className='whycontent'>
               <h4>20 Prime Locations</h4>
               <div style={{ marginTop: '-12px' }}>
-                Give your brand the power of video <br />
-                at 20 high traffic areas in Juhu. <br />
+                Give your brand the power of video 
+                at 20 high traffic areas in Juhu.
                 Do what the multi-national brands do.
               </div>
             </div>
             <br />
+  </div>
+            <div>
+
             <img src="why us 2.jpg" alt="" />
             <div style={{ marginTop: "-40px" }} className='whycontent'>
               <h4>Reach Prime customers</h4>
@@ -154,6 +178,9 @@ export const Home = () => {
               </div>
             </div>
             <br />
+            </div>
+            <div>
+
             <img src="why_us 3.png" alt="" />
             <div style={{ marginTop: "-40px" }} className='whycontent'>
               <h4>Top tier team</h4>
@@ -163,6 +190,8 @@ export const Home = () => {
                 biggest brands.
               </div>
             </div>
+            </div>
+</div>
           </div>
           <br />
           <br />
@@ -190,23 +219,31 @@ export const Home = () => {
     </div> */}
           <div className='featurediv' id="about-us">
             <h1>How it works?</h1>
-            <div>
+
+            <div className='howdiv'>
+            <div className='how1img'>
+
               <img src="pen.jpg" alt="" />
-              <div style={{ marginTop: '-40px' }} className='featurecontent'>
+              </div>
+              
+              <div className='featurecontent'>
+                <div className='whycon'>
                 <h4>Sign-up</h4>
-                <div style={{ marginTop: '-12px' }}>
                   Become part of Juhu’s exclusive marketing
-                  network that is on Localite to promote <br />
+                  network that is on Localite to promote
                   their businesses.
                 </div>
               </div>
             </div>
 
-            <div>
+            <div className='howdiv'>
+              <div className='how2img'>
+
               <img src="cms.jpg" alt="" />
-              <div style={{ marginTop: '-40px' }} className='featurecontent'>
+              </div>
+              <div className='featurecontent'>
+                <div className='whycon'>
                 <h4>Create your Post</h4>
-                <div style={{ marginTop: '-12px' }}>
                   Build your offers using our simple dashboard
                   (or let us do it for you) and your ad reaches 1000’s
                   of app users in seconds.
@@ -214,11 +251,14 @@ export const Home = () => {
               </div>
             </div>
 
-            <div>
+            <div className='howdiv'>
+              <div className='how3img'>
+
               <img src="dj.jpg" alt="" />
-              <div style={{ marginTop: '-40px' }} className='featurecontent'>
+              </div>
+              <div  className='featurecontent'>
+                <div className='whycon'>
                 <h4>Create your videos</h4>
-                <div style={{ marginTop: '-12px' }}>
                   Our expert team of editors will create powerful
                   videos for you using high quality
                   footage and messaging.
@@ -226,11 +266,15 @@ export const Home = () => {
               </div>
             </div>
 
-            <div>
+           
+            <div  className='howdiv'>
+              <div className='how4img'>
+
               <img src="https://exchange4media.gumlet.io/news-photo/132480-Signpost-Image2_12Feb24.jpg?w=480&dpr=2.6" alt="" />
-              <div style={{ marginTop: '-40px' }} className='featurecontent'>
+              </div>
+              <div className='featurecontent'>
+                <div className='whycon'>
                 <h4>Go live outdoors</h4>
-                <div style={{ marginTop: '-12px' }}>
                   Take your brand live at 20 of the most prominent
                   locations in Juhu and reach over 50,000
                   people per day
@@ -238,11 +282,14 @@ export const Home = () => {
               </div>
             </div>
 
-            <div>
+            <div  className='howdiv'>
+              <div className='how5img'>
+
               <img src="howitworks 4.png" alt="" />
-              <div style={{ marginTop: '-40px' }} className='featurecontent'>
+              </div>
+              <div className='featurecontent'>
+                <div className='whycon'>
                 <h4>Go live on Social</h4>
-                <div style={{ marginTop: '-12px' }}>
                   Our team will take you live on social using the
                   latest tools and social techniques
                   to reach the ideal audience.
@@ -270,14 +317,15 @@ export const Home = () => {
     </div> */}
 
           <div className='sellwith' id='explore'>
-            <h1>The LOCALITE <br /> App</h1>
+            <h1>The LOCALITE App</h1>
             <div className='frdiv'>
-              <h1>An exclusive app<br /><span className='community'>of Juhu, by Juhu,<br />for Juhu.</span></h1>
+              <h1>An Exclusive App<br /><span className='community'>of Juhu, by Juhu, for Juhu.</span></h1>
+              <br />
               <div className='sediv'>
                 <ul>
-                  <li>An exclusive app with 1000`s of offers<br />from the Juhu area.</li>
+                  <li>An exclusive app with 1000`s of offersfrom the Juhu area.</li>
                   <br />
-                  <li>Total value of offers is over <br /> Rs. 2 crores.</li>
+                  <li>Total value of offers is over Rs. 2 crores.</li>
                   <br />
                   <li>The app is only for members. </li>
                   <br />

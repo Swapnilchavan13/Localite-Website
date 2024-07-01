@@ -27,7 +27,9 @@ const ContactUs = () => {
   return (
     <>
     <Topnavbar />
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', maxWidth: '600px', margin: 'auto' }}>
+    <div className='contactus1' >
+        <div style={{width:'80%'}}>
+
       <h1>Contact Us</h1>
       <p>We would love to hear from you! If you have any questions or need assistance, please reach out to us through the following methods:</p>
       
@@ -46,7 +48,8 @@ const ContactUs = () => {
         <p>Localite Office, <br/> Juhu, Anand 1st Floor, <br/> Mumbai, India</p>
       </div>
 
-      <div style={{ marginTop: '40px' }}>
+</div>
+      <div className='contactform'>
         <h2>Contact Form</h2>
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '10px' }}>
@@ -59,7 +62,7 @@ const ContactUs = () => {
                 onChange={handleChange} 
                 style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
                 required 
-              />
+                />
             </label>
           </div>
           <div style={{ marginBottom: '10px' }}>
@@ -72,7 +75,7 @@ const ContactUs = () => {
                 onChange={handleChange} 
                 style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
                 required 
-              />
+                />
             </label>
           </div>
           <div style={{ marginBottom: '10px' }}>
