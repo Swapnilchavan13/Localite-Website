@@ -5,7 +5,9 @@ import '../styles/home.css';
 export const Footer = () => {
     return (
         <footer className="footer">
+            <a href="/">
             <img className='whitelogo' src="White_logo.png" alt="" />
+            </a>
             <hr className='footerline' />
             <div className="footer-content">
                 <p>Empowering  SMEs with Hyper Local visibility, <br />comprehensive solution and innovative features and help SMEs thrive in Local Market.</p>
@@ -14,12 +16,12 @@ export const Footer = () => {
                     <div className="footer-section links">
 
                         <ul>
-                            <li><a href="#home">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><a href="#about">About us</a></li>
-                            <li><a href="#about">Community</a></li>
+                            <li><a href="community">Community</a></li>
                             <li><a href="#about">Career</a></li>
-                            <li><a href="#about">Terms</a></li>
-                            <li><a href="#contact">Contact us</a></li>
+                            <li><a href="terms">Terms</a></li>
+                            <li><a href="ContactUs">Contact us</a></li>
                         </ul>
                     </div>
 

@@ -118,9 +118,9 @@ export const Home = () => {
             <div className='Slider'>
 
               <Slider {...settings}>
-                {/* <div>
+                <div>
                   <img src="https://www.myhoardings.com/blog/wp-content/uploads/2023/02/DOOH-Ads-India.jpg" alt="Localite" id="slider-image" />
-                </div> */}
+                </div>
                 <div>
                   <img  src="slide2.png" alt="Localite 2" id="slider-image" />
                 </div>
