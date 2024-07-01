@@ -25,11 +25,8 @@ const DynamicHeading = ({ name }) => (
   </h1>
 );
 
-
-
 export const Home = () => {
 
- 
     const videoRef = useRef(null);
   
     useEffect(() => {

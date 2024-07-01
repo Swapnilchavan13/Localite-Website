@@ -5,14 +5,12 @@ import '../styles/home.css';
 export const Footer = () => {
     return (
         <footer className="footer">
-
-
             <div className='mainfooter'>
             <div>
             <a href="/">
             <img className='whitelogo' src="White_logo.png" alt="" />
-            </a>
             <hr className='footerline' />
+            </a>
             <div className="footer-content">
                 <p>Empowering  SMEs with Hyper Local visibility,
                      <br />comprehensive solution and innovative features and help SMEs thrive in Local Market.</p>
