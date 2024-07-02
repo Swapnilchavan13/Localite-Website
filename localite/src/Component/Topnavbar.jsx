@@ -7,7 +7,7 @@ export const Topnavbar = () => {
       <a href="/">
         <img src="blue-logo.png" alt="" />
             </a>
-        <button className='downloadbtn'>Download app</button>
+        {/* <button className='downloadbtn'>Download app</button> */}
     </div>
   )
 }

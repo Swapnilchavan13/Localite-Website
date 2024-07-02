@@ -22,7 +22,7 @@ export const Footer = () => {
 
                         <ul>
                             <li><a href="/">Home</a></li>
-                            <li><a href="#about">About us</a></li>
+                            <li><a href="https://alittleworld.com/" target='_blank'>About us</a></li>
                             <li><a href="community">Community</a></li>
                             <li><a href="careers">Career</a></li>
                             <li><a href="terms">Terms</a></li>

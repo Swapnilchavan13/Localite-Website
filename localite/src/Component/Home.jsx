@@ -120,7 +120,9 @@ export const Home = () => {
       Your browser does not support the video tag.
     </video>
     <br />
+    <a href="merchantform">
             <button className="getstartedbtn">Get started</button>
+    </a>
           </div>
           <br />
           <br />
@@ -136,7 +138,9 @@ export const Home = () => {
                   <img src="led.jpg" alt="Localite" id="slider-image" />
                 </div>
                 <div>
-                  <img  src="slide2.png" alt="Localite 2" id="slider-image" />
+                  <a href="PhoneApp.mp4">
+                  <img  src="Artboard.png" alt="Localite 2" id="slider-image" />
+                  </a>
                 </div>
                 <div>
                   <img src="slide3.png" alt="Localite 3" id="slider-image" />
@@ -333,7 +337,7 @@ export const Home = () => {
                   <p>Create social communities and engage with like-minded people in their neighborhood, providing brands with a more engaging audience.</p>
                 </ul>
               </div>
-              <button className='getstartedbtn'>Download App</button>
+              {/* <button className='getstartedbtn'>Download App</button> */}
             </div>
           </div>
 
@@ -365,13 +369,15 @@ export const Home = () => {
             </select>
 
             <div className='selling'>
-              <h2>Start selling online with <br />LOCALITE</h2>
+              {/* <h2>Start selling online with <br />LOCALITE</h2>
               <img src="https://freeiconshop.com/wp-content/uploads/edd/google-play-badge.png" alt="" />
-              <img src="https://freeiconshop.com/wp-content/uploads/edd/app-store-badge.png" alt="" />
+              <img src="https://freeiconshop.com/wp-content/uploads/edd/app-store-badge.png" alt="" /> */}
             </div>
           </div>
 
         </div>
+        <br />
+        <br />
         <Footer />
 
         <button className="scroll-to-top" onClick={scrollToTop}>

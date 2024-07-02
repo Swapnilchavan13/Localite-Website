@@ -5,6 +5,7 @@ import ContactUs from './Component/ContactUs';
 import Community from './Component/Community';
 import Terms from './Component/Terms';
 import Careers from './Component/Careers';
+import { MerchantForm } from './Component/MerchantForm';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/community" element={<Community />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/careers" element={<Careers />} />
+      <Route path="/merchantform" element={<MerchantForm />} />
 
     </Routes>
     </BrowserRouter>
