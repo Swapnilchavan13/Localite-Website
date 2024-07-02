@@ -757,6 +757,7 @@ font-size: smaller;
   box-sizing: border-box;
 }
 .mainfooter{
+  width: 100%;
   display: block;
 }
 .footer-content {
