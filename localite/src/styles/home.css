@@ -26,10 +26,10 @@ body {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  width: 80%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 1200px;
   margin-top: -8000px;
-  position: absolute;
+  position: relative;
 }
 
 .close {
@@ -46,6 +46,12 @@ body {
 video {
   width: 100%;
   height: auto;
+}
+
+/* Blurred background effect */
+#blurred {
+  filter: blur(4px); /* Adjust the blur intensity as needed */
+  transition: filter 0.3s ease;
 }
 
 

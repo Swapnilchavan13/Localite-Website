@@ -136,7 +136,7 @@ export const Home = () => {
   };
 
   return (
-    <div className='mainmain'>
+    <div id={modalIsOpen ? 'blurred' : ''} className='mainmain'>
       <div className="maind">
         <Topnavbar />
         <Navbar />
