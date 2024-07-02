@@ -144,7 +144,7 @@ export const Home = () => {
           <div className="firstdiv">
             <DynamicHeading name={names[nameIndex]} />
             {/* <div className="contentdiv"></div> */}
-            <video className='.video' ref={videoRef} controls>
+            <video className='video' ref={videoRef} controls>
       <source src="lvideo.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
@@ -153,8 +153,7 @@ export const Home = () => {
             <button className="getstartedbtn">Get started</button>
     </a>
           </div>
-          <br />
-          <br />
+        <br />
           <hr />
           <br />
           <br />

@@ -23,28 +23,29 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fff;
+  /* background: #fff; */
   padding: 20px;
   border-radius: 8px;
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   margin-top: -8000px;
   position: relative;
+  border: none;
 }
 
 .close {
   position: absolute;
   top: 10px;
   right: 20px;
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
   background: none;
   border: none;
-  color: #000;
+  color: black;
 }
 
 video {
-  width: 100%;
+  width: 90%;
   height: auto;
 }
 
@@ -122,7 +123,7 @@ video {
 
 .firstdiv {
   font-size: x-large;
-  margin-top: -20px;
+  margin-top: 40px;
   text-align: center;
   justify-content: center;
 }
@@ -131,8 +132,8 @@ video {
   height: 240px;
 }
 
-video{
-  margin: auto;
+.video{
+  margin-top: 20px;
   width: 80%;
 }
 
@@ -150,7 +151,7 @@ video{
   border-radius: 10px;
   margin: auto;
   font-size: 50px;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 30px;
   /* font-weight: bold; */
 }
@@ -494,7 +495,7 @@ font-size: smaller;
   width: 200px;
 }
 
-.footerline {
+#footerline {
   width: 85%;
   margin-top: 20px;
   background-color: red;
@@ -582,6 +583,7 @@ html, body {
   margin-top: -10200px;
   position: absolute;
 }
+
 
 #merchantform{
   width: 90%;
