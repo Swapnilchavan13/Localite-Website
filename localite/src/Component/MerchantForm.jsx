@@ -3,6 +3,7 @@ import { jsPDF } from 'jspdf';
 import { Footer } from './Footer';
 import { Topnavbar } from './Topnavbar';
 
+
 export const MerchantForm = () => {
   const [formData, setFormData] = useState({
     businessName: '',
@@ -96,7 +97,6 @@ export const MerchantForm = () => {
   };
 
   const formStyle = {
-    maxWidth: '90%',
     margin: '0 auto',
     padding: '20px',
     borderRadius: '8px',
@@ -142,7 +142,7 @@ export const MerchantForm = () => {
   return (
     <>
     <Topnavbar />
-    <div style={formStyle}>
+    <div id='merchantform' style={formStyle}>
       <h1 style={headingStyle}>Merchant Registration Form</h1>
       <form>
         <div style={sectionStyle}>

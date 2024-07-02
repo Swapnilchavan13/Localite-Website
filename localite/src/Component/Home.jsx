@@ -3,11 +3,32 @@ import Slider from 'react-slick';
 import '../styles/home.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Modal from 'react-modal';
 import { Footer } from '../Component/Footer';
 import { Topnavbar } from './Topnavbar';
 import { Navbar } from './Navbar';
 import { useMediaQuery } from 'react-responsive';
 
+// Custom Modal styling
+Modal.setAppElement('#root'); // Ensure screen readers don't read the modal when it's open
+
+const VideoModal = ({ isOpen, onRequestClose, videoSrc }) => {
+  return (
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      className="modal"
+      overlayClassName="overlay"
+      shouldCloseOnOverlayClick={true}
+    >
+      <button className="close" onClick={onRequestClose}>×</button>
+      <video controls>
+        <source src={videoSrc} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </Modal>
+  );
+};
 
 const names = [
   "Juhu",
@@ -39,7 +60,15 @@ export const Home = () => {
       }
     }, []);
 
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const openModal = () => setModalIsOpen(true);
+    const closeModal = () => setModalIsOpen(false);
+
+
     const isWebView = useMediaQuery({ minWidth: 768 }); // Adjust the minWidth based on what you consider a web view
+
+
 
     const [settings, setSettings] = useState({
       dots: true,
@@ -137,19 +166,29 @@ export const Home = () => {
                 <div>
                   <img src="led.jpg" alt="Localite" id="slider-image" />
                 </div>
-                <div>
-                  <a href="PhoneApp.mp4">
-                  <img  src="Artboard.png" alt="Localite 2" id="slider-image" />
-                  </a>
-                </div>
+              <div>
+          <img
+            src="Artboard.png"
+            alt="Localite 2"
+            id="slider-image"
+            onClick={openModal}
+            style={{ cursor: 'pointer' }}
+          />
+        </div>
                 <div>
                   <img src="slide3.png" alt="Localite 3" id="slider-image" />
                 </div>
 
               </Slider>
+
+       
             </div>
           </div>
-
+          <VideoModal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        videoSrc="PhoneApp.mp4"
+      />
 
           <div className='whyusdiv' id="why-us">
             <h1>Why Us?</h1>
