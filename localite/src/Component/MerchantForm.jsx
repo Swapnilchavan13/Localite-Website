@@ -87,8 +87,8 @@ export const MerchantForm = () => {
     - GSTIN: ${formData.gstin}
     - Bank Account Details: ${formData.bankAccountDetails}
 
-    Document Uploads:
-    (Documents cannot be attached automatically, please attach them manually if required)
+    Declaration:
+    (I hereby declare that the information provided above is true and correct to the best of my knowledge and belief.)
     `;
 
     // Open the email client
