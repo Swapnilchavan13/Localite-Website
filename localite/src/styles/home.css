@@ -275,7 +275,7 @@ font-size: smaller;
 
 .faq select {
   font-size: large;
-  width: 80%;
+  width: 60%;
   border: none;
   background-color: #edf4ff;
   font-weight: bold;
@@ -323,6 +323,8 @@ font-size: smaller;
   box-sizing: border-box;
 }
 .mainfooter{
+  width: 85%;
+  margin: auto;
   display: flex;
 }
 
