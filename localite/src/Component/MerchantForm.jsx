@@ -70,7 +70,6 @@ export const MerchantForm = () => {
     - Contact Person: ${formData.contactPerson}
     - Contact Email: ${formData.contactEmail}
     - Contact Phone Number: ${formData.contactPhoneNumber}
-    - Website URL: ${formData.websiteUrl}
 
     Business Operations:
     - Operation Hours: ${formData.operationHours}
@@ -171,10 +170,6 @@ export const MerchantForm = () => {
             Contact Phone Number:
             <input type="text" name="contactPhoneNumber" value={formData.contactPhoneNumber} onChange={handleChange} style={inputStyle} />
           </label>
-          <label style={labelStyle}>
-            Website URL:
-            <input type="url" name="websiteUrl" value={formData.websiteUrl} onChange={handleChange} style={inputStyle} />
-          </label>
         </div>
 
         <div style={sectionStyle}>
@@ -256,7 +251,7 @@ export const MerchantForm = () => {
           </p>
         </div>
 
-        <button type="button" onClick={handleSave} style={buttonStyle}>Save Details</button>
+        <button type="button" onClick={handleSave} style={buttonStyle}>Save to Register</button>
       </form>
     </div>
     <br />
