@@ -167,7 +167,7 @@ export const Home = () => {
                 </div>
               <div>
           <img
-            src="Artboard.png"
+            src="Slide2.png"
             alt="Localite 2"
             id="slider-image"
             onClick={openModal}
