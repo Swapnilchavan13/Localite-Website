@@ -258,7 +258,7 @@ export const Home = () => {
             <div className='howdiv'>
             <div className='how1img'>
 
-              <img src="pen.jpg" alt="" />
+              <img src="1.png" alt="" />
               </div>
               
               <div className='featurecontent'>
@@ -274,7 +274,7 @@ export const Home = () => {
             <div className='howdiv'>
               <div className='how2img'>
 
-              <img src="cms.jpg" alt="" />
+              <img src="2.png" alt="" />
               </div>
               <div className='featurecontent'>
                 <div className='whycon'>
@@ -289,7 +289,7 @@ export const Home = () => {
             <div className='howdiv'>
               <div className='how3img'>
 
-              <img src="dj.jpg" alt="" />
+              <img src="3.png" alt="" />
               </div>
               <div  className='featurecontent'>
                 <div className='whycon'>
