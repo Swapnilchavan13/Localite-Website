@@ -943,6 +943,8 @@ font-size: smaller;
  width: 28px;
 }
 
+
+
 .whitelogo {
   width: 200px;
 }
@@ -983,7 +985,8 @@ font-size: smaller;
 .twodivs {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+  gap: 80px;
+  justify-content: space-around;
 }
 
 .mainmain {

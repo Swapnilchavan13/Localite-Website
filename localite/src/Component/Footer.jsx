@@ -18,7 +18,7 @@ export const Footer = () => {
             </div>
 
                 <div className='twodivs'>
-                    <div className="footer-section links">
+                    <div id='footernav' className="footer-section links">
 
                         <ul>
                             <li><a href="/">Home</a></li>
