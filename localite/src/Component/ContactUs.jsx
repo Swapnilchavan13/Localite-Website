@@ -5,6 +5,7 @@ import { Footer } from './Footer';
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: '',
+    mobile: '',
     email: '',
     questionType: '',
     comment: ''
@@ -36,6 +37,8 @@ const ContactUs = () => {
       <div style={{ marginTop: '20px' }}>
         <h2>Phone</h2>
         <p>You can call us at: <a href="tel:7715973851">7715973851</a></p>
+        <p>You can call us at: <a href="tel:7738448535">7738448535</a></p>
+
       </div>
       
       <div style={{ marginTop: '20px' }}>
@@ -45,7 +48,7 @@ const ContactUs = () => {
       
       <div style={{ marginTop: '20px' }}>
         <h2>Address</h2>
-        <p>Localite Office, <br/> Juhu, Anand 1st Floor, <br/> Mumbai, India</p>
+        <p>Localite Office, <br/>1st Floor, Anand building, Juhu, <br/> Mumbai, India</p>
       </div>
 
 </div>
@@ -59,6 +62,19 @@ const ContactUs = () => {
                 type="text" 
                 name="name" 
                 value={formData.name} 
+                onChange={handleChange} 
+                style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
+                required 
+                />
+            </label>
+          </div>
+          <div style={{ marginBottom: '10px' }}>
+            <label>
+              Contact Number:
+              <input 
+                type="tel" 
+                name="tel" 
+                value={formData.mobile} 
                 onChange={handleChange} 
                 style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
                 required 

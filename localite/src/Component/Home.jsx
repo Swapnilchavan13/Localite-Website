@@ -167,20 +167,17 @@ export const Home = () => {
                 </div>
               <div>
           <img
-            src="slide2.png"
+            src="slide12.jpg"
             alt="Localite 2"
             id="slider-image"
-            onClick={openModal}
-            style={{ cursor: 'pointer' }}
+            // onClick={openModal}
+            // style={{ cursor: 'pointer' }}
           />
         </div>
                 <div>
                   <img src="slide3.png" alt="Localite 3" id="slider-image" />
                 </div>
-
               </Slider>
-
-       
             </div>
           </div>
           <VideoModal
@@ -188,7 +185,6 @@ export const Home = () => {
         onRequestClose={closeModal}
         videoSrc="PhoneApp.mp4"
       />
-
           <div className='whyusdiv' id="why-us">
             <h1>Why Us?</h1>
 <div id='whymain'>
@@ -359,7 +355,7 @@ export const Home = () => {
             <h1>The LOCALITE App</h1>
             <div className='frdiv'>
               <h1>An Exclusive App<br /><span className='community'>of Juhu, by Juhu, for Juhu.</span></h1>
-              <br />
+              {/* <br /> */}
               <div className='sediv'>
                 <ul>
                   <li>An exclusive app with 1000`s of offersfrom the Juhu area.</li>
@@ -375,7 +371,9 @@ export const Home = () => {
                   <p>Create social communities and engage with like-minded people in their neighborhood, providing brands with a more engaging audience.</p>
                 </ul>
               </div>
-              {/* <button className='getstartedbtn'>Download App</button> */}
+              <a href="PhoneApp.mp4">
+              <button className='getstartedbtn'>View App</button>
+              </a>
             </div>
           </div>
 
