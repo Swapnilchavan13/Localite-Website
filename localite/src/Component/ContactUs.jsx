@@ -13,6 +13,12 @@ const ContactUs = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    
+    // Validate mobile number to allow only up to 10 digits
+    if (name === 'mobile' && !/^\d{0,10}$/.test(value)) {
+      return;
+    }
+    
     setFormData({
       ...formData,
       [name]: value
@@ -73,7 +79,7 @@ const ContactUs = () => {
               Contact Number:
               <input 
                 type="tel" 
-                name="tel" 
+                name="mobile" 
                 value={formData.mobile} 
                 onChange={handleChange} 
                 style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
@@ -90,7 +96,6 @@ const ContactUs = () => {
                 value={formData.email} 
                 onChange={handleChange} 
                 style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
-                required 
                 />
             </label>
           </div>
