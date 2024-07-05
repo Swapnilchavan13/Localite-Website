@@ -68,8 +68,6 @@ export const Home = () => {
 
     const isWebView = useMediaQuery({ minWidth: 768 }); // Adjust the minWidth based on what you consider a web view
 
-
-
     const [settings, setSettings] = useState({
       dots: true,
       infinite: true,
@@ -145,7 +143,7 @@ export const Home = () => {
             <DynamicHeading name={names[nameIndex]} />
             {/* <div className="contentdiv"></div> */}
             <video className='video' ref={videoRef} controls>
-      <source src="lvideo.mp4" type="video/mp4" />
+      <source src="screenvideo.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
     <br />
@@ -352,8 +350,8 @@ export const Home = () => {
     </div> */}
 
           <div className='sellwith' id='explore'>
-            <h1>The LOCALITE App</h1>
             <div className='frdiv'>
+            <h1 className='lh1'>The LOCALITE App</h1>
               <h1>An Exclusive App<br /><span className='community'>of Juhu, by Juhu, for Juhu.</span></h1>
               {/* <br /> */}
               <div className='sediv'>
