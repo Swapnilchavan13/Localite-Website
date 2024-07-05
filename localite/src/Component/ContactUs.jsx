@@ -25,120 +25,135 @@ const ContactUs = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form data submitted:', formData);
+
+    try {
+      const response = await fetch('http://62.72.59.146:3005/submitresponse', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const result = await response.json();
+      console.log('Form data submitted successfully:', result);
+    } catch (error) {
+      console.error('Error submitting form data:', error);
+    }
   };
 
   return (
     <>
-    <Topnavbar />
-    <div className='contactus1' >
+      <Topnavbar />
+      <div className='contactus1'>
         <div style={{width:'80%'}}>
+          <h1>Contact Us</h1>
+          <p>We would love to hear from you! If you have any questions or need assistance, please reach out to us through the following methods:</p>
 
-      <h1>Contact Us</h1>
-      <p>We would love to hear from you! If you have any questions or need assistance, please reach out to us through the following methods:</p>
-      
-      <div style={{ marginTop: '20px' }}>
-        <h2>Phone</h2>
-        <p>You can call us at: <a href="tel:7715973851">7715973851</a></p>
-        <p>You can call us at: <a href="tel:7738448535">7738448535</a></p>
+          <div style={{ marginTop: '20px' }}>
+            <h2>Phone</h2>
+            <p>You can call us at: <a href="tel:7715973851">7715973851</a></p>
+            <p>You can call us at: <a href="tel:7738448535">7738448535</a></p>
+          </div>
 
-      </div>
-      
-      <div style={{ marginTop: '20px' }}>
-        <h2>Email</h2>
-        <p>Feel free to email us at: <a href="mailto:localite@alittleworld.com">localite@alittleworld.com</a></p>
-      </div>
-      
-      <div style={{ marginTop: '20px' }}>
-        <h2>Address</h2>
-        <p>Localite Office, <br/>1st Floor, Anand building, Juhu, <br/> Mumbai, India</p>
-      </div>
+          <div style={{ marginTop: '20px' }}>
+            <h2>Email</h2>
+            <p>Feel free to email us at: <a href="mailto:localite@alittleworld.com">localite@alittleworld.com</a></p>
+          </div>
 
-</div>
-      <div className='contactform'>
-        <h2>Contact Form</h2>
-        <form onSubmit={handleSubmit}>
-          <div style={{ marginBottom: '10px' }}>
-            <label>
-              Name:
-              <input 
-                type="text" 
-                name="name" 
-                value={formData.name} 
-                onChange={handleChange} 
-                style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
-                required 
+          <div style={{ marginTop: '20px' }}>
+            <h2>Address</h2>
+            <p>Localite Office, <br/>1st Floor, Anand building, Juhu, <br/> Mumbai, India</p>
+          </div>
+        </div>
+
+        <div className='contactform'>
+          <h2>Contact Form</h2>
+          <form onSubmit={handleSubmit}>
+            <div style={{ marginBottom: '10px' }}>
+              <label>
+                Name:
+                <input 
+                  type="text" 
+                  name="name" 
+                  value={formData.name} 
+                  onChange={handleChange} 
+                  style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
+                  required 
                 />
-            </label>
-          </div>
-          <div style={{ marginBottom: '10px' }}>
-            <label>
-              Contact Number:
-              <input 
-                type="tel" 
-                name="mobile" 
-                value={formData.mobile} 
-                onChange={handleChange} 
-                style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
-                required 
+              </label>
+            </div>
+            <div style={{ marginBottom: '10px' }}>
+              <label>
+                Contact Number:
+                <input 
+                  type="tel" 
+                  name="mobile" 
+                  value={formData.mobile} 
+                  onChange={handleChange} 
+                  style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
+                  required 
                 />
-            </label>
-          </div>
-          <div style={{ marginBottom: '10px' }}>
-            <label>
-              Email:
-              <input 
-                type="email" 
-                name="email" 
-                value={formData.email} 
-                onChange={handleChange} 
-                style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
+              </label>
+            </div>
+            <div style={{ marginBottom: '10px' }}>
+              <label>
+                Email:
+                <input 
+                  type="email" 
+                  name="email" 
+                  value={formData.email} 
+                  onChange={handleChange} 
+                  style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
                 />
-            </label>
-          </div>
-          <div style={{ marginBottom: '10px' }}>
-            <label>
-              Question Type:
-              <select 
-                name="questionType" 
-                value={formData.questionType} 
-                onChange={handleChange} 
-                style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
-                required
-              >
-                <option value="">Select...</option>
-                <option value="general">General Inquiry</option>
-                <option value="support">Support</option>
-                <option value="feedback">Feedback</option>
-                <option value="other">Other</option>
-              </select>
-            </label>
-          </div>
-          <div style={{ marginBottom: '10px' }}>
-            <label>
-              Comment:
-              <textarea 
-                name="comment" 
-                value={formData.comment} 
-                onChange={handleChange} 
-                style={{ marginLeft: '10px', padding: '5px', width: '90%', height: '100px' }} 
-                required 
+              </label>
+            </div>
+            <div style={{ marginBottom: '10px' }}>
+              <label>
+                Question Type:
+                <select 
+                  name="questionType" 
+                  value={formData.questionType} 
+                  onChange={handleChange} 
+                  style={{ marginLeft: '10px', padding: '5px', width: '90%' }} 
+                  required
+                >
+                  <option value="">Select...</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="support">Support</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+            </div>
+            <div style={{ marginBottom: '10px' }}>
+              <label>
+                Comment:
+                <textarea 
+                  name="comment" 
+                  value={formData.comment} 
+                  onChange={handleChange} 
+                  style={{ marginLeft: '10px', padding: '5px', width: '90%', height: '100px' }} 
+                  required 
                 />
-            </label>
-          </div>
-          <button type="submit" style={{ padding: '10px 20px', backgroundColor: '#007BFF', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
-            Submit
-          </button>
-        </form>
+              </label>
+            </div>
+            <button type="submit" style={{ padding: '10px 20px', backgroundColor: '#007BFF', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
-    <br />
-    <br />
-    <Footer />
-                </>
+      <br />
+      <br />
+      <Footer />
+    </>
   );
 };
 
