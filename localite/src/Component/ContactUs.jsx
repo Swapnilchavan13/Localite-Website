@@ -43,6 +43,16 @@ const ContactUs = () => {
 
       const result = await response.json();
       console.log('Form data submitted successfully:', result);
+      
+      setFormData({
+        name: '',
+        mobile: '',
+        email: '',
+        questionType: '',
+        comment: ''
+      });
+      
+      alert("Form data submitted successfully")
     } catch (error) {
       console.error('Error submitting form data:', error);
     }
