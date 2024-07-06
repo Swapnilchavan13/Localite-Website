@@ -25,44 +25,29 @@ const ContactUs = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch('http://62.72.59.146:3005/submitresponse', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    const { name, mobile, email, questionType, comment } = formData;
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
+    const mailtoLink = `mailto:localite@alittleworld.com?subject=Contact Form Submission&body=Name: ${name}%0D%0AMobile: ${mobile}%0D%0AEmail: ${email}%0D%0AQuestion Type: ${questionType}%0D%0AComment: ${comment}`;
 
-      const result = await response.json();
-      console.log('Form data submitted successfully:', result);
-      
-      setFormData({
-        name: '',
-        mobile: '',
-        email: '',
-        questionType: '',
-        comment: ''
-      });
-      
-      alert("Form data submitted successfully")
-    } catch (error) {
-      console.error('Error submitting form data:', error);
-    }
+    window.location.href = mailtoLink;
+
+    setFormData({
+      name: '',
+      mobile: '',
+      email: '',
+      questionType: '',
+      comment: ''
+    });
   };
 
   return (
     <>
       <Topnavbar />
       <div className='contactus1'>
-        <div style={{width:'80%'}}>
+        <div style={{ width: '80%' }}>
           <h1>Contact Us</h1>
           <p>We would love to hear from you! If you have any questions or need assistance, please reach out to us through the following methods:</p>
 
@@ -79,7 +64,7 @@ const ContactUs = () => {
 
           <div style={{ marginTop: '20px' }}>
             <h2>Address</h2>
-            <p>Localite Office, <br/>1st Floor, Anand building, Juhu, <br/> Mumbai, India</p>
+            <p>Localite Office, <br />1st Floor, Anand building, Juhu, <br /> Mumbai, India</p>
           </div>
         </div>
 
