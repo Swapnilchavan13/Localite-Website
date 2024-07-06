@@ -38,28 +38,6 @@ export const MerchantForm = () => {
   };
 
   const handleSave = () => {
-    const doc = new jsPDF();
-    doc.text('Merchant Registration Form', 10, 10);
-    doc.text(`Business Name: ${formData.businessName}`, 10, 20);
-    doc.text(`Business Type: ${formData.businessType}`, 10, 30);
-    doc.text(`Business Address: ${formData.businessAddress}`, 10, 40);
-    doc.text(`Contact Person: ${formData.contactPerson}`, 10, 50);
-    doc.text(`Contact Email: ${formData.contactEmail}`, 10, 60);
-    doc.text(`Contact Phone Number: ${formData.contactPhoneNumber}`, 10, 70);
-    doc.text(`Website URL: ${formData.websiteUrl}`, 10, 80);
-    doc.text(`Operation Hours: ${formData.operationHours}`, 10, 90);
-    doc.text(`Years of Business: ${formData.yearsOfBusiness}`, 10, 100);
-    doc.text(`Number of Employees: ${formData.numberOfEmployees}`, 10, 110);
-    doc.text(`Description of Products/Services Offered: ${formData.productDescription}`, 10, 120);
-    doc.text(`Preferred Categories: ${formData.preferredCategories}`, 10, 130);
-    doc.text(`Expected Frequency of Offers: ${formData.offerFrequency}`, 10, 140);
-    doc.text(`Specific Requirements: ${formData.specificRequirements}`, 10, 150);
-    doc.text(`PAN/TAN Number: ${formData.panTanNumber}`, 10, 160);
-    doc.text(`GSTIN: ${formData.gstin}`, 10, 170);
-    doc.text(`Bank Account Details: ${formData.bankAccountDetails}`, 10, 180);
-
-    // Save the PDF
-    doc.save('Merchant_Registration_Form.pdf');
 
     // Create the email body
     const emailBody = `
@@ -251,7 +229,7 @@ export const MerchantForm = () => {
           </p>
         </div>
 
-        <button type="button" onClick={handleSave} style={buttonStyle}>Save to Register</button>
+        <button type="button" onClick={handleSave} style={buttonStyle}>Submit The Form</button>
       </form>
     </div>
     <br />
@@ -262,3 +240,4 @@ export const MerchantForm = () => {
     </>
   );
 };
+
