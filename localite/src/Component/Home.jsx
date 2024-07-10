@@ -49,6 +49,12 @@ const DynamicHeading = ({ name }) => (
 export const Home = () => {
 
     const videoRef = useRef(null);
+
+    const [activeFAQ, setActiveFAQ] = useState(null);
+
+    const toggleFAQ = (faqIndex) => {
+      setActiveFAQ(activeFAQ === faqIndex ? null : faqIndex);
+    };
   
     useEffect(() => {
       const video = videoRef.current;
@@ -142,8 +148,8 @@ export const Home = () => {
           <div className="firstdiv">
             <DynamicHeading name={names[nameIndex]} />
             {/* <div className="contentdiv"></div> */}
-            <video className='video' ref={videoRef} controls>
-      <source src="screenvideo.mp4" type="video/mp4" />
+            <video className='video' ref={videoRef} >
+      <source src="LOCALITE Web.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
     <br />
@@ -161,7 +167,7 @@ export const Home = () => {
 
               <Slider {...settings}>
                 <div>
-                  <img src="led.jpg" alt="Localite" id="slider-image" />
+                  <img src="scrn.jpg" alt="Localite" id="slider-image" />
                 </div>
               <div>
           <img
@@ -264,7 +270,7 @@ export const Home = () => {
                 <h4>Sign-up</h4>
                   Become part of Juhu’s exclusive marketing
                   network that is on Localite to promote
-                  their businesses.
+                  your business.
                 </div>
               </div>
             </div>
@@ -375,32 +381,49 @@ export const Home = () => {
             </div>
           </div>
 
-          <div className='faq'>
-            <h1>FAQs</h1>
-            <select name="" id="">
-              <option value="">What is Localite?</option>
-            </select>
-            <select name="" id="">
-              <option value="">How Do I explore this product?</option>
-            </select>
-            <select name="" id="">
-              <option value="">How wiil I get my payments?</option>
-            </select>
-            <select name="" id="">
-              <option value="">What are my gains/profits?</option>
-            </select>
-            <select name="" id="">
-              <option value="">How will your product help my business?</option>
-            </select>
-            <select name="" id="">
-              <option value="">What are the things under my control?</option>
-            </select>
-            <select name="" id="">
-              <option value="">What if there is any issue throught the <br /> process, what to do?</option>
-            </select>
-            <select name="" id="">
-              <option value="">How will you solve the problem?</option>
-            </select>
+           <div className='faq'>
+      <h1>FAQs</h1>
+
+      <select onClick={() => toggleFAQ(1)}>
+        <option style={{display:'none'}} value="">What is Localite?</option>
+      </select>
+      {activeFAQ === 1 && <h5>Hello I Am Localite</h5>}
+
+      <select onClick={() => toggleFAQ(2)}>
+        <option style={{display:'none'}} value="">How Do I explore this product?</option>
+      </select>
+      {activeFAQ === 2 && <h5>Explore by using our interactive guides and features.</h5>}
+
+      <select onClick={() => toggleFAQ(3)}>
+        <option style={{display:'none'}} value="">How will I get my payments?</option>
+      </select>
+      {activeFAQ === 3 && <h5>Payments will be processed through your registered bank account.</h5>}
+
+      <select onClick={() => toggleFAQ(4)}>
+        <option style={{display:'none'}} value="">What are my gains/profits?</option>
+      </select>
+      {activeFAQ === 4 && <h5>Your gains/profits depend on your engagement and usage of our services.</h5>}
+
+      <select onClick={() => toggleFAQ(5)}>
+        <option style={{display:'none'}} value="">How will your product help my business?</option>
+      </select>
+      {activeFAQ === 5 && <h5>Our product provides tools and analytics to streamline your business operations.</h5>}
+
+      <select onClick={() => toggleFAQ(6)}>
+        <option style={{display:'none'}} value="">What are the things under my control?</option>
+      </select>
+      {activeFAQ === 6 && <h5>You have control over settings, configurations, and user management.</h5>}
+
+      <select onClick={() => toggleFAQ(7)}>
+        <option style={{display:'none'}} value="">What if there is any issue throughout the process, what to do?</option>
+      </select>
+      {activeFAQ === 7 && <h5>Contact our support team or refer to the troubleshooting guide.</h5>}
+
+      <select onClick={() => toggleFAQ(8)}>
+        <option style={{display:'none'}} >How will you solve the problem?</option>
+      </select>
+      {activeFAQ === 8 && <h5>We will provide solutions based on the issue and offer support as needed. We will provide solutions based on the issue and offer support as needed. We will provide solutions based on the issue and offer support as needed</h5>}
+    
 
             <div className='selling'>
               {/* <h2>Start selling online with <br />LOCALITE</h2>

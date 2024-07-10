@@ -391,6 +391,13 @@ font-size: smaller;
   margin-top: 10px;
 }
 
+.faq h5{
+  color: #555;
+  width: 58%;
+  margin: auto;
+  text-align: left;
+}
+
 .selling {
   padding: 20px 30px;
 }
@@ -635,9 +642,9 @@ html, body {
   height: 240px;
 }
 
-video{
+.video{
   margin: auto;
-  width: 90%;
+  width: 96%;
 }
 /* .contentdiv {
   background-color: black;
@@ -845,6 +852,13 @@ font-size: smaller;
   background-color: #edf4ff;
   font-weight: bold;
   margin-top: 10px;
+}
+
+.faq h5{
+  color: #555;
+  width: 78%;
+  margin: auto;
+  text-align: left;
 }
 
 .selling {
