@@ -6,9 +6,15 @@ import Community from './Component/Community';
 import Terms from './Component/Terms';
 import Careers from './Component/Careers';
 import { MerchantForm } from './Component/MerchantForm';
+import { Login } from './Component/Login';
+import { AuthProvider } from './Component/AuthContext';
+import { Merchantproducts } from './Component/Merchantproducts';
+import ProtectedRoute from './Component/ProtectedRoute';
 
 function App() {
   return (
+    <AuthProvider>
+
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
@@ -18,8 +24,13 @@ function App() {
       <Route path="/careers" element={<Careers />} />
       <Route path="/merchantform" element={<MerchantForm />} />
 
+      <Route path="/merchantlogin" element={<Login />} />
+      <Route path="/merchant" element={<ProtectedRoute element={<Merchantproducts />} />} />
+      
+
     </Routes>
     </BrowserRouter>
+    </AuthProvider>
       
     );
 }
