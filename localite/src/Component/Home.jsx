@@ -380,87 +380,86 @@ export const Home = () => {
            <div className='faq'>
       <h1>FAQs</h1>
 
-      <select onClick={() => toggleFAQ(1)}>
-        <option style={{display:'none'}} value="">What is Localite?</option>
-      </select>
-      {activeFAQ === 1 && <h5>Localite is one of its kind, members-only hyperlocal community app designed to
-connect high-end local residents with hyperlocal SME brands in catchment
-specific areas, offering a marketplace for products &amp; services, special deals &amp;
-offers, events, pre-loved items, networking and much more.</h5>}
+      <h4 onClick={() => toggleFAQ(1)}>What is Localite?</h4>
+      {activeFAQ === 1 && (
+        <p>Localite is one of its kind, members-only hyperlocal community app designed to
+        connect high-end local residents with hyperlocal SME brands in catchment
+        specific areas, offering a marketplace for products &amp; services, special deals &amp;
+        offers, events, pre-loved items, networking and much more.</p>
+      )}
 
-      <select onClick={() => toggleFAQ(2)}>
-        <option style={{display:'none'}} value="">How can I sign up for Localite?</option>
-      </select>
-      {activeFAQ === 2 && <h5>To sign up, download the Localite app from the App Store or Google Play, fill the
-membership registration form, and submit the required verification to confirm you
-are a bona fide resident or business of that specific community.</h5>}
+      <h4 onClick={() => toggleFAQ(2)}>How can I sign up for Localite?</h4>
+      {activeFAQ === 2 && (
+        <p>To sign up, download the Localite app from the App Store or Google Play, fill the
+        membership registration form, and submit the required verification to confirm you
+        are a bona fide resident or business of that specific community.</p>
+      )}
 
-      <select onClick={() => toggleFAQ(3)}>
-        <option style={{display:'none'}} value="">Is there a fee to use Localite?</option>
-      </select>
-      {activeFAQ === 3 && <h5>No, Localite is absolutely free to download and use for the verified residents.</h5>}
+      <h4 onClick={() => toggleFAQ(3)}>Is there a fee to use Localite?</h4>
+      {activeFAQ === 3 && (
+        <p>No, Localite is absolutely free to download and use for the verified residents.</p>
+      )}
 
-      <select onClick={() => toggleFAQ(4)}>
-        <option style={{display:'none'}} value="">How can my business benefit from joining Localite?</option>
-      </select>
-      {activeFAQ === 4 && <h5>By joining Localite, your business gains visibility among local high-end residents,
-allowing you to promote your products and services directly to a targeted
-audience, participate in hyperlocal events, offer promotions, and build customer
-loyalty within the community.</h5>}
+      <h4 onClick={() => toggleFAQ(4)}>How can my business benefit from joining Localite?</h4>
+      {activeFAQ === 4 && (
+        <p>By joining Localite, your business gains visibility among local high-end residents,
+        allowing you to promote your products and services directly to a targeted
+        audience, participate in hyperlocal events, offer promotions, and build customer
+        loyalty within the community.</p>
+      )}
 
-      <select onClick={() => toggleFAQ(5)}>
-        <option style={{display:'none'}} value="">What types of businesses can join Localite?</option>
-      </select>
-      {activeFAQ === 5 && <h5>Localite welcomes businesses across various sectors including but not limited to
-food and beverage, retail, personal and professional services, health and wellness,
-home improvement, and many more.</h5>}
+      <h4 onClick={() => toggleFAQ(5)}>What types of businesses can join Localite?</h4>
+      {activeFAQ === 5 && (
+        <p>Localite welcomes businesses across various sectors including but not limited to
+        food and beverage, retail, personal and professional services, health and wellness,
+        home improvement, and many more.</p>
+      )}
 
-      <select onClick={() => toggleFAQ(6)}>
-        <option style={{display:'none'}} value="">How do I list my business on Localite?</option>
-      </select>
-      {activeFAQ === 6 && <h5>To list your business, complete the Merchant Registration form from here or fill
-the form available on our Localite app, submit the required documents for
-verification, and once approved, you can start customizing your business profile.</h5>}
+      <h4 onClick={() => toggleFAQ(6)}>How do I list my business on Localite?</h4>
+      {activeFAQ === 6 && (
+        <p>To list your business, complete the Merchant Registration form from here or fill
+        the form available on our Localite app, submit the required documents for
+        verification, and once approved, you can start customizing your business profile.</p>
+      )}
 
-      <select onClick={() => toggleFAQ(7)}>
-        <option style={{display:'none'}} value="">Is there a commission or fee for sales made through Localite?</option>
-      </select>
-      {activeFAQ === 7 && <h5>Localite charges a small fee for listings. Currently, there is NO commission
-charged on sales at this point. However, future updates regarding any changes will
-be communicated in advance to all registered businesses.</h5>}
+      <h4 onClick={() => toggleFAQ(7)}>Is there a commission or fee for sales made through Localite?</h4>
+      {activeFAQ === 7 && (
+        <p>Localite charges a small fee for listings. Currently, there is NO commission
+        charged on sales at this point. However, future updates regarding any changes will
+        be communicated in advance to all registered businesses.</p>
+      )}
 
-      <select onClick={() => toggleFAQ(8)}>
-        <option style={{display:'none'}} >How can I promote my business on Localite?</option>
-      </select>
-      {activeFAQ === 8 && <h5>You can promote your business by posting special offers, participating in app-
-exclusive events, and utilizing advertising features available through Localite to
-enhance your visibility and attract more customers.</h5>}
+      <h4 onClick={() => toggleFAQ(8)}>How can I promote my business on Localite?</h4>
+      {activeFAQ === 8 && (
+        <p>You can promote your business by posting special offers, participating in app-
+        exclusive events, and utilizing advertising features available through Localite to
+        enhance your visibility and attract more customers.</p>
+      )}
 
-<select onClick={() => toggleFAQ(9)}>
-        <option style={{display:'none'}} >What kind of promotions can I run on Localite?</option>
-      </select>
-      {activeFAQ === 9 && <h5>You can offer discounts, bundle deals, exclusive products, or loyalty rewards. Our
-        team is available to help you set up these promotions effectively.</h5>}
-    
-        <select onClick={() => toggleFAQ(10)}>
-        <option style={{display:'none'}} >Who do I contact if I have technical problems with the app?</option>
-      </select>
-      {activeFAQ === 10 && <h5>For technical support, please contact our support team
-        at localite@alittleworld.com or through the app&#39;s built-in help feature.</h5>}
+      <h4 onClick={() => toggleFAQ(9)}>What kind of promotions can I run on Localite?</h4>
+      {activeFAQ === 9 && (
+        <p>You can offer discounts, bundle deals, exclusive products, or loyalty rewards. Our
+        team is available to help you set up these promotions effectively.</p>
+      )}
 
-        <select onClick={() => toggleFAQ(11)}>
-        <option style={{display:'none'}} >Can I track the performance of my business on Localite?</option>
-      </select>
-      {activeFAQ === 11 && <h5>Yes, Localite provides a dashboard for business owners where you can track
-        views, sales, and engagement statistics for your listings and promotions.</h5>}
+      <h4 onClick={() => toggleFAQ(10)}>Who do I contact if I have technical problems with the app?</h4>
+      {activeFAQ === 10 && (
+        <p>For technical support, please contact our support team
+        at localite@alittleworld.com or through the app's built-in help feature.</p>
+      )}
 
+      <h4 onClick={() => toggleFAQ(11)}>Can I track the performance of my business on Localite?</h4>
+      {activeFAQ === 11 && (
+        <p>Yes, Localite provides a dashboard for business owners where you can track
+        views, sales, and engagement statistics for your listings and promotions.</p>
+      )}
 
-        <select onClick={() => toggleFAQ(12)}>
-        <option style={{display:'none'}} >How is customer data handled on Localite?</option>
-      </select>
-      {activeFAQ === 12 && <h5>Customer privacy is paramount. All data is handled in strict compliance with data
-protection regulations to ensure user information is securely managed and not
-shared without consent.</h5>}
+      <h4 onClick={() => toggleFAQ(12)}>How is customer data handled on Localite?</h4>
+      {activeFAQ === 12 && (
+        <p>Customer privacy is paramount. All data is handled in strict compliance with data
+        protection regulations to ensure user information is securely managed and not
+        shared without consent.</p>
+      )}
 
 
 

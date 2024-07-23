@@ -377,25 +377,21 @@ font-size: smaller;
 }
 
 .faq {
-  width: 70%;
-  margin: auto;
+  padding: 10px;
+  width: 45%;
+  margin-left: 30%;
+  /* text-align: left; */
+}
+
+.faq h1{
   text-align: center;
 }
 
-.faq select {
-  font-size: large;
-  width: 60%;
-  border: none;
-  background-color: #edf4ff;
-  font-weight: bold;
-  margin-top: 10px;
-}
 
 .faq h5{
   color: #555;
-  width: 58%;
-  margin: auto;
-  text-align: left;
+  width: 100%;
+  /* text-align: left; */
 }
 
 .selling {
@@ -840,11 +836,14 @@ font-size: smaller;
 }
 
 .faq {
-  width: 100%;
+  width: 90%;
   margin: auto;
-  text-align: center;
+  text-align: left;
 }
 
+.faq h1{
+  text-align: center;
+}
 .faq select {
   font-size: medium;
   width: 80%;
