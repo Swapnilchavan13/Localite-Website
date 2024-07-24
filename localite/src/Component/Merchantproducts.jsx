@@ -166,6 +166,7 @@ export const Merchantproducts = () => {
           display: flex;
           justify-content: center;
           align-items: center;
+          width: 100%;
         }
         
         .form {
@@ -189,7 +190,7 @@ export const Merchantproducts = () => {
         .form-group input,
         .form-group select,
         .form-group textarea {
-          width: 100%;
+          width: 80%;
           padding: 8px;
           height: 40px;
           box-sizing: border-box;
@@ -231,7 +232,7 @@ export const Merchantproducts = () => {
       `}</style>
       <form onSubmit={handleSubmit} className="form">
         
-        <h2 className="form-heading">Localite Merchant Product Data Form</h2>
+        <h2 className="form-heading">Localite Merchant Product Data Form (Form-4)</h2>
         {user && <p>Logged in as: {user.username}</p>}
         <h4>You have {3 - entryCount} submissions remaining this week.</h4>
         <button className='submit-button' type="button" onClick={logout}>Logout</button>
