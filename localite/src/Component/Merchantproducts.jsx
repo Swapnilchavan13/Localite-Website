@@ -227,7 +227,6 @@ export const Merchantproducts = () => {
 
         .form-group input[type="file"] {
           height: auto;
-
         }
       `}</style>
       <form onSubmit={handleSubmit} className="form">
