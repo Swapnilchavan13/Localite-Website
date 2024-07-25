@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { Footer } from './Footer';
 import { Topnavbar } from './Topnavbar';
-import axios from 'axios'; // Import axios for making HTTP requests
+import axios from 'axios';
 
 export const MerchantForm = () => {
+  const categories = ['Automotive&Transport', 'Clothing', 'DryCleaningServices', 'EducationandLearning', 'Entertainment&Leisure', 'Food', 'Food&Beverages', 'Handbags', 'Healthcare&Wellness', 'Home&Maintenance', 'Jewellery', 'PersonalCare', 'ProfessionalServices', 'Skin Care'];
+  
   const [formData, setFormData] = useState({
     businessName: '',
     businessType: '',
@@ -29,33 +31,47 @@ export const MerchantForm = () => {
     profileImage: null,
     personName: '',
     lastName: '',
-    username: '',
     password: '',
     numberOfPeople: '',
     brandLogo: null,
   });
 
+  const [profileImageUrl, setProfileImageUrl] = useState(null);
+  const [brandLogoUrl, setBrandLogoUrl] = useState(null);
+
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-    setFormData({
-      ...formData,
-      [name]: files ? files[0] : value,
-    });
+    if (files) {
+      const file = files[0];
+      const url = URL.createObjectURL(file);
+      if (name === 'profileImage') {
+        setProfileImageUrl(url);
+      } else if (name === 'brandLogo') {
+        setBrandLogoUrl(url);
+      }
+      setFormData({
+        ...formData,
+        [name]: file,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleSave = async (e) => {
     e.preventDefault();
-  
-    // Create FormData object to send files and text data
+
     const formDataToSend = new FormData();
     for (const key in formData) {
       if (formData[key]) {
         formDataToSend.append(key, formData[key]);
       }
     }
-  
+
     try {
-      // Send form data and files to backend API
       const response = await axios.post('https://localitebackend.localite.services/addmerchants', formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data'
@@ -63,12 +79,11 @@ export const MerchantForm = () => {
       });
       console.log('Data submitted successfully:', response.data);
       alert("Data is Submitted to Localite team");
-  
-      // EmailJS configuration
+
       const serviceID = 'service_qd6wjis';
       const templateID = 'template_38jnodk';
       const userID = 'qAkPR5RhKGseM24tp';
-  
+
       const emailParams = {
         business_name: formData.businessName,
         business_type: formData.businessType,
@@ -76,11 +91,9 @@ export const MerchantForm = () => {
         contact_email: formData.contactEmail,
         contact_phone_number: formData.contactPhoneNumber,
       };
-  
+
       await emailjs.send(serviceID, templateID, emailParams, userID);
-      // console.log('Email sent successfully');
-  
-      // Reset form fields
+
       setFormData({
         businessName: '',
         businessType: '',
@@ -105,18 +118,17 @@ export const MerchantForm = () => {
         profileImage: null,
         personName: '',
         lastName: '',
-        username: '',
         password: '',
         numberOfPeople: '',
         brandLogo: null,
       });
-  
+      setProfileImageUrl(null);
+      setBrandLogoUrl(null);
+
     } catch (error) {
       console.error('Failed to submit data:', error);
-      // Optionally, add code to show an error message to the user
     }
   };
-  
 
   const formStyle = {
     margin: '0 auto',
@@ -161,6 +173,13 @@ export const MerchantForm = () => {
     color: '#333',
   };
 
+  const imagePreviewStyle = {
+    width: '100px',
+    height: '100px',
+    objectFit: 'cover',
+    marginBottom: '10px',
+  };
+
   return (
     <>
       <Topnavbar />
@@ -172,6 +191,9 @@ export const MerchantForm = () => {
             <label style={labelStyle}>
               Profile Image:
               <input type="file" name="profileImage" onChange={handleChange} />
+              <br />
+              <br />
+              {profileImageUrl && <img src={profileImageUrl} alt="Profile Preview" style={imagePreviewStyle} />}
             </label>
             <label style={labelStyle}>
               Person Name:
@@ -182,18 +204,18 @@ export const MerchantForm = () => {
               <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} style={inputStyle} />
             </label>
             <label style={labelStyle}>
-              Username:
-              <input type="text" name="username" value={formData.username} onChange={handleChange} style={inputStyle} />
-            </label>
-            <label style={labelStyle}>
-              Password:
-              <input type="password" name="password" value={formData.password} onChange={handleChange} style={inputStyle} />
+              Set Password:
+              <input type="text" name="password" value={formData.password} onChange={handleChange} style={inputStyle} />
             </label>
             <label style={labelStyle}>
               Brand Logo:
               <input type="file" name="brandLogo" onChange={handleChange} />
+              <br />
+              <br />
+              {brandLogoUrl && <img src={brandLogoUrl} alt="Brand Logo Preview" style={imagePreviewStyle} />}
             </label>
           </div>
+
 
           <div style={sectionStyle}>
             <h2 style={headingStyle}>Business Information</h2>
@@ -203,7 +225,12 @@ export const MerchantForm = () => {
             </label>
             <label style={labelStyle}>
               Business Type:
-              <input type="text" name="businessType" value={formData.businessType} onChange={handleChange} style={inputStyle} />
+              <select name="businessType" value={formData.businessType} onChange={handleChange} style={inputStyle}>
+                <option value="">Select Business Type</option>
+                {categories.map((category, index) => (
+                  <option key={index} value={category}>{category}</option>
+                ))}
+              </select>
             </label>
             <label style={labelStyle}>
               Business Address:
@@ -256,7 +283,7 @@ export const MerchantForm = () => {
           </div>
 
           <div style={sectionStyle}>
-            <h2 style={headingStyle}>Financial Information</h2>
+            <h2 style={headingStyle}>Business Verification</h2>
             <label style={labelStyle}>
               PAN/TAN Number:
               <input type="text" name="panTanNumber" value={formData.panTanNumber} onChange={handleChange} style={inputStyle} />
@@ -269,12 +296,8 @@ export const MerchantForm = () => {
               Bank Account Details:
               <input type="text" name="bankAccountDetails" value={formData.bankAccountDetails} onChange={handleChange} style={inputStyle} />
             </label>
-          </div>
-
-          <div style={sectionStyle}>
-            <h2 style={headingStyle}>Document Upload</h2>
             <label style={labelStyle}>
-              Copy of Business License:
+              Business License:
               <input type="file" name="businessLicense" onChange={handleChange} />
             </label>
             <label style={labelStyle}>
@@ -282,7 +305,7 @@ export const MerchantForm = () => {
               <input type="file" name="gstCertificate" onChange={handleChange} />
             </label>
             <label style={labelStyle}>
-              PAN Card of Business:
+              PAN Card:
               <input type="file" name="panCard" onChange={handleChange} />
             </label>
             <label style={labelStyle}>
@@ -291,14 +314,7 @@ export const MerchantForm = () => {
             </label>
           </div>
 
-          <div style={sectionStyle}>
-            <h2 style={headingStyle}>Declaration</h2>
-            <p>
-              I hereby declare that the information provided above is true and correct to the best of my knowledge and belief.
-            </p>
-          </div>
-
-          <button type="submit" style={buttonStyle}>Submit The Form</button>
+          <button type="submit" style={buttonStyle}>Submit</button>
         </form>
       </div>
       <br />

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import emailjs from 'emailjs-com';
+
 import { useAuth } from './AuthContext';
 
 export const Merchantproducts = () => {
@@ -125,6 +127,21 @@ export const Merchantproducts = () => {
 
       const data = await res.json();
       alert("Data Added");
+
+       // EmailJS configuration
+       const serviceID = 'service_qd6wjis';
+       const templateID = 'template_38jnodk';
+       const userID = 'qAkPR5RhKGseM24tp';
+   
+       const emailParams = {
+         business_name: formData.username,
+         business_type: formData.businessType,
+         business_address: formData.businessAddress,
+         contact_email: formData.contactEmail,
+         contact_phone_number: formData.contactPhoneNumber,
+       };
+   
+       await emailjs.send(serviceID, templateID, emailParams, userID);
 
       // Reset all input fields after successful submission
       setAppSection('');
