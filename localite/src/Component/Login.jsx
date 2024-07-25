@@ -14,7 +14,7 @@ export const Login = () => {
   useEffect(() => {
     const fetchMerchants = async () => {
       try {
-        const response = await fetch('https://localitebackend.localite.services/allmerchants');
+        const response = await fetch('https://localitebackend.localite.services/getmerchants');
         const data = await response.json();
         setMerchants(data);
       } catch (error) {
@@ -29,7 +29,7 @@ export const Login = () => {
     e.preventDefault();
 
     const user = merchants.find(
-      (merchant) => merchant.contactPhoneNumber === mobileNumber && merchant.loginPin === loginPin
+      (merchant) => merchant.contactPhoneNumber === mobileNumber && merchant.password === loginPin
     );
 
     if (user) {

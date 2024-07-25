@@ -391,6 +391,12 @@ font-size: smaller;
 .faq h5{
   color: #555;
   width: 100%;
+  cursor: pointer;
+  /* text-align: left; */
+}
+
+.faq h4{
+  cursor: pointer;
   /* text-align: left; */
 }
 
