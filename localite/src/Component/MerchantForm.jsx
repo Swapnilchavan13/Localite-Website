@@ -80,9 +80,9 @@ export const MerchantForm = () => {
       console.log('Data submitted successfully:', response.data);
       alert("Data is Submitted to Localite team");
 
-      const serviceID = 'service_qd6wjis';
-      const templateID = 'template_38jnodk';
-      const userID = 'qAkPR5RhKGseM24tp';
+      const serviceID = 'service_7sl4p61';
+      const templateID = 'template_temjje3';
+      const userID = 'PhuU7kore77nPwnF5';
 
       const emailParams = {
         business_name: formData.businessName,
