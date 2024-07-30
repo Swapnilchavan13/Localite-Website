@@ -90,6 +90,7 @@ export const MerchantForm = () => {
         business_address: formData.businessAddress,
         contact_email: formData.contactEmail,
         contact_phone_number: formData.contactPhoneNumber,
+        password: formData.password
       };
 
       await emailjs.send(serviceID, templateID, emailParams, userID);

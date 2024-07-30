@@ -129,16 +129,12 @@ export const Merchantproducts = () => {
       alert("Data Added");
 
        // EmailJS configuration
-       const serviceID = 'service_qd6wjis';
-       const templateID = 'template_38jnodk';
-       const userID = 'qAkPR5RhKGseM24tp';
+       const serviceID = 'service_tteiinq';
+       const templateID = 'template_kflpvt9';
+       const userID = '-5-Vn5AlZtU90aYG4';
    
        const emailParams = {
-         business_name: formData.username,
-         business_type: formData.businessType,
-         business_address: formData.businessAddress,
-         contact_email: formData.contactEmail,
-         contact_phone_number: formData.contactPhoneNumber,
+         brand_name: brand,
        };
    
        await emailjs.send(serviceID, templateID, emailParams, userID);
