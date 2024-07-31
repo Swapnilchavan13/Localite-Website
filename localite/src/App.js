@@ -10,6 +10,7 @@ import { Login } from './Component/Login';
 import { AuthProvider } from './Component/AuthContext';
 import { Merchantproducts } from './Component/Merchantproducts';
 import ProtectedRoute from './Component/ProtectedRoute';
+import Privacy from './Component/Privacy';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/contactus" element={<ContactUs />} />
       <Route path="/community" element={<Community />} />
       <Route path="/terms" element={<Terms />} />
+      <Route path="/privacy" element={<Privacy />} />
       <Route path="/careers" element={<Careers />} />
       <Route path="/merchantform" element={<MerchantForm />} />
 
