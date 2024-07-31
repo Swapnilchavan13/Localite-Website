@@ -19,7 +19,7 @@ const Terms = () => {
         <p>If you choose to use Localite Services, you are responsible for maintaining the confidentiality of your account and password and for restricting access to your devices. You agree to accept responsibility for all activities that occur under your account or password. You should take all necessary steps to ensure that your password remains confidential and secure. You should inform us immediately if you have any reason to believe that your password has become known to anyone else, or if the password is being, or is likely to be, used in an unauthorized manner.</p>
         
         <h2>2. Privacy</h2>
-        <p>Please review our [Privacy Notice](#), which also governs your use of Localite Services, to understand our practices.</p>
+        <p>Please review our <a href="privacy">[Privacy Notice]</a>, which also governs your use of Localite Services, to understand our practices.</p>
 
         <h2>3. E-Platform for Communication</h2>
         <p>You acknowledge that the website is an online platform that enables you to purchase products listed at the price indicated therein at any time from any location using the internet. Localite is only a facilitator and is not and cannot be a party to or control in any manner any transactions on the website.</p>
