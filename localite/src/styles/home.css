@@ -562,8 +562,10 @@ font-size: smaller;
 
 .twodivs {
   display: flex;
-  width: 100%;
-  justify-content: space-evenly;
+  width: 90%;
+  justify-content: space-between;
+  padding-left: 50px;
+  /* margin-left: 30px; */
 }
 
 .mainmain {
@@ -1024,6 +1026,8 @@ font-size: smaller;
 .twodivs {
   display: flex;
   width: 100%;
+  padding-left: 0px;
+
   gap: 80px;
   justify-content: space-around;
 }

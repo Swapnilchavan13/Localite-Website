@@ -6,16 +6,16 @@ export const Footer = () => {
     return (
         <footer className="footer">
             <div className='mainfooter'>
-            <div>
-            <a href="/">
-            <img className='whitelogo' src="White_logo.png" alt="" />
-            <hr className='footerline' />
-            </a>
-            <div className="footer-content">
-                <p>Empowering  SMEs with Hyper Local visibility,
-                     <br />comprehensive solution and innovative features and help SMEs thrive in Local Market.</p>
-            </div>
-            </div>
+                <div>
+                    <a href="/">
+                        <img className='whitelogo' src="White_logo.png" alt="" />
+                        <hr className='footerline' />
+                    </a>
+                    <div className="footer-content">
+                        <p>Empowering  SMEs with Hyper Local visibility,
+                            <br />comprehensive solution and innovative features and help SMEs thrive in Local Market.</p>
+                    </div>
+                </div>
 
                 <div className='twodivs'>
                     <div id='footernav' className="footer-section links">
@@ -25,15 +25,24 @@ export const Footer = () => {
                             <li><a href="https://alittleworld.com/" target='_blank' rel="noreferrer">About us</a></li>
                             {/* <li><a href="community">Community</a></li> */}
                             <li><a href="careers">Career</a></li>
-                            <li><a href="terms">Terms</a></li>
-                            <li><a href="Privacy">Privacy</a></li>
                             <li><a href="ContactUs">Contact us</a></li>
 
                         </ul>
                     </div>
 
+                    <div id='footernav' className="footer-section links">
+
+                        <ul>
+                            <li><a href="terms">Terms</a></li>
+                            <li><a href="Privacy">Privacy</a></li>
+                            <li><a href="shipping">Shipping</a></li>
+                            <li><a href="return">Return & Refund</a></li>
+
+                        </ul>
+                    </div>
+
                     <div id='footerimgs' className="footer-section follow">
-                        <p style={{marginBottom:'-22px'}}>Follow Us:</p>
+                        <p style={{ marginBottom: '-22px' }}>Follow Us:</p>
                         <img className='img1' src="https://icones.pro/wp-content/uploads/2021/02/instagram-logo-icone4.png" alt="" />
                         <br />
                         <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="" /><br />

@@ -11,6 +11,8 @@ import { AuthProvider } from './Component/AuthContext';
 import { Merchantproducts } from './Component/Merchantproducts';
 import ProtectedRoute from './Component/ProtectedRoute';
 import Privacy from './Component/Privacy';
+import Return from './Component/Return';
+import Shipping from './Component/Shipping';
 
 function App() {
   return (
@@ -23,6 +25,10 @@ function App() {
       <Route path="/community" element={<Community />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/privacy" element={<Privacy />} />
+      <Route path="/return" element={<Return />} />
+      <Route path="/shipping" element={<Shipping />} />
+
+
       <Route path="/careers" element={<Careers />} />
       <Route path="/merchantform" element={<MerchantForm />} />
 
