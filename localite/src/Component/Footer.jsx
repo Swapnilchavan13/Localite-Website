@@ -46,7 +46,9 @@ export const Footer = () => {
                         <img className='img1' src="https://icones.pro/wp-content/uploads/2021/02/instagram-logo-icone4.png" alt="" />
                         <br />
                         <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="" /><br />
+                        <a href="https://www.linkedin.com/company/mylocalite/about/" target='_blank'>
                         <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" alt="" /><br />
+                        </a>
                         <img src="https://w7.pngwing.com/pngs/676/1/png-transparent-x-icon-ex-twitter-tech-companies-social-media-thumbnail.png" alt="" />
                     </div>
                 </div>

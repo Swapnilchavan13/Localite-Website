@@ -314,6 +314,9 @@ export const MerchantForm = () => {
               <input type="file" name="proofOfAddress" onChange={handleChange} />
             </label>
           </div>
+          <br />
+
+          <p>I understand that the due payment will be made to the Localite representative deputed to me. My membership will be activated only post that.</p>
 
           <button type="submit" style={buttonStyle}>Submit</button>
         </form>
