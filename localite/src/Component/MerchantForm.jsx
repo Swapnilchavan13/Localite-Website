@@ -5,7 +5,7 @@ import { Topnavbar } from './Topnavbar';
 import axios from 'axios';
 
 export const MerchantForm = () => {
-  const categories = ['Automotive&Transport', 'Clothing', 'DryCleaningServices', 'EducationandLearning', 'Entertainment&Leisure', 'Food', 'Food&Beverages', 'Handbags', 'Healthcare&Wellness', 'Home&Maintenance', 'Jewellery', 'PersonalCare', 'ProfessionalServices', 'Skin Care'];
+  const categories = ['Automotive & Transport', 'Clothing', 'DryCleaning Services', 'Educationand Learning', 'Entertainment & Leisure', 'Food', 'Food & Beverages', 'Hair Care', 'Healthcare & Wellness', 'Home & Maintenance', 'Jewellery', 'Pet & Petcare', 'PersonalCare', 'Professional Services', 'Salon & Spa', 'Skin Care', 'Other'];
   
   const [formData, setFormData] = useState({
     businessName: '',
