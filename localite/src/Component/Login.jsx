@@ -41,21 +41,32 @@ export const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <h2>Merchant Login</h2>
+    <div className="login-container" style={{ 
+      backgroundImage: "url('/bg2.png')", 
+      backgroundSize: 'cover', 
+      backgroundPosition: 'center', 
+      backgroundRepeat: 'no-repeat' 
+    }}>
+      <div id='centreimgdiv'>
+      <img className='loginpinimg' src="Localite_icon.png" alt="" />
+      <h2>Welcome! to</h2>
+      <img className='loginpinimg2' width="100px" src="/blue-logo.png" alt="" />
+      <br />
+      <p className='ptaglogin'>Your partner for Hyperlocal Marketing</p>
+      <br />
+      </div>
       <form onSubmit={handleSubmit} className="login-form">
         <div className="form-group">
-          <label htmlFor="mobileNumber">Mobile Number:</label>
           <input
             type="tel"
             id="mobileNumber"
             value={mobileNumber}
             onChange={(e) => setMobileNumber(e.target.value)}
+            placeholder='Enter Mobile Number'
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="loginPin">Login PIN:</label>
           <input
             type="password"
             id="loginPin"
@@ -65,6 +76,7 @@ export const Login = () => {
           />
         </div>
         {error && <p className="error-message">{error}</p>}
+        <p color='red'>Forget password?</p>
         <button type="submit">Login</button>
       </form>
     </div>

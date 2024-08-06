@@ -22,6 +22,8 @@ export const Merchantproducts = () => {
   const [discountedPrice, setDiscountedPrice] = useState('');
   const [productCategories, setProductCategories] = useState([]);
   const [entryCount, setEntryCount] = useState(0);
+  const [unit, setUnit] = useState(0);
+
 
   // Preview states
   const [brandImagePreview, setBrandImagePreview] = useState('');
@@ -29,6 +31,9 @@ export const Merchantproducts = () => {
   const [photo2Preview, setPhoto2Preview] = useState('');
   const [additionalPhoto1Preview, setAdditionalPhoto1Preview] = useState('');
   const [additionalPhoto2Preview, setAdditionalPhoto2Preview] = useState('');
+
+  const [merchantData, setMerchantData] = useState(null);
+
 
   useEffect(() => {
     // Fetch product categories dynamically
@@ -78,6 +83,11 @@ export const Merchantproducts = () => {
 
   useEffect(() => {
     if (user) {
+      fetch(`http://localhost:3005/getmerchant/${user.username}`)
+        .then(response => response.json())
+        .then(data => setMerchantData(data))
+        .catch(error => console.error('Error fetching merchant data:', error));
+
       fetch(`https://localitebackend.localite.services/entry-count?username=${user.username}`)
         .then(response => response.json())
         .then(data => setEntryCount(data.count))
@@ -100,8 +110,8 @@ export const Merchantproducts = () => {
     const formData = new FormData();
     formData.append('username', user.username);
     formData.append('appSection', appSection);
-    formData.append('productCategory', productCategory);
-    formData.append('brand', brand);
+    formData.append('productCategory', merchantData.businessType);
+    formData.append('brand', merchantData.businessName);
     if (brandImage) formData.append('brandImage', brandImage);
     formData.append('title', title);
     formData.append('offerHeadline', offerHeadline);
@@ -113,6 +123,7 @@ export const Merchantproducts = () => {
     if (additionalPhoto1) formData.append('additionalPhoto1', additionalPhoto1);
     if (additionalPhoto2) formData.append('additionalPhoto2', additionalPhoto2);
     formData.append('price', price);
+    formData.append('unit', unit);
     formData.append('discountedPrice', discountedPrice);
 
     try {
@@ -154,6 +165,7 @@ export const Merchantproducts = () => {
       setAdditionalPhoto2(null);
       setVideoLink('');
       setPrice('');
+      setUnit('');
       setDiscountedPrice('');
 
       // Increment entry count
@@ -243,9 +255,18 @@ export const Merchantproducts = () => {
         }
       `}</style>
       <form onSubmit={handleSubmit} className="form">
-        
         <h2 className="form-heading">Localite Merchant Product Data Form (Form-4)</h2>
-        {user && <p>Logged in as: {user.username}</p>}
+        {/* {user && <p>Logged in as:  {merchantData.businessName}</p>} */}
+        {merchantData && (
+          <div>
+            <p><strong>Business Name:</strong> {merchantData.businessName} ({merchantData.businessType})</p>
+            <a href={`https://localitebackend.localite.services/${merchantData.brandLogo}`} target='_blank'>
+            <img style={{width:"80px"}} src={`https://localitebackend.localite.services/${merchantData.brandLogo}`} alt="Profile" className="image-preview" />
+
+            </a>
+          </div>
+        )}
+
         <h4>You have {3 - entryCount} submissions remaining this week.</h4>
         <button className='submit-button' type="button" onClick={logout}>Logout</button>
 
@@ -258,12 +279,12 @@ export const Merchantproducts = () => {
           <select value={appSection} onChange={(e) => setAppSection(e.target.value)}>
             <option value="">Select...</option>
             <option value="marketplace">Marketplace</option>
-            <option value="offers">Offers</option>
+            <option value="offers">Deals</option>
             {/* <option value="free">Free</option> */}
           </select>
         </div>
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Product Category:</label>
           <select value={productCategory} onChange={(e) => setProductCategory(e.target.value)}>
             <option value="">Select...</option>
@@ -271,18 +292,18 @@ export const Merchantproducts = () => {
               <option key={index} value={category}>{category}</option>
             ))}
           </select>
-        </div>
+        </div> */}
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Brand:</label>
           <input type="text" value={brand} onChange={(e) => setBrand(e.target.value)} placeholder="Enter brand name" />
-        </div>
+        </div> */}
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Upload Brand Image:</label>
           <input type="file" onChange={(e) => setBrandImage(e.target.files[0])} />
           {brandImagePreview && <img src={brandImagePreview} alt="Brand Preview" className="image-preview" />}
-        </div>
+        </div> */}
 
         <div className="form-group">
           <label>Title:</label>
@@ -306,7 +327,7 @@ export const Merchantproducts = () => {
 
         <div className="form-group">
           <label>Upload Photo:</label>
-          <input type="file" onChange={(e) => setPhoto(e.target.files[0])} />
+          <input type="file" onChange={(e) => setPhoto(e.target.files[0])} required/>
           {photoPreview && <img src={photoPreview} alt="Photo Preview" className="image-preview" />}
         </div>
 
@@ -317,20 +338,38 @@ export const Merchantproducts = () => {
         </div>
 
         <div className="form-group">
-          <label>Upload Additional Photo 1:</label>
+          <label>Add more photo (Optional):</label>
           <input type="file" onChange={(e) => setAdditionalPhoto1(e.target.files[0])} />
           {additionalPhoto1Preview && <img src={additionalPhoto1Preview} alt="Additional Photo 1 Preview" className="image-preview" />}
         </div>
 
         <div className="form-group">
-          <label>Upload Additional Photo 2:</label>
-          <input type="file" onChange={(e) => setAdditionalPhoto2(e.target.files[0])} />
-          {additionalPhoto2Preview && <img src={additionalPhoto2Preview} alt="Additional Photo 2 Preview" className="image-preview" />}
-        </div>
+  <label>Upload video (Optional):</label>
+  <input 
+    type="file" 
+    accept="video/*" 
+    onChange={(e) => setAdditionalPhoto2(e.target.files[0])} 
+  />
+  <br />
+  <br />
+
+  {additionalPhoto2Preview && (
+    <video style={{width: "250px"}} controls className="video-preview">
+      <source src={additionalPhoto2Preview} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  )}
+</div>
+
 
         <div className="form-group">
           <label>Video Link:</label>
           <input type="text" value={videoLink} onChange={(e) => setVideoLink(e.target.value)} placeholder="Enter video link" />
+        </div>
+
+        <div className="form-group">
+          <label>No. of units:</label>
+          <input type="number" value={unit} onChange={(e) => setUnit(e.target.value)} placeholder="Enter price" />
         </div>
 
         <div className="form-group">
