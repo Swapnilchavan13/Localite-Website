@@ -149,7 +149,7 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
       alert("Data Added");
   
       // EmailJS configuration
-      const serviceID = 'service_tteiinq';
+      const serviceID = 'service_eq6t0oc';
       const templateID = 'template_kflpvt9';
       const userID = '-5-Vn5AlZtU90aYG4';
   
