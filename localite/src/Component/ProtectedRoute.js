@@ -5,7 +5,7 @@ import { useAuth } from '../Component/AuthContext';
 
 const ProtectedRoute = ({ element }) => {
   const { user } = useAuth();
-  return user ? element : <Navigate to="/merchantlogin" />;
+  return user ? element : <Navigate to="/login" />;
 };
 
 export default ProtectedRoute;

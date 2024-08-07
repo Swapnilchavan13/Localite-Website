@@ -13,6 +13,7 @@ import ProtectedRoute from './Component/ProtectedRoute';
 import Privacy from './Component/Privacy';
 import Return from './Component/Return';
 import Shipping from './Component/Shipping';
+import { Prelogin } from './Component/Prelogin';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Route path="/careers" element={<Careers />} />
       <Route path="/merchantform" element={<MerchantForm />} />
 
+      <Route path="/login" element={<Prelogin />} />
       <Route path="/merchantlogin" element={<Login />} />
       <Route path="/merchant" element={<ProtectedRoute element={<Merchantproducts />} />} />
       

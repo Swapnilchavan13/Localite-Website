@@ -225,6 +225,18 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
           margin-bottom: 20px;
           font-weight: bold;
         }
+          .form-group input{
+           margin-top:-30px;
+          }
+
+           .form-group select{
+           margin-top:-30px;
+           }
+
+           .form-group textarea {
+           margin-top:-10px;
+
+           }
         
         .form-group input,
         .form-group select,
@@ -250,7 +262,7 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
           border-radius: 4px;
           cursor: pointer;
           margin-top: 30px;
-          width: 50%;
+          width: 40%;
         }
         
         .submit-button:hover {
@@ -289,11 +301,8 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
         )}
 
         <h4>You have {3 - entryCount} submissions remaining this week.</h4>
-        <button className='submit-button' type="button" onClick={logout}>Logout</button>
 
-<br />
-<br />
-<br />
+
 
         <div className="form-group">
           <label>App Section <span style={{color:'red'}}>*</span></label>
@@ -329,21 +338,27 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
         <div className="form-group">
           <label>Title <span style={{color:'red'}}>*</span></label>
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter title" />
+          <p className='belowp'>ex. Elevate Your Wardrobe at NIshly Fashion House.</p>
         </div>
 
         <div className="form-group">
           <label>Offer Headline <span style={{color:'red'}}>*</span></label>
           <input type="text" value={offerHeadline} onChange={(e) => setOfferHeadline(e.target.value)} placeholder="Enter offer headline" />
+          <p className='belowp'>Note: The Content added here will show on the image.</p>
+
         </div>
 
         <div className="form-group">
           <label>Description <span style={{color:'red'}}>*</span></label>
           <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Enter description"></textarea>
+          <p className='belowp'>Note: please enter the product details.</p>
+
         </div>
 
         <div className="form-group">
           <label>Excerpt Description <span style={{color:'red'}}>*</span></label>
           <textarea value={excerptDescription} onChange={(e) => setExcerptDescription(e.target.value)} placeholder="Enter excerpt description"></textarea>
+      
         </div>
 
         <div className="form-group">
@@ -403,9 +418,14 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
           <input type="text" value={discountedPrice} onChange={(e) => setDiscountedPrice(e.target.value)} placeholder="Enter discounted percentage %" />
         </div>
 
+
+<div className='btndivs'>
+        <p style={{marginTop:'40px', marginLeft:'-80px', color:'blue'}} onClick={logout}>Logout</p>
+
         <button type="submit" className="submit-button" disabled={isSubmitting}>
     {isSubmitting ? 'Submitting...' : 'Submit'}
   </button>
+</div>
 
   {uploadStatus && (
     <div className="popup-message2">

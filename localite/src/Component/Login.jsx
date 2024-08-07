@@ -49,10 +49,12 @@ export const Login = () => {
     }}>
       <div id='centreimgdiv'>
       <img className='loginpinimg' src="Localite_icon.png" alt="" />
-      <h2>Welcome! to</h2>
-      <img className='loginpinimg2' width="100px" src="/blue-logo.png" alt="" />
+      <p className='lheading'>We’re excited to  <br />
+      have you onboard!</p>
+      {/* <img className='loginpinimg2' width="100px" src="/blue-logo.png" alt="" />
       <br />
       <p className='ptaglogin'>Your partner for Hyperlocal Marketing</p>
+      <br /> */}
       <br />
       </div>
       <form onSubmit={handleSubmit} className="login-form">

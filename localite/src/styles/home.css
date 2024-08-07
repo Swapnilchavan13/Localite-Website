@@ -18,6 +18,12 @@ body {
 }
 
 
+.btndivs{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
 /* App.css or your main stylesheet */
 
 /* Overlay styles */
