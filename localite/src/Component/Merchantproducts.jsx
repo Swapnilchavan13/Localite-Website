@@ -83,7 +83,7 @@ export const Merchantproducts = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:3005/getmerchant/${user.username}`)
+      fetch(`https://localitebackend.localite.services/getmerchant/${user.username}`)
         .then(response => response.json())
         .then(data => setMerchantData(data))
         .catch(error => console.error('Error fetching merchant data:', error));
@@ -195,7 +195,6 @@ export const Merchantproducts = () => {
         }
         
         .form {
-          background: white;
           padding: 40px;
           border-radius: 8px;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -229,7 +228,7 @@ export const Merchantproducts = () => {
         }
         
         .submit-button {
-          background-color: #28a745;
+          background-color: #f61717;
           color: white;
           padding: 10px;
           border: none;
@@ -254,8 +253,15 @@ export const Merchantproducts = () => {
           height: auto;
         }
       `}</style>
-      <form onSubmit={handleSubmit} className="form">
-        <h2 className="form-heading">Localite Merchant Product Data Form (Form-4)</h2>
+      <form onSubmit={handleSubmit} className="form" style={{ 
+      backgroundImage: "url('/bg3.png')", 
+      backgroundSize: 'cover', 
+      backgroundPosition: 'center', 
+      backgroundRepeat: 'no-repeat' 
+    }}>
+        <h2 className="form-heading" style={{ marginTop: '-40px', textDecoration: 'underline' }}>Post Creation Form <span style={{marginLeft:'20%'}} ><img style={{width:'30px', marginTop:'30px'}} src="Localite_icon.png" alt="" /></span></h2>
+
+        <p>We are going to create the posts for you</p>
         {/* {user && <p>Logged in as:  {merchantData.businessName}</p>} */}
         {merchantData && (
           <div>
@@ -275,7 +281,7 @@ export const Merchantproducts = () => {
 <br />
 
         <div className="form-group">
-          <label>App Section:</label>
+          <label>App Section <span style={{color:'red'}}>*</span></label>
           <select value={appSection} onChange={(e) => setAppSection(e.target.value)}>
             <option value="">Select...</option>
             <option value="marketplace">Marketplace</option>
@@ -306,45 +312,45 @@ export const Merchantproducts = () => {
         </div> */}
 
         <div className="form-group">
-          <label>Title:</label>
+          <label>Title <span style={{color:'red'}}>*</span></label>
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter title" />
         </div>
 
         <div className="form-group">
-          <label>Offer Headline:</label>
+          <label>Offer Headline <span style={{color:'red'}}>*</span></label>
           <input type="text" value={offerHeadline} onChange={(e) => setOfferHeadline(e.target.value)} placeholder="Enter offer headline" />
         </div>
 
         <div className="form-group">
-          <label>Description:</label>
+          <label>Description <span style={{color:'red'}}>*</span></label>
           <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Enter description"></textarea>
         </div>
 
         <div className="form-group">
-          <label>Excerpt Description:</label>
+          <label>Excerpt Description <span style={{color:'red'}}>*</span></label>
           <textarea value={excerptDescription} onChange={(e) => setExcerptDescription(e.target.value)} placeholder="Enter excerpt description"></textarea>
         </div>
 
         <div className="form-group">
-          <label>Upload Photo:</label>
+          <label>Upload Photo <span style={{color:'red'}}>*</span></label>
           <input type="file" onChange={(e) => setPhoto(e.target.files[0])} required/>
           {photoPreview && <img src={photoPreview} alt="Photo Preview" className="image-preview" />}
         </div>
 
         <div className="form-group">
-          <label>Upload Photo 2:</label>
+          <label>Upload Photo 2 <span style={{color:'red'}}>*</span></label>
           <input type="file" onChange={(e) => setPhoto2(e.target.files[0])} />
           {photo2Preview && <img src={photo2Preview} alt="Photo 2 Preview" className="image-preview" />}
         </div>
 
         <div className="form-group">
-          <label>Add more photo (Optional):</label>
+          <label>Upload Photo 3 (Optional)</label>
           <input type="file" onChange={(e) => setAdditionalPhoto1(e.target.files[0])} />
           {additionalPhoto1Preview && <img src={additionalPhoto1Preview} alt="Additional Photo 1 Preview" className="image-preview" />}
         </div>
 
         <div className="form-group">
-  <label>Upload video (Optional):</label>
+  <label>Upload video (Optional)</label>
   <input 
     type="file" 
     accept="video/*" 
@@ -363,22 +369,22 @@ export const Merchantproducts = () => {
 
 
         <div className="form-group">
-          <label>Video Link:</label>
+          <label>Video Link (Optional)</label>
           <input type="text" value={videoLink} onChange={(e) => setVideoLink(e.target.value)} placeholder="Enter video link" />
         </div>
 
         <div className="form-group">
-          <label>No. of units:</label>
+          <label>Units <span style={{color:'red'}}>*</span></label>
           <input type="number" value={unit} onChange={(e) => setUnit(e.target.value)} placeholder="Enter price" />
         </div>
 
         <div className="form-group">
-          <label>Price:</label>
+          <label>Price <span style={{color:'red'}}>*</span></label>
           <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Enter price" />
         </div>
 
         <div className="form-group">
-          <label>Discounted Percentage:</label>
+          <label>Discounted Percentage <span style={{color:'red'}}>*</span></label>
           <input type="text" value={discountedPrice} onChange={(e) => setDiscountedPrice(e.target.value)} placeholder="Enter discounted percentage %" />
         </div>
 

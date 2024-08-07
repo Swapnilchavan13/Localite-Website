@@ -62,7 +62,7 @@ export const Login = () => {
             id="mobileNumber"
             value={mobileNumber}
             onChange={(e) => setMobileNumber(e.target.value)}
-            placeholder='Enter Mobile Number'
+            placeholder='📞 Enter Mobile Number'
             required
           />
         </div>
@@ -72,11 +72,13 @@ export const Login = () => {
             id="loginPin"
             value={loginPin}
             onChange={(e) => setLoginPin(e.target.value)}
+            placeholder='🔐 Enter Login Pin'
             required
           />
         </div>
         {error && <p className="error-message">{error}</p>}
-        <p color='red'>Forget password?</p>
+        <p style={{color: 'red'}}>Forget password?</p>
+        <br />
         <button type="submit">Login</button>
       </form>
     </div>
