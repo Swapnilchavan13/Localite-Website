@@ -35,6 +35,10 @@ export const Merchantproducts = () => {
   const [merchantData, setMerchantData] = useState(null);
 
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
+
+
   useEffect(() => {
     // Fetch product categories dynamically
     const categories = ['Automotive&Transport', 'Clothing', 'DryCleaningServices', 'EducationandLearning', 'Entertainment&Leisure', 'Food', 'Food&Beverages', 'Handbags', 'Healthcare&Wellness', 'Home&Maintenance', 'Jewellery', 'PersonalCare', 'ProfessionalServices', 'Skin Care'];
@@ -97,22 +101,27 @@ export const Merchantproducts = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     if (!user) {
       alert("You must be logged in to submit data.");
       return;
     }
-
+  
     if (entryCount >= 3) {
       alert('You can only submit 3 entries per week.');
       return;
     }
+
+  
+    setIsSubmitting(true);  // Disable the button
+    setUploadStatus('Data uploading to Localite...');
 
     const formData = new FormData();
     formData.append('username', user.username);
     formData.append('appSection', appSection);
     formData.append('productCategory', merchantData.businessType);
     formData.append('brand', merchantData.businessName);
-    if (brandImage) formData.append('brandImage', brandImage);
+    if (brandImage) formData.append('brandImage', merchantData.brandLogo);
     formData.append('title', title);
     formData.append('offerHeadline', offerHeadline);
     formData.append('description', description);
@@ -131,25 +140,25 @@ export const Merchantproducts = () => {
         method: 'POST',
         body: formData
       });
-
+  
       if (!res.ok) {
         throw new Error('Network response was not ok');
       }
-
+  
       const data = await res.json();
       alert("Data Added");
-
-       // EmailJS configuration
-       const serviceID = 'service_tteiinq';
-       const templateID = 'template_kflpvt9';
-       const userID = '-5-Vn5AlZtU90aYG4';
-   
-       const emailParams = {
-         brand_name: brand,
-       };
-   
-       await emailjs.send(serviceID, templateID, emailParams, userID);
-
+  
+      // EmailJS configuration
+      const serviceID = 'service_tteiinq';
+      const templateID = 'template_kflpvt9';
+      const userID = '-5-Vn5AlZtU90aYG4';
+  
+      const emailParams = {
+        brand_name: merchantData.businessName,
+      };
+  
+      await emailjs.send(serviceID, templateID, emailParams, userID);
+  
       // Reset all input fields after successful submission
       setAppSection('');
       setProductCategory('');
@@ -167,12 +176,18 @@ export const Merchantproducts = () => {
       setPrice('');
       setUnit('');
       setDiscountedPrice('');
-
+  
       // Increment entry count
       incrementEntryCount();
+      
+      setUploadStatus('Data uploaded successfully!');
     } catch (err) {
       console.error('Error submitting form', err);
       alert('Error submitting form. Please try again.');
+      setUploadStatus('Error uploading data. Please try again.');
+    } finally {
+      setIsSubmitting(false);  // Re-enable the button
+      setTimeout(() => setUploadStatus(''), 3000);  // Clear the status after 3 seconds
     }
   };
 
@@ -388,7 +403,16 @@ export const Merchantproducts = () => {
           <input type="text" value={discountedPrice} onChange={(e) => setDiscountedPrice(e.target.value)} placeholder="Enter discounted percentage %" />
         </div>
 
-        <button type="submit" className="submit-button">Submit</button>
+        <button type="submit" className="submit-button" disabled={isSubmitting}>
+    {isSubmitting ? 'Submitting...' : 'Submit'}
+  </button>
+
+  {uploadStatus && (
+    <div className="popup-message2">
+      {uploadStatus}
+    </div>
+  )}
+
       </form>
     </>
   );
