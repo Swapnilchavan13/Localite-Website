@@ -43,7 +43,9 @@ export const Footer = () => {
 
                     <div id='footerimgs' className="footer-section follow">
                         <p style={{ marginBottom: '-22px' }}>Follow Us:</p>
+                        <a href="https://www.instagram.com/localite.india/" target='_blank'>
                         <img className='img1' src="https://icones.pro/wp-content/uploads/2021/02/instagram-logo-icone4.png" alt="" />
+                        </a>
                         <br />
                         <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="" /><br />
                         <a href="https://www.linkedin.com/company/mylocalite/about/" target='_blank'>
