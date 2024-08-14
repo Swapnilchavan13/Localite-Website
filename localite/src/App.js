@@ -14,6 +14,7 @@ import Privacy from './Component/Privacy';
 import Return from './Component/Return';
 import Shipping from './Component/Shipping';
 import { Prelogin } from './Component/Prelogin';
+import { Removemydata } from './Component/Removemydata';
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/return" element={<Return />} />
       <Route path="/shipping" element={<Shipping />} />
+      <Route path="/removemydata" element={<Removemydata />} />
+
 
 
       <Route path="/careers" element={<Careers />} />
