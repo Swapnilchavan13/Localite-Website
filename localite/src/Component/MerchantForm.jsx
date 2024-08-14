@@ -3,8 +3,12 @@ import emailjs from 'emailjs-com';
 import { Footer } from './Footer';
 import { Topnavbar } from './Topnavbar';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 export const MerchantForm = () => {
+  const navigate = useNavigate();
+
   const categories = ['Automotive & Transport', 'Clothing', 'DryCleaning Services', 'Educationand Learning', 'Entertainment & Leisure', 'Food', 'Food & Beverages', 'Hair Care', 'Healthcare & Wellness', 'Home & Maintenance', 'Jewellery', 'Pet & Petcare', 'PersonalCare', 'Professional Services', 'Salon & Spa', 'Skin Care', 'Other'];
   
   const [formData, setFormData] = useState({
@@ -63,14 +67,20 @@ export const MerchantForm = () => {
 
   const handleSave = async (e) => {
     e.preventDefault();
-
+  
+    // Check if the phone number is provided
+    if (!formData.contactPhoneNumber) {
+      alert("Phone number is compulsory. Please provide a phone number.");
+      return; // Prevent form submission if phone number is missing
+    }
+  
     const formDataToSend = new FormData();
     for (const key in formData) {
       if (formData[key]) {
         formDataToSend.append(key, formData[key]);
       }
     }
-
+  
     try {
       const response = await axios.post('https://localitebackend.localite.services/addmerchants', formDataToSend, {
         headers: {
@@ -79,11 +89,11 @@ export const MerchantForm = () => {
       });
       console.log('Data submitted successfully:', response.data);
       alert("Data is Submitted to Localite team");
-
+  
       const serviceID = 'service_7sl4p61';
       const templateID = 'template_temjje3';
       const userID = 'PhuU7kore77nPwnF5';
-
+  
       const emailParams = {
         business_name: formData.businessName,
         business_type: formData.businessType,
@@ -92,9 +102,9 @@ export const MerchantForm = () => {
         contact_phone_number: formData.contactPhoneNumber,
         password: formData.password
       };
-
+  
       await emailjs.send(serviceID, templateID, emailParams, userID);
-
+  
       setFormData({
         businessName: '',
         businessType: '',
@@ -125,11 +135,14 @@ export const MerchantForm = () => {
       });
       setProfileImageUrl(null);
       setBrandLogoUrl(null);
-
+  
+      // Redirect to login page after successful submission
+      navigate('/login');
     } catch (error) {
       console.error('Failed to submit data:', error);
     }
   };
+  
 
   const formStyle = {
     margin: '0 auto',
