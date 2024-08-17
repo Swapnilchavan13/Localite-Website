@@ -68,11 +68,31 @@ export const MerchantForm = () => {
   const handleSave = async (e) => {
     e.preventDefault();
   
-    // Check if the phone number is provided
-    if (!formData.contactPhoneNumber) {
-      alert("Phone number is compulsory. Please provide a phone number.");
-      return; // Prevent form submission if phone number is missing
+    // Validation logic
+  const requiredFields = [
+    { field: 'personName', message: 'Person Name is compulsory. Please provide a Person Name.' },
+    { field: 'lastName', message: 'Last Name is compulsory. Please provide a Last Name.' },
+    { field: 'password', message: 'Password is compulsory. Please provide a Password.' },
+    { field: 'businessName', message: 'Business Name is compulsory. Please provide a Business Name.' },
+    { field: 'businessType', message: 'Business Type is compulsory. Please select a Business Type.' },
+    { field: 'businessAddress', message: 'Business Address is compulsory. Please provide a Business Address.' },
+    { field: 'contactEmail', message: 'Contact Email is compulsory. Please provide a Contact Email.' },
+    { field: 'contactPhoneNumber', message: 'Phone Number is compulsory. Please provide a Phone Number.' },
+    { field: 'websiteUrl', message: 'Website URL is compulsory. Please provide a Website URL.' },
+    { field: 'operationHours', message: 'Operation Hours are compulsory. Please provide Operation Hours.' },
+    { field: 'yearsOfBusiness', message: 'Years of Business is compulsory. Please provide Years of Business.' },
+    { field: 'numberOfEmployees', message: 'Number of Employees is compulsory. Please provide Number of Employees.' },
+    { field: 'productDescription', message: 'Product Description is compulsory. Please provide a Product Description.' },
+    { field: 'preferredCategories', message: 'Preferred Categories are compulsory. Please select Preferred Categories.' },
+    { field: 'offerFrequency', message: 'Offer Frequency is compulsory. Please provide Offer Frequency.' }
+    ];
+
+  for (const { field, message } of requiredFields) {
+    if (!formData[field]) {
+      alert(message);
+      return;
     }
+  }
   
     const formDataToSend = new FormData();
     for (const key in formData) {
@@ -201,14 +221,14 @@ export const MerchantForm = () => {
         <h1 style={headingStyle}>Merchant Registration Form (Form-1)</h1>
         <form onSubmit={handleSave}>
           <div style={sectionStyle}>
-            <h2 style={headingStyle}>Personal Information</h2>
-            <label style={labelStyle}>
+            <h2 style={headingStyle}>Personal Information <span style={{color:'red'}}>*</span></h2>
+            {/* <label style={labelStyle}>
               Profile Image:
               <input type="file" name="profileImage" onChange={handleChange} />
               <br />
               <br />
               {profileImageUrl && <img src={profileImageUrl} alt="Profile Preview" style={imagePreviewStyle} />}
-            </label>
+            </label> */}
             <label style={labelStyle}>
               Person Name:
               <input type="text" name="personName" value={formData.personName} onChange={handleChange} style={inputStyle} />
@@ -232,7 +252,7 @@ export const MerchantForm = () => {
 
 
           <div style={sectionStyle}>
-            <h2 style={headingStyle}>Business Information</h2>
+            <h2 style={headingStyle}>Business Information <span style={{color:'red'}}>*</span></h2>
             <label style={labelStyle}>
               Business Name:
               <input type="text" name="businessName" value={formData.businessName} onChange={handleChange} style={inputStyle} />
@@ -261,7 +281,7 @@ export const MerchantForm = () => {
           </div>
 
           <div style={sectionStyle}>
-            <h2 style={headingStyle}>Business Operations</h2>
+            <h2 style={headingStyle}>Business Operations <span style={{color:'red'}}>*</span></h2>
             <label style={labelStyle}>
               Operation Hours:
               <input type="text" name="operationHours" value={formData.operationHours} onChange={handleChange} style={inputStyle} />
@@ -281,15 +301,27 @@ export const MerchantForm = () => {
           </div>
 
           <div style={sectionStyle}>
-            <h2 style={headingStyle}>Localite App Specifics</h2>
+            <h2 style={headingStyle}>Localite App Specifics <span style={{color:'red'}}>*</span></h2>
             <label style={labelStyle}>
-              Preferred Categories:
-              <input type="text" name="preferredCategories" value={formData.preferredCategories} onChange={handleChange} style={inputStyle} />
-            </label>
-            <label style={labelStyle}>
-              Expected Frequency of Offers:
-              <input type="text" name="offerFrequency" value={formData.offerFrequency} onChange={handleChange} style={inputStyle} />
-            </label>
+  Preferred Categories:
+  <select name="preferredCategories" value={formData.preferredCategories} onChange={handleChange} style={inputStyle}>
+    <option value="">Select Preferred Category</option>
+    {categories.map((category, index) => (
+      <option key={index} value={category}>{category}</option>
+    ))}
+  </select>
+</label>
+
+<label style={labelStyle}>
+  Expected Frequency of Offers:
+  <select name="offerFrequency" value={formData.offerFrequency} onChange={handleChange} style={inputStyle}>
+    <option value="">Select Offer Frequency</option>
+    <option value="3 offers in a week">3 offers in a week</option>
+    <option value="2 offers in a week">2 offers in a week</option>
+    <option value="1 offer in a week">1 offer in a week</option>
+  </select>
+</label>
+
             <label style={labelStyle}>
               Specific Requirements:
               <input type="text" name="specificRequirements" value={formData.specificRequirements} onChange={handleChange} style={inputStyle} />
