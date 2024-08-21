@@ -326,7 +326,7 @@ export const MerchantForm = () => {
               <br />
               {brandLogoUrl && <img src={brandLogoUrl} alt="Brand Logo Preview" style={imagePreviewStyle} />}
             </label>
-            
+
     </label>
           </div>
           <div style={sectionStyle}>
@@ -434,7 +434,7 @@ export const MerchantForm = () => {
           </div>
 
           <div style={sectionStyle}>
-            <h2 style={headingStyle}>Business Verification</h2>
+            <h2 style={headingStyle}>Business Verification (Optional)</h2>
             <label style={labelStyle}>
               PAN/TAN Number:
               <input type="text" name="panTanNumber" value={formData.panTanNumber} onChange={handleChange} style={inputStyle} />
