@@ -47,39 +47,55 @@ export const MerchantForm = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   const [otherBusinessType, setOtherBusinessType] = useState('');
+  const [showOtherInput, setShowOtherInput] = useState(false);
+
 
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
 
-
-
   const handleChange = (e) => {
     const { name, value, files } = e.target;
+  
     if (files) {
+      // Handle file inputs
       const file = files[0];
       const url = URL.createObjectURL(file);
+  
       if (name === 'profileImage') {
         setProfileImageUrl(url);
       } else if (name === 'brandLogo') {
         setBrandLogoUrl(url);
       }
-      setFormData({
-        ...formData,
+  
+      // Update formData with the file
+      setFormData(prevData => ({
+        ...prevData,
         [name]: file,
-      });
+      }));
     } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    }
-     // Clear otherBusinessType if another option is selected
-     if (name === 'businessType' && value !== 'Other') {
-      setOtherBusinessType('');
+      // Handle non-file inputs
+      if (name === 'businessType') {
+        if (value === 'Other') {
+          setShowOtherInput(true);
+        } else {
+          setFormData(prevData => ({
+            ...prevData,
+            [name]: value
+          }));
+          setShowOtherInput(false);
+          setOtherBusinessType(''); // Clear otherBusinessType if a different option is selected
+        }
+      } else {
+        setFormData(prevData => ({
+          ...prevData,
+          [name]: value
+        }));
+      }
     }
   };
+  
 
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
@@ -87,6 +103,10 @@ export const MerchantForm = () => {
 
   const handleOtherBusinessTypeChange = (e) => {
     setOtherBusinessType(e.target.value);
+  };
+
+  const handleToggleChange = () => {
+    setShowOtherInput(prevState => !prevState);
   };
 
   const handleBusinessTypeChange = (e) => {
@@ -97,14 +117,20 @@ export const MerchantForm = () => {
     });
   };
 
-    // Effect to handle updates when formData.businessType or otherBusinessType change
-    useEffect(() => {
-      // This code will run when formData.businessType or otherBusinessType changes
-      const finalBusinessType = formData.businessType === 'Other' ? otherBusinessType : formData.businessType;
-  
-      // Handle the updated business type here (e.g., send to server, local processing, etc.)
-      console.log('Updated Business Type:', finalBusinessType);
-    }, [formData.businessType, otherBusinessType]);
+  useEffect(() => {
+    // Update formData.businessType when 'Other' is selected and otherBusinessType changes
+    if (showOtherInput) {
+      setFormData(prevData => ({
+        ...prevData,
+        businessType: otherBusinessType
+      }));
+    } else {
+      setFormData(prevData => ({
+        ...prevData,
+        businessType: ''
+      }));
+    }
+  }, [otherBusinessType, showOtherInput]);
 
   const handleSave = async (e) => {
     e.preventDefault();
@@ -352,8 +378,17 @@ export const MerchantForm = () => {
         </select>
       </label>
 
+      <label style={labelStyle}>
+        <input 
+          type="checkbox" 
+          checked={showOtherInput} 
+          onChange={handleToggleChange} 
+          style={{ marginRight: '8px' }}
+        />
+        Other
+      </label>
 
-        {formData.businessType === 'Other' && (
+      {showOtherInput && (
         <label style={labelStyle}>
           Please specify:
           <input 
