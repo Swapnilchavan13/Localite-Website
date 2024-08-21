@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { Footer } from './Footer';
 import { Topnavbar } from './Topnavbar';
@@ -46,9 +46,13 @@ export const MerchantForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
+  const [otherBusinessType, setOtherBusinessType] = useState('');
+
+
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
+
 
 
   const handleChange = (e) => {
@@ -71,11 +75,36 @@ export const MerchantForm = () => {
         [name]: value,
       });
     }
+     // Clear otherBusinessType if another option is selected
+     if (name === 'businessType' && value !== 'Other') {
+      setOtherBusinessType('');
+    }
   };
 
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
   };
+
+  const handleOtherBusinessTypeChange = (e) => {
+    setOtherBusinessType(e.target.value);
+  };
+
+  const handleBusinessTypeChange = (e) => {
+    const { value } = e.target;
+    setFormData({
+      ...formData,
+      businessType: value
+    });
+  };
+
+    // Effect to handle updates when formData.businessType or otherBusinessType change
+    useEffect(() => {
+      // This code will run when formData.businessType or otherBusinessType changes
+      const finalBusinessType = formData.businessType === 'Other' ? otherBusinessType : formData.businessType;
+  
+      // Handle the updated business type here (e.g., send to server, local processing, etc.)
+      console.log('Updated Business Type:', finalBusinessType);
+    }, [formData.businessType, otherBusinessType]);
 
   const handleSave = async (e) => {
     e.preventDefault();
@@ -270,7 +299,7 @@ export const MerchantForm = () => {
               Last Name:
               <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} style={inputStyle} placeholder='Last Name' />
             </label>
-            <label style={{ display: 'block', marginBottom: '20px' }}>
+            <label style={{ display: 'block', marginBottom: '20px',fontWeight:'bold' }}>
       Set Password:
       <div style={containerStyle}>
         <input
@@ -289,34 +318,67 @@ export const MerchantForm = () => {
           {showPassword ? 'Hide' : '👁'}
         </button>
       </div>
+
+      <label style={labelStyle}>
+              Brand Logo:
+              <input type="file" name="brandLogo" onChange={handleChange} />
+              <br />
+              <br />
+              {brandLogoUrl && <img src={brandLogoUrl} alt="Brand Logo Preview" style={imagePreviewStyle} />}
+            </label>
+            
     </label>
           </div>
           <div style={sectionStyle}>
             <h2 style={headingStyle}>Business/Brands Information <span style={{color:'red'}}>*</span></h2>
             <label style={labelStyle}>
               Business/Brand Name:
-              <input type="text" name="businessName" value={formData.businessName} onChange={handleChange} style={inputStyle} />
+              <input type="text" name="businessName" value={formData.businessName} onChange={handleChange} style={inputStyle} placeholder='This is your brand name on Localite App'/>
             </label>
+          
+
             <label style={labelStyle}>
-              Business Type:
-              <select name="businessType" value={formData.businessType} onChange={handleChange} style={inputStyle}>
-                <option value="">Select Business Type</option>
-                {categories.map((category, index) => (
-                  <option key={index} value={category}>{category}</option>
-                ))}
-              </select>
-            </label>
+        Business Type:
+        <select 
+          name="businessType" 
+          value={formData.businessType} 
+          onChange={handleChange} 
+          style={inputStyle}
+        >
+          <option value="">Select Business Type</option>
+          {categories.map((category, index) => (
+            <option key={index} value={category}>{category}</option>
+          ))}
+        </select>
+      </label>
+
+
+        {formData.businessType === 'Other' && (
+        <label style={labelStyle}>
+          Please specify:
+          <input 
+            type="text" 
+            name="otherBusinessType" 
+            value={otherBusinessType} 
+            onChange={handleOtherBusinessTypeChange} 
+            style={inputStyle} 
+            placeholder="Enter your category"
+          />
+        </label>
+        )}
+
+
             <label style={labelStyle}>
               Business Address:
-              <input type="text" name="businessAddress" value={formData.businessAddress} onChange={handleChange} style={inputStyle} />
+              <input type="text" name="businessAddress" value={formData.businessAddress} onChange={handleChange} style={inputStyle} placeholder='This is your place of business where customers can visit you' />
             </label>
             <label style={labelStyle}>
               Contact Email:
-              <input type="email" name="contactEmail" value={formData.contactEmail} onChange={handleChange} style={inputStyle} />
+              <input type="email" name="contactEmail" value={formData.contactEmail} onChange={handleChange} style={inputStyle} placeholder='Ex.abcd@gamil.com' />
             </label>
             <label style={labelStyle}>
               Contact Phone Number:
-              <input type="text" name="contactPhoneNumber" value={formData.contactPhoneNumber} onChange={handleChange} style={inputStyle} />
+              <input type="text" name="contactPhoneNumber" value={formData.contactPhoneNumber} onChange={handleChange} style={inputStyle} placeholder='Ex.9876543210'/>
             </label>
           </div>
 
@@ -352,6 +414,7 @@ export const MerchantForm = () => {
   </select>
 </label>
 
+
 <label style={labelStyle}>
   Expected Frequency of Offers:
   <select name="offerFrequency" value={formData.offerFrequency} onChange={handleChange} style={inputStyle}>
@@ -360,6 +423,7 @@ export const MerchantForm = () => {
     <option value="2 offers in a week">2 offers in a week</option>
     <option value="1 offer in a week">1 offer in a week</option>
     <option value="None">None</option>
+
   </select>
 </label>
 
