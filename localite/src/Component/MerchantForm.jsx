@@ -409,11 +409,11 @@ export const MerchantForm = () => {
             </label>
             <label style={labelStyle}>
               Contact Email:
-              <input type="email" name="contactEmail" value={formData.contactEmail} onChange={handleChange} style={inputStyle} placeholder='Ex.abcd@gamil.com' />
+              <input type="email" name="contactEmail" value={formData.contactEmail} onChange={handleChange} style={inputStyle} placeholder='abcd@gmail.com' />
             </label>
             <label style={labelStyle}>
               Contact Phone Number:
-              <input type="text" name="contactPhoneNumber" value={formData.contactPhoneNumber} onChange={handleChange} style={inputStyle} placeholder='Ex.9876543210'/>
+              <input type="text" name="contactPhoneNumber" value={formData.contactPhoneNumber} onChange={handleChange} style={inputStyle} placeholder='9876543210'/>
             </label>
           </div>
 
