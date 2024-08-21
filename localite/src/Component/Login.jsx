@@ -79,7 +79,7 @@ export const Login = () => {
           />
         </div>
         {error && <p className="error-message">{error}</p>}
-        <p style={{color: 'red'}}>Forget password?</p>
+        <p style={{color: 'red'}}>Forgot password?</p>
         <br />
         <button type="submit">Login</button>
       </form>

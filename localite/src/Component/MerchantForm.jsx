@@ -43,6 +43,14 @@ export const MerchantForm = () => {
   const [profileImageUrl, setProfileImageUrl] = useState(null);
   const [brandLogoUrl, setBrandLogoUrl] = useState(null);
 
+  const [showPassword, setShowPassword] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (files) {
@@ -63,6 +71,10 @@ export const MerchantForm = () => {
         [name]: value,
       });
     }
+  };
+
+  const toggleShowPassword = () => {
+    setShowPassword((prevState) => !prevState);
   };
 
   const handleSave = async (e) => {
@@ -197,6 +209,7 @@ export const MerchantForm = () => {
     borderRadius: '4px',
     cursor: 'pointer',
     fontSize: '16px',
+    cursor: isChecked ? 'pointer' : 'not-allowed',
   };
 
   const headingStyle = {
@@ -212,6 +225,27 @@ export const MerchantForm = () => {
     objectFit: 'cover',
     marginBottom: '10px',
   };
+
+
+  const buttonStyle1 = {
+    position: 'absolute',
+    right: '30px',
+    top: '40%',
+    transform: 'translateY(-50%)',
+    cursor: 'pointer',
+    background: 'none',
+    border: 'none',
+    padding: '0',
+    fontSize: '16px',
+    color: '#007BFF',
+  };
+
+  const containerStyle = {
+    position: 'relative',
+    marginBottom: '10px',
+    width: '100%',
+  };
+  
 
   return (
     <>
@@ -229,31 +263,38 @@ export const MerchantForm = () => {
               {profileImageUrl && <img src={profileImageUrl} alt="Profile Preview" style={imagePreviewStyle} />}
             </label> */}
             <label style={labelStyle}>
-              Person Name:
-              <input type="text" name="personName" value={formData.personName} onChange={handleChange} style={inputStyle} />
+              First Name:
+              <input type="text" name="personName" value={formData.personName} onChange={handleChange} style={inputStyle} placeholder='First Name' />
             </label>
             <label style={labelStyle}>
               Last Name:
-              <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} style={inputStyle} />
+              <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} style={inputStyle} placeholder='Last Name' />
             </label>
-            <label style={labelStyle}>
-              Set Password:
-              <input type="text" name="password" value={formData.password} onChange={handleChange} style={inputStyle} />
-            </label>
-            <label style={labelStyle}>
-              Brand Logo:
-              <input type="file" name="brandLogo" onChange={handleChange} />
-              <br />
-              <br />
-              {brandLogoUrl && <img src={brandLogoUrl} alt="Brand Logo Preview" style={imagePreviewStyle} />}
-            </label>
+            <label style={{ display: 'block', marginBottom: '20px' }}>
+      Set Password:
+      <div style={containerStyle}>
+        <input
+          type={showPassword ? 'text' : 'password'}
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          style={inputStyle}
+          placeholder="This will be your login password for the Post Creation Form"
+        />
+        <button
+          type="button"
+          onClick={toggleShowPassword}
+          style={buttonStyle1}
+        >
+          {showPassword ? 'Hide' : '👁'}
+        </button>
+      </div>
+    </label>
           </div>
-
-
           <div style={sectionStyle}>
-            <h2 style={headingStyle}>Business Information <span style={{color:'red'}}>*</span></h2>
+            <h2 style={headingStyle}>Business/Brands Information <span style={{color:'red'}}>*</span></h2>
             <label style={labelStyle}>
-              Business Name:
+              Business/Brand Name:
               <input type="text" name="businessName" value={formData.businessName} onChange={handleChange} style={inputStyle} />
             </label>
             <label style={labelStyle}>
@@ -359,10 +400,23 @@ export const MerchantForm = () => {
             </label>
           </div>
           <br />
-
-          <p>I understand that the due payment will be made to the Localite representative deputed to me. My membership will be activated only post that.</p>
-
-          <button type="submit" style={buttonStyle}>Submit</button>
+          <p>
+        <span>
+          <input 
+            type="checkbox" 
+            checked={isChecked} 
+            onChange={handleCheckboxChange} 
+          />
+        </span>
+        I understand that the due payment will be made to the Localite representative deputed to me. My membership will be activated only post that.
+      </p>
+      <button 
+        type="submit" 
+        style={buttonStyle} 
+        disabled={!isChecked} // Disable button when checkbox is not checked
+      >
+        Submit
+      </button>
         </form>
       </div>
       <br />
