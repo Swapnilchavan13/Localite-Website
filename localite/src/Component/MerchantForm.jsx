@@ -78,7 +78,6 @@ export const MerchantForm = () => {
     { field: 'businessAddress', message: 'Business Address is compulsory. Please provide a Business Address.' },
     { field: 'contactEmail', message: 'Contact Email is compulsory. Please provide a Contact Email.' },
     { field: 'contactPhoneNumber', message: 'Phone Number is compulsory. Please provide a Phone Number.' },
-    { field: 'websiteUrl', message: 'Website URL is compulsory. Please provide a Website URL.' },
     { field: 'operationHours', message: 'Operation Hours are compulsory. Please provide Operation Hours.' },
     { field: 'yearsOfBusiness', message: 'Years of Business is compulsory. Please provide Years of Business.' },
     { field: 'numberOfEmployees', message: 'Number of Employees is compulsory. Please provide Number of Employees.' },
