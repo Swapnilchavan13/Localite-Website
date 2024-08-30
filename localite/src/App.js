@@ -15,6 +15,8 @@ import Return from './Component/Return';
 import Shipping from './Component/Shipping';
 import { Prelogin } from './Component/Prelogin';
 import { Removemydata } from './Component/Removemydata';
+import { Cms } from './Component/Cms';
+import { Orderhistory } from './Component/Orderhistory';
 
 function App() {
   return (
@@ -39,6 +41,12 @@ function App() {
       <Route path="/login" element={<Prelogin />} />
       <Route path="/merchantlogin" element={<Login />} />
       <Route path="/merchant" element={<ProtectedRoute element={<Merchantproducts />} />} />
+
+
+      <Route path="/cms" element={<Cms />} />
+      <Route path="/allorders" element={<Orderhistory />} />
+
+
       
 
     </Routes>

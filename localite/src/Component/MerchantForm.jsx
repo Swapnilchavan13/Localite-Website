@@ -136,29 +136,29 @@ export const MerchantForm = () => {
     e.preventDefault();
   
     // Validation logic
-  const requiredFields = [
-    { field: 'personName', message: 'Person Name is compulsory. Please provide a Person Name.' },
-    { field: 'lastName', message: 'Last Name is compulsory. Please provide a Last Name.' },
-    { field: 'password', message: 'Password is compulsory. Please provide a Password.' },
-    { field: 'businessName', message: 'Business Name is compulsory. Please provide a Business Name.' },
-    { field: 'businessType', message: 'Business Type is compulsory. Please select a Business Type.' },
-    { field: 'businessAddress', message: 'Business Address is compulsory. Please provide a Business Address.' },
-    { field: 'contactEmail', message: 'Contact Email is compulsory. Please provide a Contact Email.' },
-    { field: 'contactPhoneNumber', message: 'Phone Number is compulsory. Please provide a Phone Number.' },
-    { field: 'operationHours', message: 'Operation Hours are compulsory. Please provide Operation Hours.' },
-    { field: 'yearsOfBusiness', message: 'Years of Business is compulsory. Please provide Years of Business.' },
-    { field: 'numberOfEmployees', message: 'Number of Employees is compulsory. Please provide Number of Employees.' },
-    { field: 'productDescription', message: 'Product Description is compulsory. Please provide a Product Description.' },
-    { field: 'preferredCategories', message: 'Preferred Categories are compulsory. Please select Preferred Categories.' },
-    { field: 'offerFrequency', message: 'Offer Frequency is compulsory. Please provide Offer Frequency.' }
+    const requiredFields = [
+      { field: 'personName', message: 'Person Name is compulsory. Please provide a Person Name.' },
+      { field: 'lastName', message: 'Last Name is compulsory. Please provide a Last Name.' },
+      { field: 'password', message: 'Password is compulsory. Please provide a Password.' },
+      { field: 'businessName', message: 'Business Name is compulsory. Please provide a Business Name.' },
+      { field: 'businessType', message: 'Business Type is compulsory. Please select a Business Type.' },
+      { field: 'businessAddress', message: 'Business Address is compulsory. Please provide a Business Address.' },
+      { field: 'contactEmail', message: 'Contact Email is compulsory. Please provide a Contact Email.' },
+      { field: 'contactPhoneNumber', message: 'Phone Number is compulsory. Please provide a Phone Number.' },
+      { field: 'operationHours', message: 'Operation Hours are compulsory. Please provide Operation Hours.' },
+      { field: 'yearsOfBusiness', message: 'Years of Business is compulsory. Please provide Years of Business.' },
+      { field: 'numberOfEmployees', message: 'Number of Employees is compulsory. Please provide Number of Employees.' },
+      { field: 'productDescription', message: 'Product Description is compulsory. Please provide a Product Description.' },
+      { field: 'preferredCategories', message: 'Preferred Categories are compulsory. Please select Preferred Categories.' },
+      { field: 'offerFrequency', message: 'Offer Frequency is compulsory. Please provide Offer Frequency.' }
     ];
-
-  for (const { field, message } of requiredFields) {
-    if (!formData[field]) {
-      alert(message);
-      return;
+  
+    for (const { field, message } of requiredFields) {
+      if (!formData[field]) {
+        alert(message);
+        return;
+      }
     }
-  }
   
     const formDataToSend = new FormData();
     for (const key in formData) {
@@ -176,11 +176,12 @@ export const MerchantForm = () => {
       console.log('Data submitted successfully:', response.data);
       alert("Data is Submitted to Localite team");
   
-      const serviceID = 'service_7sl4p61';
-      const templateID = 'template_temjje3';
-      const userID = 'PhuU7kore77nPwnF5';
+      // EmailJS configuration for the first email
+      const serviceID1 = 'service_7sl4p61';
+      const templateID1 = 'template_temjje3';
+      const userID1 = 'PhuU7kore77nPwnF5';
   
-      const emailParams = {
+      const emailParams1 = {
         business_name: formData.businessName,
         business_type: formData.businessType,
         business_address: formData.businessAddress,
@@ -189,8 +190,21 @@ export const MerchantForm = () => {
         password: formData.password
       };
   
-      await emailjs.send(serviceID, templateID, emailParams, userID);
+      await emailjs.send(serviceID1, templateID1, emailParams1, userID1);
   
+      // EmailJS configuration for the second email
+      const serviceID2 = 'service_eq6t0oc';
+      const templateID2 = 'template_kflpvt9';
+      const userID2 = '-5-Vn5AlZtU90aYG4';
+  
+      const emailParams2 = {
+        brand_name: formData.businessName,
+        status: "Registered"
+      };
+  
+      await emailjs.send(serviceID2, templateID2, emailParams2, userID2);
+  
+      // Reset form data
       setFormData({
         businessName: '',
         businessType: '',
@@ -228,6 +242,7 @@ export const MerchantForm = () => {
       console.error('Failed to submit data:', error);
     }
   };
+  
   
 
   const formStyle = {

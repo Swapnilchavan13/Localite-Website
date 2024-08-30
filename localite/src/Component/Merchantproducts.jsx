@@ -155,6 +155,7 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
   
       const emailParams = {
         brand_name: merchantData.businessName,
+        status: "Offer Added"
       };
   
       await emailjs.send(serviceID, templateID, emailParams, userID);
