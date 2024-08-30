@@ -227,7 +227,7 @@ export const Cms = () => {
           <label htmlFor="website">Website:</label>
           <input
             id="website"
-            type="url"
+            type="text"
             value={website}
             onChange={(e) => setWebsite(e.target.value)}
           />
