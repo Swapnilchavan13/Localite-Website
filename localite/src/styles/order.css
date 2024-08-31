@@ -88,21 +88,19 @@
     color: #007bff;
   }
 
-  /* order.css */
+  /* order.css */  
 
-.enable-audio-button {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
+  .copy-button {
     background-color: #007bff;
-    color: white;
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    padding: 5px 10px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
+    border-radius: 4px;
   }
   
-  .enable-audio-button:hover {
+  .copy-button:hover {
     background-color: #0056b3;
   }
   

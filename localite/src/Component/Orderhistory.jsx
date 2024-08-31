@@ -40,8 +40,6 @@ export const Orderhistory = () => {
       const data = await response.json();
       const currentFirstOrderId = data.order.length > 0 ? data.order[0]._id : null;
 
-      console.log(currentFirstOrderId)
-
       // Get the stored first order ID from localStorage
       const storedFirstOrderId = localStorage.getItem('firstOrderId');
 
@@ -86,6 +84,30 @@ export const Orderhistory = () => {
     }
   };
 
+  // Function to generate and copy message template
+  const copyMessageTemplate = (order) => {
+    const message = `
+      Dear Merchant,
+      
+      Please fulfill the following order:
+
+      Product: ${order.postDetails.title}
+      Quantity: ${order.cartItems.reduce((total, item) => total + item.quantity, 0)}
+      Total Price: ${order.price}
+      
+      User Details:
+      Name: ${order.userDetails[0].userName}
+      Address: ${order.userDetails[0].address}
+      Phone: ${order.userDetails[0].phoneNumber}
+      
+      Thank you!
+    `;
+
+    navigator.clipboard.writeText(message)
+      .then(() => alert('Message copied to clipboard!'))
+      .catch(error => console.error('Error copying message:', error));
+  };
+
   return (
     <div className="order-history-container">
       <h2 className="order-history-title">Order History</h2>
@@ -107,6 +129,7 @@ export const Orderhistory = () => {
                 <th>Merchant Mobile Number</th>
                 <th>Order Date</th>
                 <th>Payment Status</th>
+                <th>Action</th> {/* Added Action column for Copy Button */}
               </tr>
             </thead>
             <tbody>
@@ -141,6 +164,11 @@ export const Orderhistory = () => {
                   </td>
                   <td>{new Date(order.createdAt).toLocaleDateString()}</td>
                   <td>{order.paymentMode}</td>
+                  <td>
+                    <button onClick={() => copyMessageTemplate(order)} className="copy-button">
+                      Copy Message
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
