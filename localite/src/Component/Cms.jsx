@@ -276,10 +276,10 @@ export const Cms = () => {
             <th>Title</th>
             <th>Entry Type</th>
             <th>Directions Link</th>
-            {/* <th>About</th>
+            <th>About</th>
             <th>Timing</th>
             <th>Contact Number</th>
-            <th>Website</th> */}
+            <th>Website</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -308,10 +308,10 @@ export const Cms = () => {
                 <td>{item.title}</td>
                 <td>{item.entryType}</td>
                 <td><a href={item.directionLink} target="_blank" rel="noopener noreferrer">Directions</a></td>
-                {/* <td>{item.about}</td>
+                <td>{item.about}</td>
                 <td>{item.timing}</td>
                 <td>{item.contactNumber}</td>
-                <td><a href={item.website} target="_blank" rel="noopener noreferrer">Website</a></td> */}
+                <td><a href={item.website} target="_blank" rel="noopener noreferrer">Website</a></td>
                 <td>
                   <button onClick={() => handleDelete(item._id)}>Delete</button>
                 </td>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Topnavbar } from './Topnavbar';
-import { Footer } from './Footer';
 
 // Community component
 const Community = () => {
@@ -40,7 +39,6 @@ const Community = () => {
     </div>
     <br />
     <br />
-    <Footer />
     </>
   );
 };

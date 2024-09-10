@@ -1,6 +1,5 @@
 import React from 'react';
 import { Topnavbar } from './Topnavbar';
-import { Footer } from './Footer';
 
 // Terms component
 const Return = () => {
@@ -44,7 +43,6 @@ const Return = () => {
     </div>
     <br />
     <br />
-    <Footer />
     </>
   );
 };

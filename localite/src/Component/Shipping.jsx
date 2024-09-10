@@ -1,6 +1,5 @@
 import React from 'react';
 import { Topnavbar } from './Topnavbar';
-import { Footer } from './Footer';
 
 // Terms component
 const Shipping = () => {
@@ -63,7 +62,6 @@ const Shipping = () => {
     </div>
     <br />
     <br />
-    <Footer />
     </>
   );
 };

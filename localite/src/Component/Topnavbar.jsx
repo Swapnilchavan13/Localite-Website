@@ -5,9 +5,13 @@ export const Topnavbar = () => {
   return (
     <div className='topdiv'>
       <a href="/">
-        <img src="blue-logo.png" alt="" />
-            </a>
-        {/* <button className='downloadbtn'>Download app</button> */}
+        <img src="w_logo.png" alt="" />
+      </a>
+      <div className='topdivtext'>
+      <p>About Us</p>
+      <p>Our Services</p>
+      <p>FAQs</p>
+      </div>
     </div>
   )
 }

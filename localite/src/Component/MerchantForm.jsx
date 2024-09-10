@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import emailjs from 'emailjs-com';
-import { Footer } from './Footer';
 import { Topnavbar } from './Topnavbar';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -109,13 +108,7 @@ export const MerchantForm = () => {
     setShowOtherInput(prevState => !prevState);
   };
 
-  const handleBusinessTypeChange = (e) => {
-    const { value } = e.target;
-    setFormData({
-      ...formData,
-      businessType: value
-    });
-  };
+
 
   useEffect(() => {
     // Update formData.businessType when 'Other' is selected and otherBusinessType changes
@@ -279,7 +272,6 @@ export const MerchantForm = () => {
     borderRadius: '4px',
     cursor: 'pointer',
     fontSize: '16px',
-    cursor: isChecked ? 'pointer' : 'not-allowed',
   };
 
   const headingStyle = {
@@ -537,7 +529,6 @@ export const MerchantForm = () => {
       <br />
       <br />
       <br />
-      <Footer />
     </>
   );
 };
