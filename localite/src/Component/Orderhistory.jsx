@@ -124,9 +124,9 @@ export const Orderhistory = () => {
                 <th>User Name</th>
                 <th>User Address</th>
                 <th>User Mobile Number</th>
-                <th>Merchant Name</th>
-                <th>Merchant Address</th>
-                <th>Merchant Mobile Number</th>
+                <th>Brand Name</th>
+                <th>Brand Address</th>
+                <th>Brand Mobile Number</th>
                 <th>Order Date</th>
                 <th>Payment Status</th>
                 <th>Action</th> {/* Added Action column for Copy Button */}
@@ -150,7 +150,7 @@ export const Orderhistory = () => {
                       {order.userDetails[0].phoneNumber}
                     </a>
                   </td>
-                  <td>{order.postDetails.merchantDetails[0].firstName} {order.postDetails.merchantDetails[0].lastName}</td>
+                  <td>{order.postDetails.brandName}</td>
                   <td>{order.postDetails.merchantDetails[0].address}</td>
                   <td>
                     <a

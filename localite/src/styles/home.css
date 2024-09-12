@@ -1,5 +1,17 @@
 /* General styles for the Home component */
 
+body{
+  background: linear-gradient(to bottom, #fef2f2, #fef2f2);
+}
+
+/* Ensure body and html take up the full height and prevent overflow */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 #merchantform{
   width: 55%;
 }
@@ -21,7 +33,7 @@
   text-align: center;
 }
 
-introdiv{
+.introdiv{
   display: flex;
 }
 
@@ -32,3 +44,255 @@ introdiv{
 .videoandbtn img{
 width: 18%;
 }
+
+
+.movingline {
+  overflow: hidden; /* Hides the overflowing text */
+  white-space: nowrap; /* Prevents text from wrapping */
+  width: 100%; /* Adjust width as needed */
+  background: linear-gradient(to right, #e41193, #eb8313);
+  position: relative; /* Positions the content relative to the container */
+  color: white;
+}
+
+.scrolling-text {
+  display: inline-block; /* Allows the text to move */
+  padding-left: 100%; /* Initial position of the text off-screen */
+  animation: scroll-text 18s linear infinite; /* Animation properties */
+  font-weight: 400;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0); /* Start position */
+  }
+  100% {
+    transform: translateX(-100%); /* End position */
+  }
+}
+
+.digitaldiv h1{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+  font-size: 60px;
+}
+
+.lmarket{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgb(69, 141, 141);
+  font-weight: 400;
+  padding: 0px 500px;
+}
+
+.threedivs{
+  position: relative;
+  width: 80%;
+  display: flex;
+  margin: auto;
+  gap: 15px;
+  background: linear-gradient(to bottom, #fef2f2, #fef2f2);
+}
+
+.threedivs div h3{
+  font-size: 30px;
+}
+
+.threedivs div {
+  text-align: center;
+  position: relative; /* Establishes a positioning context for the pseudo-element */
+  border-radius: 15px; /* Rounded corners for the main element */
+  padding: 10px; /* Adjust padding as needed */
+  background-color: white; /* Background color of the content */
+  z-index: 1; /* Ensures the content is above the pseudo-element */
+  padding: 5px 50px;
+  width: 25%;
+}
+
+.threedivs div p{
+  color: grey;
+  font-size: 20px;
+
+}
+
+.threedivs div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px; /* Match the border radius of the main element */
+  padding: 2px; /* This controls the width of the border */
+  background: linear-gradient(to bottom, #e41193 50%, #eb8313 50%); /* Creates the two-color border effect */
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0); /* Masks out the inside of the border */
+  -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
+  z-index: -1; /* Places the pseudo-element behind the content */
+}
+
+.about{
+  text-align: center;
+  width: 100%;
+  margin: 100px auto;
+  background: linear-gradient(to bottom, #fef2f2, #fef2f2);
+  height: 700px;
+}
+
+.about h1{
+  font-size: 60px;
+}
+
+.aboutdiv{
+  margin: auto;
+  width: 80%;
+  display: flex;
+  text-align: left;
+}
+
+.aboutfirstdiv {
+  position: relative;
+  width: 80%;
+  padding: 150px 100px 20px 20px;
+}
+.aboutfirstdiv h2{
+  font-size: 28px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 300;
+}
+
+.aboutdiv div img{
+  margin-top: -150px;
+  margin-left: -150px;
+  width: 150%;
+}
+
+
+.threecolordivmain{
+  width: 100%;
+  margin: auto;
+  background-color: white;
+  padding: 60px 10px;
+}
+
+.threecolordivmain h3{
+  color: rgb(13, 95, 95);
+}
+
+.threecolordiv{
+  width: 80%;
+  gap: 18px;
+  background-color: white;
+  display: flex;
+  margin: auto;
+  text-align: center;
+}
+
+
+.threesinglediv img{
+border-radius: 50%;
+width: 120px;
+background-color: #fcfafb;
+}
+
+
+.threesinglediv {
+  position: relative; /* Establishes a positioning context for the pseudo-element */
+  border: 1px solid transparent; /* Transparent border to allow pseudo-element border to show */
+  border-radius: 10px; /* Rounded corners */
+  padding: 30px 15px; /* Adjust padding as needed */
+  background-color: white; /* Background color for content */
+  z-index: 1; /* Ensures content appears above the pseudo-element */
+  color: white;
+}
+
+.threesinglediv p{
+  font-size: 22px;
+}
+
+
+.threesinglediv::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px; /* Match the border radius of the main element */
+  background: linear-gradient(to bottom right, #e41193, #eb8313); /* Gradient background color from top-left to bottom-right */
+  z-index: -2; /* Places the background gradient behind the border pseudo-element */
+}
+
+.mobilephones{
+  margin: auto;
+  width: 100%;
+  display: flex;
+  text-align: left;
+
+}
+
+
+.mobilephones img {
+  width: 100%; /* Sets image width to 100% of the div */
+}
+
+.smallmobiles{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  text-align: center;
+  padding-top: 50px;
+  margin-right: 250px;
+}
+
+.sellwithus{
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+}
+
+.sellwithus p{
+font-size: 20px;
+}
+
+.sellwithus h1{
+  font-size: 38px;
+  }
+
+.sellcolor{
+  color: rgb(114, 207, 207);
+}
+
+.sellbutton{
+  padding: 15px 60px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 18px;
+  background: linear-gradient(to right, #e41193, #eb8313);
+}
+
+.getstart{
+  text-align: center;
+  margin: auto;
+  width: 80%;
+}
+
+.getstart h1{
+  font-size: 40px;
+}
+
+.fourgetstart{
+  width: 90%;
+  text-align: left;
+  display: flex;
+  margin: auto;
+}
+
+.fourgetstart img{
+  margin: auto;
+  width: 95%;
+}
+
+

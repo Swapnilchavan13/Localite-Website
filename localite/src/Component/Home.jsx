@@ -1,8 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../styles/home.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Topnavbar } from './Topnavbar';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 export const Home = () => {
@@ -14,7 +16,11 @@ export const Home = () => {
     setActiveFAQ(activeFAQ === faqIndex ? null : faqIndex);
   };
 
-
+  useEffect(() => {
+    AOS.init({
+        duration: 1200,
+    });
+}, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -40,25 +46,157 @@ export const Home = () => {
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="" />
             </div>
             </div>
-
             <div>
               <img width='50%' src="gradient_balls.png" alt="" />
             </div>
-
           </div>
 
-
+         
           <div className="firstdiv">
+
+          <div data-aos="flip-right" class="movingline">
+  <h1 class="scrolling-text">
+    Discover and Support Local Gems! Discover and Support Local Gems! Discover and Support Local Gems! Discover and Support Local Gems!
+  </h1>
+</div>
+
+           <div className='digitaldiv'>
+             <h1>Digital Out Of Home Screens</h1>
+          </div>
             <video className='video' ref={videoRef} autoPlay loop muted>
               <source src="LOCALITE Web.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <br />
-            <a href="merchantform">
-              <button className="getstartedbtn">Get started</button>
-            </a>
+            <h1 className='lmarket'>Your Local Marketplace, Right On The Screen</h1>
           </div>
 
+          <div className='threedivs'>
+            <div data-aos="slide-left">
+              <h3>Enhaance Visibility</h3>
+              <p>Reach New customers with captivating digital displays that capture attention.</p>
+            </div>
+            <div data-aos="slide-up">
+            <h3>Targeted Ads</h3>
+            <p>Showcase targeted promotions and specials to attract the right audience.</p>
+            </div>
+            <div data-aos="slide-right">
+            <h3>Dynamic Content</h3>
+            <p>Shocase your latest offers, promotions to maximize impact and engagement.</p>
+            </div>
+
+          </div>
+
+          <div className='about'>
+            <h1>About Localite</h1>
+            <div className='aboutdiv'>
+              <div className='aboutfirstdiv'>
+                <h2>Localite is neighbourhood marketplace. We empower local merchants bub giving them a space to showcase their offering.</h2>
+                <h2>We are dedicated to bring together local businesses and customers in one easy-to-use platform, encouraging community growth and convenient local shopping.</h2>
+              </div>
+              <div data-aos="flip-right"><img src="mobile1.png" alt="" /></div>
+            </div>
+
+          </div>
+
+          <div className='threecolordivmain'>
+
+
+          <div className='threecolordiv'>
+            <div>
+              <div data-aos="slide-left" className='threesinglediv'>
+              <img src="Ellipse 32.png" alt="" />
+              <p>Showcase your products and services with high-quality images, detailed description, and customer review.</p>
+              </div>
+              <h3>Online Storefront</h3>
+            </div>
+            <div>
+              <div data-aos="slide-up" className='threesinglediv'>
+              <img src="Ellipse 33.png" alt="" />
+              <p>Expand your customer base by reaching a wider audience through digital screen and app promotion.</p>
+              </div>
+              <h3>Increase Customer Reach</h3>
+            </div>
+            <div>
+              <div data-aos="slide-right" className='threesinglediv'>
+              <img src="Ellipse 34.png" alt="" />
+              <p>Enhance brand visibility and recognition with targeted digital advertising on street corners and in high-traffic locations.</p>
+              </div>
+              <h3>Boost Brand Awareness</h3>
+            </div>
+          </div>
+
+          <div className='mobilephones'>
+            <div data-aos="flip-left" className='mainmobile'>
+              <img src="welcome2.png" alt="" />
+            </div>
+            <div className='smallmobiles'>
+              <div data-aos="slide-left">
+              <img src="rect1.png" alt="" />
+              <h3>Your Online Store</h3>
+              </div>
+              <div data-aos="slide-right">
+              <img src="rect1.png" alt="" />
+              <h3>Create Your Posts</h3>
+              </div>
+              <div data-aos="slide-left">
+              <img src="rect3.png" alt="" />
+              <h3>Attend Nearby Events</h3>
+              </div>
+              <div data-aos="slide-right">
+              <img src="rect4.png" alt="" />
+              <h3>Local Networking</h3>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+
+          <div className='sellwithus'>
+            <h1>Sell With Us</h1>
+            <p>Want to bring your loacal business to market?</p>
+            <p>List your products oe services, select your location <br /> and <span className='sellcolor'>start selling</span></p>
+            <button className='sellbutton'>Register Now</button>
+          </div>
+
+          <div className='getstart'>
+            <h1>How To Get Started</h1>
+
+            <div className='fourgetstart'>
+            <div data-aos="slide-right" data-aos-delay="0" className='image-container'>
+              <img src="htgs1.png" alt="" />
+              {/* <h3>Sign Up</h3>
+              <p>Create an account on the Localite app.</p> */}
+            </div>
+            <div data-aos="slide-right" data-aos-delay="500" className='image-container'>
+              <img src="htgs2.png" alt="" />
+              {/* <h3>Set Up Your Store</h3>
+              <p>Add your business information, products and services.</p> */}
+            </div>
+            <div data-aos="slide-right" data-aos-delay="1000" className='image-container'>
+            <img src="htgs3.png" alt="" /> 
+              {/* <h3>Login</h3>
+              <p>Add your latest offers or deals and product images.</p> */}
+            </div>
+            <div data-aos="slide-right" data-aos-delay="1500" className='image-container'>
+            <img src="htgs4.png" alt="" />
+              {/* <h3>Start Selling</h3>
+              <p>Product posts will be created and added on the app by the localite team.</p> */}
+            </div>
+            </div>
+          </div>
+
+          <div className='connect'>
+            <h1>Connect With Your Neighbour</h1>
+            <p>want to learn more about your neighbourhood?</p>
+            <p>Explore nearby products, events, offers, news, connect with like-minded people and much more!</p>
+            <p>Start exploring and connecting</p>
+            <br />
+            <p>Explore more than 20+ brands from your locality</p>
+            <p>Download App</p>
+
+          </div>
 
 
           <div className='faq'>
