@@ -1,0 +1,55 @@
+.footermain{
+    background-color: rgb(241, 239, 239);
+    padding: 20px;
+}
+.footer{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+}
+
+.footer img{
+    width: 20%;
+}
+
+.allfooter{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(136, 134, 134);
+}
+
+.footernews{
+display: flex;
+justify-content: space-between;
+}
+
+.footernews .indiv{
+margin-top: 40px;
+}
+
+.indiv button{
+  margin-left: 20px;
+  background-color: rgb(216, 31, 31);
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.indiv input{
+    width: 400px;
+  }
+
+.lastline{
+display: flex;
+justify-content: space-between;
+}
+
+.lastline img{
+    height: 20px;
+    width: 16px;
+    margin-top: 10px;
+    margin-left: 30px;
+    }

@@ -223,6 +223,15 @@ background-color: #fcfafb;
   z-index: -2; /* Places the background gradient behind the border pseudo-element */
 }
 
+.featurediv{
+  text-align: center;
+}
+
+.features{
+  margin-top: 40px;
+  width: 80%;
+}
+
 .mobilephones{
   margin: auto;
   width: 100%;
@@ -294,5 +303,106 @@ font-size: 20px;
   margin: auto;
   width: 95%;
 }
+
+
+.connect{
+  margin: 30px auto;
+  text-align: center;
+  padding: 2px 500px;
+}
+
+.connect h1{
+  font-size: 40px;
+}
+
+.connect p{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.pcolor{
+  color: rgb(61, 192, 192);
+}
+
+.siximages {
+  width: fit-content;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.siximages img {
+  border-radius: 10px; /* Rounded corners */
+}
+
+.oneimg{
+  width: 200px;
+  height: 410px;
+}
+
+.twoimg, .threeimg{
+  width: 425px;
+}
+
+.fourimg{
+  width: 400px;
+  height: 415px;
+}
+
+.fiveimg{
+  width: 300px;
+  height: 280px;
+}
+
+.siximg{
+  width: 300px;
+}
+
+
+.teamandinfra{
+  margin-top: 50px;
+  width: 100%;
+}
+
+
+.gradientimg{
+  width: 100%;
+}
+
+
+.faq{
+  width:auto;
+  justify-content: center;
+  margin: auto;
+  text-align: left;
+}
+
+.faq h1{
+  text-align: center;
+  font-size: 40px;
+}
+
+.faq h4{
+  cursor: pointer;
+}
+.faq p{
+  margin-left: 30px;
+  margin-top: -20px;
+  color: rgb(118, 116, 116);
+}
+
+.faqdiv{
+  width: 50%;
+  margin: auto;
+  justify-content: left;
+}
+
+
+.pbimg{
+  width: 1.5%;
+  margin-right: 20px;
+}
+
 
 
