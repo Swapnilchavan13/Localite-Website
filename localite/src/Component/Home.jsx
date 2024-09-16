@@ -18,9 +18,9 @@ export const Home = () => {
 
   useEffect(() => {
     AOS.init({
-        duration: 1200,
+      duration: 1200,
     });
-}, []);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -34,37 +34,44 @@ export const Home = () => {
       <div className="maind">
         <Topnavbar />
         <div className="home-container">
+          <h1 className='intoline'>Introducing</h1>
           <div className='introdiv'>
-            {/* <div>
-            <h1>Introducing</h1>
             <div>
-              <h1>Localite</h1>
-              <p>Localite ia a hyper local platform for local businesses to sell their products and services online.</p>
-            </div>
-            <div className='videoandbtn'>
-              <h2>Watch video</h2>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="" />
-            </div>
-            </div>
-            <div>
-              <img width='50%' src="gradient_balls.png" alt="" />
-            </div> */}
+              <div className='headcon' data-aos="slide-right">
+                <h1>Localite</h1>
+                <p>Localite ia a hyper local platform for local businesses to sell their products and services online.</p>
+                <div className='videoandbtn'>
+                  {/* <h2>Watch video</h2> */}
+                  <img
+                    data-aos="slide-up"
+                    className='vbtn1'
+                    src="Group 2812.png"
+                    alt=""
+                    onClick={() => window.open("https://apps.apple.com/in/app/localite-shop-win-connect/id6670195737", "_blank")}
+                  />
+                  <img data-aos="slide-up" className='vbtn2' src="Group 2734.png" alt="" />
+                </div>
+              </div>
 
-            <img style={{width:'100%'}} src="SS1.png" alt="" />
+            </div>
+            <div>
+              <img className='handmobile' data-aos="slide-left" width='100%' src="1st_imgn.png" alt="" />
+              <img className='balls' src="gradient_balls.png" alt="" />
+            </div>
           </div>
 
-         
+
           <div className="firstdiv">
 
-          <div data-aos="flip-right" class="movingline">
-  <h1 class="scrolling-text">
-    Discover and Support Local Gems! Discover and Support Local Gems! Discover and Support Local Gems! Discover and Support Local Gems!
-  </h1>
-</div>
+            <div data-aos="flip-right" class="movingline">
+              <h1 class="scrolling-text">
+                Discover and Support Local Gems! Discover and Support Local Gems! Discover and Support Local Gems! Discover and Support Local Gems!
+              </h1>
+            </div>
 
-           <div className='digitaldiv'>
-             <h1>Digital Out Of Home Screens</h1>
-          </div>
+            <div className='digitaldiv'>
+              <h1>Digital Out Of Home Screens</h1>
+            </div>
             <video data-aos="zoom-in" className='video' ref={videoRef} autoPlay loop muted>
               <source src="LOCALITE Web.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -79,22 +86,22 @@ export const Home = () => {
               <p>Reach New customers with captivating digital displays that capture attention.</p>
             </div>
             <div data-aos="slide-up">
-            <h3>Targeted Ads</h3>
-            <p>Showcase targeted promotions and specials to attract the right audience.</p>
+              <h3>Targeted Ads</h3>
+              <p>Showcase targeted promotions and specials to attract the right audience.</p>
             </div>
             <div data-aos="slide-right">
-            <h3>Dynamic Content</h3>
-            <p>Shocase your latest offers, promotions to maximize impact and engagement.</p>
+              <h3>Dynamic Content</h3>
+              <p>Showcase your latest offers, promotions to maximize impact and engagement.</p>
             </div>
-
           </div>
 
           <div className='about'>
             <h1>About Localite</h1>
             <div className='aboutdiv'>
-              <div className='aboutfirstdiv'>
+              <div data-aos="zoom-in" className='aboutfirstdiv'>
                 <h2>Localite is neighbourhood marketplace. We empower local merchants bub giving them a space to showcase their offering.</h2>
-                <h2>We are dedicated to bring together local businesses and customers in one easy-to-use platform, encouraging community growth and convenient local shopping.</h2>
+                <h2>We are dedicated to bring together local businesses and customers in one easy-to-use platform, encouraging <span className='aboutline'>community growth and convenient local shopping.
+                  </span></h2>
               </div>
               <div data-aos="flip-right"><img src="mobile1.png" alt="" /></div>
             </div>
@@ -102,98 +109,72 @@ export const Home = () => {
           </div>
 
           <div className='threecolordivmain'>
-          <div className='threecolordiv'>
-            <div data-aos="slide-up" data-aos-delay="0">
-              <div  className='threesinglediv'>
-              <img src="Ellipse 32.png" alt="" />
-              <p>Showcase your products and services with high-quality images, detailed description, and customer review.</p>
+            <div className='threecolordiv'>
+              <div data-aos="slide-up" data-aos-delay="0">
+                <div className='threesinglediv'>
+                  <img src="store2.png" alt="" />
+                  <p>Showcase your products and services with high-quality images, detailed description, and customer review.</p>
+                </div>
+                <h3>Online Storefront</h3>
               </div>
-              <h3>Online Storefront</h3>
-            </div>
-            <div data-aos="slide-up" data-aos-delay="500">
-              <div  className='threesinglediv'>
-              <img src="Ellipse 33.png" alt="" />
-              <p>Expand your customer base by reaching a wider audience through digital screen and app promotion.</p>
+              <div data-aos="slide-up" data-aos-delay="500">
+                <div className='threesinglediv'>
+                  <img src="teamwork3.png" alt="" />
+                  <p>Expand your customer base by reaching a wider audience through digital screen and app promotion.</p>
+                </div>
+                <h3>Increase Customer Reach</h3>
               </div>
-              <h3>Increase Customer Reach</h3>
-            </div>
-            <div data-aos="slide-up" data-aos-delay="1000">
-              <div  className='threesinglediv'>
-              <img src="Ellipse 34.png" alt="" />
-              <p>Enhance brand visibility and recognition with targeted digital advertising on street corners and in high-traffic locations.</p>
+              <div data-aos="slide-up" data-aos-delay="1000">
+                <div className='threesinglediv'>
+                  <img src="shout.png" alt="" />
+                  <p>Enhance brand visibility and recognition with targeted digital advertising on street corners and in high-traffic locations.</p>
+                </div>
+                <h3>Boost Brand Awareness</h3>
               </div>
-              <h3>Boost Brand Awareness</h3>
             </div>
-          </div>
 
-          {/* <div className='mobilephones'>
-            <div data-aos="flip-left" className='mainmobile'>
-              <img src="welcome2.png" alt="" />
+            <div className='featurediv'>
+              <img data-aos="zoom-in" className='features' src="Features.png" alt="" />
             </div>
-            <div className='smallmobiles'>
-              <div data-aos="slide-left">
-              <img src="rect1.png" alt="" />
-              <h3>Your Online Store</h3>
-              </div>
-              <div data-aos="slide-right">
-              <img src="rect1.png" alt="" />
-              <h3>Create Your Posts</h3>
-              </div>
-              <div data-aos="slide-left">
-              <img src="rect3.png" alt="" />
-              <h3>Attend Nearby Events</h3>
-              </div>
-              <div data-aos="slide-right">
-              <img src="rect4.png" alt="" />
-              <h3>Local Networking</h3>
-              </div>
-            </div>
-          </div> */}
-
-          <div className='featurediv'>
-
-          <img data-aos="zoom-in" className='features' src="Features.png" alt="" />
-          </div>
-
 
           </div>
 
 
-          <div className='sellwithus'>
+          <div data-aos="zoom-in" className='sellwithus'>
             <h1>Sell With Us</h1>
             <p>Want to bring your loacal business to market?</p>
             <p>List your products oe services, select your location <br /> and <span className='sellcolor'>start selling</span></p>
-            <button data-aos="zoom-in" className='sellbutton'>Register Now</button>
+            <button data-aos="zoom-in" className='sellbutton' onClick={() => window.open("https://localite.services/merchantform")}>Register Now</button>
           </div>
 
-          <div className='getstart'>
+          <div data-aos="zoom-in" className='getstart'>
             <h1>How To Get Started</h1>
 
             <div className='fourgetstart'>
-            <div data-aos="slide-right" data-aos-delay="1500" className='image-container'>
-              <img src="htgs1.png" alt="" />
-              {/* <h3>Sign Up</h3>
+              <div data-aos="slide-left" data-aos-delay="0" className='image-container'>
+                <img src="1htgs.png" alt="" />
+                {/* <h3>Sign Up</h3>
               <p>Create an account on the Localite app.</p> */}
-            </div>
-            <div data-aos="slide-right" data-aos-delay="1000" className='image-container'>
-              <img src="htgs2.png" alt="" />
-              {/* <h3>Set Up Your Store</h3>
+              </div>
+              <div data-aos="slide-left" data-aos-delay="500" className='image-container'>
+                <img src="2htgs.png" alt="" />
+                {/* <h3>Set Up Your Store</h3>
               <p>Add your business information, products and services.</p> */}
-            </div>
-            <div data-aos="slide-right" data-aos-delay="500" className='image-container'>
-            <img src="htgs3.png" alt="" /> 
-              {/* <h3>Login</h3>
+              </div>
+              <div data-aos="slide-left" data-aos-delay="1000" className='image-container'>
+                <img src="3htgs.png" alt="" />
+                {/* <h3>Login</h3>
               <p>Add your latest offers or deals and product images.</p> */}
-            </div>
-            <div data-aos="slide-right" data-aos-delay="0" className='image-container'>
-            <img src="htgs4.png" alt="" />
-              {/* <h3>Start Selling</h3>
+              </div>
+              <div data-aos="slide-left" data-aos-delay="1500" className='image-container'>
+                <img src="4htgs.png" alt="" />
+                {/* <h3>Start Selling</h3>
               <p>Product posts will be created and added on the app by the localite team.</p> */}
-            </div>
+              </div>
             </div>
           </div>
 
-          <div className='connect'>
+          <div data-aos="zoom-in" className='connect'>
             <h1>Connect With Your Neighbour</h1>
             <p>Want to learn more about your neighbourhood?</p>
             <p>Explore nearby products, events,<br /> offers, news, connect with like-minded people <br /> and much more!</p>
@@ -207,116 +188,116 @@ export const Home = () => {
           <div className='siximages'>
             <img data-aos="slide-right" className='oneimg' src="Rectangle 105.png" alt="" />
             <div>
-            <img data-aos="slide-left" className='twoimg' src="Rectangle 103.png" alt="" />
-            <br />
-            <img data-aos="slide-right" className='threeimg' src="Rectangle 104.png" alt="" />
+              <img data-aos="slide-left" className='twoimg' src="Rectangle 103.png" alt="" />
+              <br />
+              <img data-aos="slide-right" className='threeimg' src="Rectangle 104.png" alt="" />
             </div>
             <img data-aos="slide-left" className='fourimg' src="Rectangle 101.png" alt="" />
             <div>
-            <img data-aos="slide-right" className='fiveimg' src="Rectangle 100.png" alt="" />
-            <br />
-            <img data-aos="slide-left" className='siximg' src="Rectangle 102.png" alt="" />
+              <img data-aos="slide-right" className='fiveimg' src="Rectangle 100.png" alt="" />
+              <br />
+              <img data-aos="slide-left" className='siximg' src="Rectangle 102.png" alt="" />
             </div>
           </div>
 
 
-            <img className='teamandinfra' src="teaminfra.png" alt="" />
+          <img data-aos="zoom-in" className='teamandinfra' src="teaminfra.png" alt="" />
 
-            <img className='gradientimg' src="gradient_bar.png" alt="" />
+          <img data-aos="slide-up" className='gradientimg' src="gradient_bar.png" alt="" />
 
 
           <div className='faq'>
             <div className='faqdiv'>
 
-            <h1>FAQs</h1>
-            <h4 onClick={() => toggleFAQ(1)}><span><img className='pbimg' src="pb.png" alt="" /></span>What is Localite?</h4>
-            {activeFAQ === 1 && (
-              <p>Localite is one of its kind, members-only hyperlocal community app designed to
-                connect high-end local residents with hyperlocal SME brands in catchment
-                specific areas, offering a marketplace for products &amp; services, special deals &amp;
-                offers, events, pre-loved items, networking and much more.</p>
-            )}
+              <h1>FAQs</h1>
+              <h4 data-aos="slide-left" onClick={() => toggleFAQ(1)}><span><img className='pbimg' src="pb.png" alt="" /></span>What is Localite?</h4>
+              {activeFAQ === 1 && (
+                <p>Localite is one of its kind, members-only hyperlocal community app designed to
+                  connect high-end local residents with hyperlocal SME brands in catchment
+                  specific areas, offering a marketplace for products &amp; services, special deals &amp;
+                  offers, events, pre-loved items, networking and much more.</p>
+              )}
 
-            <h4 onClick={() => toggleFAQ(2)}><span><img className='pbimg' src="pb.png" alt="" /></span>How can I sign up for Localite?</h4>
-            {activeFAQ === 2 && (
-              <p>To sign up, download the Localite app from the App Store or Google Play, fill the
-                membership registration form, and submit the required verification to confirm you
-                are a bona fide resident or business of that specific community.</p>
-            )}
+              <h4 data-aos="slide-right" onClick={() => toggleFAQ(2)}><span><img className='pbimg' src="pb.png" alt="" /></span>How can I sign up for Localite?</h4>
+              {activeFAQ === 2 && (
+                <p>To sign up, download the Localite app from the App Store or Google Play, fill the
+                  membership registration form, and submit the required verification to confirm you
+                  are a bona fide resident or business of that specific community.</p>
+              )}
 
-            <h4 onClick={() => toggleFAQ(3)}><span><img className='pbimg' src="pb.png" alt="" /></span>Is there a fee to use Localite?</h4>
-            {activeFAQ === 3 && (
-              <p>No, Localite is absolutely free to download and use for the verified residents.</p>
-            )}
+              <h4 data-aos="slide-left" onClick={() => toggleFAQ(3)}><span><img className='pbimg' src="pb.png" alt="" /></span>Is there a fee to use Localite?</h4>
+              {activeFAQ === 3 && (
+                <p>No, Localite is absolutely free to download and use for the verified residents.</p>
+              )}
 
-            <h4 onClick={() => toggleFAQ(4)}><span><img className='pbimg' src="pb.png" alt="" /></span>How can my business benefit from joining Localite?</h4>
-            {activeFAQ === 4 && (
-              <p>By joining Localite, your business gains visibility among local high-end residents,
-                allowing you to promote your products and services directly to a targeted
-                audience, participate in hyperlocal events, offer promotions, and build customer
-                loyalty within the community.</p>
-            )}
+              <h4 data-aos="slide-right" onClick={() => toggleFAQ(4)}><span><img className='pbimg' src="pb.png" alt="" /></span>How can my business benefit from joining Localite?</h4>
+              {activeFAQ === 4 && (
+                <p>By joining Localite, your business gains visibility among local high-end residents,
+                  allowing you to promote your products and services directly to a targeted
+                  audience, participate in hyperlocal events, offer promotions, and build customer
+                  loyalty within the community.</p>
+              )}
 
-            <h4 onClick={() => toggleFAQ(5)}><span><img className='pbimg' src="pb.png" alt="" /></span>What types of businesses can join Localite?</h4>
-            {activeFAQ === 5 && (
-              <p>Localite welcomes businesses across various sectors including but not limited to
-                food and beverage, retail, personal and professional services, health and wellness,
-                home improvement, and many more.</p>
-            )}
+              <h4 data-aos="slide-left" onClick={() => toggleFAQ(5)}><span><img className='pbimg' src="pb.png" alt="" /></span>What types of businesses can join Localite?</h4>
+              {activeFAQ === 5 && (
+                <p>Localite welcomes businesses across various sectors including but not limited to
+                  food and beverage, retail, personal and professional services, health and wellness,
+                  home improvement, and many more.</p>
+              )}
 
-            <h4 onClick={() => toggleFAQ(6)}><span><img className='pbimg' src="pb.png" alt="" /></span>How do I list my business on Localite?</h4>
-            {activeFAQ === 6 && (
-              <p>To list your business, complete the Merchant Registration form from here or fill
-                the form available on our Localite app, submit the required documents for
-                verification, and once approved, you can start customizing your business profile.</p>
-            )}
+              <h4 data-aos="slide-right" onClick={() => toggleFAQ(6)}><span><img className='pbimg' src="pb.png" alt="" /></span>How do I list my business on Localite?</h4>
+              {activeFAQ === 6 && (
+                <p>To list your business, complete the Merchant Registration form from here or fill
+                  the form available on our Localite app, submit the required documents for
+                  verification, and once approved, you can start customizing your business profile.</p>
+              )}
 
-            <h4 onClick={() => toggleFAQ(7)}><span><img className='pbimg' src="pb.png" alt="" /></span>Is there a commission or fee for sales made through Localite?</h4>
-            {activeFAQ === 7 && (
-              <p>Localite charges a small fee for listings. Currently, there is NO commission
-                charged on sales at this point. However, future updates regarding any changes will
-                be communicated in advance to all registered businesses.</p>
-            )}
+              <h4 data-aos="slide-left" onClick={() => toggleFAQ(7)}><span><img className='pbimg' src="pb.png" alt="" /></span>Is there a commission or fee for sales made through Localite?</h4>
+              {activeFAQ === 7 && (
+                <p>Localite charges a small fee for listings. Currently, there is NO commission
+                  charged on sales at this point. However, future updates regarding any changes will
+                  be communicated in advance to all registered businesses.</p>
+              )}
 
-            <h4 onClick={() => toggleFAQ(8)}><span><img className='pbimg' src="pb.png" alt="" /></span>How can I promote my business on Localite?</h4>
-            {activeFAQ === 8 && (
-              <p>You can promote your business by posting special offers, participating in app-
-                exclusive events, and utilizing advertising features available through Localite to
-                enhance your visibility and attract more customers.</p>
-            )}
+              <h4 data-aos="slide-right" onClick={() => toggleFAQ(8)}><span><img className='pbimg' src="pb.png" alt="" /></span>How can I promote my business on Localite?</h4>
+              {activeFAQ === 8 && (
+                <p>You can promote your business by posting special offers, participating in app-
+                  exclusive events, and utilizing advertising features available through Localite to
+                  enhance your visibility and attract more customers.</p>
+              )}
 
-            <h4 onClick={() => toggleFAQ(9)}><span><img className='pbimg' src="pb.png" alt="" /></span>What kind of promotions can I run on Localite?</h4>
-            {activeFAQ === 9 && (
-              <p>You can offer discounts, bundle deals, exclusive products, or loyalty rewards. Our
-                team is available to help you set up these promotions effectively.</p>
-            )}
+              <h4 data-aos="slide-left" onClick={() => toggleFAQ(9)}><span><img className='pbimg' src="pb.png" alt="" /></span>What kind of promotions can I run on Localite?</h4>
+              {activeFAQ === 9 && (
+                <p>You can offer discounts, bundle deals, exclusive products, or loyalty rewards. Our
+                  team is available to help you set up these promotions effectively.</p>
+              )}
 
-            <h4 onClick={() => toggleFAQ(10)}><span><img className='pbimg' src="pb.png" alt="" /></span>Who do I contact if I have technical problems with the app?</h4>
-            {activeFAQ === 10 && (
-              <p>For technical support, please contact our support team
-                at localite@alittleworld.com or through the app's built-in help feature.</p>
-            )}
+              <h4 data-aos="slide-right" onClick={() => toggleFAQ(10)}><span><img className='pbimg' src="pb.png" alt="" /></span>Who do I contact if I have technical problems with the app?</h4>
+              {activeFAQ === 10 && (
+                <p>For technical support, please contact our support team
+                  at localite@alittleworld.com or through the app's built-in help feature.</p>
+              )}
 
-            <h4 onClick={() => toggleFAQ(11)}><span><img className='pbimg' src="pb.png" alt="" /></span>Can I track the performance of my business on Localite?</h4>
-            {activeFAQ === 11 && (
-              <p>Yes, Localite provides a dashboard for business owners where you can track
-                views, sales, and engagement statistics for your listings and promotions.</p>
-            )}
+              <h4 data-aos="slide-left" onClick={() => toggleFAQ(11)}><span><img className='pbimg' src="pb.png" alt="" /></span>Can I track the performance of my business on Localite?</h4>
+              {activeFAQ === 11 && (
+                <p>Yes, Localite provides a dashboard for business owners where you can track
+                  views, sales, and engagement statistics for your listings and promotions.</p>
+              )}
 
-            <h4 onClick={() => toggleFAQ(12)}><span><img className='pbimg' src="pb.png" alt="" /></span>How is customer data handled on Localite?</h4>
-            {activeFAQ === 12 && (
-              <p>Customer privacy is paramount. All data is handled in strict compliance with data
-                protection regulations to ensure user information is securely managed and not
-                shared without consent.</p>
-            )}
+              <h4 data-aos="slide-right" onClick={() => toggleFAQ(12)}><span><img className='pbimg' src="pb.png" alt="" /></span>How is customer data handled on Localite?</h4>
+              {activeFAQ === 12 && (
+                <p>Customer privacy is paramount. All data is handled in strict compliance with data
+                  protection regulations to ensure user information is securely managed and not
+                  shared without consent.</p>
+              )}
 
+            </div>
           </div>
-        </div>
 
         </div>
         <Footer />
         <br />
-        
+
         <button onClick={scrollToTop}>
           Scroll to Top
         </button>

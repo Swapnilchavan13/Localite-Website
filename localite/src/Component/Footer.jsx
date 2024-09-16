@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/footer.css';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -8,14 +9,30 @@ export const Footer = () => {
     <div className='footer'>
         <img src="w_logo.png" alt="" />
         <div className='allfooter'>
+            <Link to='/'>
             <h3>Home</h3>
+            </Link>
+            <Link to='about'>
             <h3>About us</h3>
+            </Link>
+            <Link to='terms'>
             <h3>Terms</h3>
+            </Link>
+            <Link to='privacy'>
             <h3>Privacy</h3>
+            </Link>
+            <Link to='careers'>
             <h3>Careers</h3>
+            </Link>
+            <Link to="contactus">
             <h3>Contact us</h3>
+            </Link>
+            <Link to="shipping">
             <h3>Shipping</h3>
+            </Link>
+            <Link to="return">
             <h3>Return & Refund</h3>
+            </Link>
         </div>
 
 <div className='footernews'>
