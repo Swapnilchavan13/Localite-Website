@@ -1,25 +1,92 @@
+/* General styles for desktop */
 .topdiv {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background: linear-gradient(to right, #f9f1f1, #f6e3e3, #fde0e0, #feecec, #faf4f4);
-  position: relative;
-  overflow: hidden;
   color: rgb(253, 125, 125);
   font-weight: 500;
+  position: sticky; /* Make the navbar sticky */
+  top: 0; /* Stick to the top of the viewport */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
+/* Styles for the logo */
 .topdiv img {
-  width: 40%;;
+  width: 40%;
 }
 
-.topdivtext{
+/* Hide hamburger menu by default */
+.hamburger {
+  display: none;
+}
+
+/* Hide dropdown menu by default */
+.dropdown-not {
+  display: flex;
+  gap: 40px;
+}
+
+.topdivtext {
   width: 45%;
   display: flex;
   justify-content: space-evenly;
 }
 
-.topdivtext p{
+.topdivtext p {
   cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .topdiv {
+    justify-content: space-between;
+  }
+
+  .topdiv img {
+    width: 35%;
+    margin-left: 35%;
+  }
+
+  .topdivtext {
+    display: none;
+  }
+
+  /* Hamburger menu */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 2rem;
+    color: rgb(253, 125, 125);
+  }
+
+  /* Dropdown menu (initially hidden) */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid rgb(253, 125, 125);
+    padding: 10px;
+    z-index: 1000;
+    flex-direction: column;
+  }
+
+  .dropdown-menu p {
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(253, 125, 125);
+    cursor: pointer;
+  }
+
+  .dropdown-menu p:last-child {
+    border-bottom: none;
+  }
+
+  /* Show dropdown when clicked */
+  .dropdown-active {
+    display: flex;
+  }
 }

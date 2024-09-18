@@ -133,21 +133,21 @@ export const Home = () => {
             <div className='threecolordiv'>
               <div data-aos="slide-up" data-aos-delay="0">
                 <div className='threesinglediv'>
-                  <img src="store2.png" alt="" />
+                  <img src="Ellipse 32 .png" alt="" />
                   <p>Showcase your products and services with high-quality images, detailed description, and customer review.</p>
                 </div>
                 <h3>Online Storefront</h3>
               </div>
               <div data-aos="slide-up" data-aos-delay="500">
                 <div className='threesinglediv'>
-                  <img src="teamwork3.png" alt="" />
+                  <img src="Ellipse 33 .png" alt="" />
                   <p>Expand your customer base by reaching a wider audience through digital screen and app promotion.</p>
                 </div>
                 <h3>Increase Customer Reach</h3>
               </div>
               <div data-aos="slide-up" data-aos-delay="1000">
                 <div className='threesinglediv'>
-                  <img src="shout.png" alt="" />
+                  <img src="Ellipse 34 .png" alt="" />
                   <p>Enhance brand visibility and recognition with targeted digital advertising on street corners and in high-traffic locations.</p>
                 </div>
                 <h3>Boost Brand Awareness</h3>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Topnavbar } from './Topnavbar';
+import { Footer } from './Footer';
 
 // Terms component
 const Privacy = () => {
@@ -60,6 +61,7 @@ const Privacy = () => {
     </div>
     <br />
     <br />
+    <Footer />
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Topnavbar } from './Topnavbar';
+import { Footer } from './Footer';
 
 // Careers component
 const Careers = () => {
@@ -51,6 +52,7 @@ const Careers = () => {
         </div>
       </div>
       <br />
+      <Footer />
     </>
   );
 };

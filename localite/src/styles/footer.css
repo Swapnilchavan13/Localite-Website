@@ -1,64 +1,142 @@
-.footermain{
+/* General styles for desktop */
+.footermain {
     background-color: rgb(241, 239, 239);
     padding: 20px;
-}
-.footer{
+  }
+  
+  .footer {
     margin: auto;
     width: 80%;
     text-align: center;
-}
-
-.footer img{
+  }
+  
+  .footer img {
     width: 20%;
-}
-
-.allfooter{
-    margin: auto;
+  }
+  
+  .allfooter {
     width: 80%;
     display: flex;
-    justify-content: space-between;
     color: rgb(136, 134, 134);
-}
-
-.footernews{
-display: flex;
-justify-content: space-between;
-}
-
-.footernews .indiv{
-margin-top: 40px;
-}
-
-.indiv button{
-  margin-left: 20px;
-  background-color: rgb(216, 31, 31);
-  color: white;
-  border: none;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.indiv input{
-    width: 400px;
+    margin: auto;
   }
 
-.lastline{
-display: flex;
-justify-content: space-between;
-}
 
-.lastline img{
+  .allfooter div{
+    margin: auto;
+    gap: 40px;
+    display: flex;
+   
+  }
+  
+  .footernews {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footernews .indiv {
+    margin-top: 40px;
+  }
+  
+  .indiv button {
+    margin-left: 20px;
+    background-color: rgb(216, 31, 31);
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .indiv input {
+    width: 400px;
+  }
+  
+  .lastline {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .lastline img {
     height: 20px;
     width: 16px;
     margin-top: 10px;
     margin-left: 30px;
-    }
-
-Link{
+  }
+  
+  Link {
     text-decoration: none;
-}
-
-a{
+  }
+  
+  a {
     text-decoration: none;
     color: rgb(96, 96, 96);
   }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .footer {
+      width: 95%;
+    }
+  
+    .footer img {
+      width: 40%; /* Adjust image size for smaller screens */
+    }
+  
+    .allfooter {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: 40px auto;
+      }
+      
+      .allfooter div {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 45%; /* Each column takes up 45% of the width */
+      }
+      
+      .allfooter h3 {
+        font-size: 16px;
+        margin-top: -40px;
+      }
+      
+      .allfooter a {
+        text-decoration: none;
+        color: rgb(96, 96, 96);
+      }
+      
+  
+    .footernews {
+        margin-top: -40px;
+      flex-direction: column; /* Stack elements vertically */
+    }
+
+  
+    .indiv input {
+      width: 50%; /* Make input full width */
+    }
+  
+    .indiv button {
+      width: 30%; /* Make button full width */
+    }
+  
+    .lastline {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lastline div{
+        display: flex;
+        gap: 20px;
+    }
+  
+    .lastline img {
+      margin: 0; /* Remove margin for better mobile fit */
+    }
+  
+    .footer img {
+      width: 50%; /* Further adjust image size for mobile */
+    }
+  }
+  

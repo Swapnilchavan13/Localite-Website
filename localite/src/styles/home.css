@@ -57,7 +57,7 @@ margin-top: -50%;
 
 .headcon h1{
   font-size: 160px;
-  color: rgb(5, 75, 75);
+  color: #2A6171;
 }
 
 .headcon p{
@@ -151,6 +151,11 @@ cursor: pointer;
   z-index: 1; /* Ensures the content is above the pseudo-element */
   padding: 5px 50px;
   width: 25%;
+  border: 3px solid;
+  border-top-color: #fd68d0; /* Red */
+  border-bottom-color: #f9bb11; /* Red */
+  border-left-color: #fcaf68; /* Red */
+  border-right-color: #fcaf68; /* Green */
 }
 
 .threedivs div p{
@@ -162,23 +167,7 @@ cursor: pointer;
   color: rgb(72, 165, 165);
 }
 
-.threedivs div::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 15px; /* Match the border radius of the main element */
-  padding: 2px; /* This controls the width of the border */
-  background: linear-gradient(to bottom, #e41193 50%, #eb8313 50%); /* Creates the two-color border effect */
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0); /* Masks out the inside of the border */
-  -webkit-mask-composite: destination-out;
-          mask-composite: exclude;
-  z-index: -1; /* Places the pseudo-element behind the content */
-}
+
 
 .about{
   text-align: center;
@@ -492,98 +481,154 @@ font-size: 20px;
   }
 
   .headcon {
-    padding-left: 10%;
-    margin-top: 20%;
+    padding: 10%;
   }
 
   .headcon h1 {
-    font-size: 48px; /* Reduce font size */
+    font-size: 60px; /* Reduce font size */
+    margin-top: -30%;
+    margin-bottom: 20%;
   }
 
   .headcon p {
     width: 100%; /* Adjust width */
-    font-size: 18px; /* Reduce font size */
-    margin-top: -50px;
+    font-size: 13px; /* Reduce font size */
+    margin-top: -60px;
   }
 
   .intoline {
     font-size: 28px; /* Reduce font size */
   }
 
+  .balls{
+    display: none;
+
+  }
+
   .videoandbtn {
-    display: block; /* Stack elements vertically */
+  /* Stack elements vertically */
+  margin: auto;
     text-align: center;
   }
 
   .videoandbtn img {
-    width: 90%; /* Adjust image width for mobile */
+    margin-top: 10px;
+    width: 45%; /* Adjust image width for mobile */
   }
 
   .handmobile {
-    margin-left: 0;
+    width: 130%;
+    margin: auto;
+  }
+
+  .movingline {
+    overflow: hidden; /* Hides the overflowing text */
+    white-space: nowrap; /* Prevents text from wrapping */
+    width: 100%; /* Adjust width as needed */
+    background: linear-gradient(to right, #e41193, #eb8313);
+    position: relative; /* Positions the content relative to the container */
+    color: white;
+  }
+
+  .scrolling-text{
+    font-size: 16px;
   }
 
   .digitaldiv h1 {
-    font-size: 40px; /* Reduce font size */
+    font-size: 20px; /* Reduce font size */
+  }
+
+  .digitaldiv{
+    margin: auto;
+    width: 60%;
   }
 
   .lmarket {
     padding: 0 20px; /* Reduce padding */
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .threedivs {
-    display: block; /* Stack elements vertically */
+    flex-direction: column; /* Stack the items vertically */
     width: 95%;
-    margin: auto;
+    margin-top: 30px;
+    gap: 20px; /* Add more gap between stacked items */
   }
 
   .threedivs div {
-    width: 90%; /* Adjust width */
-    margin: 10px auto;
+    width: 88%; /* Full width for mobile */
+    padding: 20px; /* Increase padding for better spacing */
+  
+  }
+
+  .threedivs div h3 {
+    font-size: 24px; /* Slightly smaller font size */
+  }
+
+  .threedivs div p {
+    font-size: 18px; /* Slightly smaller paragraph font size */
+  }
+
+  .threedivs div::before {
+    border-radius: 15px;
+    padding: 3px; /* Adjust border width for smaller screens */
   }
 
   .about {
     width: 100%;
     height: auto; /* Let height adjust based on content */
+    margin-top: 60px;
+  }
+
+  .about h1{
+    font-size: 30px;
   }
 
   .aboutdiv {
     display: block;
-    width: 95%; /* Adjust width */
+    text-align: center;
+    margin: auto;
+    width: 90%; /* Adjust width */
   }
 
   .aboutfirstdiv {
-    width: 100%; /* Adjust width */
-    padding: 20px;
+    margin-top: -160px;
+    width: 90%; /* Adjust width */
   }
 
   .aboutfirstdiv h2 {
-    font-size: 20px; /* Reduce font size */
+    font-size: 12px; /* Reduce font size */
+    font-weight: bolder;
   }
 
   .aboutdiv div img {
     width: 100%; /* Adjust image width */
-    margin-top: 0;
+    margin-top: -40px;
     margin-left: 0;
+  }
+
+  .threecolordivmain{
+    width: 95%;
+    margin-top: -30%;
   }
 
   .threecolordiv {
     display: block; /* Stack elements vertically */
-    width: 90%;
+    width: 100%;
     margin: auto;
   }
 
   .threesinglediv {
     padding: 20px; /* Reduce padding */
   }
+  
 
   .sellwithus {
     width: 95%; /* Adjust width */
   }
 
   .sellwithus h1 {
-    font-size: 28px; /* Reduce font size */
+    font-size: 25px; /* Reduce font size */
   }
 
   .sellwithus p {
@@ -595,11 +640,10 @@ font-size: 20px;
   }
 
   .getstart h1 {
-    font-size: 30px; /* Reduce font size */
+    font-size: 25px; /* Reduce font size */
   }
 
   .fourgetstart {
-    display: block; /* Stack elements vertically */
     width: 95%;
     text-align: center;
   }
@@ -613,11 +657,11 @@ font-size: 20px;
   }
 
   .connect h1 {
-    font-size: 28px; /* Reduce font size */
+    font-size: 25px; /* Reduce font size */
   }
 
   .connect p {
-    font-size: 16px; /* Reduce font size */
+    font-size: 14px; /* Reduce font size */
   }
 
   .siximages {
@@ -632,12 +676,20 @@ font-size: 20px;
   .faqdiv {
     width: 95%;
   }
+  .faq{
+    padding: 10px 1px;
+  }
 
   .faq h1 {
     font-size: 28px; /* Reduce font size */
   }
 
+  .faq h4 {
+    font-size: 13px; /* Reduce font size */
+  }
+
   .faq p {
-    font-size: 14px;
+    font-size: 13px;
+    margin-top: 5px;
   }
 }
