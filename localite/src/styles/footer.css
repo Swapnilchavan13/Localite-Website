@@ -138,5 +138,10 @@
     .footer img {
       width: 50%; /* Further adjust image size for mobile */
     }
+
+    a{
+        text-decoration: none;
+        width: 100%;
+      }
   }
   
