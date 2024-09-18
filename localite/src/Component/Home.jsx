@@ -9,6 +9,18 @@ import { Footer } from './Footer';
 
 export const Home = () => {
 
+
+  const aboutRef = useRef(null);
+  const faqRef = useRef(null);
+
+  const scrollToAbout = () => {
+    aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToFAQs = () => {
+    faqRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const videoRef = useRef(null);
   const [activeFAQ, setActiveFAQ] = useState(null);
 
@@ -32,7 +44,7 @@ export const Home = () => {
   return (
     <div className='mainmain'>
       <div className="maind">
-        <Topnavbar />
+      <Topnavbar scrollToAbout={scrollToAbout} scrollToFAQs={scrollToFAQs} />
         <div className="home-container">
           <h1 className='intoline'>Introducing</h1>
           <div className='introdiv'>
@@ -95,13 +107,22 @@ export const Home = () => {
             </div>
           </div>
 
-          <div className='about'>
+          <div className='about' ref={aboutRef}>
             <h1>About Localite</h1>
             <div className='aboutdiv'>
               <div data-aos="zoom-in" className='aboutfirstdiv'>
                 <h2>Localite is neighbourhood marketplace. We empower local merchants bub giving them a space to showcase their offering.</h2>
                 <h2>We are dedicated to bring together local businesses and customers in one easy-to-use platform, encouraging <span className='aboutline'>community growth and convenient local shopping.
                   </span></h2>
+                  <h2>
+        <span 
+          className="watch-video" 
+          style={{ cursor: 'pointer' }} 
+          onClick={() => window.open("/PhoneApp.mp4", "_blank")}
+        >
+          Watch Video ▶️▶️▶️
+        </span>
+      </h2>
               </div>
               <div data-aos="flip-right"><img src="mobile1.png" alt="" /></div>
             </div>
@@ -207,7 +228,7 @@ export const Home = () => {
 
 
           <div className='faq'>
-            <div className='faqdiv'>
+            <div className='faqdiv' ref={faqRef}>
 
               <h1>FAQs</h1>
               <h4 data-aos="slide-left" onClick={() => toggleFAQ(1)}><span><img className='pbimg' src="pb.png" alt="" /></span>What is Localite?</h4>
