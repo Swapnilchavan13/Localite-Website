@@ -139,7 +139,7 @@ const ContactUs = () => {
                 />
               </label>
             </div>
-            <button type="submit" style={{ padding: '10px 20px', backgroundColor: '#007BFF', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+            <button type="submit" style={{width:'80%', padding: '10px 20px', backgroundColor: '#007BFF', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
               Submit
             </button>
           </form>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Topnavbar } from './Topnavbar';
+import { Footer } from './Footer';
 
 // Terms component
 const Return = () => {
@@ -41,8 +42,7 @@ const Return = () => {
         <p>For any further queries or to initiate a return, please contact our support team.</p>
       </div>
     </div>
-    <br />
-    <br />
+    <Footer />
     </>
   );
 };

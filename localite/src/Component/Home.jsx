@@ -8,7 +8,7 @@ import 'aos/dist/aos.css';
 import { Footer } from './Footer';
 
 export const Home = () => {
-
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const aboutRef = useRef(null);
   const faqRef = useRef(null);
@@ -28,11 +28,24 @@ export const Home = () => {
     setActiveFAQ(activeFAQ === faqIndex ? null : faqIndex);
   };
 
+
+  const handleScroll = () => {
+    if (window.scrollY > 300) {
+      setShowScrollTop(true);
+    } else {
+      setShowScrollTop(false);
+    }
+  };
+
   useEffect(() => {
-    AOS.init({
-      duration: 1200,
-    });
+    AOS.init({ duration: 1200 });
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -319,9 +332,9 @@ export const Home = () => {
         <Footer />
         <br />
 
-        <button onClick={scrollToTop}>
-          Scroll to Top
-        </button>
+        {showScrollTop && (
+  <button className='top' onClick={scrollToTop}>🔝</button>
+)}
       </div>
 
 
