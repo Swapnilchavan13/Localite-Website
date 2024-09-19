@@ -463,13 +463,11 @@ font-size: 20px;
 }
 
 
-
-
 /* ////////////////////////////////////////////////////////////////////////////////////////// */
 
 
 /* Mobile-specific styles for Home component */
-@media (max-width: 768px) {
+@media (max-width: 1111px) {
   
   body {
     background: linear-gradient(to bottom, #fef2f2, #fef2f2);
