@@ -98,6 +98,7 @@ cursor: pointer;
   background: linear-gradient(to right, #e41193, #eb8313);
   position: relative; /* Positions the content relative to the container */
   color: white;
+  margin-top: -5px;
 }
 
 .scrolling-text {
@@ -168,7 +169,6 @@ cursor: pointer;
 }
 
 
-
 .about{
   text-align: center;
   width: 100%;
@@ -205,6 +205,10 @@ cursor: pointer;
   width: 150%;
 }
 
+#playbtn{
+  margin: 0px 40px -5px auto;
+  width: 4%;
+}
 
 .threecolordivmain{
   width: 100%;
@@ -343,6 +347,9 @@ font-size: 20px;
   width: 95%;
 }
 
+.watch-video{
+  color: #2A6171;
+}
 
 .connect{
   margin: 30px auto;
@@ -407,6 +414,7 @@ font-size: 20px;
 
 .gradientimg{
   width: 100%;
+  margin-top: -5px;
 }
 
 
@@ -414,7 +422,7 @@ font-size: 20px;
   width:auto;
   justify-content: center;
   background-color: white;
-  margin: auto;
+  margin: -5px auto;
   text-align: left;
   padding: 10px 1px;
 }
@@ -443,6 +451,14 @@ font-size: 20px;
 .pbimg{
   width: 1.5%;
   margin-right: 20px;
+}
+
+.pbimg {
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(90deg);
 }
 
 .top {
@@ -543,6 +559,12 @@ font-size: 20px;
     background: linear-gradient(to right, #e41193, #eb8313);
     position: relative; /* Positions the content relative to the container */
     color: white;
+   
+  }
+
+  #playbtn{
+    margin: 0px 40px -2px auto;
+    width: 4%;
   }
 
   .scrolling-text{

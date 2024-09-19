@@ -88,7 +88,7 @@ export const Home = () => {
 
           <div className="firstdiv">
 
-            <div data-aos="flip-right" class="movingline">
+            <div class="movingline">
               <h1 class="scrolling-text">
                 Discover and Support Local Gems! Discover and Support Local Gems! Discover and Support Local Gems! Discover and Support Local Gems!
               </h1>
@@ -133,11 +133,11 @@ export const Home = () => {
           style={{ cursor: 'pointer' }} 
           onClick={() => window.open("/PhoneApp.mp4", "_blank")}
         >
-          Watch Video ▶️▶️▶️
+          Watch Video <img id='playbtn' src="play.png" alt="" />
         </span>
       </h2>
               </div>
-              <div data-aos="flip-right"><img src="mobile1.png" alt="" /></div>
+              <div data-aos="flip-right"><img src="about.png" alt="" /></div>
             </div>
 
           </div>
@@ -168,13 +168,13 @@ export const Home = () => {
             </div>
 
             <div className='featurediv'>
-              <img data-aos="zoom-in" className='features' src="Features.png" alt="" />
+              <img className='features' src="Features.png" alt="" />
             </div>
 
           </div>
 
 
-          <div data-aos="zoom-in" className='sellwithus'>
+          <div className='sellwithus'>
             <h1>Sell With Us</h1>
             <p>Want to bring your loacal business to market?</p>
             <p>List your products oe services, select your location <br /> and <span className='sellcolor'>start selling</span></p>
@@ -235,7 +235,7 @@ export const Home = () => {
           </div>
 
 
-          <img data-aos="zoom-in" className='teamandinfra' src="teaminfra.png" alt="" />
+          <img className='teamandinfra' src="teaminfra.png" alt="" />
 
           <img data-aos="slide-up" className='gradientimg' src="gradient_bar.png" alt="" />
 
@@ -244,7 +244,11 @@ export const Home = () => {
             <div className='faqdiv' ref={faqRef}>
 
               <h1>FAQs</h1>
-              <h4 data-aos="slide-left" onClick={() => toggleFAQ(1)}><span><img className='pbimg' src="pb.png" alt="" /></span>What is Localite?</h4>
+              <h4 onClick={() => toggleFAQ(1)}>
+              <span>
+             <img className={`pbimg ${activeFAQ === 1 ? 'rotate' : ''}`} src="pb.png" alt="" />
+             </span>
+                What is Localite?</h4>
               {activeFAQ === 1 && (
                 <p>Localite is one of its kind, members-only hyperlocal community app designed to
                   connect high-end local residents with hyperlocal SME brands in catchment
@@ -252,19 +256,31 @@ export const Home = () => {
                   offers, events, pre-loved items, networking and much more.</p>
               )}
 
-              <h4 data-aos="slide-right" onClick={() => toggleFAQ(2)}><span><img className='pbimg' src="pb.png" alt="" /></span>How can I sign up for Localite?</h4>
+              <h4 onClick={() => toggleFAQ(2)}>
+              <span>
+             <img className={`pbimg ${activeFAQ === 2 ? 'rotate' : ''}`} src="pb.png" alt="" />
+             </span>
+                How can I sign up for Localite?</h4>
               {activeFAQ === 2 && (
                 <p>To sign up, download the Localite app from the App Store or Google Play, fill the
                   membership registration form, and submit the required verification to confirm you
                   are a bona fide resident or business of that specific community.</p>
               )}
 
-              <h4 data-aos="slide-left" onClick={() => toggleFAQ(3)}><span><img className='pbimg' src="pb.png" alt="" /></span>Is there a fee to use Localite?</h4>
+              <h4 onClick={() => toggleFAQ(3)}>
+              <span>
+             <img className={`pbimg ${activeFAQ === 3 ? 'rotate' : ''}`} src="pb.png" alt="" />
+             </span>
+                Is there a fee to use Localite?</h4>
               {activeFAQ === 3 && (
                 <p>No, Localite is absolutely free to download and use for the verified residents.</p>
               )}
 
-              <h4 data-aos="slide-right" onClick={() => toggleFAQ(4)}><span><img className='pbimg' src="pb.png" alt="" /></span>How can my business benefit from joining Localite?</h4>
+              <h4 onClick={() => toggleFAQ(4)}>
+              <span>
+             <img className={`pbimg ${activeFAQ === 4 ? 'rotate' : ''}`} src="pb.png" alt="" />
+             </span>
+                How can my business benefit from joining Localite?</h4>
               {activeFAQ === 4 && (
                 <p>By joining Localite, your business gains visibility among local high-end residents,
                   allowing you to promote your products and services directly to a targeted
@@ -272,53 +288,85 @@ export const Home = () => {
                   loyalty within the community.</p>
               )}
 
-              <h4 data-aos="slide-left" onClick={() => toggleFAQ(5)}><span><img className='pbimg' src="pb.png" alt="" /></span>What types of businesses can join Localite?</h4>
+              <h4 onClick={() => toggleFAQ(5)}>
+              <span>
+             <img className={`pbimg ${activeFAQ === 5 ? 'rotate' : ''}`} src="pb.png" alt="" />
+             </span>
+                What types of businesses can join Localite?</h4>
               {activeFAQ === 5 && (
                 <p>Localite welcomes businesses across various sectors including but not limited to
                   food and beverage, retail, personal and professional services, health and wellness,
                   home improvement, and many more.</p>
               )}
 
-              <h4 data-aos="slide-right" onClick={() => toggleFAQ(6)}><span><img className='pbimg' src="pb.png" alt="" /></span>How do I list my business on Localite?</h4>
+              <h4 onClick={() => toggleFAQ(6)}>
+              <span>
+             <img className={`pbimg ${activeFAQ === 6 ? 'rotate' : ''}`} src="pb.png" alt="" />
+             </span>
+                How do I list my business on Localite?</h4>
               {activeFAQ === 6 && (
                 <p>To list your business, complete the Merchant Registration form from here or fill
                   the form available on our Localite app, submit the required documents for
                   verification, and once approved, you can start customizing your business profile.</p>
               )}
 
-              <h4 data-aos="slide-left" onClick={() => toggleFAQ(7)}><span><img className='pbimg' src="pb.png" alt="" /></span>Is there a commission or fee for sales made through Localite?</h4>
+              <h4 onClick={() => toggleFAQ(7)}>
+              <span>
+             <img className={`pbimg ${activeFAQ === 7 ? 'rotate' : ''}`} src="pb.png" alt="" />
+             </span>
+                Is there a commission or fee for sales made through Localite?</h4>
               {activeFAQ === 7 && (
                 <p>Localite charges a small fee for listings. Currently, there is NO commission
                   charged on sales at this point. However, future updates regarding any changes will
                   be communicated in advance to all registered businesses.</p>
               )}
 
-              <h4 data-aos="slide-right" onClick={() => toggleFAQ(8)}><span><img className='pbimg' src="pb.png" alt="" /></span>How can I promote my business on Localite?</h4>
+              <h4 onClick={() => toggleFAQ(8)}>
+              <span>
+             <img className={`pbimg ${activeFAQ === 8 ? 'rotate' : ''}`} src="pb.png" alt="" />
+             </span>
+                How can I promote my business on Localite?</h4>
               {activeFAQ === 8 && (
                 <p>You can promote your business by posting special offers, participating in app-
                   exclusive events, and utilizing advertising features available through Localite to
                   enhance your visibility and attract more customers.</p>
               )}
 
-              <h4 data-aos="slide-left" onClick={() => toggleFAQ(9)}><span><img className='pbimg' src="pb.png" alt="" /></span>What kind of promotions can I run on Localite?</h4>
+              <h4 onClick={() => toggleFAQ(9)}>
+              <span>
+             <img className={`pbimg ${activeFAQ === 9 ? 'rotate' : ''}`} src="pb.png" alt="" />
+             </span>
+                What kind of promotions can I run on Localite?</h4>
               {activeFAQ === 9 && (
                 <p>You can offer discounts, bundle deals, exclusive products, or loyalty rewards. Our
                   team is available to help you set up these promotions effectively.</p>
               )}
 
-              <h4 data-aos="slide-right" onClick={() => toggleFAQ(10)}><span><img className='pbimg' src="pb.png" alt="" /></span>Who do I contact if I have technical problems with the app?</h4>
+              <h4 onClick={() => toggleFAQ(10)}>
+              <span>
+             <img className={`pbimg ${activeFAQ === 10 ? 'rotate' : ''}`} src="pb.png" alt="" />
+             </span>
+                Who do I contact if I have technical problems with the app?</h4>
               {activeFAQ === 10 && (
                 <p>For technical support, please contact our support team
                   at localite@alittleworld.com or through the app's built-in help feature.</p>
               )}
 
-              <h4 data-aos="slide-left" onClick={() => toggleFAQ(11)}><span><img className='pbimg' src="pb.png" alt="" /></span>Can I track the performance of my business on Localite?</h4>
+              <h4 onClick={() => toggleFAQ(11)}>
+              <span>
+             <img className={`pbimg ${activeFAQ === 11 ? 'rotate' : ''}`} src="pb.png" alt="" />
+             </span>
+                Can I track the performance of my business on Localite?</h4>
               {activeFAQ === 11 && (
                 <p>Yes, Localite provides a dashboard for business owners where you can track
                   views, sales, and engagement statistics for your listings and promotions.</p>
               )}
 
-              <h4 data-aos="slide-right" onClick={() => toggleFAQ(12)}><span><img className='pbimg' src="pb.png" alt="" /></span>How is customer data handled on Localite?</h4>
+              <h4 onClick={() => toggleFAQ(12)}>
+              <span>
+             <img className={`pbimg ${activeFAQ === 12 ? 'rotate' : ''}`} src="pb.png" alt="" />
+             </span>
+                How is customer data handled on Localite?</h4>
               {activeFAQ === 12 && (
                 <p>Customer privacy is paramount. All data is handled in strict compliance with data
                   protection regulations to ensure user information is securely managed and not
