@@ -124,7 +124,7 @@ export const Home = () => {
             <h1>About Localite</h1>
             <div className='aboutdiv'>
               <div data-aos="zoom-in" className='aboutfirstdiv'>
-                <h2>Localite is neighbourhood marketplace. We empower local merchants bub giving them a space to showcase their offering.</h2>
+                <h2>Localite is neighbourhood marketplace. We empower local merchants by giving them a space to showcase their offering.</h2>
                 <h2>We are dedicated to bring together local businesses and customers in one easy-to-use platform, encouraging <span className='aboutline'>community growth and convenient local shopping.
                   </span></h2>
                   <h2>
@@ -177,7 +177,7 @@ export const Home = () => {
           <div className='sellwithus'>
             <h1>Sell With Us</h1>
             <p>Want to bring your loacal business to market?</p>
-            <p>List your products oe services, select your location <br /> and <span className='sellcolor'>start selling</span></p>
+            <p>List your products or services, select your location <br /> and <span className='sellcolor'>start selling</span></p>
             <button className='sellbutton' onClick={() => window.open("https://localite.services/merchantform")}>Register Now</button>
           </div>
 
