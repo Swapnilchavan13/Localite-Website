@@ -107,7 +107,7 @@ export const Home = () => {
 
           <div className='threedivs'>
             <div data-aos="slide-left">
-              <h3>Enhaance Visibility</h3>
+              <h3>Enhance Visibility</h3>
               <p>Reach New customers with captivating digital displays that capture attention.</p>
             </div>
             <div data-aos="slide-up">
