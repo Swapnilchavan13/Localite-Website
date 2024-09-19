@@ -175,8 +175,8 @@ export const MerchantForm = () => {
       const userID1 = 'PhuU7kore77nPwnF5';
   
       const emailParams1 = {
-        business_name: formData.businessName,
-        business_type: formData.businessType,
+        business_name: formData.personName,
+        business_type: formData.businessName,
         business_address: formData.businessAddress,
         contact_email: formData.contactEmail,
         contact_phone_number: formData.contactPhoneNumber,
