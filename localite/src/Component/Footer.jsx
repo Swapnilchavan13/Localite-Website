@@ -61,7 +61,6 @@ export const Footer = () => {
         <a href="https://www.linkedin.com/company/103767681/admin/dashboard/" target='_blank'>
         <img src="in.png" alt="" />
         </a>
-        <img src="twitter.png" alt="" />
     </div>
 </div>
     </div>

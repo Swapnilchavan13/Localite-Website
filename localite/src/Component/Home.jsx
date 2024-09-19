@@ -168,7 +168,7 @@ export const Home = () => {
             </div>
 
             <div className='featurediv'>
-              <img className='features' src="Features.png" alt="" />
+              <img className='features' src="Features1.png" alt="" />
             </div>
 
           </div>
