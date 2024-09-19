@@ -61,7 +61,7 @@ export const Footer = () => {
           <p>@ 2024 Localite website | All rights reserved.</p>
           <div>
             <a href="https://www.instagram.com/localite.india?igsh=bXA4M243eXhqMnI0" target='_blank'>
-              <img src="insta.png" alt="" />
+              <img src="int.png" alt="" />
             </a>
             <img src="fb.png" alt="" />
             <a href="https://www.linkedin.com/company/103767681/admin/dashboard/" target='_blank'>
