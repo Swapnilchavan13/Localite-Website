@@ -178,7 +178,7 @@ export const Home = () => {
             <h1>Sell With Us</h1>
             <p>Want to bring your loacal business to market?</p>
             <p>List your products oe services, select your location <br /> and <span className='sellcolor'>start selling</span></p>
-            <button data-aos="zoom-in" className='sellbutton' onClick={() => window.open("https://localite.services/merchantform")}>Register Now</button>
+            <button className='sellbutton' onClick={() => window.open("https://localite.services/merchantform")}>Register Now</button>
           </div>
 
           <div data-aos="zoom-in" className='getstart'>
