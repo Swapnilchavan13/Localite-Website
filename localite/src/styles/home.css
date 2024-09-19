@@ -370,8 +370,15 @@ font-size: 20px;
   color: #2A6171;
 }
 
+.six{
+  width: 100%;
+  margin: auto;
+  /* border: 1px solid black; */
+}
+
 .siximages {
-  width: 90%;
+  /* border: 1px solid red; */
+  width: fit-content;
   text-align: center;
   margin: auto;
   display: flex;

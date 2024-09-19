@@ -144,21 +144,21 @@ export const Home = () => {
 
           <div className='threecolordivmain'>
             <div className='threecolordiv'>
-              <div data-aos="slide-up" data-aos-delay="0">
+              <div data-aos="zoom-in">
                 <div className='threesinglediv'>
                   <img src="Ellipse 32 .png" alt="" />
                   <p>Showcase your products and services with high-quality images, detailed description, and customer review.</p>
                 </div>
                 <h3>Online Storefront</h3>
               </div>
-              <div data-aos="slide-up" data-aos-delay="500">
+              <div data-aos="zoom-in">
                 <div className='threesinglediv'>
                   <img src="Ellipse 33 .png" alt="" />
                   <p>Expand your customer base by reaching a wider audience through digital screen and app promotion.</p>
                 </div>
                 <h3>Increase Customer Reach</h3>
               </div>
-              <div data-aos="slide-up" data-aos-delay="1000">
+              <div data-aos="zoom-in">
                 <div className='threesinglediv'>
                   <img src="Ellipse 34 .png" alt="" />
                   <p>Enhance brand visibility and recognition with targeted digital advertising on street corners and in high-traffic locations.</p>
@@ -219,6 +219,8 @@ export const Home = () => {
           </div>
 
 
+<div className='six'>
+
           <div className='siximages'>
             <img data-aos="slide-right" className='oneimg' src="Rectangle 105.png" alt="" />
             <div>
@@ -234,6 +236,7 @@ export const Home = () => {
             </div>
           </div>
 
+</div>
 
           <img className='teamandinfra' src="teaminfra.png" alt="" />
 
