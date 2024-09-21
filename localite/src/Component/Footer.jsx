@@ -58,7 +58,7 @@ export const Footer = () => {
         </div>
         <hr />
         <div className='lastline'>
-          <p>@ 2024 Localite website | All rights reserved.</p>
+          <p>Copyright © Localite. All Rights Reserved.</p>
           <div>
             <a href="https://www.instagram.com/localite.india?igsh=bXA4M243eXhqMnI0" target='_blank'>
               <img src="int.png" alt="" />
