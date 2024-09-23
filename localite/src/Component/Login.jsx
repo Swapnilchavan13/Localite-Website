@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
 import '../styles/login.css'; // Import the CSS file
-import { Footer } from './Footer';
+// import { Footer } from './Footer';
 
 export const Login = () => {
   const [merchants, setMerchants] = useState([]);
@@ -84,7 +84,7 @@ export const Login = () => {
         <br />
         <button type="submit">Login</button>
       </form>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
