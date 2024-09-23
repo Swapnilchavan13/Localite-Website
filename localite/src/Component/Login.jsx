@@ -49,7 +49,7 @@ export const Login = () => {
       backgroundRepeat: 'no-repeat' 
     }}>
       <div id='centreimgdiv'>
-      <img className='loginpinimg' src="Localite_icon.png" alt="" />
+      <img className='loginpinimg' src="w_logo.png" alt="" />
       <p className='lheading'>We’re excited to  <br />
       have you onboard!</p>
       {/* <img className='loginpinimg2' width="100px" src="/blue-logo.png" alt="" />
