@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import '../styles/login.css'; // Import the CSS file
-import { Footer } from './Footer';
+// import { Footer } from './Footer';
 
 export const Prelogin = () => {
 
@@ -39,7 +39,7 @@ export const Prelogin = () => {
       <br />
       <button id='signupbtn' onClick={handleSignupClick}>Sign up</button>
       
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
