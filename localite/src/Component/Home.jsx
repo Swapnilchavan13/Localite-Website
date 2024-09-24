@@ -64,7 +64,7 @@ export const Home = () => {
             <div>
               <div className='headcon' data-aos="slide-right">
                 <h1>Localite</h1>
-                <p>Localite ia a hyper local platform for local businesses to sell their products and services online.</p>
+                <p>Localite is a dynamic hyperlocal platform empowering local businesses to sell their products and services online.</p>
                 <div className='videoandbtn'>
                   {/* <h2>Watch video</h2> */}
                   <img
@@ -74,7 +74,13 @@ export const Home = () => {
                     alt=""
                     onClick={() => window.open("https://apps.apple.com/in/app/localite-shop-win-connect/id6670195737", "_blank")}
                   />
-                  <img data-aos="slide-up" className='vbtn2' src="Group 2734.png" alt="" />
+                  <img 
+                  data-aos="slide-up" 
+                  className='vbtn2' 
+                  src="Group 2734.png" 
+                  alt="" 
+                  onClick={() => window.open("https://youtu.be/RTGAEjDli1I?si=TT2Ybhxu7qPiazup", "_blank")}
+                  />
                 </div>
               </div>
 
@@ -90,43 +96,20 @@ export const Home = () => {
 
             <div class="movingline">
               <h1 class="scrolling-text">
-                Discover and Support Local Gems! Discover and Support Local Gems! Discover and Support Local Gems! Discover and Support Local Gems!
+              Empowering Hyper-Local Businesses in India! Empowering Hyper-Local Businesses in India! Empowering Hyper-Local Businesses in India!
               </h1>
             </div>
 
             <div className='digitaldiv'>
-              <h1>Digital Out Of Home Screens</h1>
+              <h1>Outdoor Advertising</h1>
             </div>
-            <video data-aos="zoom-in" className='video' ref={videoRef} autoPlay loop muted>
-              <source src="LOCALITE Web.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <br />
-            <h1 className='lmarket'>Your Local Marketplace, Right On The Screen</h1>
-          </div>
 
-          <div className='threedivs'>
-            <div data-aos="slide-left">
-              <h3>Enhance Visibility</h3>
-              <p>Reach New customers with captivating digital displays that capture attention.</p>
-            </div>
-            <div data-aos="slide-up">
-              <h3>Targeted Ads</h3>
-              <p>Showcase targeted promotions and specials to attract the right audience.</p>
-            </div>
-            <div data-aos="slide-right">
-              <h3>Dynamic Content</h3>
-              <p>Showcase your latest offers, promotions to maximize impact and engagement.</p>
-            </div>
-          </div>
-
-          <div className='about' ref={aboutRef}>
-            <h1>About Localite</h1>
+            <div className='about' ref={aboutRef}>
+            {/* <h1>About Localite</h1> */}
             <div className='aboutdiv'>
               <div data-aos="zoom-in" className='aboutfirstdiv'>
                 <h2>Localite is neighbourhood marketplace. We empower local merchants by giving them a space to showcase their offering.</h2>
-                <h2>We are dedicated to bring together local businesses and customers in one easy-to-use platform, encouraging <span className='aboutline'>community growth and convenient local shopping.
-                  </span></h2>
+                <h2>We are dedicated to bring together local businesses and customers in one easy-to-use platform, encouraging community growth and convenient local shopping.</h2>
                   <h2>
         <span 
           className="watch-video" 
@@ -141,6 +124,36 @@ export const Home = () => {
             </div>
 
           </div>
+
+
+            <video data-aos="zoom-in" className='video' ref={videoRef} autoPlay loop muted>
+              <source src="LOCALITE Web.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <br />
+            <h1 className='lmarket'>Your Local Marketplace, Right On The Screen</h1>
+          </div>
+
+          <div className='threedivs'>
+            <div data-aos="slide-left">
+              <h3>Boost Your Visibility</h3>
+              <p>Attract new customers with eye-catching digital displays that command attention and drive engagement.</p>
+            </div>
+            <div data-aos="slide-up">
+              <h3>Targeted Local Reach</h3>
+              <p>Connect with your targeted audience and drive traffic to your store.</p>
+            </div>
+            <div data-aos="slide-right">
+              <h3>Cost-efficient Promotions</h3>
+              <p>Affordable advertising and marketing to maximize impact and engagement.</p>
+            </div>
+          </div>
+
+
+          <div className='featurediv'>
+              <img className='features' src="Features1.png" alt="" />
+            </div>
+         
 
           <div className='threecolordivmain'>
             <div className='threecolordiv'>
@@ -167,17 +180,15 @@ export const Home = () => {
               </div>
             </div>
 
-            <div className='featurediv'>
-              <img className='features' src="Features1.png" alt="" />
-            </div>
+           
 
           </div>
 
 
           <div className='sellwithus'>
-            <h1>Sell With Us</h1>
+            <h1>Advertise Your Brand!</h1>
             <p>Want to bring your loacal business to market?</p>
-            <p>List your products or services, select your location <br /> and <span className='sellcolor'>start selling</span></p>
+            <p>List your products or services, select your location <br /> and <span className='sellcolor'>start advertising</span></p>
             <button className='sellbutton' onClick={() => window.open("https://localite.services/merchantform")}>Register Now</button>
           </div>
 
@@ -201,7 +212,7 @@ export const Home = () => {
               <p>Add your latest offers or deals and product images.</p> */}
               </div>
               <div data-aos="slide-left" data-aos-delay="1500" className='image-container'>
-                <img src="4htgs.png" alt="" />
+                <img src="no.4.png" alt="" />
                 {/* <h3>Start Selling</h3>
               <p>Product posts will be created and added on the app by the localite team.</p> */}
               </div>
@@ -212,10 +223,14 @@ export const Home = () => {
             <h1>Connect With Your Neighbour</h1>
             <p>Want to learn more about your neighbourhood?</p>
             <p>Explore nearby products, events,<br /> offers, news, connect with like-minded people <br /> and much more!</p>
-            <p className='pcolor'>Start exploring and connecting</p>
+            <a href="https://youtu.be/DAxHfPn9PHY?si=GM_w82Ncoxe2Zpcw" target="_blank" rel="noopener noreferrer">
+               <p className='pcolor'>Sneak Peek</p>
+            </a>
+
             <br />
             <p>Explore more than 20+ brands from your locality</p>
-            <p className='pcolor'>Download App</p>
+            <button className='sellbutton' onClick={() => window.open("https://localite.services/merchantform")}>Download App</button>
+            
           </div>
 
 
@@ -238,7 +253,7 @@ export const Home = () => {
 
 </div>
 
-          <img className='teamandinfra' src="teaminfra.png" alt="" />
+          <img className='teamandinfra' src="tndinfra.png" alt="" />
 
           <img data-aos="slide-up" className='gradientimg' src="gradient_bar.png" alt="" />
 
