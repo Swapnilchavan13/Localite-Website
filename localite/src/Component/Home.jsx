@@ -64,7 +64,7 @@ export const Home = () => {
             <div>
               <div className='headcon' data-aos="slide-right">
                 <h1>Localite</h1>
-                <p>Localite is a dynamic hyperlocal platform empowering local businesses to sell their products and services online.</p>
+                <p>Introducing a hyperlocal marketing agency that helps local businesses sell online, connect with their community, and grow their local presence.</p>
                 <div className='videoandbtn'>
                   {/* <h2>Watch video</h2> */}
                   <img
@@ -87,7 +87,7 @@ export const Home = () => {
             </div>
             <div>
               <img className='handmobile' data-aos="slide-left" width='100%' src="1st_imgn.png" alt="" />
-              <img className='balls' src="gradient_balls.png" alt="" />
+              {/* <img className='balls' src="gradient_balls.png" alt="" /> */}
             </div>
           </div>
 
@@ -96,7 +96,7 @@ export const Home = () => {
 
             <div class="movingline">
               <h1 class="scrolling-text">
-              Empowering Hyper-Local Businesses in India! Empowering Hyper-Local Businesses in India! Empowering Hyper-Local Businesses in India!
+              Empowering Local Businesses, Connecting Local Communities! Empowering Local Businesses, Connecting Local Communities!
               </h1>
             </div>
 
@@ -108,8 +108,8 @@ export const Home = () => {
             {/* <h1>About Localite</h1> */}
             <div className='aboutdiv'>
               <div data-aos="zoom-in" className='aboutfirstdiv'>
-                <h2>Localite is neighbourhood marketplace. We empower local merchants by giving them a space to showcase their offering.</h2>
-                <h2>We are dedicated to bring together local businesses and customers in one easy-to-use platform, encouraging community growth and convenient local shopping.</h2>
+                <h2>Localite is the go-to hyperlocal communication servide provider for the samll and medium Enterprises(SME`s), offering innovative platform to enhance brand visibility and engagement within their local communities.</h2>
+                {/* <h2>We are dedicated to bring together local businesses and customers in one easy-to-use platform, encouraging community growth and convenient local shopping.</h2> */}
                   <h2>
         <span 
           className="watch-video" 
