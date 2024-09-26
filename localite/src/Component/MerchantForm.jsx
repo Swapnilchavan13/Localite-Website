@@ -48,8 +48,6 @@ export const MerchantForm = () => {
   const [otherBusinessType, setOtherBusinessType] = useState('');
   const [showOtherInput, setShowOtherInput] = useState(false);
 
-
-
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
@@ -95,7 +93,6 @@ export const MerchantForm = () => {
     }
   };
   
-
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
   };
@@ -107,8 +104,6 @@ export const MerchantForm = () => {
   const handleToggleChange = () => {
     setShowOtherInput(prevState => !prevState);
   };
-
-
 
   useEffect(() => {
     // Update formData.businessType when 'Other' is selected and otherBusinessType changes
@@ -235,8 +230,6 @@ export const MerchantForm = () => {
       console.error('Failed to submit data:', error);
     }
   };
-  
-  
 
   const formStyle = {
     margin: '0 auto',
@@ -368,8 +361,6 @@ export const MerchantForm = () => {
               Business/Brand Name:
               <input type="text" name="businessName" value={formData.businessName} onChange={handleChange} style={inputStyle} placeholder='This is your brand name on Localite App'/>
             </label>
-          
-
             <label style={labelStyle}>
         Business Type:
         <select 

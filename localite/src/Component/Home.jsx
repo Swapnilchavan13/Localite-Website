@@ -222,7 +222,7 @@ export const Home = () => {
           <div data-aos="zoom-in" className='connect'>
             <h1>Connect With Your Neighbour</h1>
             <p>Want to learn more about your neighbourhood?</p>
-            <p>Explore nearby products, events,<br /> offers, news, connect with like-minded people <br /> and much more!</p>
+            <p>Explore nearby brands, events,<br /> offers and news connect with like-minded people <br /> and much more!</p>
             <a href="https://youtu.be/DAxHfPn9PHY?si=GM_w82Ncoxe2Zpcw" target="_blank" rel="noopener noreferrer">
                <p className='pcolor'>Sneak Peek</p>
             </a>
