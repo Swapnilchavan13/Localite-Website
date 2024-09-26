@@ -101,37 +101,16 @@ export const Home = () => {
             </div>
 
             <div className='digitaldiv'>
-              <h1>Outdoor Advertising</h1>
+            <h1 className='intoline'>Our Services</h1>
+              <h1 className='borderh'>Outdoor Advertising</h1>
             </div>
+            <h1 className='lmarket'>Your Local Marketplace, Right On The Screen</h1>
 
-            <div className='about' ref={aboutRef}>
-            {/* <h1>About Localite</h1> */}
-            <div className='aboutdiv'>
-              <div data-aos="zoom-in" className='aboutfirstdiv'>
-                <h2>Localite is the go-to hyperlocal communication servide provider for the samll and medium Enterprises(SME`s), offering innovative platform to enhance brand visibility and engagement within their local communities.</h2>
-                {/* <h2>We are dedicated to bring together local businesses and customers in one easy-to-use platform, encouraging community growth and convenient local shopping.</h2> */}
-                  <h2>
-        <span 
-          className="watch-video" 
-          style={{ cursor: 'pointer' }} 
-          onClick={() => window.open("/PhoneApp.mp4", "_blank")}
-        >
-          Watch Video <img id='playbtn' src="play.png" alt="" />
-        </span>
-      </h2>
-              </div>
-              <div data-aos="flip-right"><img src="about.png" alt="" /></div>
-            </div>
-
-          </div>
-
-
-            <video data-aos="zoom-in" className='video' ref={videoRef} autoPlay loop muted>
+           <video data-aos="zoom-in" className='video' ref={videoRef} autoPlay loop muted>
               <source src="LOCALITE Web.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <br />
-            <h1 className='lmarket'>Your Local Marketplace, Right On The Screen</h1>
           </div>
 
           <div className='threedivs'>
@@ -149,46 +128,79 @@ export const Home = () => {
             </div>
           </div>
 
+          <div className='about' ref={aboutRef}>
+            {/* <h1>About Localite</h1> */}
+            <h1 className='borderh'>A Hyperlocal App</h1>
+
+            <div className='aboutdiv'>
+              <div data-aos="zoom-in" className='aboutfirstdiv'>
+                <h2>Shocases brand's offers & promotion.</h2>
+                <h2>List your Event workshops, music events, exhibition, etc.</h2>
+                <h2>Connects with your local residents & communities.</h2>
+                <h2>Ensure maximum visibility for hyperlocal suburban users.</h2>
+                {/* <h2>We are dedicated to bring together local businesses and customers in one easy-to-use platform, encouraging community growth and convenient local shopping.</h2> */}
+                  <h2>
+        <span 
+          className="watch-video" 
+          style={{ cursor: 'pointer' }} 
+          onClick={() => window.open("https://youtu.be/RTGAEjDli1I?si=D4DXhBQbq1Gr8sU-", "_blank")}
+        >
+          Watch Video <img id='playbtn' src="play.png" alt="" />
+        </span>
+      </h2>
+              </div>
+              <div data-aos="flip-right"><img src="about.png" alt="" /></div>
+            </div>
+
+          </div>
 
           <div className='featurediv'>
               <img className='features' src="Features1.png" alt="" />
             </div>
          
 
+         <div className='socialmedia'>
+         <h1 className='borderh'>Social Media Management</h1>
+          <div className='mddiv'>
+            <img data-aos="slide-right" className='mediaimg' src="https://scopemastery.com/wp-content/uploads/2023/10/Trusted-Social-Media-Management-service-in-Toronto-2048x1365.webp" alt="" />
+            {/* <img data-aos="slide-right" className='mediaimg' src="https://umnico-cdn.com/production/landing/en-article16-3e771beffe6c1925452bc9f6d3c88424.jpg" alt="" /> */}
+            <h2 data-aos="slide-left">An experienced team to develop your social media plan, videos and images. We craft best quality videos and content for social.</h2>
+          </div>
+         </div>
+
           <div className='threecolordivmain'>
+          <h1 className='intoline'>Benefits Of Localite</h1>
+
             <div className='threecolordiv'>
               <div data-aos="zoom-in">
+                <h3>Online Storefront</h3>
                 <div className='threesinglediv'>
                   <img src="Ellipse 32 .png" alt="" />
                   <p>Showcase your products and services with high-quality images, detailed description, and customer review.</p>
                 </div>
-                <h3>Online Storefront</h3>
               </div>
               <div data-aos="zoom-in">
+                <h3>Increase Customer Reach</h3>
                 <div className='threesinglediv'>
                   <img src="Ellipse 33 .png" alt="" />
                   <p>Expand your customer base by reaching a wider audience through digital screen and app promotion.</p>
                 </div>
-                <h3>Increase Customer Reach</h3>
               </div>
               <div data-aos="zoom-in">
+                <h3>Boost Brand Awareness</h3>
                 <div className='threesinglediv'>
                   <img src="Ellipse 34 .png" alt="" />
                   <p>Enhance brand visibility and recognition with targeted digital advertising on street corners and in high-traffic locations.</p>
                 </div>
-                <h3>Boost Brand Awareness</h3>
               </div>
             </div>
-
-           
-
           </div>
 
 
           <div className='sellwithus'>
             <h1>Advertise Your Brand!</h1>
-            <p>Want to bring your loacal business to market?</p>
-            <p>List your products or services, select your location <br /> and <span className='sellcolor'>start advertising</span></p>
+            <p>Want to grow your local business?</p>
+            <p>List your products or services, select your location <br /> and start advertising</p>
             <button className='sellbutton' onClick={() => window.open("https://localite.services/merchantform")}>Register Now</button>
           </div>
 
@@ -220,22 +232,20 @@ export const Home = () => {
           </div>
 
           <div data-aos="zoom-in" className='connect'>
-            <h1>Connect With Your Neighbour</h1>
-            <p>Want to learn more about your neighbourhood?</p>
+            <h1>Connect With Your Neighbour!</h1>
+            <p>Want to learn more about your locality?</p>
             <p>Explore nearby brands, events,<br /> offers and news connect with like-minded people <br /> and much more!</p>
             <a href="https://youtu.be/DAxHfPn9PHY?si=GM_w82Ncoxe2Zpcw" target="_blank" rel="noopener noreferrer">
-               <p className='pcolor'>Sneak Peek</p>
+               <p className='pcolor'>Sneak Peek <img id='playbtn' src="play.png" alt="" /></p>
             </a>
 
             <br />
             <p>Explore more than 20+ brands from your locality</p>
-            <button className='sellbutton' onClick={() => window.open("https://localite.services/merchantform")}>Download App</button>
-            
+            <button className='sellbutton' onClick={() => window.open("https://apps.apple.com/in/app/localite-shop-win-connect/id6670195737", "_blank")}>Download App</button>
           </div>
 
 
 <div className='six'>
-
           <div className='siximages'>
             <img data-aos="slide-right" className='oneimg' src="Rectangle 105.png" alt="" />
             <div>
@@ -253,7 +263,7 @@ export const Home = () => {
 
 </div>
 
-          <img className='teamandinfra' src="tndinfra.png" alt="" />
+          <img className='teamandinfra' src="about_us.png" alt="" />
 
           <img data-aos="slide-up" className='gradientimg' src="gradient_bar.png" alt="" />
 
