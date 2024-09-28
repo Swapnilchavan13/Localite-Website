@@ -37,6 +37,7 @@ export const MerchantForm = () => {
     password: '',
     numberOfPeople: '',
     brandLogo: null,
+    membershipPlan: '',
   });
 
   const [profileImageUrl, setProfileImageUrl] = useState(null);
@@ -220,6 +221,7 @@ export const MerchantForm = () => {
         password: '',
         numberOfPeople: '',
         brandLogo: null,
+        membershipPlan: '',
       });
       setProfileImageUrl(null);
       setBrandLogoUrl(null);
@@ -465,6 +467,22 @@ export const MerchantForm = () => {
               <input type="text" name="specificRequirements" value={formData.specificRequirements} onChange={handleChange} style={inputStyle} />
             </label>
           </div>
+
+          <label style={labelStyle}>
+  Choose Membership Plan:
+  <select 
+    name="membershipPlan" 
+    value={formData.membershipPlan} 
+    onChange={handleChange} 
+    style={inputStyle}
+  >
+    <option value="">Select Membership Plan</option>
+    <option value="1Month">1 Month</option>
+    <option value="3Months">3 Months</option>
+    <option value="6Months">6 Months</option>
+    <option value="12Months">12 Months</option>
+  </select>
+</label>
 
           <div style={sectionStyle}>
             <h2 style={headingStyle}>Business Verification (Optional)</h2>

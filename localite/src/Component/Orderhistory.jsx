@@ -38,7 +38,7 @@ export const Orderhistory = () => {
     try {
       const response = await fetch(apiUrlAll);
       const data = await response.json();
-      const currentFirstOrderId = data.order.length > 0 ? data.order[0]._id : null;
+      const currentFirstOrderId = data.order.length > 0 ? data.order[0]?._id : null;
 
       // Get the stored first order ID from localStorage
       const storedFirstOrderId = localStorage.getItem('firstOrderId');
@@ -91,14 +91,14 @@ export const Orderhistory = () => {
       
       Please fulfill the following order:
 
-      Product: ${order.postDetails.title}
-      Quantity: ${order.cartItems.reduce((total, item) => total + item.quantity, 0)}
-      Total Price: ${order.price}
+      Product: ${order?.postDetails?.title ?? 'N/A'}
+      Quantity: ${order?.cartItems?.reduce((total, item) => total + item.quantity, 0) ?? 0}
+      Total Price: ${order?.price ?? 'N/A'}
       
       User Details:
-      Name: ${order.userDetails[0].userName}
-      Address: ${order.userDetails[0].address}
-      Phone: ${order.userDetails[0].phoneNumber}
+      Name: ${order?.userDetails?.[0]?.userName ?? 'N/A'}
+      Address: ${order?.userDetails?.[0]?.address ?? 'N/A'}
+      Phone: ${order?.userDetails?.[0]?.phoneNumber ?? 'N/A'}
       
       Thank you!
     `;
@@ -134,36 +134,36 @@ export const Orderhistory = () => {
             </thead>
             <tbody>
               {orders.map((order) => (
-                <tr key={order._id}>
-                  <td>{order.postDetails.title}</td>
-                  <td>{order.cartItems.reduce((total, item) => total + item.quantity, 0)}</td>
-                  <td>{order.price}</td>
-                  <td>{order.userDetails[0].userName}</td>
-                  <td>{order.userDetails[0].address}</td>
+                <tr key={order?._id}>
+                  <td>{order?.postDetails?.title ?? 'N/A'}</td>
+                  <td>{order?.cartItems?.reduce((total, item) => total + item.quantity, 0) ?? 0}</td>
+                  <td>{order?.price ?? 'N/A'}</td>
+                  <td>{order?.userDetails?.[0]?.userName ?? 'N/A'}</td>
+                  <td>{order?.userDetails?.[0]?.address ?? 'N/A'}</td>
                   <td>
                     <a
-                      href={`https://wa.me/${order.userDetails[0].phoneNumber}`}
+                      href={`https://wa.me/${order?.userDetails?.[0]?.phoneNumber}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="phone-link"
                     >
-                      {order.userDetails[0].phoneNumber}
+                      {order?.userDetails?.[0]?.phoneNumber ?? 'N/A'}
                     </a>
                   </td>
-                  <td>{order.postDetails.brandName}</td>
-                  <td>{order.postDetails.merchantDetails[0].address}</td>
+                  <td>{order?.postDetails?.brandName ?? 'N/A'}</td>
+                  <td>{order?.postDetails?.merchantDetails?.[0]?.address ?? 'N/A'}</td>
                   <td>
                     <a
-                      href={`https://wa.me/${order.postDetails.merchantDetails[0].phoneNumber}`}
+                      href={`https://wa.me/${order?.postDetails?.merchantDetails?.[0]?.phoneNumber}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="phone-link"
                     >
-                      {order.postDetails.merchantDetails[0].phoneNumber}
+                      {order?.postDetails?.merchantDetails?.[0]?.phoneNumber ?? 'N/A'}
                     </a>
                   </td>
-                  <td>{new Date(order.createdAt).toLocaleDateString()}</td>
-                  <td>{order.paymentMode}</td>
+                  <td>{new Date(order?.createdAt).toLocaleDateString()}</td>
+                  <td>{order?.paymentMode ?? 'N/A'}</td>
                   <td>
                     <button onClick={() => copyMessageTemplate(order)} className="copy-button">
                       Copy Message
