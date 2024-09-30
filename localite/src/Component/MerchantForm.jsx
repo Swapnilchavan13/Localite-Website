@@ -148,6 +148,13 @@ export const MerchantForm = () => {
         return;
       }
     }
+
+     // Validate phone number (must be 10 digits)
+  const phoneNumber = formData.contactPhoneNumber;
+  if (!/^\d{10}$/.test(phoneNumber)) {
+    alert('Phone Number must be exactly 10 digits.');
+    return;
+  }
   
     const formDataToSend = new FormData();
     for (const key in formData) {
@@ -413,7 +420,19 @@ export const MerchantForm = () => {
             </label>
             <label style={labelStyle}>
               Contact Phone Number:
-              <input type="text" name="contactPhoneNumber" value={formData.contactPhoneNumber} onChange={handleChange} style={inputStyle} placeholder='9876543210'/>
+              <input
+  type="tel" // Change type to 'tel'
+  name="contactPhoneNumber"
+  value={formData.contactPhoneNumber}
+  onChange={handleChange}
+  style={inputStyle}
+  placeholder='9876543210'
+  maxLength={10}
+  pattern="\d{10}"
+  onInput={(e) => {
+    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+  }}
+/>
             </label>
           </div>
 
