@@ -12,6 +12,8 @@ export const Home = () => {
 
   const aboutRef = useRef(null);
   const faqRef = useRef(null);
+  const faqSer = useRef(null);
+
 
   const scrollToAbout = () => {
     aboutRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -19,6 +21,10 @@ export const Home = () => {
 
   const scrollToFAQs = () => {
     faqRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+   const scrollToServices = () => {
+    faqSer.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   const videoRef = useRef(null);
@@ -57,7 +63,7 @@ export const Home = () => {
   return (
     <div className='mainmain'>
       <div className="maind">
-      <Topnavbar scrollToAbout={scrollToAbout} scrollToFAQs={scrollToFAQs} />
+      <Topnavbar scrollToAbout={scrollToAbout} scrollToFAQs={scrollToFAQs} scrollToServices={scrollToServices} />
         <div className="home-container">
           <h1 className='intoline'>Introducing</h1>
           <div className='introdiv'>
@@ -101,7 +107,7 @@ export const Home = () => {
             </div>
 
             <div className='digitaldiv'>
-            <h1 className='intoline'>Our Services</h1>
+            <h1 ref={faqSer} className='intoline'>Our Services</h1>
               <h1 className='borderh'>Outdoor Advertising</h1>
             </div>
             <h1 className='lmarket'>Your Local Marketplace, Right On The Screen</h1>
@@ -149,7 +155,7 @@ export const Home = () => {
         </span>
       </h2>
               </div>
-              <div data-aos="flip-right"><img src="about.png" alt="" /></div>
+              <div data-aos="flip-right"><img className='aboutimg' src="about.png" alt="" /></div>
             </div>
 
           </div>

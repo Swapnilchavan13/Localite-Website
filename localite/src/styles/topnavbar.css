@@ -38,6 +38,10 @@
   cursor: pointer;
 }
 
+p{
+  cursor: pointer;
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
   .topdiv {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/topnavbar.css';
 
-export const Topnavbar = ({ scrollToAbout, scrollToFAQs }) => {
+export const Topnavbar = ({ scrollToAbout, scrollToFAQs, scrollToServices }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -22,7 +22,7 @@ export const Topnavbar = ({ scrollToAbout, scrollToFAQs }) => {
       {/* Dropdown menu */}
       <div className={`dropdown-menu ${isOpen ? 'dropdown-active' : 'dropdown-not'}`}>
         <p onClick={scrollToAbout}>About Us</p>
-        <p>Our Services</p>
+        <p onClick={scrollToServices}>Our Services</p>
         <p onClick={scrollToFAQs}>FAQs</p>
       </div>
     </div>

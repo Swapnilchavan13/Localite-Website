@@ -168,6 +168,7 @@ cursor: pointer;
   margin: auto;
   border-radius: 10px;
 }
+
 .socialmedia{
   margin-top: 50px;
 }
@@ -223,7 +224,14 @@ cursor: pointer;
   font-size: 60px;
 }
 
+.aboutimg{
+  width: 60%;
+  margin-top: 20px;
+  /* border: 1px solid red; */
+}
+
 .aboutdiv{
+  /* border: 1px solid red; */
   margin: auto;
   width: 80%;
   display: flex;
@@ -242,7 +250,7 @@ cursor: pointer;
 }
 
 .aboutdiv div img{
-  margin-top: -150px;
+  margin-top: -80px;
   margin-left: -150px;
   width: 150%;
 }
@@ -533,7 +541,7 @@ font-size: 20px;
 
 
 /* Mobile-specific styles for Home component */
-@media (max-width: 1111px) {
+@media (max-width: 711px) {
   
   body {
     background: linear-gradient(to bottom, #fef2f2, #fef2f2);
@@ -668,6 +676,33 @@ font-size: 20px;
     padding: 3px; /* Adjust border width for smaller screens */
   }
 
+
+
+  /* ///////// */
+
+  .borderh {
+    font-size: 20px; /* Decrease font size for headings */
+  }
+
+  .mddiv {
+    /* padding: 10px; Reduce padding */
+    display: inline;
+    justify-content: center;  
+    margin: auto;
+    width: 100%;
+  }
+
+  .mddiv>.mediaimg {
+    width: 100%; /* Ensure the image does not overflow */
+    justify-content: center;
+    margin: auto;
+  }
+
+  .mddiv>h2 {
+    font-size: 14px; /* Decrease text size */
+    padding: 0 10px; /* Reduce padding */
+  }
+  /* //////// */
   .about {
     width: 100%;
     height: auto; /* Let height adjust based on content */
