@@ -421,7 +421,7 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
 
 
 <div className='btndivs'>
-        <p style={{marginTop:'40px', marginLeft:'-80px', color:'blue'}} onClick={logout}>Logout</p>
+        <p style={{marginTop:'40px', color:'blue'}} onClick={logout}>Logout</p>
 
         <button type="submit" className="submit-button" disabled={isSubmitting}>
     {isSubmitting ? 'Submitting...' : 'Submit'}

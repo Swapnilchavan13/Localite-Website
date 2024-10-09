@@ -75,12 +75,13 @@ export const Login = () => {
             id="loginPin"
             value={loginPin}
             onChange={(e) => setLoginPin(e.target.value)}
-            placeholder='🔐 Enter Login Pin'
+            placeholder='🔐 Enter Login Password'
             required
           />
+          <p style={{ textAlign:'left',color: 'grey'}}>The one used at the time of sign up</p>
         </div>
         {error && <p className="error-message">{error}</p>}
-        <p style={{color: 'red'}}>Forgot password?</p>
+        {/* <p style={{color: 'red'}}>Forgot password?</p> */}
         <br />
         <button type="submit">Login</button>
       </form>

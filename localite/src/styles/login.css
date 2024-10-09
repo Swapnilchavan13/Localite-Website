@@ -15,6 +15,10 @@
     text-align: center;
   }
 
+  #loginPin, #mobileNumber{
+    height: 60px;
+  }
+
   .loginpinimg{
     width: 100px;
     margin-bottom: 40px;
