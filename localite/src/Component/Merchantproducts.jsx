@@ -338,13 +338,13 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
 
         <div className="form-group">
           <label>Title <span style={{color:'red'}}>*</span></label>
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter title" />
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter title" required/>
           <p className='belowp'>ex. Elevate Your Wardrobe at NIshly Fashion House.</p>
         </div>
 
         <div className="form-group">
           <label>Offer Headline <span style={{color:'red'}}>*</span></label>
-          <input type="text" value={offerHeadline} onChange={(e) => setOfferHeadline(e.target.value)} placeholder="Enter offer headline" />
+          <input type="text" value={offerHeadline} onChange={(e) => setOfferHeadline(e.target.value)} placeholder="Enter offer headline" required/>
           <p className='belowp'>Note: The Content added here will show on the image.</p>
 
         </div>
@@ -369,7 +369,9 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
         </div>
 
         <div className="form-group">
-          <label>Upload Photo 2 <span style={{color:'red'}}>*</span></label>
+          <label>Upload Photo 2 
+            {/* <span style={{color:'red'}}>*</span> */}
+          </label>
           <input type="file" onChange={(e) => setPhoto2(e.target.files[0])} />
           {photo2Preview && <img src={photo2Preview} alt="Photo 2 Preview" className="image-preview" />}
         </div>
@@ -406,17 +408,17 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
 
         <div className="form-group">
           <label>Units <span style={{color:'red'}}>*</span></label>
-          <input type="number" value={unit} onChange={(e) => setUnit(e.target.value)} placeholder="Enter price" />
+          <input type="number" value={unit} onChange={(e) => setUnit(e.target.value)} placeholder="Enter price" required/>
         </div>
 
         <div className="form-group">
           <label>Price <span style={{color:'red'}}>*</span></label>
-          <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Enter price" />
+          <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Enter price" required/>
         </div>
 
         <div className="form-group">
           <label>Discounted Percentage <span style={{color:'red'}}>*</span></label>
-          <input type="text" value={discountedPrice} onChange={(e) => setDiscountedPrice(e.target.value)} placeholder="Enter discounted percentage %" />
+          <input type="text" value={discountedPrice} onChange={(e) => setDiscountedPrice(e.target.value)} placeholder="Enter discounted percentage %" required/>
         </div>
 
 
