@@ -300,7 +300,7 @@ export const Home = () => {
             <br />
             <p>Explore more than 20+ brands from your locality</p>
            
-           <div className='dldbtns'>
+           <div id='dldbtns'>
             <button className='sellbutton' onClick={() => window.open("https://play.google.com/store/apps/details?id=com.dev.localite", "_blank")}>Download App on Playstore</button>
 
             <button className='sellbutton' onClick={() => window.open("https://apps.apple.com/in/app/localite-shop-win-connect/id6670195737", "_blank")}>Download App on Appstore</button>

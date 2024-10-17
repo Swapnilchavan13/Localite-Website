@@ -58,7 +58,7 @@ export const Footer = () => {
         </div>
         <hr />
         <div className='lastline'>
-          <p>Copyright © A Little World PVT LTD. All Rights Reserved.</p>
+          <p>Copyright © A LITTLE WORLD PRIVATE LIMITED. All Rights Reserved.</p>
           <div>
             <a href="https://www.instagram.com/localite.india?igsh=bXA4M243eXhqMnI0" target='_blank'>
               <img src="int.png" alt="" />

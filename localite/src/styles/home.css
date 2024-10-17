@@ -352,18 +352,14 @@ background-color: #fcfafb;
   margin-top: 100px;
 }
 
-.dldbtns{
+#dldbtns{
   margin: auto;
   display: flex;
   justify-content: space-evenly;
   gap: 5px;
-  width: 90%;
+  width: 80%;
 }
 
-.dldbtns button{
-  margin: auto;
-  font-size: 13px;
-}
 
 .featurediv{
   margin-top: 40px;
@@ -779,6 +775,8 @@ font-size: 20px;
   .headcon {
     margin: 40px auto;
     padding: 10%;
+    border: 1px solid red;
+    
   }
 
   .headcon h1 {
@@ -790,7 +788,7 @@ font-size: 20px;
   .headcon p {
     width: 100%; /* Adjust width */
     font-size: 13px; /* Reduce font size */
-    margin-top: -60px;
+    margin-top: -40px;
   }
 
   .intoline {
@@ -818,7 +816,7 @@ font-size: 20px;
   }
 
   .handmobile {
-    width: 130%;
+    width: 80%;
     margin: -70px auto;
   }
 
@@ -1041,6 +1039,10 @@ font-size: 20px;
 
   .oneimg{
     display: none;
+  }
+
+  #dldbtns button{
+    font-size: 10px;
   }
 
  
