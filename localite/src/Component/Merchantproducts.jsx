@@ -496,7 +496,7 @@ const handleRemoveAdditionalPhoto1 = () => {
         <label>Final Price</label>
         <input
           type="text" // Change input type to text
-          value={`₹ ${price.toFixed(2)} /-`} // Display formatted value
+          value={price.toFixed(2)} // Display formatted value
           readOnly
           placeholder="Calculated actual price"
           style={{ textAlign: 'left' }} // Optional: Align text to the right
