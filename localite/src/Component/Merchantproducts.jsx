@@ -5,14 +5,14 @@ import { useAuth } from './AuthContext';
 
 export const Merchantproducts = () => {
   const { user, logout } = useAuth();
-  const [appSection, setAppSection] = useState('');
+  const [appSection, setAppSection] = useState('offers');
   const [productCategory, setProductCategory] = useState('');
   const [brand, setBrand] = useState('');
   const [brandImage, setBrandImage] = useState(null);
   const [title, setTitle] = useState('');
-  const [offerHeadline, setOfferHeadline] = useState('');
+  const [offerHeadline, setOfferHeadline] = useState('NA');
   const [description, setDescription] = useState('');
-  const [excerptDescription, setExcerptDescription] = useState('');
+  const [excerptDescription, setExcerptDescription] = useState('NA');
   const [photo, setPhoto] = useState(null);
   const [videoLink, setVideoLink] = useState('');
   const [photo2, setPhoto2] = useState(null);
