@@ -250,16 +250,6 @@ export const Home = () => {
       <img src="5.png" alt="" />
       <img src="3.png" alt="" />
       <img src="7.png" alt="" />
-
-
-
-      <img src="9.png" alt="" />
-      <img src="8.png" alt="" />
-      <img src="2.png" alt="" />
-      <img src="1 (1).png" alt="" />
-      <img src="5.png" alt="" />
-      <img src="3.png" alt="" />
-      <img src="7.png" alt="" />
     </div>
   </div>
 </div>
