@@ -4,6 +4,7 @@ import emailjs from 'emailjs-com';
 import { useAuth } from './AuthContext';
 
 export const Merchantproducts = () => {
+  const [mrp, setMrp] = useState('');
   const { user, logout } = useAuth();
   const [appSection, setAppSection] = useState('');
   const [productCategory, setProductCategory] = useState('');
@@ -18,11 +19,11 @@ export const Merchantproducts = () => {
   const [photo2, setPhoto2] = useState(null);
   const [additionalPhoto1, setAdditionalPhoto1] = useState(null);
   const [additionalPhoto2, setAdditionalPhoto2] = useState(null);
-  const [price, setPrice] = useState('');
+  const [price, setPrice] = useState(0);
   const [discountedPrice, setDiscountedPrice] = useState('');
   const [productCategories, setProductCategories] = useState([]);
-  const [entryCount, setEntryCount] = useState(0);
-  const [unit, setUnit] = useState(0);
+  const [entryCount, setEntryCount] = useState("");
+  const [unit, setUnit] = useState('');
 
 
   // Preview states
@@ -38,6 +39,32 @@ export const Merchantproducts = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
 
+
+useEffect(() => {
+  const calculatedPrice = mrp - (mrp * discountedPrice / 100);
+  setPrice(calculatedPrice);
+}, [mrp, discountedPrice]);
+
+
+const handleDiscountChange = (e) => {
+  const value = Math.min(Math.max(0, e.target.value), 100); // Limit discount between 0 and 100
+  setDiscountedPrice(value);
+};
+
+const handleRemovePhoto = () => {
+  setPhoto(null);
+  setPhotoPreview(null);
+};
+
+const handleRemovePhoto2 = () => {
+  setPhoto2(null);
+  setPhoto2Preview(null);
+};
+
+const handleRemoveAdditionalPhoto1 = () => {
+  setAdditionalPhoto1(null);
+  setAdditionalPhoto1Preview(null);
+};
 
   useEffect(() => {
     // Fetch product categories dynamically
@@ -308,9 +335,9 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
         <div className="form-group">
           <label>App Section <span style={{color:'red'}}>*</span></label>
           <select value={appSection} onChange={(e) => setAppSection(e.target.value)}>
-            <option value="">Select...</option>
-            <option value="marketplace">Marketplace</option>
-            <option value="offers">Deals</option>
+            {/* <option value="">Select...</option> */}
+            {/* <option value="marketplace">Marketplace</option> */}
+            <option value="offers">Deal Section</option>
             {/* <option value="free">Free</option> */}
           </select>
         </div>
@@ -337,50 +364,70 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
         </div> */}
 
         <div className="form-group">
-          <label>Title <span style={{color:'red'}}>*</span></label>
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter title" required/>
-          <p className='belowp'>ex. Elevate Your Wardrobe at NIshly Fashion House.</p>
+          <label>Title of the offer<span style={{color:'red'}}>*</span></label>
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Note: The Content added here will show on the image." required/>
+          <p className='belowp'>ex. Elevate Your Wardrobe at Nishly Fashion House. OR 20% Festive Offer!</p>
         </div>
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Offer Headline <span style={{color:'red'}}>*</span></label>
-          <input type="text" value={offerHeadline} onChange={(e) => setOfferHeadline(e.target.value)} placeholder="Enter offer headline" required/>
+          <input type="text" value={offerHeadline} onChange={(e) => setOfferHeadline(e.target.value)} placeholder="Enter offer headline"/>
           <p className='belowp'>Note: The Content added here will show on the image.</p>
+        </div> */}
+
+        <div className="form-group">
+          <label>Description of the offer<span style={{color:'red'}}>*</span></label>
+          <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Enter detailed description of the product/service"></textarea>
 
         </div>
 
-        <div className="form-group">
-          <label>Description <span style={{color:'red'}}>*</span></label>
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Enter description"></textarea>
-          <p className='belowp'>Note: please enter the product details.</p>
-
-        </div>
-
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Excerpt Description <span style={{color:'red'}}>*</span></label>
           <textarea value={excerptDescription} onChange={(e) => setExcerptDescription(e.target.value)} placeholder="Enter excerpt description"></textarea>
       
-        </div>
+        </div> */}
 
         <div className="form-group">
           <label>Upload Photo <span style={{color:'red'}}>*</span></label>
           <input type="file" onChange={(e) => setPhoto(e.target.files[0])} required/>
-          {photoPreview && <img src={photoPreview} alt="Photo Preview" className="image-preview" />}
+          <p className='belowp'>Note: Pre-existing photos of clients/product/service to be added.</p>
+           {photoPreview && (
+        <div className="image-preview-container">
+          <img src={photoPreview} alt="Photo Preview" className="image-preview" />
+          <button onClick={handleRemovePhoto} className="remove-photo-button">
+            &#10006; {/* This is a cross icon */}
+          </button>
+        </div>
+      )}
         </div>
 
         <div className="form-group">
-          <label>Upload Photo 2 
+          <label>Upload Photo 2 (Optional)
             {/* <span style={{color:'red'}}>*</span> */}
           </label>
           <input type="file" onChange={(e) => setPhoto2(e.target.files[0])} />
-          {photo2Preview && <img src={photo2Preview} alt="Photo 2 Preview" className="image-preview" />}
+          {photo2Preview && (
+          <div className="image-preview-container">
+            <img src={photo2Preview} alt="Photo 2 Preview" className="image-preview" />
+            <button onClick={handleRemovePhoto2} className="remove-photo-button">
+              &#10006; {/* Cross icon */}
+            </button>
+          </div>
+        )}
         </div>
 
         <div className="form-group">
           <label>Upload Photo 3 (Optional)</label>
           <input type="file" onChange={(e) => setAdditionalPhoto1(e.target.files[0])} />
-          {additionalPhoto1Preview && <img src={additionalPhoto1Preview} alt="Additional Photo 1 Preview" className="image-preview" />}
-        </div>
+          {additionalPhoto1Preview && (
+          <div className="image-preview-container">
+            <img src={additionalPhoto1Preview} alt="Additional Photo 1 Preview" className="image-preview" />
+            <button onClick={handleRemoveAdditionalPhoto1} className="remove-photo-button">
+              &#10006; {/* Cross icon */}
+            </button>
+          </div>
+        )}
+          </div>
 
         <div className="form-group">
   <label>Upload video (Optional)</label>
@@ -392,6 +439,7 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
   <br />
   <br />
 
+
   {additionalPhoto2Preview && (
     <video style={{width: "250px"}} controls className="video-preview">
       <source src={additionalPhoto2Preview} type="video/mp4" />
@@ -399,28 +447,62 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
     </video>
   )}
 </div>
+  <h3>OR</h3>
 
 
         <div className="form-group">
-          <label>Video Link (Optional)</label>
-          <input type="text" value={videoLink} onChange={(e) => setVideoLink(e.target.value)} placeholder="Enter video link" />
+          <label>Paste a Video Link (Optional)</label>
+          <input type="text" value={videoLink} onChange={(e) => setVideoLink(e.target.value)} placeholder="Enter video link of the OFFERED product/service" />
         </div>
 
         <div className="form-group">
-          <label>Units </label>
+          <label>Units</label>
           <input type="number" value={unit} onChange={(e) => setUnit(e.target.value)} placeholder="Enter only incase of limited PRODUCTS"/>
         </div>
 
-        <div className="form-group">
-          <label>Price <span style={{color:'red'}}>*</span></label>
-          <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Enter price" required/>
-        </div>
 
         <div className="form-group">
-          <label>Discounted Percentage <span style={{color:'red'}}>*</span></label>
-          <input type="text" value={discountedPrice} onChange={(e) => setDiscountedPrice(e.target.value)} placeholder="Enter discounted percentage %" required/>
+        <label>Actual Price <span style={{ color: 'red' }}>*</span></label>
+        <input
+          type="number"
+          value={mrp}
+          onChange={(e) => setMrp(e.target.value)}
+          placeholder="Enter product/service actual price"
+          required
+        />
+      </div>
+
+
+        <div className="form-group">
+          <label>Discount Percentage <span style={{color:'red'}}>*</span></label>
+          <input type="number" value={discountedPrice}
+           onChange={handleDiscountChange} // Use the validation function here
+          //  onChange={(e) => setDiscountedPrice(e.target.value)}
+            placeholder="Enter discount unit on the product/service" required/>
         </div>
 
+        {/* <div className="form-group">
+        <label>Final Price</label>
+        <input 
+          type="number" 
+          disabled 
+          placeholder="Final price will be calculated" 
+        />
+       
+      </div> */}
+
+
+<div className="form-group">
+        <label>Final Price</label>
+        <input
+          type="text" // Change input type to text
+          value={`₹ ${price.toFixed(2)} /-`} // Display formatted value
+          readOnly
+          placeholder="Calculated actual price"
+          style={{ textAlign: 'left' }} // Optional: Align text to the right
+        />
+        <p className='belowp'>Note: Discounted offer for the customers.</p>
+      </div>
 
 <div className='btndivs'>
 
