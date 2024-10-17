@@ -4,6 +4,7 @@ import emailjs from 'emailjs-com';
 import { useAuth } from './AuthContext';
 
 export const Merchantproducts = () => {
+  const [mrp, setMrp] = useState('');
   const { user, logout } = useAuth();
   const [appSection, setAppSection] = useState('offers');
   const [productCategory, setProductCategory] = useState('');
@@ -18,10 +19,10 @@ export const Merchantproducts = () => {
   const [photo2, setPhoto2] = useState(null);
   const [additionalPhoto1, setAdditionalPhoto1] = useState(null);
   const [additionalPhoto2, setAdditionalPhoto2] = useState(null);
-  const [price, setPrice] = useState('');
+  const [price, setPrice] = useState(0);
   const [discountedPrice, setDiscountedPrice] = useState('');
   const [productCategories, setProductCategories] = useState([]);
-  const [entryCount, setEntryCount] = useState(0);
+  const [entryCount, setEntryCount] = useState('');
   const [unit, setUnit] = useState(0);
 
 
@@ -37,6 +38,18 @@ export const Merchantproducts = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
+
+
+useEffect(() => {
+  const calculatedPrice = mrp - (mrp * discountedPrice / 100);
+  setPrice(calculatedPrice);
+}, [mrp, discountedPrice]);
+
+
+const handleDiscountChange = (e) => {
+  const value = Math.min(Math.max(0, e.target.value), 100); // Limit discount between 0 and 100
+  setDiscountedPrice(value);
+};
 
 
 const handleRemovePhoto = () => {
@@ -449,14 +462,35 @@ const handleRemoveAdditionalPhoto1 = () => {
         </div>
 
         <div className="form-group">
-          <label>Actual Price <span style={{color:'red'}}>*</span></label>
-          <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Enter product/service actual price" required/>
-        </div>
+        <label>Actual Price <span style={{ color: 'red' }}>*</span></label>
+        <input
+          type="number"
+          value={mrp}
+          onChange={(e) => setMrp(e.target.value)}
+          placeholder="Enter product/service actual price"
+          required
+        />
+      </div>
 
         <div className="form-group">
           <label>Discount Percentage <span style={{color:'red'}}>*</span></label>
-          <input type="number" value={discountedPrice} onChange={(e) => setDiscountedPrice(e.target.value)} placeholder="Enter discount unit on the product/service" required/>
+          <input type="number" value={discountedPrice}
+           onChange={handleDiscountChange} // Use the validation function here
+          //  onChange={(e) => setDiscountedPrice(e.target.value)}
+            placeholder="Enter discount unit on the product/service" required/>
         </div>
+
+        <div className="form-group">
+        <label>Final Price</label>
+        <input
+          type="text" // Change input type to text
+          value={`₹ ${price.toFixed(2)} /-`} // Display formatted value
+          readOnly
+          placeholder="Calculated actual price"
+          style={{ textAlign: 'left' }} // Optional: Align text to the right
+        />
+        <p className='belowp'>Note: Discounted offer for the customers.</p>
+      </div>
         
 
 
