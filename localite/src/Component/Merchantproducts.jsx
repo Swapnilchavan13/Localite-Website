@@ -289,7 +289,7 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
     }}>
         <h2 className="form-heading" style={{ marginTop: '-40px', textDecoration: 'underline' }}>Post Creation Form <span style={{marginLeft:'20%'}} ><img style={{width:'30px', marginTop:'30px'}} src="Localite_icon.png" alt="" /></span></h2>
 
-        <p>We are going to create the posts for you</p>
+        <p>We are going to create the posts for you.</p>
         {/* {user && <p>Logged in as:  {merchantData.businessName}</p>} */}
         {merchantData && (
           <div>
@@ -407,8 +407,8 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
         </div>
 
         <div className="form-group">
-          <label>Units <span style={{color:'red'}}>*</span></label>
-          <input type="number" value={unit} onChange={(e) => setUnit(e.target.value)} placeholder="Enter price" required/>
+          <label>Units </label>
+          <input type="number" value={unit} onChange={(e) => setUnit(e.target.value)} placeholder="Enter only incase of limited PRODUCTS"/>
         </div>
 
         <div className="form-group">
@@ -423,11 +423,12 @@ const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
 
 
 <div className='btndivs'>
-        <p style={{marginTop:'40px', color:'blue'}} onClick={logout}>Logout</p>
 
-        <button type="submit" className="submit-button" disabled={isSubmitting}>
+        <button type="submit" id='submit-button' className="submit-button" disabled={isSubmitting}>
     {isSubmitting ? 'Submitting...' : 'Submit'}
   </button>
+  <p style={{width:'80%'}}>Note: Our creative team will use the above brand information submitted by you in order to create an attractive post on Localite App.</p>
+        <p style={{marginTop:'40px', color:'blue'}} onClick={logout}>Logout</p>
 </div>
 
   {uploadStatus && (

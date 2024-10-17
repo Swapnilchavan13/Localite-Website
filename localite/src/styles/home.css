@@ -718,6 +718,10 @@ font-size: 20px;
   right: 10px;
 }
 
+#submit-button{
+  margin-top: 10px;
+}
+
 
 /* ////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -776,7 +780,7 @@ font-size: 20px;
     margin: 40px auto;
     padding: 10%;
     border: 1px solid red;
-    
+
   }
 
   .headcon h1 {
