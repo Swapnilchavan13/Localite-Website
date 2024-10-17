@@ -15,6 +15,12 @@ export const Home = () => {
   const faqSer = useRef(null);
 
 
+  const handleScrollImages = () => {
+    const scroller = document.querySelector('.scroller');
+    scroller.scrollBy({ left: 1200, behavior: 'smooth' }); // Scrolls by 300px to the right
+  };
+  
+
   const scrollToAbout = () => {
     aboutRef.current.scrollIntoView({ behavior: 'smooth' });
   };
@@ -70,29 +76,26 @@ export const Home = () => {
             <div>
               <div className='headcon' data-aos="slide-right">
                 <h1>Localite</h1>
-                <p>Introducing a hyperlocal marketing agency that helps local businesses sell online, connect with their community, and grow their local presence.</p>
+                <p>is the go-to hyperlocal marketing and communication service provider for Small and Medium Enterprises (SME's), offering an innovative platform to enhance brand visibility and engagement within their local communities.</p>
                 <div className='videoandbtn'>
-                  {/* <h2>Watch video</h2> */}
                   <img
-                    data-aos="slide-up"
                     className='vbtn1'
                     src="Group 2812.png"
                     alt=""
                     onClick={() => window.open("https://apps.apple.com/in/app/localite-shop-win-connect/id6670195737", "_blank")}
                   />
                   <img 
-                  data-aos="slide-up" 
                   className='vbtn2' 
                   src="Group 2734.png" 
                   alt="" 
-                  onClick={() => window.open("https://youtu.be/RTGAEjDli1I?si=TT2Ybhxu7qPiazup", "_blank")}
+                  onClick={() => window.open("https://play.google.com/store/apps/details?id=com.dev.localite", "_blank")}
                   />
                 </div>
               </div>
 
             </div>
             <div>
-              <img className='handmobile' data-aos="slide-left" width='100%' src="1st_imgn.png" alt="" />
+              <img className='handmobile' data-aos="slide-left" src="gif.gif" alt="" />
               {/* <img className='balls' src="gradient_balls.png" alt="" /> */}
             </div>
           </div>
@@ -134,18 +137,36 @@ export const Home = () => {
             </div>
           </div>
 
-          <div className='about' ref={aboutRef}>
+          <div className='about'>
             {/* <h1>About Localite</h1> */}
             <h1 className='borderh'>A Hyperlocal App</h1>
 
             <div className='aboutdiv'>
               <div data-aos="zoom-in" className='aboutfirstdiv'>
-                <h2>Shocases brand's offers & promotion.</h2>
-                <h2>List your Event workshops, music events, exhibition, etc.</h2>
-                <h2>Connects with your local residents & communities.</h2>
-                <h2>Ensure maximum visibility for hyperlocal suburban users.</h2>
-                {/* <h2>We are dedicated to bring together local businesses and customers in one easy-to-use platform, encouraging community growth and convenient local shopping.</h2> */}
-                  <h2>
+               
+
+      <div class="bullet-item">
+        <img id="aboutbullet" src="bullet.png" alt="bullet" />
+        <h2>Showcases brand's offers & promotions.</h2>
+    </div>
+
+    <div class="bullet-item">
+        <img id="aboutbullet" src="bullet.png" alt="bullet" />
+        <h2>List your event workshops, music events, exhibition, etc.</h2>
+    </div>
+
+    <div class="bullet-item">
+        <img id="aboutbullet" src="bullet.png" alt="bullet" />
+        <h2>Connects with your local residents & communities.</h2>
+    </div>
+
+    <div class="bullet-item">
+        <img id="aboutbullet" src="bullet.png" alt="bullet" />
+        <h2>Ensure maximum visibility for hyperlocal suburban users.</h2>
+    </div>
+  
+
+        <h2>
         <span 
           className="watch-video" 
           style={{ cursor: 'pointer' }} 
@@ -170,7 +191,11 @@ export const Home = () => {
           <div className='mddiv'>
             <img data-aos="slide-right" className='mediaimg' src="https://scopemastery.com/wp-content/uploads/2023/10/Trusted-Social-Media-Management-service-in-Toronto-2048x1365.webp" alt="" />
             {/* <img data-aos="slide-right" className='mediaimg' src="https://umnico-cdn.com/production/landing/en-article16-3e771beffe6c1925452bc9f6d3c88424.jpg" alt="" /> */}
-            <h2 data-aos="slide-left">An experienced team to develop your social media plan, videos and images. We craft best quality videos and content for social.</h2>
+           <div>
+
+            <h2 data-aos="slide-left">An experienced team to develop your social media plan and videos and images.</h2> 
+              <h2 data-aos="slide-left">We craft best quality videos and content for your strong online presence.</h2>
+           </div>
           </div>
          </div>
 
@@ -203,10 +228,47 @@ export const Home = () => {
           </div>
 
 
+{/* //Merchants photos */}
+<div className='partners' ref={faqRef}>
+  <h1 className='intoline'>Our Network Partners</h1>
+
+  <div className='top-row'>
+    <img src="6.png" data-aos="slide-right" alt="" />
+    <img src="4 (1).png" data-aos="zoom-in" alt="" />
+    <img src="11.png" data-aos="slide-right" alt="" />
+    <img src="10.png" data-aos="zoom-in" alt="" />
+  </div>
+
+
+  <div className='scroll-container'>
+  <img  className='scroll-btn' onClick={handleScrollImages} src="arr.png" alt="" />
+    <div className='scroller'>
+      <img src="9.png" alt="" />
+      <img src="8.png" alt="" />
+      <img src="2.png" alt="" />
+      <img src="1 (1).png" alt="" />
+      <img src="5.png" alt="" />
+      <img src="3.png" alt="" />
+      <img src="7.png" alt="" />
+
+
+
+      <img src="9.png" alt="" />
+      <img src="8.png" alt="" />
+      <img src="2.png" alt="" />
+      <img src="1 (1).png" alt="" />
+      <img src="5.png" alt="" />
+      <img src="3.png" alt="" />
+      <img src="7.png" alt="" />
+    </div>
+  </div>
+</div>
+
+
           <div className='sellwithus'>
             <h1>Advertise Your Brand!</h1>
             <p>Want to grow your local business?</p>
-            <p>List your products or services, select your location <br /> and start advertising</p>
+            <p>List your products or services, select your location <br /> and start advertising!</p>
             <button className='sellbutton' onClick={() => window.open("https://localite.services/merchantform")}>Register Now</button>
           </div>
 
@@ -238,44 +300,30 @@ export const Home = () => {
           </div>
 
           <div data-aos="zoom-in" className='connect'>
-            <h1>Connect With Your Neighbour!</h1>
+            <h1>Connect With Your Neighbourhood!</h1>
             <p>Want to learn more about your locality?</p>
             <p>Explore nearby brands, events,<br /> offers and news connect with like-minded people <br /> and much more!</p>
             <a href="https://youtu.be/DAxHfPn9PHY?si=GM_w82Ncoxe2Zpcw" target="_blank" rel="noopener noreferrer">
-               <p className='pcolor'>Sneak Peek <img id='playbtn' src="play.png" alt="" /></p>
+               <p className='pcolor'>Sneak Peek <img id='playbtn2' src="play.png" alt="" /></p>
             </a>
 
             <br />
             <p>Explore more than 20+ brands from your locality</p>
-            <button className='sellbutton' onClick={() => window.open("https://apps.apple.com/in/app/localite-shop-win-connect/id6670195737", "_blank")}>Download App</button>
+           
+           <div className='dldbtns'>
+            <button className='sellbutton' onClick={() => window.open("https://play.google.com/store/apps/details?id=com.dev.localite", "_blank")}>Download App on Playstore</button>
+
+            <button className='sellbutton' onClick={() => window.open("https://apps.apple.com/in/app/localite-shop-win-connect/id6670195737", "_blank")}>Download App on Appstore</button>
+           </div>
+
           </div>
 
-
-<div className='six'>
-          <div className='siximages'>
-            <img data-aos="slide-right" className='oneimg' src="Rectangle 105.png" alt="" />
-            <div>
-              <img data-aos="slide-left" className='twoimg' src="Rectangle 103.png" alt="" />
-              <br />
-              <img data-aos="slide-right" className='threeimg' src="Rectangle 104.png" alt="" />
-            </div>
-            <img data-aos="slide-left" className='fourimg' src="Rectangle 101.png" alt="" />
-            <div>
-              <img data-aos="slide-right" className='fiveimg' src="Rectangle 100.png" alt="" />
-              <br />
-              <img data-aos="slide-left" className='siximg' src="Rectangle 102.png" alt="" />
-            </div>
-          </div>
-
-</div>
-
-          <img className='teamandinfra' src="about_us.png" alt="" />
-
+          <img className='teamandinfra' src="about_us.png" alt=""  ref={aboutRef}/>
           <img data-aos="slide-up" className='gradientimg' src="gradient_bar.png" alt="" />
 
 
           <div className='faq'>
-            <div className='faqdiv' ref={faqRef}>
+            <div className='faqdiv'>
 
               <h1>FAQs</h1>
               <h4 onClick={() => toggleFAQ(1)}>

@@ -21,6 +21,7 @@ a{
 
 .firstdiv{
   width: 100%;
+  margin-top: 0px;
   text-align: center;
 }
 
@@ -39,32 +40,29 @@ a{
 
 .introdiv{
   display: flex;
+  /* border: 1px solid red; */
+  width: 100%;
   margin-top: -80px;
 }
 
-.intoline {
-  color: #343232; /* Text color */
+/* .intoline {
+  color: #343232; 
   text-shadow: 0 0 10px rgba(245, 30, 101, 0.5),
                0 0 20px rgba(243, 28, 139, 0.4),
                0 0 30px rgba(233, 123, 123, 0.3),
                0 0 40px rgba(245, 73, 73, 0.2),
                0 0 50px rgba(246, 141, 197, 0.1);
-}
+} */
 
 
 .headcon{
-  padding-left: 30%;
-  margin-top: 40%;
-  width: 70%;
+  position: relative;
+  text-align: left;
+  padding-left: 20%;
+  /* margin-top: 20%; */
+  width: 50%;
   /* border: 1px solid red; */
-  z-index: 10000000000;
-}
-
-.balls{
-position: absolute;
-width:60%;
-margin-left: 10%;
-margin-top: -50%;
+  z-index: 9999999;
 }
 
 .headcon h1{
@@ -74,9 +72,10 @@ margin-top: -50%;
 
 .headcon p{
   /* border: 1px solid red; */
-  width: 150%;
-  font-size: 30px;
+  width: 100%;
+  font-size: 22px;
   margin-top: -120px;
+  margin-left: 10px;
   color: #7DB9B4;;
 }
 .intoline{
@@ -89,15 +88,24 @@ margin-top: -50%;
 .videoandbtn{
   display: flex;
   /* border: 1px solid red; */
+  margin-top: 40px;
+  margin-bottom: 20px;
   gap: 20px;
 }
 
 .handmobile{
-  margin-left: 200px;
+  /* position: absolute; */
+  /* margin-left: -300px; */
+  width: 140%;
+  /* border: 1px solid red; */
+  text-align: left;
+  margin: auto;
+  margin-right: 300px;
+  margin-left: -200px;
 }
 
 .videoandbtn img{
-width: 60%;
+width: 30%;
 cursor: pointer;
 }
 
@@ -122,7 +130,7 @@ cursor: pointer;
 
 @keyframes scroll-text {
   0% {
-    transform: translateX(0); /* Start position */
+    transform: translateX(0%); /* Start position */
   }
   100% {
     transform: translateX(-100%); /* End position */
@@ -146,7 +154,7 @@ cursor: pointer;
   border: 2px solid black;
   border-radius: 10px;
   margin: auto;
-  padding: 5px;
+  padding: 5px 25px;
   width: fit-content;
   font-size: 40px;
 }
@@ -155,7 +163,7 @@ cursor: pointer;
   width: 80%;
   display: flex;
   gap: 20px;
-  margin:10px auto;
+  margin:50px auto;
 }
 
 .mddiv h2{
@@ -205,17 +213,16 @@ cursor: pointer;
 .threedivs div p{
   color: grey;
   font-size: 20px;
-
 }
+
 .aboutline{
   color: #2A6171;
 }
 
-
 .about{
   text-align: center;
   width: 100%;
-  margin: 100px auto;
+  margin: 70px auto;
   background: linear-gradient(to bottom, #fef2f2, #fef2f2);
   height: 700px;
 }
@@ -248,6 +255,29 @@ cursor: pointer;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 300;
 }
+.aboutfirstdiv {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add space between bullet points */
+}
+
+#aboutbullet{
+width: 40px;
+margin-top: 0px;
+margin-left: -60px;
+}
+
+.bullet-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between image and text */
+}
+
+.bullet-item img{
+  position: absolute;
+  margin-top: 70px;
+}
 
 .aboutdiv div img{
   margin-top: -80px;
@@ -260,15 +290,21 @@ cursor: pointer;
   width: 4%;
 }
 
+#playbtn2{
+  margin: 0px 40px -5px auto;
+  width: 2.5%;
+}
+
 .threecolordivmain{
   width: 100%;
-  margin: auto;
+  margin: -40px auto;
   background-color: white;
   padding: 20px 10px;
 }
 
 .threecolordivmain h3{
   color: #2A6171;
+  font-size: 20px;
 }
 
 .threecolordiv{
@@ -276,17 +312,15 @@ cursor: pointer;
   gap: 18px;
   background-color: white;
   display: flex;
-  margin: auto;
+  margin: -30px auto;
   text-align: center;
 }
-
 
 .threesinglediv img{
 border-radius: 50%;
 width: 120px;
 background-color: #fcfafb;
 }
-
 
 .threesinglediv {
   position: relative; /* Establishes a positioning context for the pseudo-element */
@@ -302,7 +336,6 @@ background-color: #fcfafb;
   font-size: 22px;
 }
 
-
 .threesinglediv::after {
   content: '';
   position: absolute;
@@ -315,13 +348,32 @@ background-color: #fcfafb;
   z-index: -2; /* Places the background gradient behind the border pseudo-element */
 }
 
+.partners{
+  margin-top: 100px;
+}
+
+.dldbtns{
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5px;
+  width: 90%;
+}
+
+.dldbtns button{
+  margin: auto;
+  font-size: 13px;
+}
+
 .featurediv{
+  margin-top: 40px;
+
   text-align: center;
   background-color: transparent;
 }
 
 .features{
-  margin-top: 40px;
+  margin-top: 100px;
   width: 80%;
 }
 
@@ -330,9 +382,7 @@ background-color: #fcfafb;
   width: 100%;
   display: flex;
   text-align: left;
-
 }
-
 
 .mobilephones img {
   width: 100%; /* Sets image width to 100% of the div */
@@ -402,9 +452,10 @@ font-size: 20px;
 }
 
 .connect{
+  width: 60%;
   margin: 30px auto;
   text-align: center;
-  padding: 2px 500px;
+  /* padding: 2px 500px; */
 }
 
 .connect h1{
@@ -416,10 +467,28 @@ font-size: 20px;
   font-weight: 600;
 }
 
-.pcolor{
+.connect .pcolor{
   color: #2A6171;
   cursor: pointer;
 }
+
+/* .merchantphotos{
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.merchantphotos img {
+  margin: auto;
+  width: 90%;
+  border: 1px solid grey;
+  border-radius: 10px;
+} */
 
 .six{
   width: 100%;
@@ -537,6 +606,123 @@ font-size: 20px;
 }
 
 
+.partners {
+  text-align: center;
+  padding: 40px 0;
+}
+
+
+
+
+
+
+/* ????????? */
+
+.partners {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #f9f9f9; /* Light background for better contrast */
+}
+
+.intoline {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Static top row */
+.top-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Space between the first three images */
+  margin-bottom: 30px;
+}
+
+.top-row img {
+  width: 20%; /* Control size of top row images */
+  height: auto;
+  border-radius: 10px; /* Rounded corners for a modern look */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.top-row img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollable second row */
+.scroll-container {
+  position: relative;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 20px 0;
+  margin-top: -30px;
+}
+
+.scroller {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+.scroller::-webkit-scrollbar {
+  height: 8px;
+}
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hides scrollbar in Firefox */
+.scroller {
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scroller::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.scroller img {
+  width: 20%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.scroller img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Button styles */
+.scroll-btn {
+  width: 7%;
+  border-radius: 20px;
+  cursor: pointer;
+  position: absolute; /* Allows free positioning */
+  right: 0; /* Aligns button to the right */
+  background-color: transparent; /* No background */
+  border: none; /* No border */
+  color: #333; /* Button color */
+  padding: 10px;
+  margin-top: -30px; /* Adjust this value to position the button higher */
+  z-index: 999999; /* Ensures the button stays on top */
+}
+
+
+.scroll-btn.left {
+  left: 10px;
+}
+
+.scroll-btn.right {
+  right: 10px;
+}
+
+
 /* ////////////////////////////////////////////////////////////////////////////////////////// */
 
 
@@ -545,6 +731,26 @@ font-size: 20px;
   
   body {
     background: linear-gradient(to bottom, #fef2f2, #fef2f2);
+  }
+
+  .top-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .top-row img {
+    width: 100%;
+  }
+
+  .scroller img {
+    width: 35%;
+  }
+
+  .scroll-btn {
+    width: 18%;
+    border-radius: 20px;
+    cursor: pointer; /* Keeps the pointer style for the button */
+    margin-top: -80px;
   }
 
   html, body {
@@ -608,13 +814,12 @@ font-size: 20px;
   }
 
   .video{
-    margin-top: -100px;
     border: 2px solid black;
   }
 
   .handmobile {
     width: 130%;
-    margin: auto;
+    margin: -70px auto;
   }
 
   .movingline {
@@ -624,12 +829,18 @@ font-size: 20px;
     background: linear-gradient(to right, #e41193, #eb8313);
     position: relative; /* Positions the content relative to the container */
     color: white;
+    margin-top: 30px;
    
   }
 
   #playbtn{
     margin: 0px 40px -2px auto;
     width: 4%;
+  }
+  
+  #playbtn2{
+    margin: 0px 40px -3px auto;
+    width: 7%;
   }
 
   .scrolling-text{
@@ -698,9 +909,15 @@ font-size: 20px;
     margin: auto;
   }
 
-  .mddiv>h2 {
+  .mddiv h2 {
     font-size: 14px; /* Decrease text size */
     padding: 0 10px; /* Reduce padding */
+  }
+
+
+  .features{
+    margin-top: -100px;
+    width: 90%;
   }
   /* //////// */
   .about {
@@ -716,7 +933,7 @@ font-size: 20px;
   .aboutdiv {
     display: block;
     text-align: center;
-    margin: auto;
+    margin: 20px auto;
     width: 90%; /* Adjust width */
   }
 
@@ -738,7 +955,7 @@ font-size: 20px;
 
   .threecolordivmain{
     width: 95%;
-    margin-top: -10%;
+    margin-top: 0%;
   }
 
   .threecolordiv {

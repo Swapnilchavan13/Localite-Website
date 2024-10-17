@@ -42,6 +42,15 @@ p{
   cursor: pointer;
 }
 
+.navreg{
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    background: linear-gradient(to right, #e41193, #eb8313);
+  
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
   .topdiv {
