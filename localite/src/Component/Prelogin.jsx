@@ -25,11 +25,11 @@ export const Prelogin = () => {
       backgroundRepeat: 'no-repeat' 
     }}>
       <div id='centreimgdiv'>
-      <img className='loginpinimg' src="w_logo.png" alt="" />
       <h2>Welcome! to</h2>
-      <img className='loginpinimg2' width="100px" src="/blue-logo.png" alt="" />
-      <br />
-      <p className='ptaglogin'>Your partner for Hyperlocal Marketing</p>
+      <img className='loginpinimg' src="w_logo.png" alt="" />
+      {/* <img className='loginpinimg2' width="100px" src="/blue-logo.png" alt="" /> */}
+      <p className='ptaglogin'>The trusted hyperlocal marketing partner for your business.
+      </p>
       <br />
       </div>
       <br />
