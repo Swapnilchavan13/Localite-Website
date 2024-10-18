@@ -167,13 +167,13 @@ export const Home = () => {
   
 
         <h2>
-        <span 
+        <a 
           className="watch-video" 
           style={{ cursor: 'pointer' }} 
           onClick={() => window.open("https://youtu.be/RTGAEjDli1I?si=D4DXhBQbq1Gr8sU-", "_blank")}
         >
           Watch Video <img id='playbtn' src="play.png" alt="" />
-        </span>
+        </a>
       </h2>
               </div>
               <div data-aos="flip-right"><img className='aboutimg' src="about.png" alt="" /></div>

@@ -217,6 +217,8 @@ const handleRemoveAdditionalPhoto1 = () => {
     } finally {
       setIsSubmitting(false);  // Re-enable the button
       setTimeout(() => setUploadStatus(''), 3000);  // Clear the status after 3 seconds
+      // Refresh the page after successful submission
+    window.location.reload();
     }
   };
 

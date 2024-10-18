@@ -298,9 +298,9 @@ margin-left: -60px;
 
 .threecolordivmain{
   width: 100%;
-  margin: 0px auto;
+  margin: -10px auto;
   background-color: white;
-  padding: 20px 10px;
+  padding: 0px 10px;
 }
 
 .threecolordivmain h3{
@@ -349,10 +349,6 @@ background-color: #fcfafb;
   z-index: -2; /* Places the background gradient behind the border pseudo-element */
 }
 
-.partners{
-  margin-top: 100px;
-}
-
 #dldbtns{
   margin: auto;
   display: flex;
@@ -396,7 +392,7 @@ background-color: #fcfafb;
 .sellwithus{
   text-align: center;
   width: 80%;
-  margin: auto;
+  margin: -80px auto;
   padding: 10px;
 }
 
@@ -424,7 +420,7 @@ font-size: 20px;
 
 .getstart{
   text-align: center;
-  margin: auto;
+  margin: 100px auto;
   width: 80%;
 }
 
@@ -450,7 +446,7 @@ font-size: 20px;
 
 .connect{
   width: 60%;
-  margin: 30px auto;
+  margin: -90px auto 10px;
   text-align: center;
   /* padding: 2px 500px; */
 }
@@ -846,7 +842,6 @@ font-size: 20px;
   }
 
 
-
   /* ///////// */
 
   .borderh {
@@ -987,9 +982,24 @@ font-size: 20px;
     width: 95%;
   }
 
+
   .siximages img {
     width: 100%;
   }
+
+  .watch-video {
+    color: #2A6171;
+    position: relative;  /* Ensure it's positioned */
+    z-index: 10;         /* Higher z-index to bring it above */
+}
+
+.aboutimg {
+    position: relative;  /* Ensure it's positioned */
+    z-index: 1;          /* Lower z-index to keep it below */
+    pointer-events: none;  /* Prevent this div from blocking clicks */
+}
+
+
 
   .faqdiv {
     width: 95%;
