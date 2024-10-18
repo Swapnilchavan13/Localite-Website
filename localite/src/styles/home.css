@@ -80,9 +80,10 @@ a{
 }
 .intoline{
   font-family: 'Futura', sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 60px;
   text-align: center;
+  color: #333;
 }
 
 .videoandbtn{
@@ -468,23 +469,6 @@ font-size: 20px;
   cursor: pointer;
 }
 
-/* .merchantphotos{
-  width: 95%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  margin-bottom: 30px;
-}
-
-.merchantphotos img {
-  margin: auto;
-  width: 90%;
-  border: 1px solid grey;
-  border-radius: 10px;
-} */
 
 .six{
   width: 100%;
@@ -501,32 +485,6 @@ font-size: 20px;
   gap: 10px;
 }
 
-.siximages img {
-  border-radius: 10px; /* Rounded corners */
-}
-
-.oneimg{
-  width: 200px;
-  height: 410px;
-}
-
-.twoimg, .threeimg{
-  width: 425px;
-}
-
-.fourimg{
-  width: 400px;
-  height: 415px;
-}
-
-.fiveimg{
-  width: 300px;
-  height: 280px;
-}
-
-.siximg{
-  width: 300px;
-}
 
 
 .teamandinfra{
@@ -608,10 +566,6 @@ font-size: 20px;
 }
 
 
-
-
-
-
 /* ????????? */
 
 .partners {
@@ -620,12 +574,12 @@ font-size: 20px;
   background-color: #f9f9f9; /* Light background for better contrast */
 }
 
-.intoline {
+/* .intoline {
   font-size: 60px;
   font-weight: 600;
   margin-bottom: 40px;
   color: #333;
-}
+} */
 
 /* Static top row */
 .top-row {
@@ -777,22 +731,26 @@ font-size: 20px;
   }
   
   .headcon {
-    margin: 40px auto;
-    padding: 10%;
-    /* border: 1px solid red; */
-
+    margin: 70px auto ;
+    padding: 10px;
+      text-align: center;
+      width: 80%;
+      z-index: inherit;
+      text-align: left;
   }
 
   .headcon h1 {
-    font-size: 60px; /* Reduce font size */
-    margin-top: -30%;
+    font-size: 35px; /* Reduce font size */
+    margin-top: -25%;
     margin-bottom: 20%;
+    text-align: center;
   }
 
   .headcon p {
     width: 100%; /* Adjust width */
     font-size: 13px; /* Reduce font size */
-    margin-top: -40px;
+    margin-top: -50px;
+    margin-left: 2px;
   }
 
 
@@ -819,7 +777,7 @@ font-size: 20px;
 
   .handmobile {
     width: 80%;
-    margin: -70px auto;
+    margin: -50px auto -35px 80px;
   }
 
   .movingline {
@@ -923,7 +881,7 @@ font-size: 20px;
   .about {
     width: 100%;
     height: auto; /* Let height adjust based on content */
-    margin-top: 60px;
+    margin-top: 20px;
   }
 
   .about h1{
@@ -949,13 +907,17 @@ font-size: 20px;
 
   .aboutdiv div img {
     width: 100%; /* Adjust image width */
-    margin-top: -40px;
+    margin-top: -80px;
     margin-left: 0;
+  }
+
+  .socialmedia{
+    margin-top: 20px;
   }
 
   .threecolordivmain{
     width: 95%;
-    margin-top: 0%;
+    margin-top: 10px;
   }
 
   .threecolordiv {
@@ -967,11 +929,21 @@ font-size: 20px;
   .threesinglediv {
     padding: 20px; /* Reduce padding */
   }
+
+
+  .partners{
+    margin-top: 0px;
+    height: fit-content;
+  }
   
 
   .sellwithus {
     width: 95%; /* Adjust width */
+    margin-top: -40px;
+  background: linear-gradient(to bottom, #fef2f2, #fef2f2);
+
   }
+
 
   .sellwithus h1 {
     font-size: 25px; /* Reduce font size */
@@ -1045,6 +1017,19 @@ font-size: 20px;
 
   #dldbtns button{
     font-size: 10px;
+  }
+
+  .intoline{
+    font-family: 'Futura', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    color: #333;
+  }
+
+  .teamandinfra{
+    margin-top: 0px;
+    width: 100%;
   }
 
  

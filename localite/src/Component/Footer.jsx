@@ -63,7 +63,9 @@ export const Footer = () => {
             <a href="https://www.instagram.com/localite.india?igsh=bXA4M243eXhqMnI0" target='_blank'>
               <img src="int.png" alt="" />
             </a>
+            <a href="https://www.facebook.com/profile.php?id=61565805519332" target='_blank'>
             <img src="fb.png" alt="" />
+            </a>
             <a href="https://www.linkedin.com/company/103767681/admin/dashboard/" target='_blank'>
               <img src="in.png" alt="" />
             </a>
