@@ -335,7 +335,7 @@ const handleRemoveAdditionalPhoto1 = () => {
 
         <div className="form-group">
           <label>App Section <span style={{color:'red'}}>*</span></label>
-          <select value={appSection} onChange={(e) => setAppSection(e.target.value)}>
+          <select value={appSection} onChange={(e) => setAppSection(e.target.value)} disabled>
             {/* <option value="">Select...</option> */}
             {/* <option value="marketplace">Marketplace</option> */}
             <option value="offers">Deal Section</option>

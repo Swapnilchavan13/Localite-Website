@@ -315,7 +315,7 @@ export const MerchantForm = () => {
 
   return (
     <>
-      <Topnavbar />
+      {/* <Topnavbar /> */}
       <div id='merchantform' style={formStyle}>
         <h1 style={headingStyle}>Merchant Registration Form (Form-1)</h1>
         <form onSubmit={handleSave}>
