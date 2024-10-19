@@ -25,19 +25,23 @@ export const Prelogin = () => {
       backgroundRepeat: 'no-repeat' 
     }}>
       <div id='centreimgdiv'>
-      <h2>Welcome! to</h2>
+        <div className='weldiv'>
+      <h2>Welcome to</h2>
       <img className='loginpinimg' src="w_logo.png" alt="" />
+        </div>
       {/* <img className='loginpinimg2' width="100px" src="/blue-logo.png" alt="" /> */}
       <p className='ptaglogin'>The trusted hyperlocal marketing partner for your business.
       </p>
       <br />
       </div>
       <br />
+      <br />
+
       
       <button id='loginbtn' onClick={handleLoginClick}>Login</button>
-      <br />
-      <br />
+      <p>(For already registered businesses)</p>
       <button id='signupbtn' onClick={handleSignupClick}>Sign up</button>
+      <p>(For listing your business)</p>
       
       {/* <Footer /> */}
     </div>

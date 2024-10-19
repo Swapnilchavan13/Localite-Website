@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 export const MerchantForm = () => {
   const navigate = useNavigate();
 
-  const categories = ['Automotive & Transport', 'Clothing', 'DryCleaning Services', 'Educationand Learning', 'Entertainment & Leisure', 'Food', 'Food & Beverages', 'Hair Care', 'Healthcare & Wellness', 'Home & Maintenance', 'Jewellery', 'Pet & Petcare', 'PersonalCare', 'Professional Services', 'Salon & Spa', 'Skin Care', 'Other'];
+  const categories = ['Automotive & Transport', 'Clothing', 'Dry Cleaning Services', 'Education and Learning', 'Entertainment & Leisure', 'Food & Beverages', 'Hair Care', 'Healthcare & Wellness', 'Home & Maintenance', 'Jewellery', 'Pet & Petcare', 'Personal Care', 'Professional Services', 'Salon & Spa', 'Skin Care', 'Other'];
   
   const [formData, setFormData] = useState({
     businessName: '',
@@ -16,6 +16,7 @@ export const MerchantForm = () => {
     businessAddress: '',
     contactEmail: '',
     contactPhoneNumber: '',
+    contactPhoneNumber2: '',
     websiteUrl: '',
     operationHours: '',
     yearsOfBusiness: '',
@@ -209,6 +210,7 @@ export const MerchantForm = () => {
         businessAddress: '',
         contactEmail: '',
         contactPhoneNumber: '',
+        contactPhoneNumber2: '',
         websiteUrl: '',
         operationHours: '',
         yearsOfBusiness: '',
@@ -296,7 +298,7 @@ export const MerchantForm = () => {
   const buttonStyle1 = {
     position: 'absolute',
     right: '30px',
-    top: '40%',
+    top: '-10px',
     transform: 'translateY(-50%)',
     cursor: 'pointer',
     background: 'none',
@@ -336,6 +338,25 @@ export const MerchantForm = () => {
               Last Name:
               <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} style={inputStyle} placeholder='Last Name' />
             </label>
+
+            <label style={labelStyle}>
+              Contact Number:
+              <input
+  type="tel" // Change type to 'tel'
+  name="contactPhoneNumber"
+  value={formData.contactPhoneNumber}
+  onChange={handleChange}
+  style={inputStyle}
+  placeholder='This will be your USER ID for the Post Creation Form'
+  maxLength={10}
+  pattern="\d{10}"
+  onInput={(e) => {
+    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+  }}
+/>
+</label>
+
+
             <label style={{ display: 'block', marginBottom: '20px',fontWeight:'bold' }}>
       Set Password:
       <div style={containerStyle}>
@@ -345,7 +366,7 @@ export const MerchantForm = () => {
           value={formData.password}
           onChange={handleChange}
           style={inputStyle}
-          placeholder="This will be your login password for the Post Creation Form"
+          placeholder="This will be your LOGIN PASSWORD for the Post Creation Form"
         />
         <button
           type="button"
@@ -355,6 +376,8 @@ export const MerchantForm = () => {
           {showPassword ? 'Hide' : '👁'}
         </button>
       </div>
+
+      
 
       <label style={labelStyle}>
               Brand Logo:
@@ -417,25 +440,28 @@ export const MerchantForm = () => {
               <input type="text" name="businessAddress" value={formData.businessAddress} onChange={handleChange} style={inputStyle} placeholder='This is your place of business where customers can visit you' />
             </label>
             <label style={labelStyle}>
-              Contact Email:
+            Business Contact email:
               <input type="email" name="contactEmail" value={formData.contactEmail} onChange={handleChange} style={inputStyle} placeholder='abcd@gmail.com' />
             </label>
+
+
             <label style={labelStyle}>
-              Contact Phone Number:
+            Business Contact Number:
               <input
   type="tel" // Change type to 'tel'
-  name="contactPhoneNumber"
-  value={formData.contactPhoneNumber}
+  name="contactPhoneNumber2"
+  value={formData.contactPhoneNumber2}
   onChange={handleChange}
   style={inputStyle}
-  placeholder='9876543210'
+  placeholder='This is where your customers can contact you'
   maxLength={10}
   pattern="\d{10}"
   onInput={(e) => {
     e.target.value = e.target.value.replace(/[^0-9]/g, '');
   }}
 />
-            </label>
+</label>
+            
           </div>
 
           <div style={sectionStyle}>
