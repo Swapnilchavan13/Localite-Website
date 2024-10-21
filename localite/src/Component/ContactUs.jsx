@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Topnavbar } from './Topnavbar';
 import { Footer } from './Footer';
+import emailjs from 'emailjs-com';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const ContactUs = () => {
     questionType: '',
     comment: ''
   });
+  const [isSubmitted, setIsSubmitted] = useState(false); // For success message
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,23 +27,56 @@ const ContactUs = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+
+
+  const handleSubmit = (e) => { 
     e.preventDefault();
 
     const { name, mobile, email, questionType, comment } = formData;
 
-    const mailtoLink = `mailto:localite@alittleworld.com?subject=Contact Form Submission&body=Name: ${name}%0D%0AMobile: ${mobile}%0D%0AEmail: ${email}%0D%0AQuestion Type: ${questionType}%0D%0AComment: ${comment}`;
+    // EmailJS parameters for admin email
+    const adminTemplateParams = {
+      to_name: "Localite Admin", // The receiver's name (admin)
+      from_name: name, // The user's name
+      message: `Mobile: ${mobile}\nEmail: ${email}\nQuestion Type: ${questionType}\nComment: ${comment}`, // The message content
+      reply_to: email // The user's email for reply
+    };
 
-    window.location.href = mailtoLink;
+    // EmailJS parameters for user auto-reply email
+    const userTemplateParams = {
+      to_name: name, // The user's name
+      from_name: "Localite Support Team", // The name of the sender (you)
+      message: `Thank you for contacting us! We've received your message and will get back to you soon.\n\nDetails you submitted:\nMobile: ${mobile}\nEmail: ${email}\nQuestion Type: ${questionType}\nComment: ${comment}`, // The message content
+      reply_to: email, // Your support email
+      user_email: email // The user's email where the thank-you message will be sent
+    };
 
-    setFormData({
-      name: '',
-      mobile: '',
-      email: '',
-      questionType: '',
-      comment: ''
-    });
+    // Send email to admin
+    emailjs.send('service_i9j329k', 'template_2h2y23w', adminTemplateParams, 'KpIJ_qUujjm-qYHat')
+      .then((response) => {
+        console.log('Admin email sent successfully!', response.status, response.text);
+
+        // Send auto-reply email to user
+        emailjs.send('service_i9j329k', 'template_266swor', userTemplateParams, 'KpIJ_qUujjm-qYHat')
+          .then((response) => {
+            console.log('Auto-reply sent to user successfully!', response.status, response.text);
+          }, (error) => {
+            console.error('Failed to send auto-reply to user...', error);
+          });
+
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          mobile: '',
+          email: '',
+          questionType: '',
+          comment: ''
+        });
+      }, (error) => {
+        console.error('Failed to send email to admin...', error);
+      });
   };
+
 
   return (
     <>
@@ -70,7 +105,10 @@ const ContactUs = () => {
 
         <div className='contactform'>
           <h2>Contact Form</h2>
-          <form onSubmit={handleSubmit}>
+          {isSubmitted ? (
+            <p>Thank you for your message! We will get back to you soon.</p>
+          ) : (
+            <form onSubmit={handleSubmit}>
             <div style={{ marginBottom: '10px' }}>
               <label>
                 Name:
@@ -143,6 +181,7 @@ const ContactUs = () => {
               Submit
             </button>
           </form>
+          )}
         </div>
       </div>
       <Footer />

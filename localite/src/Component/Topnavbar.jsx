@@ -21,7 +21,7 @@ export const Topnavbar = ({ scrollToAbout, scrollToFAQs, scrollToServices }) => 
 
       {/* Dropdown menu */}
       <div className={`dropdown-menu ${isOpen ? 'dropdown-active' : 'dropdown-not'}`}>
-      <button className='navreg' onClick={() => window.open("https://localite.services/merchantform", "_blank", "noopener,noreferrer")}>
+      <button className='navreg' onClick={() => window.open("https://localite.services/login", "_blank", "noopener,noreferrer")}>
   Register Now!
 </button>
         <p onClick={scrollToServices}>Our Services</p>

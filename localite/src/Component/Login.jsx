@@ -50,12 +50,9 @@ export const Login = () => {
     }}>
       <div id='centreimgdiv'>
       <img className='loginpinimg' src="w_logo.png" alt="" />
-      <p className='lheading'>We’re excited to  <br />
+      <p className='ptaglogin'>We’re excited to  <br />
       have you onboard!</p>
-      {/* <img className='loginpinimg2' width="100px" src="/blue-logo.png" alt="" />
-      <br />
-      <p className='ptaglogin'>Your partner for Hyperlocal Marketing</p>
-      <br /> */}
+      
       <br />
       </div>
       <form onSubmit={handleSubmit} className="login-form">
@@ -65,7 +62,7 @@ export const Login = () => {
             id="mobileNumber"
             value={mobileNumber}
             onChange={(e) => setMobileNumber(e.target.value)}
-            placeholder='📞 Enter Mobile Number'
+            placeholder='📞 Enter Registered Mobile Number'
             required
           />
         </div>
@@ -78,7 +75,7 @@ export const Login = () => {
             placeholder='🔐 Enter Login Password'
             required
           />
-          <p style={{ textAlign:'left',color: 'grey'}}>The one used at the time of sign up</p>
+          <p style={{ textAlign:'left',color: 'grey'}}>(please use the details entered at the time of the sign-up.)</p>
         </div>
         {error && <p className="error-message">{error}</p>}
         {/* <p style={{color: 'red'}}>Forgot password?</p> */}

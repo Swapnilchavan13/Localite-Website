@@ -3,7 +3,7 @@ import '../styles/footer.css';
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
-export const Footer = () => {
+export const Footer =  ({ scrollToAbout }) => {
   const { pathname } = useLocation();
 
   // Scroll to top whenever the path changes
@@ -20,8 +20,8 @@ export const Footer = () => {
             <Link to='/'>
               <h3>Home</h3>
             </Link>
-            <Link to='/about'>
-              <h3>About us</h3>
+            <Link>
+              <h3 onClick={scrollToAbout}>About us</h3>
             </Link>
             <Link to='/terms'>
               <h3>Terms</h3>

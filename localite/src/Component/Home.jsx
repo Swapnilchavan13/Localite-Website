@@ -71,12 +71,12 @@ export const Home = () => {
       <div className="maind">
       <Topnavbar scrollToAbout={scrollToAbout} scrollToFAQs={scrollToFAQs} scrollToServices={scrollToServices} />
         <div className="home-container">
-          <h1 className='intoline'>Introducing</h1>
+          <h1 className='intoline' id='intro'>Introducing</h1>
           <div className='introdiv'>
             <div>
               <div className='headcon' data-aos="slide-right">
-                <h1>Localite</h1>
-                <p>is the go-to hyperlocal marketing and communication service provider for Small and Medium Enterprises (SME's), offering an innovative platform to enhance brand visibility and engagement within their local communities.</p>
+                
+                <p><span className='localitefont'>Localite</span> is the go-to hyperlocal marketing and communication service provider for Small and Medium Enterprises (SME's), offering an innovative platform to enhance brand visibility and engagement within their local communities.</p>
                 <div className='videoandbtn'>
                   <img
                     className='vbtn1'
@@ -110,7 +110,7 @@ export const Home = () => {
             </div>
 
             <div className='digitaldiv'>
-            <h1 ref={faqSer} className='intoline'>Our Services</h1>
+            <h1 ref={faqSer} className='intoline'>OUR SERVICES</h1>
               <h1 className='borderh'>Outdoor Advertising</h1>
             </div>
             <h1 className='lmarket'>Your Local Marketplace, Right On The Screen</h1>
@@ -145,14 +145,14 @@ export const Home = () => {
               <div data-aos="zoom-in" className='aboutfirstdiv'>
                
 
-      <div class="bullet-item">
+      <div className="bullet-item">
         <img id="aboutbullet" src="bullet.png" alt="bullet" />
         <h2>Showcases brand's offers & promotions.</h2>
     </div>
 
-    <div class="bullet-item">
+    <div className="bullet-item">
         <img id="aboutbullet" src="bullet.png" alt="bullet" />
-        <h2>List your event workshops, music events, exhibition, etc.</h2>
+        <h2 id='bulleth'>List your event workshops, music events, exhibition, etc.</h2>
     </div>
 
     <div class="bullet-item">
@@ -200,7 +200,7 @@ export const Home = () => {
          </div>
 
           <div className='threecolordivmain'>
-          <h1 className='intoline'>Benefits Of Localite</h1>
+          <h1 className='intoline'>BENEFITS OF LOCALITE</h1>
 
             <div className='threecolordiv'>
               <div data-aos="zoom-in">
@@ -230,7 +230,7 @@ export const Home = () => {
 
 {/* //Merchants photos */}
 <div className='partners' ref={faqRef}>
-  <h1 className='intoline'>Our Network Partners</h1>
+  <h1 className='intoline'>OUR NETWORK PARTNERS</h1>
 
   <div className='top-row'>
       <img src="4 (1).png" alt="" />
@@ -297,20 +297,42 @@ export const Home = () => {
                <p className='pcolor'>Sneak Peek <img id='playbtn2' src="play.png" alt="" /></p>
             </a>
 
-            <br />
             <p>Explore more than 20+ brands from your locality</p>
            
            <div id='dldbtns'>
-            <button className='sellbutton' onClick={() => window.open("https://play.google.com/store/apps/details?id=com.dev.localite", "_blank")}>Download App on Playstore</button>
+            <button className='sellbutton' onClick={() => window.open("https://play.google.com/store/apps/details?id=com.dev.localite", "_blank")}>Download Localite on Playstore</button>
 
-            <button className='sellbutton' onClick={() => window.open("https://apps.apple.com/in/app/localite-shop-win-connect/id6670195737", "_blank")}>Download App on Appstore</button>
+            <button className='sellbutton' onClick={() => window.open("https://apps.apple.com/in/app/localite-shop-win-connect/id6670195737", "_blank")}>Download Localite on Appstore</button>
            </div>
 
           </div>
 
-          <img className='teamandinfra' src="about_us.png" alt=""  ref={aboutRef}/>
-          <img data-aos="slide-up" className='gradientimg' src="gradient_bar.png" alt="" />
+          <img className='teamandinfra' src="about_us3.png" alt=""  ref={aboutRef}/>
 
+
+<div className='abtimgcon'>
+
+<div data-aos="zoom-in" className='aboutfirstdiv'>      
+  <div className="bullet-item">
+        <img id="aboutbullet1" src="bullet.png" alt="bullet" />
+        <h2>At 3500 square foot of dynamic work space in Juhu, we are a team of 20+ members.</h2>
+    </div>
+      
+    <div className="bullet-item">
+        <img id="aboutbullet2" src="bullet.png" alt="bullet" />
+        <h2 id='bulleth'>Localite is founded by the pioneers in Media & Communication and have led several related initiatives.</h2>
+    </div>
+
+    <div class="bullet-item">
+        <img id="aboutbullet3" src="bullet.png" alt="bullet" />
+        <h2>Our core team comes has an extensive experience in research and technology products & services.
+        </h2>
+    </div>
+</div>
+
+</div>
+
+          <img data-aos="slide-up" className='gradientimg' src="gradient_bar.png" alt="" />
 
           <div className='faq'>
             <div className='faqdiv'>
@@ -449,7 +471,7 @@ export const Home = () => {
           </div>
 
         </div>
-        <Footer />
+        <Footer scrollToAbout={scrollToAbout} />
         <br />
 
         {showScrollTop && (

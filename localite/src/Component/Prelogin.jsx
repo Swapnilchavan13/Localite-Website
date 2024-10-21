@@ -40,6 +40,8 @@ export const Prelogin = () => {
       
       <button id='loginbtn' onClick={handleLoginClick}>Login</button>
       <p>(For already registered businesses)</p>
+      <br />
+
       <button id='signupbtn' onClick={handleSignupClick}>Sign up</button>
       <p>(For listing your business)</p>
       

@@ -34,7 +34,7 @@ a{
 }
 
 .introdiv .indiv{
-  background: linear-gradient(to bottom, #fce5e5, #fef2f2);
+  background: linear-gradient(to bottom, #fcecec, #fef2f2);
   text-align: left;
 }
 
@@ -65,18 +65,24 @@ a{
   z-index: 9999999;
 }
 
+.localitefont{
+  /* font-size: 25px; */
+  font-size: 100px;
+  color: #2A6171;
+  font-weight: bold;
+}
+
 .headcon h1{
   font-size: 160px;
-  color: #2A6171;
 }
 
 .headcon p{
   /* border: 1px solid red; */
   width: 100%;
   font-size: 22px;
-  margin-top: -120px;
+  margin-top: 70px;
   margin-left: 10px;
-  color: #7DB9B4;;
+  color: #7DB9B4;
 }
 .intoline{
   font-family: 'Futura', sans-serif;
@@ -165,6 +171,7 @@ cursor: pointer;
   display: flex;
   gap: 20px;
   margin:50px auto;
+  color: #7DB9B4;
 }
 
 .mddiv h2{
@@ -270,6 +277,7 @@ margin-left: -60px;
 
 .bullet-item {
   width: 100%;
+  color: #7DB9B4;
   display: flex;
   align-items: center;
   gap: 10px; /* Space between image and text */
@@ -491,7 +499,37 @@ font-size: 20px;
 
 .gradientimg{
   width: 100%;
-  margin-top: -5px;
+  margin-top: 28%;
+}
+
+.abtimgcon{
+ /* display: none; */
+  width: 80%;
+  /* height: fit-content; */
+  text-align: left;
+  text-align: center;
+  margin: -28% auto;
+  /* border: 1px solid red; */
+}
+.abtimgcon div div{
+  text-align: left;
+  margin-top: -20px;
+}
+
+.abtimgcon div #aboutbullet1{
+  width: 3%;
+  margin-top: -30px;
+  margin-left: -40px;
+}
+.abtimgcon div #aboutbullet2{
+  width: 3%;
+  margin-top: -30px;
+  margin-left: -40px;
+}
+.abtimgcon div #aboutbullet3{
+  width: 3%;
+  margin-top: -30px;
+  margin-left: -40px;
 }
 
 
@@ -688,13 +726,24 @@ font-size: 20px;
     grid-template-columns: repeat(2, 1fr);
   }
 
+
+  #intro{
+    display: none;
+  }
+
+  .top-row {
+    justify-content: center;
+    gap: 0px; /* Space between the first three images */
+    /* margin-bottom: 30px; */
+  }
+  
   .top-row img {
     width: 100%;
   }
 
   .scroller img {
-    width: 35%;
-  }
+    width: 40%;
+    margin-left: -15px;  }
 
   .scroll-btn {
     width: 18%;
@@ -736,24 +785,25 @@ font-size: 20px;
   }
 
   .headcon h1 {
-    font-size: 35px; /* Reduce font size */
-    margin-top: -25%;
-    margin-bottom: 20%;
-    text-align: center;
+    font-size: 25px; /* Reduce font size */
+    margin-top: -20%;
+    margin-bottom: 15%;
+    text-align: left;
   }
+
+  .localitefont{
+    font-size: 25px;
+    /* font-size: 100px; */
+    color: #2A6171;
+    font-weight: bold;
+  }
+  
 
   .headcon p {
     width: 100%; /* Adjust width */
     font-size: 13px; /* Reduce font size */
     margin-top: -50px;
     margin-left: 2px;
-  }
-
-
-
-  .balls{
-    display: none;
-
   }
 
   .videoandbtn {
@@ -789,12 +839,12 @@ font-size: 20px;
 
   #playbtn{
     margin: 0px 40px -2px auto;
-    width: 4%;
+    width: 5%;
   }
   
   #playbtn2{
     margin: 0px 40px -3px auto;
-    width: 7%;
+    width: 8%;
   }
 
   .scrolling-text{
@@ -809,6 +859,42 @@ font-size: 20px;
     margin: auto;
     width: 60%;
   }
+
+
+  #aboutbullet{
+    position: absolute;
+    margin-left: -30px;
+    width: 6%;
+  }
+
+  .abtimgcon{
+    /* display: none; */
+     width: 80%;
+     text-align: left;
+     margin: -52% auto;
+   }
+
+   .abtimgcon div #aboutbullet1{
+    width: 4%;
+    margin-top: -15px;
+    margin-left: -20px;
+  }
+  .abtimgcon div #aboutbullet2{
+    width: 4%;
+    margin-top: -30px;
+    margin-left: -20px;
+  }
+  .abtimgcon div #aboutbullet3{
+    width: 4%;
+    margin-top: -15px;
+    margin-left: -20px;
+  }
+
+   .gradientimg{
+    width: 100%;
+    margin-top: 48%;
+  }
+
 
   .lmarket {
     padding: 0 20px; /* Reduce padding */
@@ -833,7 +919,7 @@ font-size: 20px;
   }
 
   .threedivs div p {
-    font-size: 18px; /* Slightly smaller paragraph font size */
+    font-size: 14px; /* Slightly smaller paragraph font size */
   }
 
   .threedivs div::before {
@@ -841,6 +927,9 @@ font-size: 20px;
     padding: 3px; /* Adjust border width for smaller screens */
   }
 
+  .scroll-container div {
+  padding-left: 10px;
+  }
 
   /* ///////// */
 
@@ -879,8 +968,9 @@ font-size: 20px;
     margin-top: 20px;
   }
 
+
   .about h1{
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .aboutdiv {
@@ -912,7 +1002,8 @@ font-size: 20px;
 
   .threecolordivmain{
     width: 95%;
-    margin-top: 10px;
+    padding-top: 20px;
+    margin-top: 30px;
   }
 
   .threecolordiv {
@@ -925,6 +1016,14 @@ font-size: 20px;
     padding: 20px; /* Reduce padding */
   }
 
+  .threesinglediv p{
+    font-size: 14px; /* Reduce padding */
+  }
+
+  
+  .threesinglediv img {
+    width: 20%; /* Reduce padding */
+  }
 
   .partners{
     margin-top: 0px;
@@ -969,6 +1068,14 @@ font-size: 20px;
     padding: 0 20px; /* Adjust padding */
   }
 
+  .connect .pcolor{
+    color: #2A6171;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 40px;
+  }
+
   .connect h1 {
     font-size: 25px; /* Reduce font size */
   }
@@ -988,6 +1095,7 @@ font-size: 20px;
   }
 
   .watch-video {
+    font-size: 18px;
     color: #2A6171;
     position: relative;  /* Ensure it's positioned */
     z-index: 10;         /* Higher z-index to bring it above */
@@ -1024,7 +1132,13 @@ font-size: 20px;
     display: none;
   }
 
+  #dldbtns{
+    width: 150%;
+    margin-left: -60px;
+  }
+
   #dldbtns button{
+    width: 200px;
     font-size: 10px;
   }
 
