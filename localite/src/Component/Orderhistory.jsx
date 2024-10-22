@@ -94,6 +94,7 @@ export const Orderhistory = () => {
       Product: ${order?.postDetails?.title ?? 'N/A'}
       Quantity: ${order?.cartItems?.reduce((total, item) => total + item.quantity, 0) ?? 0}
       Total Price: ${order?.price ?? 'N/A'}
+      Payment: ${order?.paymentMode ?? 'N/A'}
       
       User Details:
       Name: ${order?.userDetails?.[0]?.userName ?? 'N/A'}
