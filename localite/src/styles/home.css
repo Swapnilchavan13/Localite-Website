@@ -252,7 +252,6 @@ cursor: pointer;
 .aboutdiv div:nth-child(1){
   font-size: 30rch;
   margin-top: -30px;
-
 }
 
 .aboutfirstdiv {
@@ -581,7 +580,7 @@ font-size: 20px;
 
 .top {
   position: fixed;
-  bottom: 20px;
+  bottom: 70px;
   right: 20px;
   color: white;
   border: none;
@@ -984,8 +983,13 @@ font-size: 20px;
   }
 
   .aboutfirstdiv {
-    margin-top: -160px;
+    margin-top: 0px;
     width: 90%; /* Adjust width */
+  }
+
+  .aboutdiv div:nth-child(1){
+    font-size: 30rch;
+    margin-top: -80px;
   }
 
   .aboutfirstdiv h2 {
