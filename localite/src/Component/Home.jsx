@@ -164,7 +164,6 @@ export const Home = () => {
         <img id="aboutbullet" src="bullet.png" alt="bullet" />
         <h2>Ensure maximum visibility for hyperlocal suburban users.</h2>
     </div>
-  
 
         <h2>
         <a 

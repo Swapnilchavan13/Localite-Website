@@ -12,6 +12,11 @@
   z-index: 1000; /* Ensure it stays above other content */
 }
 
+.topdiv a{
+  color: rgb(253, 125, 125);
+
+}
+
 /* Styles for the logo */
 .topdiv img {
   width: 40%;
