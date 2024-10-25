@@ -17,6 +17,7 @@ import { Prelogin } from './Component/Prelogin';
 import { Removemydata } from './Component/Removemydata';
 import { Cms } from './Component/Cms';
 import { Orderhistory } from './Component/Orderhistory';
+import { EventTable } from './Component/EventTable';
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
 
       <Route path="/cms" element={<Cms />} />
       <Route path="/allorders" element={<Orderhistory />} />
+      <Route path="/allevents" element={<EventTable />} />
+
+      
 
 
       
