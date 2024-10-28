@@ -534,7 +534,7 @@ export const MerchantForm = () => {
 </label>
 
           <div style={sectionStyle}>
-            <h2 style={headingStyle}>Business Verification (Optional)</h2>
+            <h2 style={headingStyle}>Business Verification</h2>
             <label style={labelStyle}>
               PAN/TAN Number: <span style={{color:'red'}}>*</span>
               <input type="text" name="panTanNumber" value={formData.panTanNumber} onChange={handleChange} style={inputStyle} />
