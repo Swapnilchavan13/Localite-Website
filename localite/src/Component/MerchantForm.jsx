@@ -140,7 +140,9 @@ export const MerchantForm = () => {
       { field: 'numberOfEmployees', message: 'Number of Employees is compulsory. Please provide Number of Employees.' },
       { field: 'productDescription', message: 'Product Description is compulsory. Please provide a Product Description.' },
       { field: 'preferredCategories', message: 'Preferred Categories are compulsory. Please select Preferred Categories.' },
-      { field: 'offerFrequency', message: 'Offer Frequency is compulsory. Please provide Offer Frequency.' }
+      { field: 'offerFrequency', message: 'Offer Frequency is compulsory. Please provide Offer Frequency.' },
+      { field: 'panTanNumber', message: 'PAN Number is compulsory. Please provide Offer Frequency.' }
+
     ];
   
     for (const { field, message } of requiredFields) {
@@ -534,12 +536,12 @@ export const MerchantForm = () => {
           <div style={sectionStyle}>
             <h2 style={headingStyle}>Business Verification (Optional)</h2>
             <label style={labelStyle}>
-              PAN/TAN Number:
+              PAN/TAN Number: <span style={{color:'red'}}>*</span>
               <input type="text" name="panTanNumber" value={formData.panTanNumber} onChange={handleChange} style={inputStyle} />
             </label>
             <label style={labelStyle}>
               GSTIN:
-              <input type="text" name="gstin" value={formData.gstin} onChange={handleChange} style={inputStyle} />
+              <input type="text" name="gstin" value={formData.gstin} placeholder='If Applicable' onChange={handleChange} style={inputStyle} />
             </label>
             <label style={labelStyle}>
               Bank Account Details:
