@@ -21,7 +21,7 @@ export const Cms = () => {
   const locations = ['Juhu', 'Andheri (W)'];
   const categories = [
     'Parks', 'Religious Places', 'Beaches', 'Ambulance Services', 'Fire Brigade',
-    'Police', 'Women & Child Helpline', 'Mental Health Helpline', 'Pre-loved', 'Transportation'
+    'Police', 'Women & Child Helpline', 'Mental Health Helpline', 'Pre-loved', 'Transportation', 'Animal & Bird Rescue Helpline'
   ];
 
   const { getRootProps, getInputProps } = useDropzone({
