@@ -88,7 +88,7 @@ export const Login = () => {
         <p>(For already registered businesses)</p>
       <br />
 
-      <button style={{color:'white'}} id='signupbtn' onClick={handleSignupClick}>Sign up</button>
+      <button style={{color:'white', textAlign:'center'}} onClick={handleSignupClick}>Sign up</button>
       <p>(For listing your business)</p>
       </form>
       {/* <Footer /> */}
