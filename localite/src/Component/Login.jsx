@@ -26,6 +26,10 @@ export const Login = () => {
     fetchMerchants();
   }, []);
 
+  const handleSignupClick = () => {
+    navigate('/merchantform');
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -81,6 +85,11 @@ export const Login = () => {
         {/* <p style={{color: 'red'}}>Forgot password?</p> */}
         <br />
         <button type="submit">Login</button>
+        <p>(For already registered businesses)</p>
+      <br />
+
+      <button style={{color:'white'}} id='signupbtn' onClick={handleSignupClick}>Sign up</button>
+      <p>(For listing your business)</p>
       </form>
       {/* <Footer /> */}
     </div>

@@ -12,9 +12,9 @@ export const Prelogin = () => {
       navigate('/merchantlogin');
     };
   
-    const handleSignupClick = () => {
-      navigate('/merchantform');
-    };
+    // const handleSignupClick = () => {
+    //   navigate('/merchantform');
+    // };
 
 
   return (
@@ -24,7 +24,7 @@ export const Prelogin = () => {
       backgroundPosition: 'center', 
       backgroundRepeat: 'no-repeat' 
     }}>
-        <img width="45%" src="Registration_pg.png" alt="" />
+        <img width="52%" src="Registration_pg.png" alt="" />
       <div id='centreimgdiv'>
         <div className='weldiv'>
       <h2>Welcome to</h2>
@@ -40,11 +40,11 @@ export const Prelogin = () => {
 
       
       <button id='loginbtn' onClick={handleLoginClick}>Login</button>
-      <p>(For already registered businesses)</p>
+      {/* <p>(For already registered businesses)</p> */}
       <br />
-
+{/* 
       <button id='signupbtn' onClick={handleSignupClick}>Sign up</button>
-      <p>(For listing your business)</p>
+      <p>(For listing your business)</p> */}
       
       {/* <Footer /> */}
     </div>
