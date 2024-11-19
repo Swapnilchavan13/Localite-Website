@@ -12,7 +12,7 @@
   }
 
   #centreimgdiv{
-    margin-top: 20%;
+    /* margin-top: -40%; */
     text-align: center;
   }
 
@@ -39,17 +39,16 @@
   }
 
   .weldiv{
-    margin-top: 150px;
+    margin-top: 0px;
   }
 
   .weldiv h2{
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 19px;
     color: black;
   }
 
   .login-container h2 {
-    
     margin-bottom: 1.5rem;
     color: #333;
     text-align: center;
@@ -178,6 +177,7 @@
     .weldiv h2{
       margin-top: 20px;
       font-size: 20px;
+      margin-bottom: 0px;
       color: black;
     }
   }

@@ -24,6 +24,7 @@ export const Prelogin = () => {
       backgroundPosition: 'center', 
       backgroundRepeat: 'no-repeat' 
     }}>
+        <img width="45%" src="Registration_pg.png" alt="" />
       <div id='centreimgdiv'>
         <div className='weldiv'>
       <h2>Welcome to</h2>
@@ -34,8 +35,8 @@ export const Prelogin = () => {
       </p>
       <br />
       </div>
-      <br />
-      <br />
+      {/* <br /> */}
+      {/* <br /> */}
 
       
       <button id='loginbtn' onClick={handleLoginClick}>Login</button>
