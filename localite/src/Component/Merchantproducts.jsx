@@ -7,7 +7,7 @@ export const Merchantproducts = () => {
   const [mrp, setMrp] = useState('');
   const { user, logout } = useAuth();
   const [appSection, setAppSection] = useState('offers');
-  const [productCategory, setProductCategory] = useState('');
+  const [productCategory, setProductCategory] = useState('Product');
   const [brand, setBrand] = useState('');
   const [brandImage, setBrandImage] = useState(null);
   const [title, setTitle] = useState('');
@@ -39,6 +39,29 @@ export const Merchantproducts = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 const [uploadStatus, setUploadStatus] = useState(''); // For the popup message
 
+const [showSecondPhotoField, setShowSecondPhotoField] = useState(false);
+  const [showThirdPhotoField, setShowThirdPhotoField] = useState(false);
+
+  const handleToggleSecondFile = () => {
+    setShowSecondPhotoField((prev) => !prev);
+  };
+
+  // Toggle function to show/hide third photo field
+  const handleToggleThirdFile = () => {
+    setShowThirdPhotoField((prev) => !prev);
+  };
+
+  const handleFileChange = (e, setter, previewSetter) => {
+    const file = e.target.files[0];
+    setter(file);
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      previewSetter(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
+
 
 useEffect(() => {
   const calculatedPrice = mrp - (mrp * discountedPrice / 100);
@@ -49,6 +72,10 @@ useEffect(() => {
 const handleDiscountChange = (e) => {
   const value = Math.min(Math.max(0, e.target.value), 100); // Limit discount between 0 and 100
   setDiscountedPrice(value);
+};
+
+const handleSelection = (type) => {
+  setProductCategory(type); // Update the state with the selected type
 };
 
 
@@ -66,6 +93,7 @@ const handleRemoveAdditionalPhoto1 = () => {
   setAdditionalPhoto1(null);
   setAdditionalPhoto1Preview(null);
 };
+
 
   useEffect(() => {
     // Fetch product categories dynamically
@@ -310,6 +338,67 @@ const handleRemoveAdditionalPhoto1 = () => {
         .form-group input[type="file"] {
           height: auto;
         }
+
+
+        .offer-type-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.offer-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.offer-button.active {
+  background-color: #007bff; /* Blue for active */
+  color: white;
+}
+
+.offer-button.inactive {
+  background-color: #d3d3d3; /* Grey for inactive */
+  color: black;
+}
+
+.remove-photo-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-photo-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Add/Remove button */
+.add-file-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 15px 0;
+  width: fit-content;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-file-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
       `}</style>
       <form onSubmit={handleSubmit} className="form" style={{ 
       backgroundImage: "url('/bg3.png')", 
@@ -345,15 +434,24 @@ const handleRemoveAdditionalPhoto1 = () => {
           </select>
         </div>
 
-        {/* <div className="form-group">
-          <label>Product Category:</label>
-          <select value={productCategory} onChange={(e) => setProductCategory(e.target.value)}>
-            <option value="">Select...</option>
-            {productCategories.map((category, index) => (
-              <option key={index} value={category}>{category}</option>
-            ))}
-          </select>
-        </div> */}
+        <div className="form-group">
+          <label>Type of Offer</label>
+          <div style={{display:'flex', gap:'20px'}}>
+
+      <button
+        className={`offer-button ${productCategory === "Product" ? "active" : "inactive"}`}
+        onClick={() => handleSelection("Product")}
+      >
+        Product
+      </button>
+      <button
+        className={`offer-button ${productCategory === "Service" ? "active" : "inactive"}`}
+        onClick={() => handleSelection("Service")}
+      >
+        Service
+      </button>
+        </div>
+    </div>
 
         {/* <div className="form-group">
           <label>Brand:</label>
@@ -367,7 +465,7 @@ const handleRemoveAdditionalPhoto1 = () => {
         </div> */}
 
         <div className="form-group">
-          <label>Title of the offer<span style={{color:'red'}}>*</span></label>
+          <label>Name of the {productCategory}<span style={{color:'red'}}>*</span></label>
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Note: The Content added here will show on the image." required/>
           <p className='belowp'>ex. Elevate Your Wardrobe at Nishly Fashion House. OR 20% Festive Offer!</p>
         </div>
@@ -378,17 +476,15 @@ const handleRemoveAdditionalPhoto1 = () => {
           <p className='belowp'>Note: The Content added here will show on the image.</p>
         </div> */}
 
-        <div className="form-group">
-          <label>Description of the offer<span style={{color:'red'}}>*</span></label>
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Enter detailed description of the product/service"></textarea>
-
-        </div>
 
         {/* <div className="form-group">
           <label>Excerpt Description <span style={{color:'red'}}>*</span></label>
           <textarea value={excerptDescription} onChange={(e) => setExcerptDescription(e.target.value)} placeholder="Enter excerpt description"></textarea>
       
         </div> */}
+
+{/*
+ALLL photp
 
         <div className="form-group">
           <label>Upload Photo <span style={{color:'red'}}>*</span></label>
@@ -398,22 +494,22 @@ const handleRemoveAdditionalPhoto1 = () => {
         <div className="image-preview-container">
           <img src={photoPreview} alt="Photo Preview" className="image-preview" />
           <button onClick={handleRemovePhoto} className="remove-photo-button">
-            &#10006; {/* This is a cross icon */}
+            &#10006; 
           </button>
         </div>
       )}
         </div>
-
+        
         <div className="form-group">
           <label>Upload Photo 2 (Optional)
-            {/* <span style={{color:'red'}}>*</span> */}
+            
           </label>
           <input type="file" onChange={(e) => setPhoto2(e.target.files[0])} />
           {photo2Preview && (
           <div className="image-preview-container">
             <img src={photo2Preview} alt="Photo 2 Preview" className="image-preview" />
             <button onClick={handleRemovePhoto2} className="remove-photo-button">
-              &#10006; {/* Cross icon */}
+              &#10006; 
             </button>
           </div>
         )}
@@ -426,13 +522,14 @@ const handleRemoveAdditionalPhoto1 = () => {
           <div className="image-preview-container">
             <img src={additionalPhoto1Preview} alt="Additional Photo 1 Preview" className="image-preview" />
             <button onClick={handleRemoveAdditionalPhoto1} className="remove-photo-button">
-              &#10006; {/* Cross icon */}
+              &#10006; 
             </button>
           </div>
         )}
           </div>
+  */}
 
-        <div className="form-group">
+        {/* <div className="form-group">
   <label>Upload video (Optional)</label>
   <input 
     type="file" 
@@ -449,19 +546,121 @@ const handleRemoveAdditionalPhoto1 = () => {
       Your browser does not support the video tag.
     </video>
   )}
-</div>
-  <h3>OR</h3>
-
-
+</div> */}
+{/* 
         <div className="form-group">
           <label>Paste a Video Link (Optional)</label>
           <input type="text" value={videoLink} onChange={(e) => setVideoLink(e.target.value)} placeholder="Enter video link of the OFFERED product/service" />
+        </div> */}
+
+<div>
+      {/* First Upload Field */}
+      <div className="form-group">
+        <label>Upload Photo/Video <span style={{ color: "red" }}>*</span></label>
+        <input
+          type="file"
+          onChange={(e) => handleFileChange(e, setPhoto, setPhotoPreview)}
+          required
+        />
+        {/* <p className="belowp">Note: Pre-existing photos of clients/product/service to be added.</p> */}
+        {photoPreview && (
+          <div className="image-preview-container">
+            <img src={photoPreview} alt="Photo Preview" className="image-preview" />
+            <button onClick={handleRemovePhoto} className="remove-photo-button">
+              &#10006; {/* Cross icon */}
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div style={{display:'flex', gap:'5px', width:'80%'}}>
+
+     <div>
+
+      {/* Button to Add Second File Upload Field */}
+      <button onClick={handleToggleSecondFile} className="add-file-button">
+        {showSecondPhotoField ? "Remove Field" : "Add Another File +"}
+      </button>
+
+      {/* Second Upload Field (Visible when "Add Another File" is clicked) */}
+      {showSecondPhotoField && (
+        <div className="form-group">
+          <label>Upload Photo (Optional)</label>
+          <input
+            type="file"
+            onChange={(e) => handleFileChange(e, setPhoto2, setPhoto2Preview)}
+          />
+          {photo2Preview && (
+            <div className="image-preview-container">
+              <img
+                src={photo2Preview}
+                alt="Photo 2 Preview"
+                className="image-preview"
+              />
+              <button onClick={handleRemovePhoto2} className="remove-photo-button">
+                &#10006; {/* Cross icon */}
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
+      </div>
+
+
+      <div>
+
+      {/* Button to Add Third File Upload Field */}
+      <button onClick={handleToggleThirdFile} className="add-file-button">
+        {showThirdPhotoField ? "Remove Field" : "Add Another File +"}
+      </button>
+
+      {/* Third Upload Field (Visible when "Add Another File" is clicked) */}
+      {showThirdPhotoField && (
+        <div className="form-group">
+          <label>Upload Photo (Optional)</label>
+          <input
+            type="file"
+            onChange={(e) => handleFileChange(e, setAdditionalPhoto1, setAdditionalPhoto1Preview)}
+            />
+          {additionalPhoto1Preview && (
+            <div className="image-preview-container">
+              <img
+                src={additionalPhoto1Preview}
+                alt="Additional Photo 1 Preview"
+                className="image-preview"
+                />
+              <button onClick={handleRemoveAdditionalPhoto1} className="remove-photo-button">
+                &#10006; {/* Cross icon */}
+              </button>
+            </div>
+          )}
         </div>
 
+)}
+</div>
+</div>
+    </div>
+    <br />
+
+
+
+
+
+
+
+
+{productCategory === "Product" && (
         <div className="form-group">
           <label>Units</label>
-          <input type="number" value={unit} onChange={(e) => setUnit(e.target.value)} placeholder="Enter only incase of limited PRODUCTS"/>
+          <input
+            type="number"
+            value={unit}
+            onChange={(e) => setUnit(e.target.value)}
+            placeholder="Enter only in case of limited PRODUCTS"
+          />
         </div>
+      )}
 
         <div className="form-group">
         <label>Actual Price <span style={{ color: 'red' }}>*</span></label>
@@ -469,7 +668,7 @@ const handleRemoveAdditionalPhoto1 = () => {
           type="number"
           value={mrp}
           onChange={(e) => setMrp(e.target.value)}
-          placeholder="Enter product/service actual price"
+          // placeholder={`Enter ${productCategory} actual price`}
           required
         />
       </div>
@@ -479,7 +678,8 @@ const handleRemoveAdditionalPhoto1 = () => {
           <input type="number" value={discountedPrice}
            onChange={handleDiscountChange} // Use the validation function here
           //  onChange={(e) => setDiscountedPrice(e.target.value)}
-            placeholder="Enter discount unit on the product/service" required/>
+            // placeholder={`Enter discount unit on the ${productCategory}`}
+             required/>
         </div>
 
         <div className="form-group">
@@ -493,6 +693,12 @@ const handleRemoveAdditionalPhoto1 = () => {
         />
         <p className='belowp'>Note: Discounted offer for the customers.</p>
       </div>
+
+      <div className="form-group">
+          <label>Description of the {productCategory} (Optional)</label>
+          <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder={`Enter detailed description of the ${productCategory}`}></textarea>
+
+        </div>
         
 
 
