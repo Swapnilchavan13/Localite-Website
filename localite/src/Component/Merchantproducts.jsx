@@ -466,8 +466,8 @@ const handleRemoveAdditionalPhoto1 = () => {
 
         <div className="form-group">
           <label>Name of the {productCategory}<span style={{color:'red'}}>*</span></label>
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Note: The Content added here will show on the image." required/>
-          <p className='belowp'>ex. Elevate Your Wardrobe at Nishly Fashion House. OR 20% Festive Offer!</p>
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required/>
+          {/* <p className='belowp'>ex. Elevate Your Wardrobe at Nishly Fashion House. OR 20% Festive Offer!</p> */}
         </div>
 
         {/* <div className="form-group">
