@@ -40,9 +40,8 @@ export const EventTable = () => {
   };
 
   const handleNextPage = () => {
-    if (currentPage < totalPages) {
       setCurrentPage((prevPage) => prevPage + 1);
-    }
+    
   };
 
   const handlePreviousPage = () => {
@@ -78,25 +77,35 @@ export const EventTable = () => {
                 </td>
                 <td data-label="Organizer">{event.eventOrganiserName || 'N/A'}</td>
                 <td data-label="Date(s)">
-                  {event.eventDate && event.eventDate.length > 0 ? (
-                    event.eventDate.map((dateItem, idx) => (
-                      <div key={idx}>
-                        {dateItem.date ? new Date(dateItem.date).toLocaleDateString() : 'N/A'}
-                      </div>
-                    ))
-                  ) : (
-                    <span>N/A</span>
-                  )}
-                </td>
-                <td data-label="Tickets">
-  {event.ticket && event.ticket.length > 0 ? (
-    event.ticket.map(ticket => (
-      <div key={ticket._id}>
-        {ticket.ticketName || 'N/A'}: ₹{ticket.ticketPrice !== undefined ? ticket.ticketPrice : 'N/A'}
+  {event.eventDate && event.eventDate.length > 0 ? (
+    event.eventDate.map((dateItem, idx) => (
+      <div key={idx}>
+        {dateItem.date ? new Date(dateItem.date).toLocaleDateString() : 'N/A'}
       </div>
     ))
   ) : (
     <span>N/A</span>
+  )}
+</td>
+
+<td data-label="Tickets">
+  {event.eventDate && event.eventDate.length > 0 ? (
+    event.eventDate.map((dateItem, idx) => (
+      <div key={idx}>
+        {dateItem.tickets && dateItem.tickets.length > 0 ? (
+          dateItem.tickets.map(ticket => (
+            <div key={ticket._id}>
+              {ticket.ticketName || ticket.ticketType || 'N/A'}: ₹{ticket.ticketPrice !== undefined ? ticket.ticketPrice : 'N/A'} 
+              {ticket.ticketDescription && `- ${ticket.ticketDescription}`}
+            </div>
+          ))
+        ) : (
+          <span>No tickets available for this date</span>
+        )}
+      </div>
+    ))
+  ) : (
+    <span>No tickets available</span>
   )}
 </td>
 
