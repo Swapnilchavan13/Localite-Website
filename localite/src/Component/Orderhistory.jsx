@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import emailjs from 'emailjs-com'; // Import EmailJS
 import '../styles/order.css'; // Import the CSS file
 
 export const Orderhistory = () => {
@@ -10,15 +11,13 @@ export const Orderhistory = () => {
   const apiUrlAll = 'https://qljsn1wzw2.execute-api.ap-south-1.amazonaws.com/prod/api/order/all';
   const apiUrlPage = 'https://qljsn1wzw2.execute-api.ap-south-1.amazonaws.com/prod/api/order/all';
 
-  // Function to play notification sound
   const playNotificationSound = () => {
     const audio = new Audio('/notification.mp3');
-    audio.play().catch(error => {
+    audio.play().catch((error) => {
       console.error('Error playing audio:', error);
     });
   };
 
-  // Function to fetch orders for the current page
   const fetchOrders = async () => {
     setLoading(true);
     try {
@@ -33,43 +32,70 @@ export const Orderhistory = () => {
     }
   };
 
-  // Function to check for new orders
+  const sendEmailNotification = (order) => {
+    const templateParams = {
+      product_title: order?.postDetails?.title ?? 'N/A',
+      product_quantity: order?.cartItems?.reduce((total, item) => total + item.quantity, 0) ?? 0,
+      total_price: order?.price ?? 'N/A',
+      user_name: order?.userDetails?.[0]?.userName ?? 'N/A',
+      user_address: order?.userDetails?.[0]?.address ?? 'N/A',
+      user_phone: order?.userDetails?.[0]?.phoneNumber ?? 'N/A',
+      brand_name: order?.postDetails?.brandName ?? 'N/A',
+      brand_address: order?.postDetails?.merchantDetails?.[0]?.address ?? 'N/A',
+      brand_phone: order?.postDetails?.merchantDetails?.[0]?.phoneNumber ?? 'N/A',
+      order_date: new Date(order?.createdAt).toLocaleDateString(),
+      payment_status: order?.paymentMode ?? 'N/A',
+    };
+
+    emailjs
+      .send('service_qd6wjis', 'template_38jnodk', templateParams, 'qAkPR5RhKGseM24tp')
+      .then(
+        (result) => {
+          console.log('Email sent successfully:', result.text);
+        },
+        (error) => {
+          console.error('Error sending email:', error.text);
+        }
+      );
+  };
+
   const checkForNewOrders = async () => {
     try {
       const response = await fetch(apiUrlAll);
       const data = await response.json();
       const currentFirstOrderId = data.order.length > 0 ? data.order[0]?._id : null;
 
-      // Get the stored first order ID from localStorage
       const storedFirstOrderId = localStorage.getItem('firstOrderId');
 
-      // If there is a change in the first order ID
       if (storedFirstOrderId && currentFirstOrderId !== storedFirstOrderId) {
         playNotificationSound();
-        await fetchOrders(); // Fetch updated orders
+        await fetchOrders();
+
+        // Send email notification for the new order
+        if (data.order.length > 0) {
+          sendEmailNotification(data.order[0]); // Send email for the first (newest) order
+        }
       }
 
-      // Update the stored first order ID
       localStorage.setItem('firstOrderId', currentFirstOrderId);
     } catch (error) {
       console.error('Error checking for new orders:', error);
     }
   };
 
-  // Initialize data and start checking for new orders
   useEffect(() => {
     const initializeData = async () => {
-      await fetchOrders(); // Fetch initial page data
-      await checkForNewOrders(); // Check initial orders
+      await fetchOrders();
+      await checkForNewOrders();
     };
 
     initializeData();
 
     const intervalId = setInterval(() => {
-      checkForNewOrders(); // Check for new orders every 5 seconds
+      checkForNewOrders();
     }, 5000);
 
-    return () => clearInterval(intervalId); // Clean up interval on unmount
+    return () => clearInterval(intervalId);
   }, [currentPage]);
 
   const handlePreviousPage = () => {
@@ -84,7 +110,6 @@ export const Orderhistory = () => {
     }
   };
 
-  // Function to generate and copy message template
   const copyMessageTemplate = (order) => {
     const message = `
       Dear Merchant,
