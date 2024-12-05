@@ -4,12 +4,14 @@ import '../styles/order.css'; // Import the CSS file
 
 export const Orderhistory = () => {
   const [orders, setOrders] = useState([]);
+  const [brands, setBrands] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
 
-  const apiUrlAll = 'https://qljsn1wzw2.execute-api.ap-south-1.amazonaws.com/prod/api/order/all';
-  const apiUrlPage = 'https://qljsn1wzw2.execute-api.ap-south-1.amazonaws.com/prod/api/order/all';
+  const apiUrlAll = 'https://hc29cfp8vj.execute-api.ap-south-1.amazonaws.com/prod/api/order/all';
+  const apiUrlPage = 'https://hc29cfp8vj.execute-api.ap-south-1.amazonaws.com/prod/api/order/all';
+  const apiUrlBrands = 'https://hc29cfp8vj.execute-api.ap-south-1.amazonaws.com/prod/api/brand/all';
 
   const playNotificationSound = () => {
     const audio = new Audio('/notification.mp3');
@@ -32,6 +34,38 @@ export const Orderhistory = () => {
     }
   };
 
+  const fetchBrands = async () => {
+    try {
+      // Create an array of fetch promises for pages 1 to 14
+      const fetchPromises = [];
+      for (let page = 1; page <= 14; page++) {
+        fetchPromises.push(fetch(`${apiUrlBrands}?page=${page}`));
+      }
+  
+      // Await all fetch promises
+      const responses = await Promise.all(fetchPromises);
+  
+      // Convert all responses to JSON
+      const allData = await Promise.all(responses.map((res) => res.json()));
+  
+      // Combine all brand data
+      const allBrands = allData.flatMap((data) => data.brands || []); // Combine all brands from all pages
+  
+      // Map brand details by brandId
+      const brandMap = allBrands.reduce((acc, brand) => {
+        acc[brand.brandId] = {
+          phone: brand.phone || 'N/A',
+          address: brand.address || 'N/A',
+        };
+        return acc;
+      }, {});
+  
+      setBrands(brandMap);
+    } catch (error) {
+      console.error('Error fetching all brands:', error);
+    }
+  };
+
   const sendEmailNotification = (order) => {
     const templateParams = {
       product_title: order?.postDetails?.title ?? 'N/A',
@@ -41,8 +75,8 @@ export const Orderhistory = () => {
       user_address: order?.userDetails?.[0]?.address ?? 'N/A',
       user_phone: order?.userDetails?.[0]?.phoneNumber ?? 'N/A',
       brand_name: order?.postDetails?.brandName ?? 'N/A',
-      brand_address: order?.postDetails?.merchantDetails?.[0]?.address ?? 'N/A',
-      brand_phone: order?.postDetails?.merchantDetails?.[0]?.phoneNumber ?? 'N/A',
+      brand_address: brands[order?.postDetails?.brandId]?.address ?? 'N/A',
+      brand_phone: brands[order?.postDetails?.brandId]?.phone ?? 'N/A',
       order_date: new Date(order?.createdAt).toLocaleDateString(),
       payment_status: order?.paymentMode ?? 'N/A',
     };
@@ -85,6 +119,7 @@ export const Orderhistory = () => {
 
   useEffect(() => {
     const initializeData = async () => {
+      await fetchBrands();
       await fetchOrders();
       await checkForNewOrders();
     };
@@ -159,45 +194,57 @@ export const Orderhistory = () => {
               </tr>
             </thead>
             <tbody>
-              {orders.map((order) => (
-                <tr key={order?._id}>
-                  <td>{order?.postDetails?.title ?? 'N/A'}</td>
-                  <td>{order?.cartItems?.reduce((total, item) => total + item.quantity, 0) ?? 0}</td>
-                  <td>{order?.price ?? 'N/A'}</td>
-                  <td>{order?.userDetails?.[0]?.userName ?? 'N/A'}</td>
-                  <td>{order?.userDetails?.[0]?.address ?? 'N/A'}</td>
-                  <td>
-                    <a
-                      href={`https://wa.me/${order?.userDetails?.[0]?.phoneNumber}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="phone-link"
-                    >
-                      {order?.userDetails?.[0]?.phoneNumber ?? 'N/A'}
-                    </a>
-                  </td>
-                  <td>{order?.postDetails?.brandName ?? 'N/A'}</td>
-                  <td>{order?.postDetails?.merchantDetails?.[0]?.address ?? 'N/A'}</td>
-                  <td>
-                    <a
-                      href={`https://wa.me/${order?.postDetails?.merchantDetails?.[0]?.phoneNumber}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="phone-link"
-                    >
-                      {order?.postDetails?.merchantDetails?.[0]?.phoneNumber ?? 'N/A'}
-                    </a>
-                  </td>
-                  <td>{new Date(order?.createdAt).toLocaleDateString()}</td>
-                  <td>{order?.paymentMode ?? 'N/A'}</td>
-                  <td>
-                    <button onClick={() => copyMessageTemplate(order)} className="copy-button">
-                      Copy Message
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+  {orders.map((order) => {
+    // Check if the order date is today's date
+    const isToday = new Date(order?.createdAt).toDateString() === new Date().toDateString();
+
+    return (
+      <tr
+        key={order?._id}
+        style={{
+          backgroundColor: isToday ? 'green' : 'transparent', // Green background for today's orders
+          color: isToday ? 'white' : 'inherit', // Optional: Make text white for contrast
+        }}
+      >
+        <td>{order?.postDetails?.title ?? 'N/A'}</td>
+        <td>{order?.cartItems?.reduce((total, item) => total + item.quantity, 0) ?? 0}</td>
+        <td>{order?.price ?? 'N/A'}</td>
+        <td>{order?.userDetails?.[0]?.userName ?? 'N/A'}</td>
+        <td>{order?.userDetails?.[0]?.address ?? 'N/A'}</td>
+        <td>
+          <a
+            href={`https://wa.me/${order?.userDetails?.[0]?.phoneNumber}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="phone-link"
+          >
+            {order?.userDetails?.[0]?.phoneNumber ?? 'N/A'}
+          </a>
+        </td>
+        <td>{order?.postDetails?.brandName ?? 'N/A'}</td>
+        <td>{brands[order?.postDetails?.brandId]?.address ?? 'N/A'}</td>
+        <td>
+          <a
+            href={`https://wa.me/${brands[order?.postDetails?.brandId]?.phone}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="phone-link"
+          >
+            {brands[order?.postDetails?.brandId]?.phone ?? 'N/A'}
+          </a>
+        </td>
+        <td>{new Date(order?.createdAt).toLocaleDateString()}</td>
+        <td>{order?.paymentMode ?? 'N/A'}</td>
+        <td>
+          <button onClick={() => copyMessageTemplate(order)} className="copy-button">
+            Copy Message
+          </button>
+        </td>
+      </tr>
+    );
+  })}
+</tbody>
+
           </table>
           <div className="pagination">
             <button
@@ -219,7 +266,7 @@ export const Orderhistory = () => {
         </>
       )}
       <button onClick={playNotificationSound} className="test-sound-button">
-        Test Sound
+        Test Notification Sound
       </button>
     </div>
   );

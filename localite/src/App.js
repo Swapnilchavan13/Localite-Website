@@ -45,7 +45,7 @@ function App() {
 
 
       <Route path="/cms" element={<Cms />} />
-      <Route path="/allorders" element={<Orderhistory />} />
+      <Route path="/allorders9049127078" element={<Orderhistory />} />
       <Route path="/allevents" element={<EventTable />} />
 
       
