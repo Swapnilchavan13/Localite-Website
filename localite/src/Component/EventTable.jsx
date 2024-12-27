@@ -9,10 +9,11 @@ export const EventTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [eventsPerPage] = useState(10); // Set the number of events per page
   const [totalEvents, setTotalEvents] = useState(0); // Total number of events
+  const [selectedEvent, setSelectedEvent] = useState(''); // Selected event name
 
   const fetchData = async (page) => {
     try {
-      const response = await fetch(`https://qljsn1wzw2.execute-api.ap-south-1.amazonaws.com/prod/api/feature/event?page=${currentPage}`);
+      const response = await fetch(`https://hc29cfp8vj.execute-api.ap-south-1.amazonaws.com/prod/api/feature/event?page=${currentPage}`);
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -32,6 +33,11 @@ export const EventTable = () => {
     fetchData(currentPage); // Fetch data whenever the current page changes
   }, [currentPage]);
 
+  // Filter events based on the selected event name
+  const filteredEvents = selectedEvent
+    ? events.filter(event => event.name === selectedEvent)
+    : events;
+
   // Calculate the total number of pages
   const totalPages = Math.ceil(totalEvents / eventsPerPage);
 
@@ -40,8 +46,7 @@ export const EventTable = () => {
   };
 
   const handleNextPage = () => {
-      setCurrentPage((prevPage) => prevPage + 1);
-    
+    setCurrentPage((prevPage) => prevPage + 1);
   };
 
   const handlePreviousPage = () => {
@@ -50,12 +55,31 @@ export const EventTable = () => {
     }
   };
 
+  // Handle event name selection
+  const handleEventSelect = (e) => {
+    setSelectedEvent(e.target.value);
+  };
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <div className="event-table-container">
       <h2>Event List</h2>
+      
+      {/* Dropdown to select event */}
+      <div className="event-filter">
+        <label htmlFor="event-select">Select Event: </label>
+        <select id="event-select" onChange={handleEventSelect} value={selectedEvent}>
+          <option value="">-- All Events --</option>
+          {events.map((event) => (
+            <option key={event._id} value={event.name}>
+              {event.name}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <table>
         <thead>
           <tr>
@@ -68,8 +92,8 @@ export const EventTable = () => {
           </tr>
         </thead>
         <tbody>
-          {events.length > 0 ? (
-            events.map(event => (
+          {filteredEvents.length > 0 ? (
+            filteredEvents.map((event) => (
               <tr key={event._id}>
                 <td data-label="Name">{event.name || 'N/A'}</td>
                 <td data-label="Location">
@@ -77,37 +101,37 @@ export const EventTable = () => {
                 </td>
                 <td data-label="Organizer">{event.eventOrganiserName || 'N/A'}</td>
                 <td data-label="Date(s)">
-  {event.eventDate && event.eventDate.length > 0 ? (
-    event.eventDate.map((dateItem, idx) => (
-      <div key={idx}>
-        {dateItem.date ? new Date(dateItem.date).toLocaleDateString() : 'N/A'}
-      </div>
-    ))
-  ) : (
-    <span>N/A</span>
-  )}
-</td>
+                  {event.eventDate && event.eventDate.length > 0 ? (
+                    event.eventDate.map((dateItem, idx) => (
+                      <div key={idx}>
+                        {dateItem.date ? new Date(dateItem.date).toLocaleDateString() : 'N/A'}
+                      </div>
+                    ))
+                  ) : (
+                    <span>N/A</span>
+                  )}
+                </td>
 
-<td data-label="Tickets">
-  {event.eventDate && event.eventDate.length > 0 ? (
-    event.eventDate.map((dateItem, idx) => (
-      <div key={idx}>
-        {dateItem.tickets && dateItem.tickets.length > 0 ? (
-          dateItem.tickets.map(ticket => (
-            <div key={ticket._id}>
-              {ticket.ticketName || ticket.ticketType || 'N/A'}: ₹{ticket.ticketPrice !== undefined ? ticket.ticketPrice : 'N/A'} 
-              {ticket.ticketDescription && `- ${ticket.ticketDescription}`}
-            </div>
-          ))
-        ) : (
-          <span>No tickets available for this date</span>
-        )}
-      </div>
-    ))
-  ) : (
-    <span>No tickets available</span>
-  )}
-</td>
+                <td data-label="Tickets">
+                  {event.eventDate && event.eventDate.length > 0 ? (
+                    event.eventDate.map((dateItem, idx) => (
+                      <div key={idx}>
+                        {dateItem.tickets && dateItem.tickets.length > 0 ? (
+                          dateItem.tickets.map((ticket) => (
+                            <div key={ticket._id}>
+                              {ticket.ticketName || ticket.ticketType || 'N/A'}: ₹{ticket.ticketPrice !== undefined ? ticket.ticketPrice : 'N/A'} 
+                              {ticket.ticketDescription && `- ${ticket.ticketDescription}`}
+                            </div>
+                          ))
+                        ) : (
+                          <span>No tickets available for this date</span>
+                        )}
+                      </div>
+                    ))
+                  ) : (
+                    <span>No tickets available</span>
+                  )}
+                </td>
 
                 <td data-label="User Bookings">
                   {event.orders && event.orders.length > 0 ? (

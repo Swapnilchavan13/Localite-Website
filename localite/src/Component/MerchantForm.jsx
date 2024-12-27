@@ -507,7 +507,6 @@ export const MerchantForm = () => {
     <option value="2 offers in a week">2 offers in a week</option>
     <option value="1 offer in a week">1 offer in a week</option>
     <option value="None">None</option>
-
   </select>
 </label>
 

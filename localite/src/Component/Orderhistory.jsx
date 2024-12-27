@@ -93,6 +93,48 @@ export const Orderhistory = () => {
       );
   };
 
+  const sendSMSNotification = async () => {
+    const apiUrl = "https://control.msg91.com/api/v5/flow";
+    const authKey = "408994AbeVcmRYV66682d3bP1";
+    const templateId = "6630b3aad6fc055ae36a4bd2";
+    const mobileNumber = 919049127078;
+  
+    const payload = {
+      template_id: templateId,
+      realTimeResponse: "1", // Enable detailed API response
+      recipients: [
+        {
+          mobiles: mobileNumber,
+        },
+      ],
+    };
+  
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          accept: "application/json",
+          authkey: authKey,
+        },
+        body: JSON.stringify(payload),
+      });
+  
+      const data = await response.json();
+      console.log("API Response:", data); // Log the API response
+  
+      if (data.type === "success") {
+        console.log("SMS sent successfully");
+      } else {
+        console.error("Error sending SMS:", data);
+      }
+    } catch (error) {
+      console.error("Error sending SMS:", error);
+    }
+  };
+  
+  
+
   const checkForNewOrders = async () => {
     try {
       const response = await fetch(apiUrlAll);
@@ -108,6 +150,7 @@ export const Orderhistory = () => {
         // Send email notification for the new order
         if (data.order.length > 0) {
           sendEmailNotification(data.order[0]); // Send email for the first (newest) order
+          sendSMSNotification(); // Send SMS for the new order
         }
       }
 
@@ -142,6 +185,7 @@ export const Orderhistory = () => {
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
+       // Send SMS for the new order
     }
   };
 

@@ -18,7 +18,7 @@ export const Cms = () => {
   const [filterLocation, setFilterLocation] = useState('');
   const [filterCategory, setFilterCategory] = useState('');
 
-  const locations = ['Juhu', 'Andheri (W)'];
+  const locations = ['Juhu', 'Andheri (W)','Park Street', 'Ballygunge'];
   const categories = [
     'Parks', 'Religious Places', 'Beaches', 'Ambulance Services', 'Fire Brigade',
     'Police', 'Women & Child Helpline', 'Mental Health Helpline', 'Pre-loved', 'Transportation', 'Animal & Bird Rescue Helpline'
