@@ -18,6 +18,7 @@ import { Removemydata } from './Component/Removemydata';
 import { Cms } from './Component/Cms';
 import { Orderhistory } from './Component/Orderhistory';
 import { EventTable } from './Component/EventTable';
+import { MerchantsLinks } from './Component/MerchantsLinks';
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
       <Route path="/return" element={<Return />} />
       <Route path="/shipping" element={<Shipping />} />
       <Route path="/removemydata" element={<Removemydata />} />
+      <Route path="/merchantlinks" element={<MerchantsLinks />} />
+
 
 
 
